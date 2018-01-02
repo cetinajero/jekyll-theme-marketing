@@ -4,6 +4,29 @@ Right now just a test theme for Jekyll.
 
 ## Installation
 
+### Installation on Jekyll sites using GitHub Pages
+
+1. Add the following to your Gemfile
+
+  ```ruby
+  gem "jekyll-remote-theme"
+  ```
+  and run `bundle install` to install the plugin
+
+2. Add the following 3 lines to your site's `_config.yml` to activate the `jekyll-theme-marketing` theme and the `jekyll-remote-theme` plugin
+
+  ```yml
+  ...
+  remote_theme: cetinajero/jekyll-theme-marketing
+  ...
+  ...
+  plugins:
+    - jekyll-remote-theme
+  ...
+  ```
+
+### Installation on all Jekyll sites
+
 Add this line to your Jekyll site's `Gemfile`:
 
 ```ruby
@@ -18,11 +41,7 @@ theme: jekyll-theme-marketing
 
 And then execute:
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install jekyll-theme-marketing
+    $ bundle install
 
 ## Usage
 
@@ -30,7 +49,7 @@ TODO: Write usage instructions here. Describe your available layouts, includes, 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/hello. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/cetinajero/jekyll-theme-marketing/issues. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## Development
 
@@ -45,3 +64,9 @@ To add a custom directory to your theme-gem, please edit the regexp in `jekyll-t
 
 The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
+## Credits
+
+**Edgar Tinajero**
+
+- <https://github.com/cetinajero>
+- <https://about.me/cetinajero>
