@@ -1,2 +1,31 @@
-<!-- Jekyll theme: https://github.com/cetinajero/jekyll-theme-marketing -->
-{{ content }}
+<!DOCTYPE html>
+<html lang="{{ page.lang |  slice: 0,2 | default: site.lang |  slice: 0,2 | default: "en" }}" dir="ltr">
+  <!-- Jekyll theme: https://github.com/cetinajero/jekyll-theme-marketing -->
+
+  <head>
+
+    {% seo %}
+    {% include head/meta.html %}
+    {% include head/scripts.html %}
+    {% if site.original %} {% include head/firebase/sdk.html %} {% endif %}
+    {% include head/fonts.html %}
+    {% include head/style.html %}
+    {% include head/google-analytics.html %}
+
+  </head>
+
+  <body id="marketing-theme" class="fixed-header boxed">
+
+    <div class="page-box">
+      <div class="page-box-content">
+        {% include body/header.html %}
+        {{ content }}
+      </div>
+    </div>
+
+    {% include body/footer.html %}
+    {% include body/scripts.html %}
+
+  </body>
+
+</html>
