@@ -3,8 +3,8 @@ require "yaml"
 
 desc "Build website"
 task :build do
-  puts "## Running: bundle exec jekyll build --verbose"
-  system "bundle exec jekyll build --verbose"
+  puts "## Running: bundle exec jekyll build --verbose --trace"
+  system "bundle exec jekyll build --verbose --trace"
   cd "_site" do
     puts "## Showing changes in _site"
     system "git status"
@@ -14,9 +14,11 @@ end
 
 desc "Run local server"
 namespace :serve do
+
+  desc "Run local server with _config-dev.yml"
   task :dev do
     begin
-      puts "## Running: bundle exec jekyll serve --config _config-dev.yml"
+      puts "## Running: bundle exec jekyll serve --config _config-dev.yml --host 0.0.0.0"
       config_prod=YAML.load_file("_config.yml")
       config_prod.each do |key, value|
         if key == "defaults"
@@ -31,26 +33,77 @@ namespace :serve do
       config_dev=File.new("_config-dev.yml","w")
       config_dev.write(config_prod.to_h.to_yaml)
       config_dev.close
-      system "bundle exec jekyll serve --config _config-dev.yml"
+      system "bundle exec jekyll serve --config _config-dev.yml --host 0.0.0.0"
     rescue Exception => e
       puts e
       puts "\n## Shutting down server"
     end
   end
+
+  desc "Run local server with _config.yml"
   task :prod do
     begin
-      puts "## Running: bundle exec jekyll serve"
-      system "bundle exec jekyll serve"
+      puts "## Running: bundle exec jekyll serve --host 0.0.0.0"
+      system "bundle exec jekyll serve --host 0.0.0.0"
     rescue Exception => e
       puts e
       puts "\n## Shutting down server"
     end
+  end
+
+  desc "Run local server without a collection"
+  namespace :without do
+
+    desc "Run local server without radius collection"
+    task :radius do
+      begin
+        puts "## Running: bundle exec jekyll serve --config _config-dev.yml --host 0.0.0.0"
+        config_prod=YAML.load_file("_config.yml")
+        config_prod.each do |key, value|
+          if key == "defaults"
+            value[2].each do |key, value| # collections.radius.published = false
+              key == "values" ? value.merge!({ "published" => false }) : nil
+            end
+          end
+        end
+        config_dev=File.new("_config-dev.yml","w")
+        config_dev.write(config_prod.to_h.to_yaml)
+        config_dev.close
+        system "bundle exec jekyll serve --config _config-dev.yml --host 0.0.0.0"
+      rescue Exception => e
+        puts e
+        puts "\n## Shutting down server"
+      end
+    end
+
+    desc "Run local server without cctv collection"
+    task :cctv do
+      begin
+        puts "## Running: bundle exec jekyll serve --config _config-dev.yml --host 0.0.0.0"
+        config_prod=YAML.load_file("_config.yml")
+        config_prod.each do |key, value|
+          if key == "defaults"
+            value[3].each do |key, value| # collections.cctv.published = false
+              key == "values" ? value.merge!({ "published" => false }) : nil
+            end
+          end
+        end
+        config_dev=File.new("_config-dev.yml","w")
+        config_dev.write(config_prod.to_h.to_yaml)
+        config_dev.close
+        system "bundle exec jekyll serve --config _config-dev.yml --host 0.0.0.0"
+      rescue Exception => e
+        puts e
+        puts "\n## Shutting down server"
+      end
+    end
+
   end
 end
 
 desc "Deploy to Github Pages"
 task :deploy do
-  puts "## Deploying to Github Pages"
+  puts "## Deploying to GitHub Pages"
 
   puts "## Generating site"
   system "bundle exec jekyll build"
@@ -71,6 +124,7 @@ end
 
 desc "Git reset commands"
 namespace :reset do
+  desc "Git reset soft"
   task :soft do
     puts "## Current last commit: " + `git log --oneline | head -n 1`
 
@@ -91,6 +145,11 @@ alias_task [
     [:b, :build],
     [:sd, 'serve:dev'],
     [:sp, 'serve:prod'],
+    [:swr, 'serve:without:radius'],
+    [:swc, 'serve:without:cctv'],
     [:d, :deploy],
     [:rs, 'reset:soft'],
 ]
+
+desc "Run local server with _config-dev.yml"
+task :default => [:sd]
