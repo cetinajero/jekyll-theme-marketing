@@ -102,25 +102,30 @@ namespace :serve do
   end
 end
 
-desc "Deploy to Github Pages"
-task :deploy do
-  puts "## Deploying to GitHub Pages"
+desc "Deploy tasks"
+namespace :deploy do
 
-  puts "## Generating site"
-  system "bundle exec jekyll build"
+  desc "Deploy site to Github Pages"
+  task :website do
+    puts "## Deploying to GitHub Pages"
 
-  cd "_site" do
-    system "git add -A"
+    puts "## Generating site"
+    system "bundle exec jekyll build"
 
-    message = "Site updated at #{Time.now.utc}"
-    puts "## Commiting: #{message}"
-    system "git commit -m \"#{message}\""
+    cd "_site" do
+      system "git add -A"
 
-    puts "## Pushing generated site"
-    system "git push"
+      message = "Site updated at #{Time.now.utc}"
+      puts "## Commiting: #{message}"
+      system "git commit -m \"#{message}\""
 
-    puts "## Deploy Complete!"
+      puts "## Pushing generated site"
+      system "git push"
+
+      puts "## Deploy Complete!"
+    end
   end
+
 end
 
 desc "Git reset commands"
