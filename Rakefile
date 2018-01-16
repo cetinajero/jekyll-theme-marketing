@@ -137,7 +137,7 @@ namespace :deploy do
     puts "## Running: git push origin master"
     system "git push origin master"
 
-    puts "## Running: git push origin #{new_version}" # Push tagged version
+    puts "## Running: git push origin v#{new_version}" # Push tagged version
     system "git push origin v#{new_version}"
 
     puts "## Running: gem build #{File.basename(Dir.pwd)}.gemspec"
