@@ -7,7 +7,7 @@ layout: null
   <ShortName>{{ site.title }}</ShortName>
   <Description>Search {{ site.title }}</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image type="image/x-icon" width="16" height="16">/assets/img/common/favicon.ico</Image>
+  <Image type="image/x-icon" width="16" height="16">{{ '/assets/img/common/favicon.ico' | relative_url }}</Image>
   <Url method="get" type="text/html"
       template="http://www.google.com/search?q={searchTerms}+site%3A{{ site.url | remove_first:'http://' | remove_first:'https://' | remove_first:'www.' }}&amp;hl=en"/>
 </OpenSearchDescription>
