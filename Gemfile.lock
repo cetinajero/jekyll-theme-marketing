@@ -14,6 +14,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
+    bump (0.5.4)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -239,6 +240,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bump
   bundler (~> 1.12)
   github-pages
   jekyll-theme-marketing!
