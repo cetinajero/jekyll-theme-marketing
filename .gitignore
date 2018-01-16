@@ -2,3 +2,5 @@
 .bundle
 .sass-cache
 _site
+.DS_Store
+_config-dev.yml
