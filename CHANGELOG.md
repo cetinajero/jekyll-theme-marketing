@@ -2,7 +2,8 @@
 
 ### Enhancements
 
-* Added layout [grid](https://github.com/cetinajero/jekyll-theme-marketing/blob/2ecf7929406960910b71fe8bbdbfbb13ab44feb9/_layouts/grid.html)
+* Updated layout [page](https://github.com/cetinajero/jekyll-theme-marketing/blob/50cf0a5a9aa6a9d6e83b4855bd050e72c9e17dd6/_layouts/page.html) to manage `i18n` and product `collections`.
+* Added layout [grid.](https://github.com/cetinajero/jekyll-theme-marketing/blob/2ecf7929406960910b71fe8bbdbfbb13ab44feb9/_layouts/grid.html)
 * Implemented [CHANGELOG.md](CHANGELOG.md)
 
 ## [0.2.0](https://github.com/cetinajero/jekyll-theme-marketing/releases/tag/v0.2.0)
