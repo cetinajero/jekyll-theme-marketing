@@ -2,6 +2,7 @@
 
 ### Enhancements
 
+* Added layout [grid](https://github.com/cetinajero/jekyll-theme-marketing/blob/2ecf7929406960910b71fe8bbdbfbb13ab44feb9/_layouts/grid.html)
 * Implemented [CHANGELOG.md](CHANGELOG.md)
 
 ## [0.2.0](https://github.com/cetinajero/jekyll-theme-marketing/releases/tag/v0.2.0)
