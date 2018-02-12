@@ -16,5 +16,10 @@ layout: default
 
 <div class="post">
   <div id="sign-in-content"></div>
+  <p>
+    {% for resource in page.resources.spec-sheets.catalog %}
+      <img src="{{ site.amazon-s3 }}{{ resource }}" alt="{{ page.title }}" class="img-center">
+    {% endfor %}
+  </p>
   {{ content }}
 </div>
