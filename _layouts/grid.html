@@ -26,7 +26,7 @@ layout: page
           </div>
           <div class="product-brand">{{ doc.brand }} {{ doc.commercial }}</div>
           <div id="{{ i18n-id }}" class="product-description">{% if i18n-description %}{{ i18n-description }}{% else %}{{ doc.description }}{% endif %}</div>
-          <div class="product-price"><span class="label label-primary">$ {{ doc.price }}{% assign doc-price-size = doc.price | downcase | split: '.' | last | size %}{% if doc-price-size == 1 %}{{ "0" }}{% endif %} {{ doc.currency }}</span></div>
+          <div class="product-price"><span class="label label-primary">{% if doc.price %}{{ doc.price | prepend: '$ ' }}{% endif %}{% assign doc-price-size = doc.price | downcase | split: '.' | last | size %}{% if doc-price-size == 1 %}{{ "0" }}{% endif %}{% if doc.currency %}{{ doc.currency | prepend: ' ' }}{% endif %}</span></div>
         </div>
       {% endfor %}
     {% endfor %}
