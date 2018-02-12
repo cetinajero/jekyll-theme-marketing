@@ -16,6 +16,15 @@ layout: default
 
 <div class="post">
   <div id="sign-in-content"></div>
+  {% for resource in page.resources.spec-sheets.datasheets %}
+    {% assign i18n-resource-text = page.i18n[site.lang].resources.spec-sheets.datasheets[forloop.index0].text %}
+    <p class="center">
+      <a href="{{ site.amazon-s3 }}{{ resource.link }}">
+        <span class="glyphicon glyphicon-download-alt"></span>
+        <em><strong>{% if i18n-resource-text %}{{ i18n-resource-text }}{% else %}{{ resource.text }}{% endif %}</strong></em>
+      </a>
+    </p>
+  {% endfor %}
   <p>
     {% for resource in page.resources.spec-sheets.catalog %}
       <img src="{{ site.amazon-s3 }}{{ resource }}" alt="{{ page.title }}" class="img-center">
