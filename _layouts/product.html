@@ -1,0 +1,139 @@
+---
+layout: page
+tabs: [Description, Downloads, Videos, Special Offers]
+---
+{% assign url-size = page.url | size | minus: 2 %}
+{% assign i18n-id = page.url | slice: 1,url-size | replace: '/', '-' | remove_first: collection.label | remove_first: '-' %}
+{% assign i18n-title = site.data.i18n.catalog[collection.label][site.lang][i18n-id].title %}
+{% if page.i18n[site.lang].description %}
+  {% assign i18n-description = page.i18n[site.lang].description %}
+{% else %}
+  {% assign i18n-description = site.data.i18n.catalog[collection.label][site.lang][i18n-id].desc %}
+{% endif %}
+<div class="container">
+  <div class="row">
+    <div id="product-images" class="col-xs-12 col-sm-12 col-md-4">
+      <div class="product-images">
+        <ul id="lightSlider">
+          {% for product-image in (1..page.resources.product-images) %}
+            {% assign page-categories-size = page.categories | size %}
+            {% if page-categories-size >= 1 %}
+              {% assign page-categories = page.categories | join: "/" | append: "/" %}
+            {% endif %}
+            {% if forloop.index == 1 %}
+              {% assign image-num = '' %}
+            {% elsif forloop.index < 10 %}
+              {% assign image-num = forloop.index | prepend: "_0" %}
+            {% else %}
+              {% assign image-num = forloop.index | prepend: "_" %}
+            {% endif %}
+            {% capture product-image-url %}
+              {{ site.amazon-s3 }}/assets/img/catalog/thumbnails/{{ page.collection }}/{{ page-categories }}{{ page.title | downcase  }}{{ image-num | append: ".png" }}
+            {% endcapture %}
+            <li data-thumb="{{ product-image-url }}">
+              <img src="{{ product-image-url }}" class="img-center" alt="{% if i18n-title %}{{ i18n-title }}{% else %}{{ page.title }}{% endif %}" />
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div id="product-generals" class="col-xs-12 col-sm-12 col-md-8">
+        <h3 id="{{ i18n-id }}" class="product-description">{% if i18n-description %}{{ i18n-description }}{% else %}{{ page.description }}{% endif %}</h3>
+        <p id="{{ i18n-id }}" class="product-model">Model: <strong>{% if i18n-title %}{{ i18n-title }}{% else %}{{ page.title }}{% endif %}</strong></p>
+        <p id="{{ i18n-id }}" class="product-brand">Brand: <strong>{{ page.brand }}</strong></p>
+        <p id="{{ i18n-id }}" class="product-commercial">Nombre comercial: <strong>{{ page.commercial }}</strong></p>
+        <div id="{{ i18n-id }}" class="product-price"><span class="label label-primary">{% if page.price %}{{ page.price | prepend: '$ ' }}{% endif %}{% assign page.price-size = page.price | downcase | split: '.' | last | size %}{% if page.price-size == 1 %}{{ "0" }}{% endif %}{% if page.currency %}{{ page.currency | prepend: ' ' }}{% endif %}</span></div>
+    </div>
+  </div>
+  <div class="row">
+
+    <ul class="nav nav-tabs nav-justified">
+      {% for tab in layout.tabs %}
+        <li role="presentation" {% if forloop.first == true %}class="active"{% endif %}><a data-toggle="tab" href="#{{ tab| downcase | replace: ' ', '-' }}">{{ tab }}</a></li>
+      {% endfor %}
+    </ul>
+
+    <div class="tab-content">
+      {% for tab in layout.tabs %}
+        <div id="{{ tab | downcase | replace: ' ', '-' }}" class="tab-pane fade {% if forloop.first == true %}in active{% endif %}">
+          <div class="container">
+            {% case forloop.index %}
+
+            {% when 1 %}
+              <p>
+                {% for resource in page.resources.spec-sheets.catalog %}
+                  <img src="{{ site.amazon-s3 }}{{ resource }}" alt="{{ page.title }}" class="img-center">
+                {% endfor %}
+              </p>
+              {{ content }}
+
+            {% when 2 %}
+              {% for resource in page.resources.downloads %}
+                {% assign i18n-resource-text = page.i18n[site.lang].resources.downloads[forloop.index0].text %}
+                <p>
+                  <a class="btn btn-primary btn-sm" href="{{ site.amazon-s3 }}{{ resource.link }}">
+                    <strong><span class="glyphicon glyphicon-download-alt"></span> Download</strong>
+                  </a>
+                  <span class="product-downloads">
+                  {% if i18n-resource-text %}{{ i18n-resource-text }}{% else %}{{ resource.text }}{% endif %}
+                  </span>
+                </p>
+              {% endfor %}
+
+            {% when 3 %}
+              {% if page.resources.videos %}
+                {% assign ids = page.resources.videos | split: ", " %}
+                {% for id in ids %}
+                  <div class="col-xs-12 col-sm-12 col-md-6">
+                    <iframe
+                      id="ytplayer"
+                      type="text/html"
+                      width="100%"
+                      height="350"
+                      src="https://www.youtube.com/embed/{{ id }}?rel=0&modestbranding=1"
+                      frameborder="0"
+                      gesture="media"
+                      allow="encrypted-media"
+                      allowfullscreen>
+                    </iframe>
+                  </div>
+                {% endfor %}
+              {% else %}
+                <p>There aren't any videos related to this product.</p>
+              {% endif %}
+
+            {% else %}
+              {% if page.resources.special-offers %}
+                <p>
+                  {% for resource in (1..page.resources.special-offers) %}
+                    {% assign page-categories-size = page.categories | size %}
+                    {% if page-categories-size >= 1 %}
+                      {% assign page-categories = page.categories | join: "/" | append: "/" %}
+                    {% endif %}
+                    {% if forloop.index == 1 %}
+                      {% assign image-num = '' %}
+                    {% elsif forloop.index < 10 %}
+                      {% assign image-num = forloop.index | prepend: "_0" %}
+                    {% else %}
+                      {% assign image-num = forloop.index | prepend: "_" %}
+                    {% endif %}
+                    {% capture product-special-offer-url %}
+                      {{ site.amazon-s3 }}/assets/img/catalog/special-offers/{{ page.collection }}/{{ page-categories }}{{ page.title | downcase  }}{{ image-num | append: ".png" }}
+                    {% endcapture %}
+                    <img src="{{ product-special-offer-url }}" alt="{{ page.title }}" class="img-center">
+                  {% endfor %}
+                </p>
+              {% else %}
+                <p>There aren't any offers related to this product.</p>
+              {% endif %}
+
+            {% endcase %}
+
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</div> <!-- /container -->
+<script src="/js/sliders/lightslider.js"></script>
