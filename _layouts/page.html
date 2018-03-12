@@ -1,18 +1,22 @@
 ---
 layout: default
 ---
-{% assign url-size = page.url | size | minus: 2 %}
-{% assign i18n-id = page.url | slice: 1,url-size | replace: '/', '-' | remove_first: page.collection | remove_first: '-' %}
-{% if i18n-id == "" %}{% assign i18n-id = page.collection %}{% endif %}
-{% if page.collection == 'pages' %}
-  {% assign i18n-title = site.data.i18n.common[page.collection][site.lang][i18n-id].title %}
-  {% assign i18n-subtitle = site.data.i18n.common[page.collection][site.lang][i18n-id].subtitle %}
+{% if page.layout == "product" %}
+  {% assign class = 'hide' %}
 {% else %}
-  {% assign i18n-title = site.data.i18n.catalog[page.collection][site.lang][i18n-id].title %}
-  {% assign i18n-subtitle = site.data.i18n.catalog[page.collection][site.lang][i18n-id].subtitle %}
+  {% assign url-size = page.url | size | minus: 2 %}
+  {% assign i18n-id = page.url | slice: 1,url-size | replace: '/', '-' | remove_first: page.collection | remove_first: '-' %}
+  {% if i18n-id == "" %}{% assign i18n-id = page.collection %}{% endif %}
+  {% if page.collection == 'pages' %}
+    {% assign i18n-title = site.data.i18n.common[page.collection][site.lang][i18n-id].title %}
+    {% assign i18n-subtitle = site.data.i18n.common[page.collection][site.lang][i18n-id].subtitle %}
+  {% else %}
+    {% assign i18n-title = site.data.i18n.catalog[page.collection][site.lang][i18n-id].title %}
+    {% assign i18n-subtitle = site.data.i18n.catalog[page.collection][site.lang][i18n-id].subtitle %}
+  {% endif %}
 {% endif %}
-<h2 id="{{ i18n-id }}" class="post">{% if i18n-title %}{{ i18n-title }}{% else %}{{ page.title }}{% endif %}</h2>
-<h3 id="{{ i18n-id }}" class="post">{% if i18n-subtitle %}{{ i18n-subtitle }}{% else %}{{ page.subtitle }}{% endif %}</h3>
+<h2 id="{{ i18n-id }}" class="post {{ class }}">{% if i18n-title %}{{ i18n-title }}{% else %}{{ page.title }}{% endif %}</h2>
+<h3 id="{{ i18n-id }}" class="post {{ class }}">{% if i18n-subtitle %}{{ i18n-subtitle }}{% else %}{{ page.subtitle }}{% endif %}</h3>
 
 <div class="post">
   <div id="sign-in-content"></div>
