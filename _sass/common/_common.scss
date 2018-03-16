@@ -1,0 +1,12 @@
+.marketing-theme{
+  &.content-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &.clean-view{
+    margin-top: 30px;
+    padding-bottom: 30px;
+  }
+}

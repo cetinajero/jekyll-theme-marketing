@@ -5,6 +5,5 @@
 @charset "utf-8";
 
 // Import partials.
-@import
-  "product-cards/3d-space"
-;
+@import "common/common";
+@import "product-cards/3d-space";
