@@ -128,9 +128,15 @@ tabs: [description, downloads, videos, special-offers]
                         {% assign image-num = forloop.index | prepend: "_" %}
                       {% endif %}
                       {% capture product-special-offer-url %}
-                        {{ site.amazon-s3 }}/assets/img/catalog/special-offers/{{ page.collection }}/{{ page-categories }}{{ site.domain | replace:'.',' ' | truncatewords: 1,"" }}/{% if page.resources.special-offers.model %}{{ page.resources.special-offers.model | downcase }}{% else %}{{ page.title | downcase  }}{% endif %}{{ image-num | append: ".png" }}
+                        {{ site.amazon-s3 }}/assets/img/catalog/special-offers/{{ page.collection }}/{{ page-categories }}{{ site.domain | replace:'.',' ' | truncatewords: 1,"" }}/{% if page.resources.special-offers.model %}{{ page.resources.special-offers.model | downcase }}{% else %}{{ page.title | downcase  }}{% endif %}{{ image-num | append: ".pdf" }}
                       {% endcapture %}
-                      <img src="{{ product-special-offer-url }}" alt="{{ page.title }}" class="img-center">
+                      <object data="{{ product-special-offer-url }}" type="application/pdf" width="100%" height="1000px">
+                        <p>
+                          <a class="btn btn-primary btn-sm" href="{{ product-special-offer-url }}">
+                            <strong><span class="glyphicon glyphicon-download-alt"></span> {{ site.data.i18n.common.product-layout[site.lang].download }}</strong>
+                          </a>
+                        </p>
+                      </object>
                     {% endfor %}
                   </p>
                 {% endunless %}
