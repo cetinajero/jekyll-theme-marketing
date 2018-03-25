@@ -1,0 +1,12 @@
+nav ol.breadcrumb{
+  background: #fff;
+  font-size: 1.1em;
+  margin-left: 20px;
+  padding-top: 20px;
+
+  li{
+    a{
+      color: $font-color-menu;
+    }
+  }
+}

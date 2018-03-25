@@ -15,6 +15,40 @@ layout: default
     {% assign i18n-subtitle = site.data.i18n.catalog[page.collection][site.lang][i18n-id].subtitle %}
   {% endif %}
 {% endif %}
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    {% for level in (-1..page.categories.size) %}
+      {% if forloop.first %}
+        <li class="breadcrumb-item home"><a href="{{ '/' | relative_url }}"><span class="glyphicon glyphicon-home"></span></a></li>
+        {% if page.menu-father %}
+          <li class="breadcrumb-item {{ page.collection }}"><a href="{{ page.collection | prepend: '/' | relative_url }}">{{ site.data.i18n.catalog[page.collection][site.lang][page.collection].title }}</a></li>
+        {% endif %}
+      {% elsif forloop.last %}
+        <li class="breadcrumb-item {{ i18n-id}} active" aria-current="page">{% if i18n-title %}{{ i18n-title }}{% else %}{{ page.title }}{% endif %}</li>
+      {% else %}
+        {% assign cat-num = forloop.index %}
+        {% assign url-size = page.url | size | minus: 2 %}
+        {% assign sections = page.url | slice: 1,url-size | split : '/' %}
+        {% capture level-url %}
+          {% for section in sections %}
+            {% if forloop.index > cat-num %} {% break %} {% endif %}
+            {{ section | append: '/' }}
+          {% endfor %}
+        {% endcapture %}
+        {% assign level-url = level-url | strip_newlines | replace: ' ', '' | relative_url %}
+        {% assign level-url-size = level-url | size | minus: 2 %}
+        {% assign level-i18n-id = level-url | slice: 1,level-url-size | replace: '/', '-' | remove_first: page.collection | remove_first: '-' %}
+        {% assign level-i18n-title = site.data.i18n.catalog[page.collection][site.lang][level-i18n-id].title %}
+        {% assign page-commercial-downcase = page.commercial | downcase  %}
+        {% unless page.categories[level] == page-commercial-downcase %}
+          <li class="breadcrumb-item {{ level-i18n-id }}"><a href="{{ level-url }}">{% if level-i18n-title %}{{ level-i18n-title }}{% else %}{{ page.categories[level] | replace: '-', ' ' | capitalize }}{% endif %}</a></li>
+        {% endunless %}
+      {% endif %}
+    {% endfor %}
+  </ol>
+</nav>
+
 <h2 id="{{ i18n-id }}" class="post {{ class }}">{% if i18n-title %}{{ i18n-title }}{% else %}{{ page.title }}{% endif %}</h2>
 <h3 id="{{ i18n-id }}" class="post {{ class }}">{% if i18n-subtitle %}{{ i18n-subtitle }}{% else %}{{ page.subtitle }}{% endif %}</h3>
 
