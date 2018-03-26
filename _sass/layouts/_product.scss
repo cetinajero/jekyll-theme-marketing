@@ -1,0 +1,14 @@
+div#special-offers{
+  #special-offers-object{
+    height: 1000px;
+  }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  div#special-offers{
+    #special-offers-object{
+      height: 100%;
+    }
+  }
+}

@@ -130,7 +130,7 @@ tabs: [description, downloads, videos, special-offers]
                       {% capture product-special-offer-url %}
                         {{ site.amazon-s3 }}/assets/img/catalog/special-offers/{{ page.collection }}/{{ page-categories }}{{ site.domain | replace:'.',' ' | truncatewords: 1,"" }}/{% if page.resources.special-offers.model %}{{ page.resources.special-offers.model | downcase }}{% else %}{{ page.title | downcase  }}{% endif %}{{ image-num | append: ".pdf" }}
                       {% endcapture %}
-                      <object data="{{ product-special-offer-url }}" type="application/pdf" width="100%" height="1000px">
+                      <object id="special-offers-object" data="{{ product-special-offer-url }}" type="application/pdf" width="100%">
                         <p>
                           <a class="btn btn-primary btn-sm" href="{{ product-special-offer-url }}">
                             <strong><span class="glyphicon glyphicon-download-alt"></span> {{ site.data.i18n.common.product-layout[site.lang].download }}</strong>
