@@ -23,7 +23,7 @@ layout: default
         <li class="breadcrumb-item home"><a href="{{ '/' | relative_url }}"><span class="glyphicon glyphicon-home"></span></a></li>
         <li class="breadcrumb-item ellipsis hidden-xs hidden-sm hidden-md hidden-lg">...</li>
         {% if page.menu-father %}
-          <li class="breadcrumb-item {{ page.collection }}"><a href="{{ page.collection | prepend: '/' | relative_url }}">{{ site.data.i18n.catalog[page.collection][site.lang][page.collection].title }}</a></li>
+          <li class="breadcrumb-item {{ page.collection }}"><a href="{{ page.collection | prepend: '/' | relative_url }}">{% if site.data.i18n.catalog[page.collection][site.lang][page.collection].title %}{{ site.data.i18n.catalog[page.collection][site.lang][page.collection].title }}{% else %}{{ page.collection | capitalize }}{% endif %}</a></li>
         {% endif %}
       {% elsif forloop.last %}
         <li class="breadcrumb-item {{ i18n-id }} active" aria-current="page">{% if i18n-title %}{{ i18n-title }}{% else %}{{ page.title }}{% endif %}</li>
