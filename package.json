@@ -1,0 +1,12 @@
+{
+  "name": "jekyll-theme-marketing",
+  "version": "0.3.0",
+  "description": "Right now just a test theme for Jekyll",
+  "main": "index.js",
+  "repository": "git@github.com:cetinajero/jekyll-theme-marketing.git",
+  "author": "<cetinajero@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "jspdf": "^1.3.5"
+  }
+}

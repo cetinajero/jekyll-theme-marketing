@@ -1,7 +1,16 @@
 ---
 layout: page
 tabs: [description, downloads, videos, special-offers]
+special-offers:
+  format: letter
+  orientation: portrait
+  unit: in
+  width: 8
+  height: 9.1
+  margin: 0.25
+  dpi: 300
 ---
+<script src="/node_modules/jspdf/dist/jspdf.min.js"></script>
 {% assign url-size = page.url | size | minus: 2 %}
 {% assign i18n-id = page.url | slice: 1,url-size | replace: '/', '-' | remove_first: collection.label | remove_first: '-' %}
 {% assign i18n-title = site.data.i18n.catalog[collection.label][site.lang][i18n-id].title %}
@@ -127,16 +136,35 @@ tabs: [description, downloads, videos, special-offers]
                       {% else %}
                         {% assign image-num = forloop.index | prepend: "_" %}
                       {% endif %}
-                      {% capture product-special-offer-url %}
-                        {{ site.amazon-s3 }}/assets/img/catalog/special-offers/{{ page.collection }}/{{ page-categories }}{{ site.domain | replace:'.',' ' | truncatewords: 1,"" }}/{% if page.resources.special-offers.model %}{{ page.resources.special-offers.model | downcase }}{% else %}{{ page.title | downcase  }}{% endif %}{{ image-num | append: ".pdf" }}
-                      {% endcapture %}
-                      <object id="special-offers-object" data="{{ product-special-offer-url }}" type="application/pdf" width="100%">
-                        <p>
-                          <a class="btn btn-primary btn-sm" href="{{ product-special-offer-url }}">
-                            <strong><span class="glyphicon glyphicon-download-alt"></span> {{ site.data.i18n.common.product-layout[site.lang].download }}</strong>
-                          </a>
-                        </p>
-                      </object>
+                      <div class="marketing-theme content-right">
+                        <a class="btn btn-primary btn-sm" onclick="specialOffersPDF();">
+                          <strong><span class="glyphicon glyphicon-download-alt"></span> {{ site.data.i18n.common.product-layout[site.lang].download }}</strong>
+                        </a>
+                      </div>
+                      <div id="special-offers-{{ forloop.index }}">
+                        <img id="special-offers-promo{{ forloop.index }}" src="/img/special-offers/{{ page.collection }}/{{ page-categories }}{% if page.resources.special-offers.model %}{{ page.resources.special-offers.model | downcase }}{% else %}{{ page.title | downcase  }}{% endif %}{{ image-num | append: '.png' }}" alt="{{ page.title }}" title="{{ page.title }}">
+                        <img id="special-offers-data{{ forloop.index }}" src="/img/special-offers/customers/{{ site.domain | replace:'.',' ' | truncatewords: 1,"" }}.png" alt="{{ page.title }}" title="{{ page.title }}">
+                        <canvas id="special-offers-promoCanvas{{ forloop.index }}" class="hide" width="{{ layout.special-offers.width | times: layout.special-offers.dpi }}" height="{{ layout.special-offers.height | times: layout.special-offers.dpi }}"></canvas>
+                        <canvas id="special-offers-dataCanvas{{ forloop.index }}" class="hide" width="{{ layout.special-offers.width | times: layout.special-offers.dpi }}" height="{{ layout.special-offers.height | minus: 10.5 | times: layout.special-offers.dpi | times: -1 }}"></canvas>
+                      </div>
+                      <script>
+                        function specialOffersPDF(){
+                          var doc = new jsPDF({
+                            orientation: '{{ layout.special-offers.orientation }}',
+                            unit: '{{ layout.special-offers.unit }}',
+                            format: '{{ layout.special-offers.format }}'
+                          })
+                          var promo = document.getElementById("special-offers-promo{{ forloop.index }}");
+                          var promoCanvas = document.getElementById("special-offers-promoCanvas{{ forloop.index }}");
+                          var data = document.getElementById("special-offers-data{{ forloop.index }}");
+                          var dataCanvas = document.getElementById("special-offers-dataCanvas{{ forloop.index }}");
+                          promoCanvas.getContext("2d").drawImage(promo, 0, 0);
+                          dataCanvas.getContext("2d").drawImage(data, 0, 0);
+                          doc.addImage(promoCanvas.toDataURL(), 'PNG', {{ layout.special-offers.margin }}, {{ layout.special-offers.margin }}, {{ layout.special-offers.width }}, {{ layout.special-offers.height }},'promoImg','FAST')
+                          doc.addImage(dataCanvas.toDataURL(), 'PNG', {{ layout.special-offers.margin }}, {{ layout.special-offers.margin }} + {{ layout.special-offers.height }}, {{ layout.special-offers.width }}, {{ 11 | minus: layout.special-offers.margin | minus: layout.special-offers.margin }} - {{ layout.special-offers.height }},'dataImg','FAST')
+                          doc.save('{{ page.title }}.pdf')
+                        }
+                      </script>
                     {% endfor %}
                   </p>
                 {% endunless %}
