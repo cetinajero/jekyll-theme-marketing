@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    jekyll-theme-marketing (0.3.0)
+    jekyll-theme-marketing (0.4.0)
       jekyll (~> 3.6)
 
 GEM
