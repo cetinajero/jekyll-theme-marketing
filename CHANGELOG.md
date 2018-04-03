@@ -1,5 +1,13 @@
 ## Unreleased
 
+## [0.4.0](https://github.com/cetinajero/jekyll-theme-marketing/releases/tag/v0.4.0)
+
+### Enhancements
+* Add `jsPDF` to create PDF on the fly. [#969a9c5](https://github.com/cetinajero/jekyll-theme-marketing/commit/969a9c5764c3ca3bc106ad1a512c98f8310d5a12)
+* Implement `breadcrumbs` on `page` layout. [#6ca0530](https://github.com/cetinajero/jekyll-theme-marketing/commit/6ca053000c4e02429f4a8a0bb9e4914369dd5bd7) [#73771fe](https://github.com/cetinajero/jekyll-theme-marketing/commit/73771fec9c21052153b878dea33af976fcc06bdb)
+* Create 3D Space `product-card`. [#a9b7efc](https://github.com/cetinajero/jekyll-theme-marketing/commit/a9b7efcf827f69641f9a79fe5ca5b4672eb0796c)
+* Active targered `nav-tab` based on hashed urls on `product` layout. [#a080366](https://github.com/cetinajero/jekyll-theme-marketing/commit/a0803660b28796f4a93eb1ffdc3e43c8e476aedd)
+
 ## [0.3.0](https://github.com/cetinajero/jekyll-theme-marketing/releases/tag/v0.3.0)
 
 ### Enhancements
@@ -16,7 +24,7 @@
 * Implemented `OpenSearch` protocol. [#1e06157](https://github.com/cetinajero/jekyll-theme-marketing/commit/1e061579c41c3fd7f70395d22f698ae30222bc64)
 * Added `favicon.ico` [#a579565](https://github.com/cetinajero/jekyll-theme-marketing/commit/a57956595486ba0304b221d413ff7d2f3671b7c9)
 * Added `meta` tags to head. [#f81d511](https://github.com/cetinajero/jekyll-theme-marketing/commit/f81d511bdb2eb0c10a0214bbf9efa535e243a551)
-* Added `head` and `body` to `default` layout, also added structure to `home` layout. [#ba9f2fc](https://github.com/cetinajero/jekyll-theme-marketing/commit/ba9f2fc150b4db0c06a1000a0e064e521ff462c9) 
+* Added `head` and `body` to `default` layout, also added structure to `home` layout. [#ba9f2fc](https://github.com/cetinajero/jekyll-theme-marketing/commit/ba9f2fc150b4db0c06a1000a0e064e521ff462c9)
 * Added `rake` tasks for easier development.
 * Added `plaintext` layout. [#20a4af9](https://github.com/cetinajero/jekyll-theme-marketing/commit/20a4af95941267e185828d367b75635eca90fac6)
   * Note: `plaintext` layout do not depend on the `default` layout.
