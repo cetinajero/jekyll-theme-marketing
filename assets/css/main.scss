@@ -8,6 +8,7 @@
 $font-color-menu: {{ site.css.menu.font-color }};
 
 // Import partials.
+@import "layouts/grid";
 @import "layouts/product";
 @import "common/common";
 @import "breadcrumbs/bootstrap";
