@@ -12,12 +12,16 @@ special-offers:
 ---
 <script src="/node_modules/jspdf/dist/jspdf.min.js"></script>
 {% assign url-size = page.url | size | minus: 2 %}
-{% assign i18n-id = page.url | slice: 1,url-size | replace: '/', '-' | remove_first: collection.label | remove_first: '-' %}
-{% assign i18n-title = site.data.i18n.catalog[collection.label][site.lang][i18n-id].title %}
+{% assign i18n-id = page.url | slice: 1,url-size | replace: '/', '-' | remove_first: page.collection | remove_first: '-' %}
+{% if page.i18n[site.lang].title %}
+  {% assign i18n-title = page.i18n[site.lang].title %}
+{% else %}
+  {% assign i18n-title = site.data.i18n.catalog[page.collection][site.lang][i18n-id].title %}
+{% endif %}
 {% if page.i18n[site.lang].description %}
   {% assign i18n-description = page.i18n[site.lang].description %}
 {% else %}
-  {% assign i18n-description = site.data.i18n.catalog[collection.label][site.lang][i18n-id].desc %}
+  {% assign i18n-description = site.data.i18n.catalog[page.collection][site.lang][i18n-id].desc %}
 {% endif %}
 <div class="container">
   <div class="row">
