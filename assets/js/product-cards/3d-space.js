@@ -65,30 +65,34 @@ jQuery(document).ready(function(){
 
 
 	/* ----  Image Gallery Carousel   ---- */
-	var carouselSlideWidth = 335;
-	var isAnimating = false;
+	function responsiveCarousel(){
+		var carouselSlideWidth = jQuery('.product-back').width();
+		jQuery('.product-back .carousel li').css('width', carouselSlideWidth);
+		jQuery('.arrows-perspective').css('perspective', carouselSlideWidth).css('width', carouselSlideWidth);
 
-	function initializeCarousel(id){
-		var carouselWidth = 0;
-		// building the width of the casousel
-		jQuery('#carousel-'+id+' li').each(function(){
-			carouselWidth += carouselSlideWidth;
+		jQuery('.product-back .carousel ul').each(function(){
+			var carouselWidth = 0;
+			// building the width of the casousel
+			jQuery(this).children().each(function(){
+				carouselWidth += carouselSlideWidth;
+			});
+			jQuery(this).css('width', carouselWidth).css('left', '0px');
 		});
-		var carousel = jQuery('#carousel-'+id+' ul');
-		jQuery(carousel).css('width', carouselWidth);
-
-		return carouselWidth;
 	}
+
+	jQuery(window).on('resize', responsiveCarousel);
+
+  responsiveCarousel();
+
+	var isAnimating = false;
 
 	// Load Next Image
 	jQuery('div.carouselNext').on('click', function(){
 		var id = jQuery(this).data('id');
 		var carousel = jQuery('#carousel-'+id+' ul');
-		carouselWidth = initializeCarousel(id);
-		console.log(carouselWidth);
 		var currentLeft = Math.abs(parseInt(jQuery(carousel).css("left")));
-		var newLeft = currentLeft + carouselSlideWidth;
-		if(newLeft == carouselWidth || isAnimating === true){return;}
+		var newLeft = currentLeft + carousel.children(":first").width();
+		if(newLeft == carousel.width() || isAnimating === true){return;}
 		jQuery('#carousel-'+id+' ul').css({'left': "-" + newLeft + "px",
 							   "transition": "300ms ease-out"
 							 });
@@ -101,7 +105,7 @@ jQuery(document).ready(function(){
 		var id = jQuery(this).data('id');
 		var carousel = jQuery('#carousel-'+id+' ul');
 		var currentLeft = Math.abs(parseInt(jQuery(carousel).css("left")));
-		var newLeft = currentLeft - carouselSlideWidth;
+		var newLeft = currentLeft - carousel.children(":first").width();
 		if(newLeft < 0  || isAnimating === true){return;}
 		jQuery('#carousel-'+id+' ul').css({'left': "-" + newLeft + "px",
 							   "transition": "300ms ease-out"

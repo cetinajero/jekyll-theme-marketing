@@ -1,8 +1,8 @@
 <div id="make-3D-space-{{ include.id }}" class="make-3D-space">
     <div id="product-card-{{ include.id }}" class="product-card" data-id="{{ include.id }}">
         <div id="product-front-{{ include.id }}" class="product-front">
-        	<div class="shadow"></div>
-            <img src="{{ include.img }}" alt="{{ include.model }}" />
+            <div class="shadow"></div>
+            <img src="{{ include.img }}" alt="{{ include.model }}" class="img-center"/>
             <a {{ include.href }}><div class="image_overlay"></div></a>
             <div id="view_details-{{ include.id }}" class="view_details hide" data-id="{{ include.id }}">View details</div>
             <div class="stats">
@@ -10,7 +10,7 @@
                 <div class="stats-container">
                   <span class="product_price">{{ include.price }} {{ include.currency }}</span>
                   <span class="product_name">{{ include.commercial }}</span>
-                  <p>{{ include.desc }}</p>
+                  <p class="product_description">{{ include.desc }}</p>
                   <div class="product-options">
                     <strong>MODEL</strong>
                     <span>{{ include.model }}</span>
@@ -25,9 +25,9 @@
 	        <div class="shadow"></div>
             <div id="carousel-{{ include.id }}" class="carousel">
                 <ul>
-                    <li><img src="{{ include.img | replace: '.png', '_02.png' }}" alt="{{ include.model }}" /></li>
-                    <li><img src="{{ include.img | replace: '.png', '_03.png' }}" alt="{{ include.model }}" /></li>
-                    <li><img src="{{ include.img | replace: '.png', '_04.png' }}" alt="{{ include.model }}" /></li>
+                    <li class="marketing-theme content-centered"><img src="{{ include.img | replace: '.png', '_02.png' }}" alt="{{ include.model }}" /></li>
+                    <li class="marketing-theme content-centered"><img src="{{ include.img | replace: '.png', '_03.png' }}" alt="{{ include.model }}" /></li>
+                    <li class="marketing-theme content-centered"><img src="{{ include.img | replace: '.png', '_04.png' }}" alt="{{ include.model }}" /></li>
                 </ul>
                 <div class="arrows-perspective">
                     <div class="carouselPrev" data-id="{{ include.id }}">
