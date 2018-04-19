@@ -141,7 +141,7 @@ special-offers:
                         {% assign image-num = forloop.index | prepend: "_" %}
                       {% endif %}
                       <div class="marketing-theme content-right">
-                        <a class="btn btn-primary btn-sm" onclick="specialOffersPDF();">
+                        <a class="btn btn-primary btn-sm" onclick="specialOffersPDF{{ forloop.index }}();">
                           <strong><span class="glyphicon glyphicon-download-alt"></span> {{ site.data.i18n.common.product-layout[site.lang].download }}</strong>
                         </a>
                       </div>
@@ -152,7 +152,7 @@ special-offers:
                         <canvas id="special-offers-dataCanvas{{ forloop.index }}" class="hide" width="{{ layout.special-offers.width | times: layout.special-offers.dpi }}" height="{{ layout.special-offers.height | minus: 10.5 | times: layout.special-offers.dpi | times: -1 }}"></canvas>
                       </div>
                       <script>
-                        function specialOffersPDF(){
+                        function specialOffersPDF{{ forloop.index }}(){
                           var doc = new jsPDF({
                             orientation: '{{ layout.special-offers.orientation }}',
                             unit: '{{ layout.special-offers.unit }}',
