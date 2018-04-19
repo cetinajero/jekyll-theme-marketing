@@ -12,9 +12,9 @@
                   <span class="product_name">{{ include.commercial }}</span>
                   <p class="product_description">{{ include.desc }}</p>
                   <div class="product-options">
-                    <strong>MODEL</strong>
+                    <strong>{{ site.data.i18n.common.product-cards[site.lang].3d-space.model.title | default: 'Model' }}</strong>
                     <span>{{ include.model }}</span>
-                    <strong>BRAND</strong>
+                    <strong>{{ site.data.i18n.common.product-cards[site.lang].3d-space.brand.title | default: 'Brand' }}</strong>
                     <span>{{ include.brand }}</span>
                   </div>
                 </div>

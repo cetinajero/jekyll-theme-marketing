@@ -138,7 +138,7 @@ div.product-card.flip180{
             transition: all 200ms ease-out;
 }
 .stats-container .product_name{
-	font-size:22px;
+	font-size:20px;
 	color:#393c45;
 }
 .stats-container .product_price{
@@ -167,6 +167,7 @@ div.product-card.flip180{
 	padding:2px 0 0;
 }
 .product-options strong{
+	text-transform: uppercase;
 	font-weight:700;
 	color:#393c45;
 	font-size:14px;
