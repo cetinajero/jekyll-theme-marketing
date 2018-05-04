@@ -6,6 +6,7 @@
 
 // Define variables
 $font-color-menu: {{ site.css.menu.font-color }};
+$icon-color-menu: {{ site.css.menu.icons }};
 
 // Import partials.
 @import "layouts/grid";
@@ -13,4 +14,5 @@ $font-color-menu: {{ site.css.menu.font-color }};
 @import "common/common";
 
 @import "components/breadcrumbs/bootstrap";
+@import "components/navbars/vg_progressive";
 @import "components/product-cards/3d-space";
