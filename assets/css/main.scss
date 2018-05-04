@@ -11,5 +11,6 @@ $font-color-menu: {{ site.css.menu.font-color }};
 @import "layouts/grid";
 @import "layouts/product";
 @import "common/common";
-@import "breadcrumbs/bootstrap";
-@import "product-cards/3d-space";
+
+@import "components/breadcrumbs/bootstrap";
+@import "components/product-cards/3d-space";
