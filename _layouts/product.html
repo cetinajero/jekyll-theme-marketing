@@ -83,6 +83,7 @@ special-offers:
                   <img src="{{ site.amazon-s3 }}{{ resource }}" alt="{{ page.title }}" class="img-center">
                 {% endfor %}
               </p>
+              {{ page.i18n[site.lang].detailed_desc | default: page.detailed_desc }}
               {{ content }}
 
             {% when 2 %}
