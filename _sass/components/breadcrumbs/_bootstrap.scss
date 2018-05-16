@@ -1,13 +1,18 @@
-nav ol.breadcrumb{
-  background: #fff;
-  font-size: 1.1em;
-  margin-left: 20px;
-  margin-top: 3px;
-  padding-top: 20px;
+nav.breadcrumb-component {
+  max-width: 1300px;
+  margin: auto;
 
-  li{
-    a{
-      color: $font-color-menu;
+  ol.breadcrumb {
+    background: #fff;
+    font-size: 1.1em;
+    margin-left: 20px;
+    margin-top: 3px;
+    padding-top: 20px;
+
+    li{
+      a{
+        color: $font-color-menu;
+      }
     }
   }
 }
