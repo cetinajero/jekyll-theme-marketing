@@ -14,6 +14,7 @@ $icon-color-menu: {{ site.css.menu.icons }};
 @import "common/common";
 
 @import "components/breadcrumbs/bootstrap";
+@import "components/lang-switchers/toogle-lang";
 @import "components/navbars/vg_progressive";
 @import "components/product-cards/3d-space";
 @import "components/sidenavs/material";
