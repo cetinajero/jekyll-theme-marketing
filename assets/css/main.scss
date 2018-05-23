@@ -12,6 +12,7 @@ $icon-color-menu: {{ site.css.menu.icons }};
 @import "layouts/grid";
 @import "layouts/product";
 @import "common/common";
+@import "common/custom";
 
 @import "components/breadcrumbs/bootstrap";
 @import "components/lang-switchers/toogle-lang";
