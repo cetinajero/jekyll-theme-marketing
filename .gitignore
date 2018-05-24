@@ -4,3 +4,33 @@
 _site
 .DS_Store
 _config-dev.yml
+.yarn-integrity
+
+# Node.JS modules
+/node_modules/**/*.md
+/node_modules/**/*.editorconfig
+/node_modules/**/bower.json
+/node_modules/**/composer.json
+/node_modules/**/package.json
+/node_modules/**/Gruntfile.coffee
+/node_modules/**/svgo.yaml
+/node_modules/**/LICENSE
+/node_modules/**/LICENSE.txt
+/node_modules/**/yarn.lock
+
+# flag-icon-css
+/node_modules/flag-icon-css/*.html
+/node_modules/flag-icon-css/assets/
+/node_modules/flag-icon-css/css/
+/node_modules/flag-icon-css/less/
+/node_modules/flag-icon-css/flags/4x3/
+/node_modules/flag-icon-css/flags/1x1/*.svg
+!/node_modules/flag-icon-css/flags/1x1/mx.svg
+!/node_modules/flag-icon-css/flags/1x1/us.svg
+!/node_modules/flag-icon-css/flags/1x1/br.svg
+
+# jspdf
+/node_modules/adler32cs/
+/node_modules/cf-blob.js/
+/node_modules/file-saver/
+/node_modules/jspdf/**/*debug.js
