@@ -1,36 +1,86 @@
 *.gem
 .bundle
 .sass-cache
-_site
+_site/
 .DS_Store
 _config-dev.yml
+.docker
 .yarn-integrity
 
 # Node.JS modules
-/node_modules/**/*.md
-/node_modules/**/*.editorconfig
-/node_modules/**/bower.json
-/node_modules/**/composer.json
-/node_modules/**/package.json
-/node_modules/**/Gruntfile.coffee
-/node_modules/**/svgo.yaml
-/node_modules/**/LICENSE
-/node_modules/**/LICENSE.txt
-/node_modules/**/yarn.lock
+/assets/node_modules/**/.bowerrc
+/assets/node_modules/**/.gitattributes
+/assets/node_modules/**/.jscsrc
+/assets/node_modules/**/.npmignore
+/assets/node_modules/**/.travis.yml
+/assets/node_modules/**/_config.yml
+/assets/node_modules/**/AUTHORS.txt
+/assets/node_modules/**/CNAME
+/assets/node_modules/**/MIT-LICENSE.txt
+/assets/node_modules/**/*.md
+/assets/node_modules/**/*.editorconfig
+/assets/node_modules/**/bower.json
+/assets/node_modules/**/composer.json
+/assets/node_modules/**/Gruntfile.coffee
+/assets/node_modules/**/Gruntfile.js
+/assets/node_modules/**/LICENSE
+/assets/node_modules/**/LICENSE.txt
+/assets/node_modules/**/package.json
+/assets/node_modules/**/svgo.yaml
+/assets/node_modules/**/yarn.lock
+
+# bootstrap
+/assets/node_modules/bootstrap/docs/
+/assets/node_modules/bootstrap/fonts/
+/assets/node_modules/bootstrap/grunt/
+/assets/node_modules/bootstrap/js/
+/assets/node_modules/bootstrap/less/
+/assets/node_modules/bootstrap/test-infra/
+/assets/node_modules/bootstrap/dist/**/*.js
+/assets/node_modules/bootstrap/dist/**/*.css
+/assets/node_modules/bootstrap/dist/**/*.map
+/assets/node_modules/bootstrap/dist/**/*.eot
+!/assets/node_modules/bootstrap/dist/**/*min.css
+!/assets/node_modules/bootstrap/dist/**/*min.js
+/assets/node_modules/bootstrap/**/*theme.min.css
 
 # flag-icon-css
-/node_modules/flag-icon-css/*.html
-/node_modules/flag-icon-css/assets/
-/node_modules/flag-icon-css/css/
-/node_modules/flag-icon-css/less/
-/node_modules/flag-icon-css/flags/4x3/
-/node_modules/flag-icon-css/flags/1x1/*.svg
-!/node_modules/flag-icon-css/flags/1x1/mx.svg
-!/node_modules/flag-icon-css/flags/1x1/us.svg
-!/node_modules/flag-icon-css/flags/1x1/br.svg
+/assets/node_modules/flag-icon-css/*.html
+/assets/node_modules/flag-icon-css/assets/
+/assets/node_modules/flag-icon-css/css/
+/assets/node_modules/flag-icon-css/less/
+/assets/node_modules/flag-icon-css/flags/4x3/
+/assets/node_modules/flag-icon-css/flags/1x1/*.svg
+!/assets/node_modules/flag-icon-css/flags/1x1/mx.svg
+!/assets/node_modules/flag-icon-css/flags/1x1/us.svg
+!/assets/node_modules/flag-icon-css/flags/1x1/br.svg
+
+# font-awesome
+/assets/node_modules/font-awesome/*.txt
+/assets/node_modules/font-awesome/css/*.css*
+!/assets/node_modules/font-awesome/css/*min.css
+/assets/node_modules/font-awesome/fonts/*.otf
+/assets/node_modules/font-awesome/less/
+/assets/node_modules/font-awesome/scss/
+
+# jquery
+/assets/node_modules/jquery/src/
+/assets/node_modules/jquery/**/*.js
+!/assets/node_modules/jquery/**/cdn/jquery.min
+!/assets/node_modules/jquery/**/cdn/jquery.min.js
+/assets/node_modules/jquery/**/*.map
+
+# js-md5
+/assets/node_modules/js-md5/src/
 
 # jspdf
-/node_modules/adler32cs/
-/node_modules/cf-blob.js/
-/node_modules/file-saver/
-/node_modules/jspdf/**/*debug.js
+/assets/node_modules/adler32cs/
+/assets/node_modules/cf-blob.js/
+/assets/node_modules/file-saver/
+/assets/node_modules/jspdf/**/*debug.js
+
+# vue
+/assets/node_modules/vue/src/
+/assets/node_modules/vue/types/
+/assets/node_modules/vue/dist/*.js
+!/assets/node_modules/vue/dist/vue.min.js

@@ -7,6 +7,12 @@
   "author": "<cetinajero@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "jspdf": "^1.3.5"
+    "bootstrap": "3.2.0",
+    "flag-icon-css": ">=3.0.0",
+    "font-awesome": ">=4.1.0",
+    "jquery": "1.11.2",
+    "js-md5": ">=0.7.3",
+    "jspdf": ">=1.3.5",
+    "vue": ">=2.5.16"
   }
 }
