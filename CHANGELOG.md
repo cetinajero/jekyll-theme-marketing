@@ -1,5 +1,30 @@
 ## Unreleased
 
+## [0.5.0](https://github.com/cetinajero/jekyll-theme-marketing/releases/tag/v0.5.0)
+
+### Enhancements
+* Installed dependency packages [#2f68852](https://github.com/cetinajero/jekyll-theme-marketing/commit/2f688525224b06e075954667490e27e5a914c9bb)
+  * "bootstrap": "3.2.0",
+  * "flag-icon-css": ">=3.0.0",
+  * "font-awesome": ">=4.1.0",
+  * "jquery": "1.11.2",
+  * "js-md5": ">=0.7.3",
+  * "jspdf": ">=1.3.5",
+  * "vue": ">=2.5.16"
+* Installed dependencies thru `yarn` package manager. [#a8b33b7](https://github.com/cetinajero/jekyll-theme-marketing/commit/a8b33b753b750e7551a444c970b6ef2ecb4c9bc7), [#86e3f5c](https://github.com/cetinajero/jekyll-theme-marketing/commit/86e3f5c0ecf0cea60fd7387695d901f5e11fed54)
+* Added `lang-switcher` component. [#3d18d5b](https://github.com/cetinajero/jekyll-theme-marketing/commit/3d18d5bf99deee3a3a56a2c40b85c6ce86390beb)
+* Added `max-width` to breadcrumb component. [#021829a](https://github.com/cetinajero/jekyll-theme-marketing/commit/021829a231ff43883b02d92c3cc81060c1ef5702)
+* Added i18n page content thru `detailed_desc`. [#aebcc9e](https://github.com/cetinajero/jekyll-theme-marketing/commit/aebcc9e41526e733e04b0109c916824047349158)
+* Created `components` SASS section. [#de17ee0](https://github.com/cetinajero/jekyll-theme-marketing/commit/de17ee0cb6ce75a650d4edb944d9aa6f9b3eec07)
+* Added `data-last-deploy` attribute to `body/header/logo` include. [#7064910](https://github.com/cetinajero/jekyll-theme-marketing/commit/7064910bb387586a73df89d2abd418c97a3ba41e)
+* Implement Firestore database on `exchange-rates` collection. [#bce885c](https://github.com/cetinajero/jekyll-theme-marketing/commit/bce885c2a662199bac1ee6501c46ecaf36bbae26)
+* Translate `3d-space` product-card. [#ccd64d0](https://github.com/cetinajero/jekyll-theme-marketing/commit/ccd64d0434be296cfdc58cfecdc8016ab82fbf03)
+* Make `3d-space` product card responsive. [#5f70ca2](https://github.com/cetinajero/jekyll-theme-marketing/commit/5f70ca217aecadcab6eaf7d166005c9528d0e6a9)
+
+### Bug fixes
+* Fixed issue on special offers's `Download` button. [#d226b2d](https://github.com/cetinajero/jekyll-theme-marketing/commit/d226b2da2b195dfebf98c049e7b3f07306b6154a)
+* Fixed issue using `collection.label` instead of `page.collection`. [#9521b09](https://github.com/cetinajero/jekyll-theme-marketing/commit/9521b093d69d3528575f60ab30575cafd571386c)
+
 ## [0.4.0](https://github.com/cetinajero/jekyll-theme-marketing/releases/tag/v0.4.0)
 
 ### Enhancements
