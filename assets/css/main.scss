@@ -9,6 +9,8 @@ $font-color-menu: {{ site.css.menu.font-color }};
 $icon-color-menu: {{ site.css.menu.icons }};
 
 // Import partials.
+@import "../assets/node_modules/flag-icon-css/sass/flag-icon";
+
 @import "layouts/grid";
 @import "layouts/product";
 @import "common/common";
