@@ -1,0 +1,31 @@
+<i class="material-icons" class="ripple" id="menu" title="Menu">menu</i>
+
+<section id="appVue">
+  <div class="side-nav">
+    <header>
+      <div class="avatars-container" width=70 height=70 >
+          <img :src="photo" width=70 height=70 />
+      </div>
+      <div class="rich-area">
+        <a href="#">{( name )}</a>
+        <div class="email">
+          <a href="">{( email )}</a>
+          <i class="material-icons" class="ripple">arrow_drop_down</i>
+        </div>
+      </div>
+    </header>
+    <nav class="side-bar">
+      <ul>
+        <li class="disabled"><i class="material-icons">person</i>Mi Perfil</li>
+        <li class="disabled"><i class="material-icons">description</i>Facturas</li>
+        <li class="disabled"><i class="material-icons">note</i>Notas de Crédito</li>
+        <li class="disabled"><i class="material-icons">account_balance_wallet</i>Estados de Cuenta</li>
+        <hr>
+        <li id='subheader'>Servicio</li>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScqLZRLtB4CKlQPRdzz_b6EVY8JPLEXsOgyzmUsfWvfpaczEA/viewform"><li class="ripple" onclick="activateMenuItem(this)"><i class="material-icons">build</i>Reportes de Reparación</li></a>
+        <li class="disabled"><i class="material-icons">computer</i>Software de Programación</li>
+        <li class="disabled"><i class="material-icons">list_alt</i>Manuales de Servicio</li>
+      </ul>
+    </nav>
+  </div>
+</section>
