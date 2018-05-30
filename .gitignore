@@ -29,6 +29,26 @@ _config-dev.yml
 /assets/node_modules/**/svgo.yaml
 /assets/node_modules/**/yarn.lock
 
+# @fortawesome/fontawesome
+/assets/node_modules/@fortawesome/fontawesome/*.d.ts
+/assets/node_modules/@fortawesome/fontawesome/*.es.js
+/assets/node_modules/@fortawesome/fontawesome-common-types/
+
+# @fortawesome/fontawesome-free-brands
+/assets/node_modules/@fortawesome/fontawesome-free-brands/*.d.ts
+/assets/node_modules/@fortawesome/fontawesome-free-brands/*.js
+!/assets/node_modules/@fortawesome/fontawesome-free-brands/index.js
+
+# @fortawesome/fontawesome-free-regular
+/assets/node_modules/@fortawesome/fontawesome-free-regular/*.d.ts
+/assets/node_modules/@fortawesome/fontawesome-free-regular/*.js
+!/assets/node_modules/@fortawesome/fontawesome-free-regular/index.js
+
+# @fortawesome/fontawesome-free-solid
+/assets/node_modules/@fortawesome/fontawesome-free-solid/*.d.ts
+/assets/node_modules/@fortawesome/fontawesome-free-solid/*.js
+!/assets/node_modules/@fortawesome/fontawesome-free-solid/index.js
+
 # bootstrap
 /assets/node_modules/bootstrap/docs/
 /assets/node_modules/bootstrap/fonts/
@@ -54,14 +74,6 @@ _config-dev.yml
 !/assets/node_modules/flag-icon-css/flags/1x1/mx.svg
 !/assets/node_modules/flag-icon-css/flags/1x1/us.svg
 !/assets/node_modules/flag-icon-css/flags/1x1/br.svg
-
-# font-awesome
-/assets/node_modules/font-awesome/*.txt
-/assets/node_modules/font-awesome/css/*.css*
-!/assets/node_modules/font-awesome/css/*min.css
-/assets/node_modules/font-awesome/fonts/*.otf
-/assets/node_modules/font-awesome/less/
-/assets/node_modules/font-awesome/scss/
 
 # jquery
 /assets/node_modules/jquery/src/

@@ -7,9 +7,12 @@
   "author": "<cetinajero@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@fortawesome/fontawesome": "latest",
+    "@fortawesome/fontawesome-free-brands": "latest",
+    "@fortawesome/fontawesome-free-regular": "latest",
+    "@fortawesome/fontawesome-free-solid": "latest",
     "bootstrap": "3.2.0",
     "flag-icon-css": "latest",
-    "font-awesome": "latest",
     "jquery": "1.11.2",
     "js-md5": "latest",
     "jspdf": "latest",
