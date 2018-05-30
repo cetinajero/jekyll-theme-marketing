@@ -1,0 +1,29 @@
+div.phone-active div.custom {
+  &{
+    text-align: center;
+  }
+  span.phone {
+    font-size: 10pt;
+  }
+}
+
+div#exchange-rates {
+  position: absolute;
+  margin-top: 7px;
+  svg{
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 1199px) {
+  header.header .primary .navbar .nav > li > a,
+  header.header .primary .navbar .nav > li > a:visited {
+    font-size: 8.6pt;
+  }
+}
+
+@media (max-width: 700px) {
+  div.phone-active div.custom span.phone {
+    font-size: 7.8pt;
+  }
+}

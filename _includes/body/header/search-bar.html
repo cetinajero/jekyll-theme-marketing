@@ -1,0 +1,16 @@
+<!-- TODO: IMPLEMENT ALGOLIA SEARCH JEKILL PLUGIN (https://github.com/algolia/algoliasearch-jekyll) -->
+
+<div class="search-active col-sm-9 col-md-9">
+  <a href="#" class="close"><span>{{ site.data.i18n.common.menu[site.lang].close.title }}</span>×</a>
+  <div class="search">
+    <form action="/index.php" method="post" class="form-inline">
+      <input class="search-string form-control" id="mod-search-searchword" type="search" placeholder="{{ site.data.i18n.common.menu[site.lang].search.title }}" name="searchword" />
+      <button class="search-submit">
+        <i class="fas fa-search fa-lg" data-fa-transform="up-1"></i>
+      </button>
+      <input type="hidden" name="task" value="search" />
+      <input type="hidden" name="option" value="com_search" />
+      <input type="hidden" name="Itemid" value="101" />
+    </form>
+  </div>
+</div>

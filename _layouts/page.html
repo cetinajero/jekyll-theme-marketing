@@ -20,7 +20,7 @@ layout: default
   <ol id="breadcrumb" class="breadcrumb">
     {% for level in (-1..page.categories.size) %}
       {% if forloop.first %}
-        <li class="breadcrumb-item home"><a href="{{ '/' | relative_url }}"><span class="glyphicon glyphicon-home"></span></a></li>
+        <li class="breadcrumb-item home"><a href="{{ '/' | relative_url }}"><i class="fas fa-home fa-lg" data-fa-transform="up-2"></i></a></li>
         <li class="breadcrumb-item ellipsis hidden-xs hidden-sm hidden-md hidden-lg">...</li>
         {% if page.menu-father %}
           <li class="breadcrumb-item {{ page.collection }}"><a href="{{ page.collection | prepend: '/' | relative_url }}">{% if site.data.i18n.catalog[page.collection][site.lang][page.collection].title %}{{ site.data.i18n.catalog[page.collection][site.lang][page.collection].title }}{% else %}{{ page.collection | capitalize }}{% endif %}</a></li>
