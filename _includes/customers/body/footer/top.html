@@ -1,7 +1,7 @@
 <aside class="col-sm-6 col-md-6">
   {% assign customer-type = site.awards[0].awards[0] | split: '-' | first %}
   {% if customer-type != 'platino' %}{% assign customer-type = 'titanio' %}{% endif %}
-  <div class="title-block"><h3 class="title"><i class="fas fa-building"></i> Socio {{ customer-type }} de {{ site.author }}</h3></div>
+  <div class="title-block"><h3 class="title"><i class="fas fa-user-tie"></i> Socio {{ customer-type }} de {{ site.author }}</h3></div>
   <div class="custom">
     <ul class="footer-list">
       <li class="footer-list"><a class="white" href="/our-offices/">{{ site.data.i18n.common.pages[site.lang].ouroffices.title }}</a></li>
