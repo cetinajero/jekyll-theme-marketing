@@ -16,6 +16,7 @@
     "jquery": "1.11.2",
     "js-md5": "latest",
     "jspdf": "latest",
+    "lightslider": "latest",
     "vue": "latest"
   }
 }
