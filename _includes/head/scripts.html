@@ -11,3 +11,5 @@
 <script src="/vendors/sliders/revolution-slider/js/jquery.themepunch.revolution.min.js" type="text/javascript"></script>
 
 <script src="{{ 'assets/node_modules/lightslider/dist/js/lightslider.min.js' | relative_url }}"></script>
+
+{% if site.zendesk %}{% include head/scripts/zendesk.html %}{% endif %}
