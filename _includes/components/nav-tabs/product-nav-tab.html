@@ -1,0 +1,75 @@
+<ul class="nav nav-tabs nav-justified">
+  {% for tab in layout.tabs %}
+    <li role="presentation" {% if forloop.first == true %}class="active"{% endif %}{% if tab == 'special-offers' and site.original or site.special-offers.customers == false %}class="hide"{% endif %}><a data-toggle="tab" href="#{{ tab| downcase | replace: ' ', '-' }}">{{ site.data.i18n.common.product-layout[site.lang][tab] }}</a></li>
+  {% endfor %}
+</ul>
+
+<div class="tab-content">
+  {% for tab in layout.tabs %}
+    <div id="{{ tab | downcase | replace: ' ', '-' }}" class="tab-pane fade {% if forloop.first == true %}in active{% endif %}">
+      <div class="container">
+        {% case forloop.index %}
+
+        {% when 1 %}
+          <p>
+            {% for resource in page.resources.spec-sheets.catalog %}
+              <img src="{{ site.amazon-s3 }}{{ resource }}" alt="{{ page.title }}" class="img-center">
+            {% endfor %}
+          </p>
+          {{ page.i18n[site.lang].detailed_desc | default: page.detailed_desc }}
+          {{ content }}
+
+        {% when 2 %}
+          {% if  page.resources.downloads %}
+            {% for resource in page.resources.downloads %}
+              {% assign i18n-resource-text = page.i18n[site.lang].resources.downloads[forloop.index0].text %}
+              <p>
+                <a class="btn btn-primary btn-sm" href="{{ site.amazon-s3 }}{{ resource.link }}">
+                  <strong><i class="fas fa-download fa-lg" data-fa-transform="left-4"></i> {{ site.data.i18n.common.product-layout[site.lang].download }}</strong>
+                </a>
+                <span class="product-downloads">
+                {% if i18n-resource-text %}{{ i18n-resource-text }}{% else %}{{ resource.text }}{% endif %}
+                </span>
+              </p>
+            {% endfor %}
+          {% else %}
+            <p>{{ site.data.i18n.common.product-layout[site.lang].downloads-empty }}</p>
+          {% endif %}
+
+        {% when 3 %}
+          {% if page.resources.videos %}
+            {% assign ids = page.resources.videos | split: ", " %}
+            {% for id in ids %}
+              <div class="col-xs-12 col-sm-12 col-md-6">
+                <iframe
+                  id="ytplayer"
+                  type="text/html"
+                  width="100%"
+                  height="350"
+                  src="https://www.youtube.com/embed/{{ id }}?rel=0&modestbranding=1"
+                  frameborder="0"
+                  gesture="media"
+                  allow="encrypted-media"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            {% endfor %}
+          {% else %}
+            <p>{{ site.data.i18n.common.product-layout[site.lang].videos-empty }}</p>
+          {% endif %}
+
+        {% else %}
+          {% if page.resources.special-offers.quantity > 0 %}
+            {% unless site.original or site.special-offers.customers == false %}
+              {% include components/generators/pdf/special-offers.html %}
+            {% endunless %}
+          {% else %}
+            <p>{{ site.data.i18n.common.product-layout[site.lang].special-offers-empty }}</p>
+          {% endif %}
+
+        {% endcase %}
+
+      </div>
+    </div>
+  {% endfor %}
+</div>

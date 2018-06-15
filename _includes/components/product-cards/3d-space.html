@@ -3,10 +3,10 @@
         <div id="product-front-{{ include.id }}" class="product-front">
             <div class="shadow"></div>
             <img src="{{ include.img }}" alt="{{ include.model }}" class="img-center"/>
-            <a {{ include.href }}><div class="image_overlay"></div></a>
+            <a href="{{ include.href }}{% if site.special-offers.customers %}{{ '#special-offers' }}{% endif %}"><div class="image_overlay"></div></a>
             <div id="view_details-{{ include.id }}" class="view_details hide" data-id="{{ include.id }}">View details</div>
             <div class="stats">
-              <a {{ include.href }}>
+              <a href="{{ include.href }}{% if site.special-offers.customers %}{{ '#special-offers' }}{% endif %}">
                 <div class="stats-container">
                   <span class="product_price">{{ include.price }} {{ include.currency }}</span>
                   <span class="product_name">{{ include.commercial }}</span>
