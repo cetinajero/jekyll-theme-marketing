@@ -1,8 +1,13 @@
-div#product-generals {
+div#product-generals{
   div.product-price{
-    span.disabled-price{
-      text-decoration: line-through;
-      background-color: lightgray;
+    span{
+      &.disabled-price{
+        text-decoration: line-through;
+        background-color: lightgray;
+      }
+      a.white{
+        color: #fff;
+      }
     }
   }
 }
