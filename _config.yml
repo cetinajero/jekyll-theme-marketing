@@ -8,6 +8,7 @@ description: > # this means to ignore newlines until "baseurl:"
 keywords: Jekyll, GitHub Pages, theme, website, blog
 baseurl: /jekyll-theme-marketing
 lang: en_US
+google-analytics: UA-69457978-1
 css:
   header:
     background-color: "#1A69D5"

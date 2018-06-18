@@ -1,0 +1,32 @@
+<footer id="footer">
+
+  <div class="footer-top"> <!-- start footer-top -->
+    <div id="vg-footer">
+      <div class="container">
+        <div class="row sidebar">
+          {% if site.original -%}
+            {% include grupopv/body/footer/top.html %}
+          {% else -%}
+            {% include customers/body/footer/top.html %}
+          {% endif -%}
+        </div>
+      </div>
+    </div>
+  </div> <!-- end footer-top -->
+
+  <div class="footer-bottom"> <!-- start footer-bottom -->
+    <div class="container">
+      <div class="row">
+        {% include body/footer/copyright.html %}
+
+        {% if site.original -%}
+          {% include body/footer/bottom.html %}
+        {% endif -%}
+
+        {% include body/footer/buttons.html %}
+
+      </div>
+    </div>
+  </div> <!-- end footer-bottom -->
+
+</footer>
