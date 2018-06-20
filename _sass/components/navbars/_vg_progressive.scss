@@ -1,55 +1,63 @@
-.right-box-wrapper {
+.header-wrapper{
+  .right-box-wrapper {
 
-  .contact-header{
+    .contact-header{
 
-    border-right: 1px solid rgba(204,204,204,.8);
-    color: #1e1e1e;
-    display: inline-block;
-    height: 30px;
-    margin: 8px -4px 8px 0;
-    position: relative;
-    text-align: center;
-    vertical-align: top;
-    width: 41px;
+      border-right: 1px solid rgba(204,204,204,.8);
+      color: #1e1e1e;
+      display: inline-block;
+      height: 30px;
+      margin: 8px -4px 8px 0;
+      position: relative;
+      text-align: center;
+      vertical-align: top;
+      width: 41px;
 
-    &:last-child {
-      border-right: 0 none;
+      &:last-child {
+        border-right: 0 none;
+      }
+
+      a{
+
+        display: block;
+        height: 23px;
+        padding-top: 7px;
+        width: 100%;
+
+        svg{
+          font-size: 1.2em;
+          color: $icon-color-menu;
+          overflow: visible;
+          opacity: 1;
+          filter: alpha(opacity=100);
+          -webkit-transition: all .3s linear;
+          transition: all .3s linear;
+          -webkit-transform: translateZ(0px);
+        }
+
+        &:hover svg{
+          opacity: .5;
+          filter: alpha(opacity=50);
+          -webkit-transition: all .3s linear;
+          transition: all .3s linear;
+        }
+
+      }
     }
 
-    a{
-
-      display: block;
-      height: 23px;
-      padding-top: 7px;
-      width: 100%;
-
-      svg{
-        font-size: 1.2em;
-        color: $icon-color-menu;
-        overflow: visible;
-        opacity: 1;
-        filter: alpha(opacity=100);
-        -webkit-transition: all .3s linear;
-        transition: all .3s linear;
-        -webkit-transform: translateZ(0px);
+    .navbar{
+      button{
+        svg{
+          color: $icon-color-menu;
+        }
       }
-
-      &:hover svg{
-        opacity: .5;
-        filter: alpha(opacity=50);
-        -webkit-transition: all .3s linear;
-        transition: all .3s linear;
-      }
-
     }
   }
-
-  .navbar{
-    button{
-      svg{
-        color: $icon-color-menu;
+  div.phone-active {
+    div.custom {
+      span.phone {
+        color: $font-color-menu;
       }
     }
   }
-
 }

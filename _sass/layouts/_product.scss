@@ -1,6 +1,62 @@
+#product-images {
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+#product-generals {
+  margin-bottom: 10px;
+
+  p, div.product-price span {
+    font-size: 1.2em;
+  }
+
+  div.product-price{
+    text-align: left;
+    margin-left: 10px;
+  }
+}
+
+#downloads{
+  span.product-downloads{
+    font-size: 1.2em;
+    margin-left: 7px;
+  }
+}
+
+#special-offers{
+  .container{
+    p{
+      img{
+        width: 800px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
 div#special-offers{
   #special-offers-object{
     height: 1000px;
+  }
+}
+
+@media (min-width: 1199px){
+  #product-generals {
+    margin-top: 70px;
+  }
+}
+
+@media (min-width: 992px){
+  #product-generals {
+    margin-top: 20px;
+
+    p {
+      padding-top: 10px;
+    }
+
+    div.product-price{
+      padding-top: 20px;
+    }
   }
 }
 
