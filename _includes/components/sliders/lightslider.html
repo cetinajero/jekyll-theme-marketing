@@ -1,0 +1,31 @@
+<div class="product-images">
+  <ul id="lightSlider">
+    {% assign product-images-groups = "product-images, base-product-images" | split: ", " %}
+    {% for product-image-group in product-images-groups %}
+      {% if page.resources[product-image-group].quantity %}
+        {% assign images-count = page.resources[product-image-group].quantity %}
+      {% else %}
+        {% assign images-count = 1 %}
+      {% endif %}
+      {% for product-image in (1..images-count) %}
+        {% assign page-categories-size = page.categories | size %}
+        {% if page-categories-size >= 1 %}
+          {% assign page-categories = page.categories | join: "/" | append: "/" %}
+        {% endif %}
+        {% if forloop.index == 1 %}
+          {% assign image-num = '' %}
+        {% elsif forloop.index < 10 %}
+          {% assign image-num = forloop.index | prepend: "_0" %}
+        {% else %}
+          {% assign image-num = forloop.index | prepend: "_" %}
+        {% endif %}
+        {% capture product-image-url %}
+          {{ site.amazon-s3 }}/assets/img/catalog/thumbnails/{{ page.collection }}/{{ page-categories }}{% if page.resources[product-image-group].model %}{{ page.resources[product-image-group].model | downcase }}{% else %}{{ page.title | downcase  }}{% endif %}{{ image-num | append: ".png" }}
+        {% endcapture %}
+        <li data-thumb="{{ product-image-url }}">
+          <img src="{{ product-image-url }}" class="img-center" alt="{% if i18n-title %}{{ i18n-title }}{% else %}{{ page.title }}{% endif %}" />
+        </li>
+      {% endfor %}
+    {% endfor %}
+  </ul>
+</div>
