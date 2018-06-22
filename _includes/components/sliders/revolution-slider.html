@@ -1,0 +1,67 @@
+<div class="slider rs-slider">
+  <div class="tp-banner-container">
+    <div class="tp-banner">
+      <!-- start revolution slider 4.6.96 fullwidth mode -->
+      <link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+      <div id="rev_slider_2_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" style="margin:0px auto;background-color:#FFF;padding:0px;margin-top:0px;margin-bottom:0px;max-height:350px;">
+        <div id="rev_slider_2_1" class="rev_slider fullwidthabanner" style="display:none;max-height:350px;height:350px;">
+          <ul>
+            {% for slider in site.data.sliders.common %}
+              {% for collection-type in site.defaults %}
+                {% if collection-type.scope.type == slider.collection %}
+                  {% if collection-type.values.published == true -%}
+                    <!-- start slider {{ slider.name }} -->
+                    <li
+                      data-transition="{{ slider.transition | default: 'random' }}"
+                      data-slotamount="7"
+                      data-masterspeed="{{ slider.speed | default: 300 }}"
+                      data-link="{{ slider.link }}"
+                      data-delay="{{ slider.duration | default: 8000 }}"
+                      data-saveperformance="off">
+
+                      <!-- {{ slider.name }} background -->
+                      <img
+                        src="/vendors/sliders/revolution-slider/assets/images/dummy.png"
+                        alt="{{ slider.name }}"
+                        data-lazyload="{{ site.amazon-s3 }}/assets/img/common/sliders/{{ slider.name }}/{{ slider.name }}-background.png"
+                        data-bgposition="center center"
+                        data-bgfit="contain"
+                        data-bgrepeat="no-repeat">
+
+                      {% for layer in slider.layers %}
+                        {% assign data-speed = 450 | times: forloop.index | plus: 0 %}
+                        <!-- layer {{ forloop.index }} -->
+                        <div
+                          class="tp-caption {{ layer.start-animation | default: 'lft' }} {{ layer.end-animation | default: 'ltl' }}"
+                          data-easing="Elastic.easeInOut"
+                          data-x="{{ layer.x | default: 0 }}"
+                          data-y="{{ layer.y | default: 0 }}"
+                          data-start="{{ layer.start | default: data-speed }}"
+                          data-speed="{{ layer.start-speed | default: 1300 }}"
+                          data-elementdelay="0.1"
+                          data-end="{{ layer.end | default: '' }}"
+                          data-endspeed="{{ layer.end-speed | default: 1300 }}"
+                          data-endelementdelay="0.1"
+                          style="z-index: {{ forloop.index }};">
+                          <img
+                            src="/vendors/sliders/revolution-slider/assets/images/dummy.png"
+                            alt=""
+                            data-lazyload="{{ site.amazon-s3 }}/assets/img/common/sliders/{{ slider.name }}/{{ slider.name }}-{{ layer.src }}.png">
+                        </div>
+                      {% endfor %}
+
+                    </li>
+                    <!-- end slider {{ slider.name }} -->
+                  {% endif -%}
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          </ul>
+          <div class="tp-bannertimer hide"></div>
+        </div>
+  			<script src="/vendors/sliders/revolution-slider/js/settings.js"></script>
+		  </div>
+      <!-- end revolution slider -->
+    </div>
+  </div>
+</div>
