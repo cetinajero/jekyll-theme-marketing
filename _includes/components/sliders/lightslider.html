@@ -4,8 +4,10 @@
     {% for product-image-group in product-images-groups %}
       {% if page.resources[product-image-group].quantity %}
         {% assign images-count = page.resources[product-image-group].quantity %}
-      {% else %}
+      {% elsif product-image-group == 'product-images' %}
         {% assign images-count = 1 %}
+      {% else %}
+        {% assign images-count = 0 %}
       {% endif %}
       {% for product-image in (1..images-count) %}
         {% assign page-categories-size = page.categories | size %}
