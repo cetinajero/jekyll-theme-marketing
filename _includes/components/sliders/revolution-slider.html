@@ -33,7 +33,7 @@
                         <!-- layer {{ forloop.index }} -->
                         <div
                           class="tp-caption {{ layer.start-animation | default: 'lft' }} {{ layer.end-animation | default: 'ltl' }}"
-                          data-easing="Elastic.easeInOut"
+                          data-easing="{{ layer.easing | default: 'Power3.easeInOut' }}"
                           data-x="{{ layer.x | default: 0 }}"
                           data-y="{{ layer.y | default: 0 }}"
                           data-start="{{ layer.start | default: data-speed }}"
