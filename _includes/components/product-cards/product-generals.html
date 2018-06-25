@@ -1,4 +1,4 @@
-<div id="product-generals" class="col-xs-12 col-sm-12 col-md-8">
+<div id="product-generals" class="col-xs-12 col-sm-12 col-md-8" data-appear-animation="fadeInUp">
     <h3 id="{{ i18n-id }}" class="product-description">{% if i18n-description %}{{ i18n-description }}{% else %}{{ page.description }}{% endif %}</h3>
     <p class="product-model">{{ site.data.i18n.common.product-layout[site.lang].model }}: <strong>{% if i18n-title %}{{ i18n-title }}{% else %}{{ page.title }}{% endif %}</strong></p>
     <p class="product-brand">{{ site.data.i18n.common.product-layout[site.lang].brand }}: <strong>{{ page.brand }}</strong></p>
