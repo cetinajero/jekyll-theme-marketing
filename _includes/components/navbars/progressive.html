@@ -5,7 +5,8 @@
   </button>
   <nav class="collapse collapsing navbar-collapse">
     <ul class="nav navbar-nav navbar-center">
-      {% for menu-types in site.data.menus %}
+      {% assign sorted-menus = site.data.menus | sort %}
+      {% for menu-types in sorted-menus %}
         {% for menu in menu-types[1] %}
           {% if menu-types[0] == 'common' or menu-types[0] == 'customers' and site.original == false %}
             {% for collection-type in site.defaults %}
