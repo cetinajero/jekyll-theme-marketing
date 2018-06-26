@@ -1,0 +1,12 @@
+- collection: posts
+  name: First menu => /#first-menu
+  sub-menus:
+    - name: First sub-menu => /#first-sub-menu
+      sub-menus:
+        - First sub-sub-menu => /#first-sub-sub-menu
+        - Second sub-sub-menu => /#second-sub-sub-menu
+        - Third sub-sub-menu => /#Third-sub-sub-menu
+    - name: Second sub-menu => /#second-sub-menu
+      sub-menus:
+        - First sub-sub-menu => /#first-sub-sub-menu
+        - Second sub-sub-menu => /#second-sub-sub-menu
