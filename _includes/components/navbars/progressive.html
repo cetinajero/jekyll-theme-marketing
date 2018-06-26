@@ -1,0 +1,70 @@
+<div class="navbar navbar-default" role="navigation">
+  <button type="button" class="navbar-toggle btn-navbar collapsed" data-toggle="collapse" data-target=".primary .navbar-collapse">
+    <i class="fas fa-bars fa-lg" data-fa-transform="grow-2 left-4"></i>
+    <span>Menu</span>
+  </button>
+  <nav class="collapse collapsing navbar-collapse">
+    <ul class="nav navbar-nav navbar-center">
+      {% for menu-types in site.data.menus %}
+        {% for menu in menu-types[1] %}
+          {% if menu-types[0] == 'common' or menu-types[0] == 'customers' and site.original == false %}
+            {% for collection-type in site.defaults %}
+              {% if collection-type.scope.type == menu.collection %}
+                {% if collection-type.values.published == true -%}
+                  <li class="item-3381{% if menu.sub-menus %}{{ ' deeper parent megamenu promo' }}{% endif %}">
+                    {% assign menu-name = menu.name | split: ' => ' | first %}
+                    <a class="dropdown-toggle disabled-ds" href="{{ menu.name | split: ' => ' | last }}">{{ site.data.i18n.catalog[menu.collection][site.lang][menu-name].title | default: menu-name }}</a>
+                    <ul class="sub">
+                      <li class="item-3471 divider-item fhmm-content">
+                        <span class="">
+                          <div class="custom">
+                            <div class="sub-list"> <!-- START SECTIONS -->
+                              {% for sub-menu in menu.sub-menus %}
+                                <div class="box closed">
+                                  {% assign sub-menu-name = sub-menu.name | split: ' => ' | first %}
+                                  <h6 class="title"><a href="{{ sub-menu.name | split: ' => ' | last }}">{{ site.data.i18n.catalog[menu.collection][site.lang][sub-menu-name].title | default: sub-menu-name }}</a></h6>
+                                  <ul>
+                                    {% for sub-sub-menu in sub-menu.sub-menus %}
+                                      {% assign sub-sub-menu-name = sub-sub-menu | split: ' => ' | first %}
+                                      <li><a href="{{ sub-sub-menu | split: ' => ' | last }}">{{ site.data.i18n.catalog[menu.collection][site.lang][sub-sub-menu-name].title | default: sub-sub-menu-name }}</a></li>
+                                    {% endfor %}
+                                  </ul>
+                                </div>
+                              {% endfor %}
+                            </div> <!-- END SECTIONS -->
+                            <div class="promo-block">
+                              <a href="{{ menu.link }}"><img src="{{ site.amazon-s3 }}/assets/img/common/navbars/{{ menu.collection }}.png" alt="menu-{{ menu-collection }}"/></a>
+                            </div>
+                          </div>
+                        </span>
+                      </li>
+                    </ul>
+                  </li>
+                {% endif -%}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </ul>
+  </nav>
+</div>
+
+<script type="text/javascript">
+  function goToSparesUrl(){
+    esMxUrl = '{{ site.data.menus.common[0].spares.esMxUrl }}'
+    enUsUrl = '{{ site.data.menus.common[0].spares.enUsUrl }}'
+    ptBrUrl = '{{ site.data.menus.common[0].spares.ptBrUrl }}'
+
+    currentLang = document.getElementsByTagName("html")[0].getAttribute("lang");
+
+    if (currentLang == 'en') {
+      window.location.href = enUsUrl;
+    } else if (currentLang == 'es') {
+      window.location.href = esMxUrl;
+    } else {
+      window.location.href = ptBrUrl;
+    }
+
+  }
+</script>
