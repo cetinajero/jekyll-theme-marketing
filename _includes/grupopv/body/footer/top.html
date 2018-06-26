@@ -1,34 +1,71 @@
-<aside class="col-sm-4 col-md-4">
-  <div class="title-block"><h3 class="title"><i class="fas fa-building"></i> {{ site.title }}</h3></div>
+{% if site.title == 'Grupo PV' %}
+  <aside class="col-sm-4 col-md-4">
+    <div class="title-block"><h3 class="title"><i class="fas fa-building"></i> {{ site.title }}</h3></div>
+    <div class="custom">
+      <ul class="footer-list">
+        <li class="footer-list"><a class="white" href="/welcome/">{{ site.data.i18n.common.pages[site.lang].welcome.title }}</a></li>
+        <li class="footer-list"><a class="white" href="/values/">{{ site.data.i18n.common.pages[site.lang].values.title }}</a></li>
+        <li class="footer-list"><a class="white" href="/our-offices/">{{ site.data.i18n.common.pages[site.lang].ouroffices.title }}</a></li>
+        {% if site.awards %}<li class="footer-list"><a class="white" href="/awards/">{{ site.data.i18n.common.pages[site.lang].awards.title }}</a></li>{% endif %}
+      </ul>
+    </div>
+  </aside>
+
+  <aside class="col-sm-4 col-md-4">
+    <div class="title-block"><h3 class="title"><i class="fas fa-hands-helping"></i> {{ site.data.i18n.common.footer[site.lang].support.title }}</h3></div>
+    <div class="custom">
+      <ul class="footer-list">
+        <li class="footer-list"><a class="white" href="/programming-software/">{{ site.data.i18n.common.pages[site.lang].programmingsoftware.title }}</a></li>
+        <li class="footer-list"><a class="white" href="/approvals/">{{ site.data.i18n.common.pages[site.lang].approvals.title }}</a></li>
+        <li class="footer-list"><a class="white" href="https://www.netguard.video/tools/downloads">{{ site.data.i18n.common.footer[site.lang].engineering.title }} <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+        <li class="footer-list"><a class="white" href="https://get.teamviewer.com/grupopv">TeamViewer <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <aside class="col-sm-4 col-md-4">
+    <div class="title-block"><h3 class="title"><i class="fas fa-envelope"></i> {{ site.data.i18n.common.footer[site.lang].contact.title }}</h3></div>
+    <div class="custom">
+      <ul class="footer-list">
+        <li class="footer-list"><a class="white" href="/contact/">{{ site.data.i18n.common.pages[site.lang].contact.title }}</a></li>
+        <li class="footer-list"><a class="white" href="{{ site.amazon-s3 }}/assets/pdf/formats/distribution-request.pdf">{{ site.data.i18n.common.footer[site.lang].distribution_request.title }} <i class="fas fa-download fa-sm"></i></a></li>
+        <li class="footer-list"><a class="white" href="https://docs.google.com/forms/d/e/1FAIpQLSdrGUMRbymOKIVdk3-unh2PAIFzbPhTyb_9dFWxas1RbsbnCA/viewform">{{ site.data.i18n.common.footer[site.lang].complaints_suggestions.title }} <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+{% else %}
+  <aside class="col-sm-4 col-md-4">
+  <div class="title-block"><h3 class="title">{{ site.title }}</h3></div>
   <div class="custom">
     <ul class="footer-list">
       <li class="footer-list"><a class="white" href="/welcome/">{{ site.data.i18n.common.pages[site.lang].welcome.title }}</a></li>
       <li class="footer-list"><a class="white" href="/values/">{{ site.data.i18n.common.pages[site.lang].values.title }}</a></li>
       <li class="footer-list"><a class="white" href="/our-offices/">{{ site.data.i18n.common.pages[site.lang].ouroffices.title }}</a></li>
-      {% if site.awards %}<li class="footer-list"><a class="white" href="/awards/">{{ site.data.i18n.common.pages[site.lang].awards.title }}</a></li>{% endif %}
     </ul>
   </div>
-</aside>
+  </aside>
 
-<aside class="col-sm-4 col-md-4">
-  <div class="title-block"><h3 class="title"><i class="fas fa-hands-helping"></i> {{ site.data.i18n.common.footer[site.lang].support.title }}</h3></div>
-  <div class="custom">
-    <ul class="footer-list">
-      <li class="footer-list"><a class="white" href="/programming-software/">{{ site.data.i18n.common.pages[site.lang].programmingsoftware.title }}</a></li>
-      <li class="footer-list"><a class="white" href="/approvals/">{{ site.data.i18n.common.pages[site.lang].approvals.title }}</a></li>
-      <li class="footer-list"><a class="white" href="https://www.netguard.video/tools/downloads">{{ site.data.i18n.common.footer[site.lang].engineering.title }} <i class="fas fa-external-link-alt fa-sm"></i></a></li>
-      <li class="footer-list"><a class="white" href="https://get.teamviewer.com/grupopv">TeamViewer <i class="fas fa-external-link-alt fa-sm"></i></a></li>
-    </ul>
-  </div>
-</aside>
-
-<aside class="col-sm-4 col-md-4">
-  <div class="title-block"><h3 class="title"><i class="fas fa-envelope"></i> {{ site.data.i18n.common.footer[site.lang].contact.title }}</h3></div>
+  <aside class="col-sm-4 col-md-4">
+  <div class="title-block"><h3 class="title">{{ site.data.i18n.common.footer[site.lang].contact.title }}</h3></div>
   <div class="custom">
     <ul class="footer-list">
       <li class="footer-list"><a class="white" href="/contact/">{{ site.data.i18n.common.pages[site.lang].contact.title }}</a></li>
-      <li class="footer-list"><a class="white" href="{{ site.amazon-s3 }}/assets/pdf/formats/distribution-request.pdf">{{ site.data.i18n.common.footer[site.lang].distribution_request.title }} <i class="fas fa-download fa-sm"></i></a></li>
-      <li class="footer-list"><a class="white" href="https://docs.google.com/forms/d/e/1FAIpQLSdrGUMRbymOKIVdk3-unh2PAIFzbPhTyb_9dFWxas1RbsbnCA/viewform">{{ site.data.i18n.common.footer[site.lang].complaints_suggestions.title }} <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+      <li class="footer-list"><a class="white" href="{{ site.amazon-s3 }}/assets/pdf/formats/distribution-request.pdf">{{ site.data.i18n.common.footer[site.lang].distribution_request.title }}</a></li>
+      <li class="footer-list"><a class="white" href="https://docs.google.com/forms/d/e/1FAIpQLSdrGUMRbymOKIVdk3-unh2PAIFzbPhTyb_9dFWxas1RbsbnCA/viewform">{{ site.data.i18n.common.footer[site.lang].complaints_suggestions.title }}</a></li>
     </ul>
   </div>
-</aside>
+  </aside>
+
+  <aside class="col-sm-4 col-md-4">
+  <div class="title-block"><h3 class="title">{{ site.data.i18n.common.footer[site.lang].policies.title }}</h3></div>
+  <div class="custom">
+    <ul class="footer-list">
+      <li class="footer-list"><a class="white" href="{{ site.amazon-s3 }}/assets/pdf/documents/referenced-accounts.pdf">{{ site.data.i18n.common.footer[site.lang].referenced_accounts.title }}</a></li>
+      <li class="footer-list"><a class="white" href="{{ site.amazon-s3 }}/assets/pdf/documents/guarantees.pdf">{{ site.data.i18n.common.footer[site.lang].guarantees.title }}</a></li>
+      <li class="footer-list"><a class="white" href="{{ site.amazon-s3 }}/assets/pdf/formats/repair-request.pdf">{{ site.data.i18n.common.footer[site.lang].repair_request.title }}</a></li>
+      <li class="footer-list"><a class="white" href="https://s3-us-west-2.amazonaws.com/denac-public/assets/pdf/documents/privacy-notice.pdf">{{ site.data.i18n.common.footer[site.lang].privacy_notice.title }}</a></li>
+      <li class="footer-list"><a class="white" href="https://s3-us-west-2.amazonaws.com/denac-public/assets/pdf/documents/terms-and-conditions.pdf">{{ site.data.i18n.common.footer[site.lang].terms_conditions.title }}</a></li>
+    </ul>
+  </div>
+  </aside>
+{% endif %}

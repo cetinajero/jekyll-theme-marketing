@@ -1,5 +1,9 @@
 {% if site.original -%}
-  {% assign classes = "col-sm-4 col-md-4" %}
+  {% if site.title == 'Grupo PV' %}
+    {% assign classes = "col-sm-4 col-md-4" %}
+  {% else -%}
+    {% assign classes = "col-sm-11 col-md-11" %}
+  {% endif -%}
 {% else -%}
   {% assign classes = "col-sm-6 col-md-6" %}
 {% endif -%}
