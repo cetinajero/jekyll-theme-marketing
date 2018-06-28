@@ -1,0 +1,38 @@
+<script type="text/javascript">document.getElementById("{{ page.form.id }}").classList.add("hide")</script>
+<div class="container marketing-theme blur-background" data-appear-animation="fadeInUp">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <script type="text/javascript">var submitted=false;</script>
+      <iframe id="hidden_iframe" class="hide" name="hidden_iframe" onload="submitted&amp;&amp;(window.location='{{ page.form.response-url }}')"></iframe>
+      <div class="jumbotron rounded bg-white">
+        <h3 class="display-3">{{ page.form.header }}</h3>
+        <p><sub>{{ page.form.subheader }}</sub></p>
+        <hr class="my-4">
+        <form class="form" method="post" onsubmit="submitted=!0" target="hidden_iframe" action="{{ page.form.google-forms-url }}">
+          {% for field in page.form.fields %}
+            <div class="form-group" data-appear-animation="fadeInUp">
+              <label>{{ field.label }}</label>
+              <input name="entry.{{ field.google-entry }}" type="{{ field.type }}" aria-describedby="{{ field.label | downcase }}Help" placeholder="{{ field.placeholder }}" required/>
+              <small id="{{ field.label | downcase }}Help" class="form-text text-muted">{{ field.caption }}</small>
+            </div>
+          {% endfor %}
+          <p class="marketing-theme red" data-appear-animation="fadeInUp"><sup><sup>{{ page.form.footer-danger }}</sup></sup></p>
+          <hr class="my-4">
+          <button type="submit" class="btn btn-primary" value="Send" data-appear-animation="bounceIn">{{ page.form.send-button }}</button>
+        </form>
+      </div>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+</div>
+
+<style>
+  div.form-group input{
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+  .blur-background:before {
+    background-image: url('{{ page.form.background-url }}');
+  }
+</style>
