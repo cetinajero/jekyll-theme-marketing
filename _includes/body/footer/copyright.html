@@ -1,0 +1,15 @@
+{% if site.original -%}
+  {% if site.title == 'Grupo PV' %}
+    {% assign classes = "col-sm-4 col-md-4" %}
+  {% else -%}
+    {% assign classes = "col-sm-11 col-md-11" %}
+  {% endif -%}
+{% else -%}
+  {% assign classes = "col-sm-6 col-md-6" %}
+{% endif -%}
+
+<div class="copyright col-xs-12 {{ classes }}">
+  <p>{{ site.data.i18n.common.footer[site.lang].copyrights.title }}, {{ 'now' | date: "%Y" }}.</p>
+  <p>{{ site.data.i18n.common.footer[site.lang].price_list_message.title }}</p>
+  <p>{{ site.data.i18n.common.footer[site.lang].price_changes.title }}</p>
+</div>

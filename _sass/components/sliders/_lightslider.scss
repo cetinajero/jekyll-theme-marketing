@@ -1,0 +1,33 @@
+.product-images {
+    width:100%;
+
+    .lSSlideWrapper {
+      border: 1px solid #eee;
+      border-radius: 15px;
+      -moz-border-radius: 15px;
+    }
+    .lSGallery li {
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      -moz-border-radius: 15px;
+    }
+
+    ul {
+        list-style: none outside none;
+        padding-left: 0;
+        margin-bottom:0;
+
+        li {
+            display: block;
+            float: left;
+            margin-right: 6px;
+            cursor:pointer;
+
+            img {
+                display: block;
+                height: auto;
+                max-width: 100%;
+            }
+        }
+    }
+}

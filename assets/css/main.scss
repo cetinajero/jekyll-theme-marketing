@@ -11,13 +11,23 @@ $icon-color-menu: {{ site.css.menu.icons }};
 // Import partials.
 @import "../assets/node_modules/flag-icon-css/sass/flag-icon";
 
+@import "grupopv/navbar";
+@import "layouts/404";
+@import "layouts/default";
 @import "layouts/grid";
+@import "layouts/page";
 @import "layouts/product";
 @import "common/common";
 @import "common/custom";
 
 @import "components/breadcrumbs/bootstrap";
+@import "components/contact-cards/location";
+@import "components/footers/vg_progressive";
+@import "components/forms/formspree";
 @import "components/lang-switchers/toogle-lang";
 @import "components/navbars/vg_progressive";
 @import "components/product-cards/3d-space";
+@import "components/product-cards/basic";
+@import "components/product-cards/product-generals";
 @import "components/sidenavs/material";
+@import "components/sliders/lightslider";

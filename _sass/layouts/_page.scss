@@ -1,0 +1,70 @@
+h2.post{
+  padding-top: 25px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h3.post{
+  text-align: center;
+}
+
+.programming-software h4{
+  color: #1a69d5;
+}
+
+div.post{
+  padding: 2%;
+}
+
+div.post p {
+  padding-left: 2%;
+}
+
+div.post p img{
+  text-align: center;
+}
+
+img.img-small, a.img-small {
+  width: 25%;
+}
+
+img.img-center, a.img-center {
+  display: block;
+  margin: 0 auto;
+}
+
+div.post div.center p.center-paragraph,
+div.post div.center ul.center-paragraph{
+  margin: 30px auto;
+  max-width: 900px;
+}
+
+div.post .center{
+  text-align: center;
+}
+
+div.post .justify{
+  text-align: justify;
+}
+
+div.post .left{
+  text-align: left;
+}
+
+p.footer-font,
+ul.footer-font {
+  color: #808080;
+  font-family: 'Arimo   ', sans-serif;
+  font-size: 16px;
+}
+
+div.post div.center p.title{
+  color: #1a69d5;
+  font-family: 'helvetica', sans-serif;
+  font-size: 18pt
+}
+
+div.post div.center p.subtitle{
+  margin: 30px auto;
+  max-width: 700px;
+}

@@ -1,4 +1,8 @@
 .marketing-theme{
+  &.red{
+    color:red;
+  }
+
   &.clean-view{
     margin-top: 30px;
     padding-bottom: 30px;
@@ -13,5 +17,24 @@
   &.content-right{
     display: flex;
     justify-content: flex-end;
+  }
+
+  &.blur-background:before {
+    content: "";
+    position: absolute;
+    display: block;
+    background-size:cover;
+    width: 98%;
+    height: 100%;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+  }
+
+  &.blur-background {
+    overflow: auto;
+    position: relative;
   }
 }

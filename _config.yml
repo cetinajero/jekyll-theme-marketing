@@ -1,13 +1,14 @@
 title: Your awesome title
 author: GitHub User
 email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
+description: > # this means to ignore newlines until "keywords:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 keywords: Jekyll, GitHub Pages, theme, website, blog
 baseurl: /jekyll-theme-marketing
 lang: en_US
+google-analytics: UA-69457978-1
 css:
   header:
     background-color: "#1A69D5"
@@ -16,6 +17,15 @@ css:
     icons: "#1A69D5"
   footer:
     background-color: "#1D6BD6"
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts" # previously `post` in Jekyll 2.2.
+    values:
+      layout: page
+      published: true
 
 # Build settings
 markdown: kramdown
