@@ -63,8 +63,9 @@ yarn-error.log
 /assets/node_modules/bootstrap/dist/**/*.map
 /assets/node_modules/bootstrap/dist/**/*.eot
 !/assets/node_modules/bootstrap/dist/**/*min.css
+!/assets/node_modules/bootstrap/dist/**/*min.css.map
 !/assets/node_modules/bootstrap/dist/**/*min.js
-/assets/node_modules/bootstrap/**/*theme.min.css
+/assets/node_modules/bootstrap/**/*theme.min.css*
 
 # flag-icon-css
 /assets/node_modules/flag-icon-css/*.html
