@@ -5,7 +5,7 @@
       <div class="container">
         <div class="row sidebar">
           {% if site.original -%}
-            {% include grupopv/body/footer/top.html %}
+            {% include components/footers/progressive/top.html %}
           {% else -%}
             {% include customers/body/footer/top.html %}
           {% endif -%}
@@ -20,7 +20,7 @@
         {% include body/footer/copyright.html %}
 
         {% if site.original -%}
-          {% include body/footer/bottom.html %}
+          {% include components/footers/progressive/bottom.html %}
         {% endif -%}
 
         {% include body/footer/buttons.html %}
