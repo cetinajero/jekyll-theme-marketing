@@ -13,7 +13,25 @@
           {% for field in page.form.request.fields %}
             <div class="form-group" data-appear-animation="fadeInUp">
               <label>{{ field.label }}</label>
-              <input name="entry.{{ field.google-entry }}" type="{{ field.type }}" aria-describedby="{{ field.label | downcase }}Help" placeholder="{{ field.placeholder }}" required/>
+              {% if field.type == 'checkbox' %}
+                {% for value in field.values %}
+                  <input type="{{ field.type }}" name="entry.{{ field.google-entry }}" id="a{{ forloop.index }}" value="{{ value }}"/>
+                  <label class="label-checkbox text-muted" for="a{{ forloop.index }}">{{ value }}</label>
+                {% endfor %}
+              {% elsif field.type == 'select' %}
+                <select name="entry.{{ field.google-entry }}">
+                  <option selected disabled>Selecciona</option>
+                  {% for value in field.values %}
+                    <option value="{{ value }}">{{ value }}</option>
+                  {% endfor %}
+                </select>
+              {% elsif field.type == 'date' %}
+                <input name="entry.{{ field.google-entry }}_day" type="{{ field.type }}" aria-describedby="{{ field.label | downcase }}Help" placeholder="{{ field.placeholder }}" required/>
+                <input name="entry.{{ field.google-entry }}_month" type="{{ field.type }}" aria-describedby="{{ field.label | downcase }}Help" placeholder="{{ field.placeholder }}" required/>
+                <input name="entry.{{ field.google-entry }}_year" type="{{ field.type }}" aria-describedby="{{ field.label | downcase }}Help" placeholder="{{ field.placeholder }}" required/>
+              {% else %}
+                <input name="entry.{{ field.google-entry }}" type="{{ field.type }}" aria-describedby="{{ field.label | downcase }}Help" placeholder="{{ field.placeholder }}" required/>
+              {% endif %}
               <small id="{{ field.label | downcase }}Help" class="form-text text-muted">{{ field.caption }}</small>
             </div>
           {% endfor %}
@@ -40,10 +58,6 @@
 </div>
 
 <style>
-  div.form-group input{
-    margin-top: 4px;
-    margin-bottom: 4px;
-  }
   .blur-background:before {
     background-image: url('{{ site.amazon-s3 }}/assets/img/common/forms/{{ page.form.id }}-bg.png');
   }
