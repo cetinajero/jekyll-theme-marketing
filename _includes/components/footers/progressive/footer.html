@@ -1,0 +1,51 @@
+<footer id="footer">
+
+  <div class="footer-top"> <!-- start footer-top -->
+    <div id="vg-footer">
+      <div class="container">
+        <div class="row sidebar">
+          {% include components/footers/progressive/top.html %}
+        </div>
+      </div>
+    </div>
+  </div> <!-- end footer-top -->
+
+  <div class="footer-bottom"> <!-- start footer-bottom -->
+    <div class="container">
+      <div class="row">
+        {% include components/copyrights/progressive.html %}
+
+        {% if site.title == 'Grupo PV' %}
+          <aside class="col-sm-4 col-md-4">
+            <div class="title-block"><h3 class="title"><i class="fas fa-gavel"></i> {{ site.data.i18n.common.footer[site.lang].policies.title }}</h3></div>
+            <div class="custom">
+              <ul class="footer-list">
+                <li class="footer-list"><a class="gray" href="{{ site.amazon-s3 }}/assets/pdf/documents/referenced-accounts.pdf"><i class="fas fa-download"></i> {{ site.data.i18n.common.footer[site.lang].referenced_accounts.title }}</a></li>
+                <li class="footer-list"><a class="gray" href="{{ site.amazon-s3 }}/assets/pdf/documents/guarantees.pdf"><i class="fas fa-download"></i> {{ site.data.i18n.common.footer[site.lang].guarantees.title }}</a></li>
+                <li class="footer-list"><a class="gray" href="{{ site.amazon-s3 }}/assets/pdf/formats/repair-request.pdf"><i class="fas fa-download"></i> {{ site.data.i18n.common.footer[site.lang].repair_request.title }}</a></li>
+                <li class="footer-list"><a class="gray" href="{{ site.amazon-s3 }}/assets/pdf/documents/privacy-notice.pdf"><i class="fas fa-download"></i> {{ site.data.i18n.common.footer[site.lang].privacy_notice.title }}</a></li>
+                <li class="footer-list"><a class="gray" href="{{ site.amazon-s3 }}/assets/pdf/documents/terms-and-conditions.pdf"><i class="fas fa-download"></i> {{ site.data.i18n.common.footer[site.lang].terms_conditions.title }}</a></li>
+              </ul>
+            </div>
+          </aside>
+
+          <aside class="col-sm-3 col-md-3">
+            {% include components/social-media/progressive.html %}
+          </aside>
+        {% endif %}
+
+        {% if site.original -%}
+          {% assign classes = "col-sm-1 col-md-1" %}
+        {% else -%}
+          {% assign classes = "col-sm-6 col-md-6" %}
+        {% endif -%}
+        <div class="col-xs-12 {{ classes }}">
+          {% include components/scroll-to-tops/progressive.html %}
+          {% include components/lang-switchers/two-langs.html %}
+        </div>
+
+      </div>
+    </div>
+  </div> <!-- end footer-bottom -->
+
+</footer>

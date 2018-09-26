@@ -1,0 +1,27 @@
+<a href="javascript:switchLang()" class="lang-switcher">
+  <span class="flag-icon flag-icon-squared" id="lang-switcher"></span>
+</a>
+
+<script type="text/javascript">
+  if (!window.location.href.includes('grupopv')) {
+    document.querySelector('.lang-switcher').classList.add('hide');
+  }
+
+  currentLang = document.getElementsByTagName("html")[0].getAttribute("lang");
+
+  if (currentLang == 'en') {
+    document.querySelector('#lang-switcher').classList.add('flag-icon-mx');
+  } else {
+    document.querySelector('#lang-switcher').classList.add('flag-icon-us');
+  }
+
+  function switchLang(){
+    if (currentLang == 'en') {
+      url = window.location.href.replace('localhost:4000','grupopv.mx').replace('grupopv.us','grupopv.mx');
+      window.location.href = url;
+    } else {
+      url = window.location.href.replace('localhost:4000','grupopv.us').replace('grupopv.mx','grupopv.us');
+      window.location.href = url;
+    }
+  }
+</script>
