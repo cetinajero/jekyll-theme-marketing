@@ -22,6 +22,7 @@ $icon-color-menu: {{ site.css.menu.icons }};
 
 @import "components/breadcrumbs/bootstrap";
 @import "components/contact-cards/location";
+@import "components/contact-cards/phone-card";
 @import "components/footers/vg_progressive";
 @import "components/forms/formspree";
 @import "components/forms/google-forms";

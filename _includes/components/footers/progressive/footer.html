@@ -12,7 +12,7 @@
 
   <div class="footer-bottom"> <!-- start footer-bottom -->
     <div class="container">
-      <div class="row">
+      <div class="row marketing-theme content-centered">
         {% include components/copyrights/progressive.html %}
 
         {% if site.title == 'Grupo PV' %}
@@ -28,18 +28,14 @@
               </ul>
             </div>
           </aside>
-
           <aside class="col-sm-3 col-md-3">
             {% include components/social-media/progressive.html %}
           </aside>
+        {% elsif site.original == false %}
+          {% include components/contact-cards/phone-card.html %}
         {% endif %}
 
-        {% if site.original -%}
-          {% assign classes = "col-sm-1 col-md-1" %}
-        {% else -%}
-          {% assign classes = "col-sm-6 col-md-6" %}
-        {% endif -%}
-        <div class="col-xs-12 {{ classes }}">
+        <div class="col-xs-12 col-sm-1 col-md-1">
           {% include components/scroll-to-tops/progressive.html %}
           {% include components/lang-switchers/two-langs.html %}
         </div>
