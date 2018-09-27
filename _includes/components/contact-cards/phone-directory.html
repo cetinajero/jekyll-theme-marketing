@@ -12,7 +12,7 @@
       <div class="{{ classes }}">
         <span class="phone">
           <strong>{{ address.name }}:</strong>
-          {{ address.phone }}
+          <a href="tel:{{ address.phone[0].number }}">{{ address.phone[0].number }}</a>
         </span>
       </div>
     {% endfor %}
