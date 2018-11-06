@@ -15,19 +15,7 @@ layout: page
         {% else %}
           {% assign i18n-description = site.data.i18n.catalog[collection.label][site.lang][i18n-id].desc %}
         {% endif %}
-        <div class="col-xs-12 col-sm-4 col-md-3">
-          <div>
-            <a {% if doc.menu-name or collection.products.detail or doc.menu-name %}{{ doc.url | prepend: 'href="' | append: '"' }}{% endif %}>
-              <img id="{{ i18n-id }}" class="product-image" src="{{ doc.image }}" alt="{% if i18n-title %}{{ i18n-title }}{% else %}{{ doc.title }}{% endif %}" />
-            </a>
-          </div>
-          <div class="product-model">
-            <a id="{{ i18n-id }}" {% if doc.menu-name or collection.products.detail or doc.menu-name %}{{ doc.url | prepend: 'href="' | append: '"' }}{% endif %}>{% if i18n-title %}{{ i18n-title }}{% else %}{{ doc.title }}{% endif %}</a>
-          </div>
-          <div class="product-brand">{{ doc.brand }} {{ doc.commercial }}</div>
-          <div id="{{ i18n-id }}" class="product-description">{% if i18n-description %}{{ i18n-description }}{% else %}{{ doc.description }}{% endif %}</div>
-          <div class="product-price"><span class="label label-primary">{% if doc.price %}{{ doc.price | prepend: '$ ' }}{% endif %}{% assign doc-price-size = doc.price | downcase | split: '.' | last | size %}{% if doc-price-size == 1 %}{{ "0" }}{% endif %}{% if doc.currency %}{{ doc.currency | prepend: ' ' }}{% endif %}</span></div>
-        </div>
+        {% include components/product-cards/progressive.html %}
       {% endfor %}
     {% endfor %}
   </div>
