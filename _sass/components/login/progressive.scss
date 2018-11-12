@@ -1,0 +1,13 @@
+.container-disabled{
+  #donwload_login form {
+    label, input {
+      color: black;
+    }
+  }
+
+  #donwload_list {
+    .download-resource {
+      margin-left: 15px;
+    }
+  }
+}

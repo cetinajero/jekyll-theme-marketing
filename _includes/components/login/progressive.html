@@ -1,0 +1,90 @@
+<script type="text/javascript" src="{{ '/assets/node_modules/js-md5/build/md5.min.js' | relative_url }}"></script>
+
+<div class="container">
+  <div class="row" id="vg-mainbody">
+    <div class="col-sm-12 col-md-12 vg_component_box">
+      <div class="container-disabled">
+        <div class="login" id="donwload_login">
+          <div class="hide page-header">
+            <div class="container">
+              <h1 class="title">{{ site.data.i18n.components.login[site.lang].login.title | default: 'Login'}}</h1>
+            </div>
+        	</div>
+          <form action="javascript:donwload_login()" method="post" class="form-validate form-horizontal well">
+            <fieldset>
+              <div class="control-group">
+                <div class="control-label">
+                  <label id="username-lbl" for="username" class="required">{{ site.data.i18n.components.login[site.lang].user.title | default: 'Login'}}</label>
+                </div>
+                <div class="controls">
+                  <input type="text" name="username" id="username" value="" class="validate-username required" size="25" required="" aria-required="true" autofocus="">
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="control-label">
+                  <label id="password-lbl" for="password" class="required">{{ site.data.i18n.components.login[site.lang].password.title | default: 'Password'}}</label>
+                </div>
+                <div class="controls">
+                  <input type="password" name="password" id="password" value="" class="validate-password required" size="25" maxlength="99" required="" aria-required="true">
+                </div>
+              </div>
+              <div class="hide control-group margin-bottom-only">
+                <div class="control-label">
+                  <label>{{ site.data.i18n.components.login[site.lang].remember-me.title | default: 'Login'}}</label>
+                  <div class="new-checkbox">
+                    <input id="remember" type="checkbox" name="remember" class="inputbox" value="yes">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="15px" height="15px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+                      <polygon fill="#1e1e1e" points="9.298,13.391 4.18,9.237 3,10.079 9.297,17 17.999,4.678 16.324,3 "></polygon>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div id="donwload_alert" class="hide alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                  <i class="fas fa-times alert-icon fa-sm" data-fa-transform="right-23 up-3"></i>
+                </button>
+                <div class="fas fa-exclamation-circle alert-icon fa-lg" data-fa-transform="up-1"></div>
+                <span>{{ site.data.i18n.components.login[site.lang].wrong-credentials.title | default: 'The user credentials are incorrect, please verify them and try again.'}}</span>
+              </div>
+              <div class="control-group">
+                <div class="controls">
+                  <button type="submit" class="btn btn-primary">{{ site.data.i18n.components.login[site.lang].login-button.title | default: 'Login'}}</button>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        <div class="hide list-group article-links">
+          <a class="list-group-item" href="#">{{ site.data.i18n.components.login[site.lang].lost-password.title | default: 'Forgot your password?'}}</a>
+          <a class="list-group-item" href="#">{{ site.data.i18n.components.login[site.lang].lost-username.title | default: 'Forgot your username?'}}</a>
+        </div>
+        <div id="donwload_list" class="hide">
+          <div class="page-header">
+            <div class="container">
+              <h4 class="title">{{ site.data.i18n.components.login[site.lang].downloads.title | default: 'Downloads'}}</h4>
+            </div>
+          </div>
+          {% for file in page.files %}
+            <a class="btn btn-primary btn-sm" href="https://www.dropbox.com/s/{{ file.id }}/{{ file.filename }}{% if file.download %}{{ '?dl=1' }}{% endif %}" target="_blank">
+              <strong><i class="fas fa-download fa-lg" data-fa-transform="left-4"></i> {{ site.data.i18n.components.login[site.lang].download.title | default: 'Download'}}</strong>
+            </a>
+            <span class="download-resource">{{ file.name }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  function donwload_login(){
+    hash = md5(document.getElementById("username").value)+md5(document.getElementById("password").value);
+    if (hash == '{{ page.username | append: page.password }}'){
+      document.getElementById("donwload_login").classList.add("hide");
+      document.getElementById("donwload_alert").classList.add("hide");
+      document.getElementById("donwload_list").classList.remove("hide");
+    } else {
+      document.getElementById("donwload_alert").classList.remove("hide");
+    }
+  }
+</script>
