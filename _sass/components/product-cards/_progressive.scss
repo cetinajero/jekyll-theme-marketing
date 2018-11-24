@@ -1,0 +1,11 @@
+div#progressive-product-card{
+  div.product-price{
+    span{
+      &.disabled-price{
+        font-size: 11px;
+        text-decoration: line-through;
+        background-color: lightgray;
+      }
+    }
+  }
+}
