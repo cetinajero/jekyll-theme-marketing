@@ -1,4 +1,4 @@
-<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="progressive-product-card" class="col-xs-12 col-sm-4 col-md-3">
   <div>
     <a {% if doc.menu-name or collection.products.detail or doc.menu-name %}{{ doc.url | prepend: 'href="' | append: '"' }}{% endif %}>
       <img id="{{ i18n-id }}" class="product-image" src="{{ doc.image }}" alt="{% if i18n-title %}{{ i18n-title }}{% else %}{{ doc.title }}{% endif %}" />
@@ -9,5 +9,10 @@
   </div>
   <div class="product-brand">{{ doc.brand }} {{ doc.commercial }}</div>
   <div id="{{ i18n-id }}" class="product-description">{% if i18n-description %}{{ i18n-description }}{% else %}{{ doc.description }}{% endif %}</div>
-  {% unless site.product.price.disabled %}<div class="product-price"><span class="label label-primary">{% if doc.price %}{{ doc.price | prepend: '$ ' }}{% endif %}{% assign doc-price-size = doc.price | downcase | split: '.' | last | size %}{% if doc-price-size == 1 %}{{ "0" }}{% endif %}{% if doc.currency %}{{ doc.currency | prepend: ' ' }}{% endif %}</span></div>{% endunless %}
+  {% unless site.product.price.disabled %}
+    <div class="product-price">
+      <span class="label label-primary {% if doc.promotion-price and site.original == false %}{{ 'disabled-price' }}{% endif %}">{% if doc.price %}{{ doc.price | prepend: '$ ' }}{% endif %}{% assign doc-price-size = doc.price | downcase | split: '.' | last | size %}{% if doc-price-size == 1 %}{{ "0" }}{% endif %}{% if doc.currency %}{{ doc.currency | prepend: ' ' }}{% endif %}</span>
+      <span class="label label-primary">{% unless site.original %}{% if site.special-offers.customers %}{% if doc.promotion-price %}{{ doc.promotion-price | prepend: '$ ' }}{% endif %}{% assign promotion-price-size = doc.promotion-price | downcase | split: '.' | last | size %}{% if promotion-price-size == 1 %}{{ "0" }}{% endif %}{% if doc.promotion-currency %}{{ doc.promotion-currency | prepend: ' ' }}{% endif %}{% endif %}{% endunless %}</span>
+    </div>
+  {% endunless %}
 </div>
