@@ -1,0 +1,38 @@
+<section id="product-details-header">
+  {% for resource in page.resources.spec-sheets.header %}
+    <img src="{{ site.amazon-s3 }}{{ resource }}" alt="{{ page.title }}" class="img-center">
+  {% endfor %}
+</section>
+{% if page.resources.spec-sheets.text %}
+  <section id="product-details-parragraph" class="marketing-theme clean-view">
+    {% for resource in page.resources.spec-sheets.text %}
+      {% assign i18n-resource-text = page.i18n[site.lang].resources.spec-sheets.text.[forloop.index0] %}
+      <p class="footer-font justify">{% if i18n-resource-text %}{{ i18n-resource-text }}{% else %}{{ resource }}{% endif %}</p>
+    {% endfor %}
+  </section>
+{% endif %}
+{% if page.resources.spec-sheets.specs %}
+  <section id="product-details-specs" class="marketing-theme clean-view">
+    <div class="title-box">
+      <h3>{{ site.data.i18n.components.product-cards[site.lang].product-details.features.title | default: 'Features' }}</h3>
+    </div>
+    {% for resource in page.resources.spec-sheets.specs %}
+      {% assign i18n-resource-text = page.i18n[site.lang].resources.spec-sheets.specs.[forloop.index0] %}
+      <article class="col-sm-6 col-md-4" style="padding:0px">
+        <span class="text-muted"><i class="text-primary fas fa-check-circle"></i> {% if i18n-resource-text %}{{ i18n-resource-text.name }}{% else %}{{ resource.name }}{% endif %}</span>
+        <div class="lead">{% if i18n-resource-text %}{{ i18n-resource-text.value }}{% else %}{{ resource.value }}{% endif %}</div>
+      </article>
+    {% endfor %}
+  </section>
+{% endif %}
+<p id="product-details-footer">
+  {% for resource in page.resources.spec-sheets.catalog %}
+    <img src="{{ site.amazon-s3 }}{{ resource }}" alt="{{ page.title }}" class="img-center">
+  {% endfor %}
+</p>
+<section id="product-details-pricelists-notice" class="marketing-theme clean-view">
+  <article>
+    <p class="text-muted text-center">{{ site.data.i18n.components.product-cards[site.lang].product-details.pricelists-notice.title }}</p>
+  </article>
+</section>
+{{ content }}
