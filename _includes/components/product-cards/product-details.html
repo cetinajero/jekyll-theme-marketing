@@ -25,7 +25,7 @@
     {% endfor %}
   </section>
 {% endif %}
-<p id="product-details-footer">
+<p id="product-details-footer" class="row">
   {% for resource in page.resources.spec-sheets.catalog %}
     <img src="{{ site.amazon-s3 }}{{ resource }}" alt="{{ page.title }}" class="img-center">
   {% endfor %}
