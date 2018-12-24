@@ -9,7 +9,7 @@ _config-dev.yml
 yarn-error.log
 
 # Node.JS modules
-/node_modules/.bin/
+/assets/node_modules/.bin/
 /assets/node_modules/**/.bowerrc
 /assets/node_modules/**/.gitattributes
 /assets/node_modules/**/.jscsrc
