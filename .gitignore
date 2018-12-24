@@ -100,6 +100,7 @@ yarn-error.log
 /assets/node_modules/asynckit/
 /assets/node_modules/aws-sign2/
 /assets/node_modules/aws4/
+/assets/node_modules/base64-arraybuffer/
 /assets/node_modules/bcrypt-pbkdf/
 /assets/node_modules/canvg/
 /assets/node_modules/caseless/
@@ -107,6 +108,7 @@ yarn-error.log
 /assets/node_modules/co/
 /assets/node_modules/combined-stream/
 /assets/node_modules/core-util-is/
+/assets/node_modules/css-line-break/
 /assets/node_modules/cssom/
 /assets/node_modules/cssstyle/
 /assets/node_modules/dashdash/
@@ -128,6 +130,7 @@ yarn-error.log
 /assets/node_modules/getpass/
 /assets/node_modules/har-schema/
 /assets/node_modules/har-validator/
+/assets/node_modules/html2canvas/
 /assets/node_modules/http-signature/
 /assets/node_modules/iconv-lite/
 /assets/node_modules/is-typedarray/
@@ -148,6 +151,7 @@ yarn-error.log
 /assets/node_modules/parse5/
 /assets/node_modules/performance-now/
 /assets/node_modules/prelude-ls/
+/assets/node_modules/promise-polyfill/
 /assets/node_modules/psl/
 /assets/node_modules/punycode/
 /assets/node_modules/qs/
@@ -158,7 +162,7 @@ yarn-error.log
 /assets/node_modules/sax/
 /assets/node_modules/source-map/
 /assets/node_modules/sshpk/
-/assets/node_modules/stackblur/
+/assets/node_modules/stackblur-canvas/
 /assets/node_modules/symbol-tree/
 /assets/node_modules/tough-cookie/
 /assets/node_modules/tr46/
@@ -173,6 +177,7 @@ yarn-error.log
 /assets/node_modules/xml-name-validator/
 /assets/node_modules/xmldom/
 /assets/node_modules/jspdf/**/*debug.js
+/assets/node_modules/jspdf/**/*node.min.js
 
 # lightslider
 /assets/node_modules/lightslider/.*rc
