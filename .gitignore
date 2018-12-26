@@ -169,6 +169,7 @@ yarn-error.log
 /assets/node_modules/tunnel-agent/
 /assets/node_modules/tweetnacl/
 /assets/node_modules/type-check/
+/assets/node_modules/uri-js/
 /assets/node_modules/uuid/
 /assets/node_modules/verror/
 /assets/node_modules/webidl-conversions/
