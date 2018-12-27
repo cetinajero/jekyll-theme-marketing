@@ -1,11 +1,11 @@
-<script type="text/javascript">document.getElementById("{{ page.form.id }}").classList.add("hide")</script>
+<script type="text/javascript">document.getElementById("{{ page.form.id }}").classList.add("d-none")</script>
 
 <div class="container marketing-theme blur-background" data-appear-animation="fadeInUp">
   <div class="row">
     <div class="col-sm-3"></div>
     <div class="col-sm-6">
       <script type="text/javascript">var submitted=false;</script>
-      <iframe id="hidden_iframe" class="hide" name="hidden_iframe" onload="submitted&amp;&amp;(window.location='{{ page.url }}?response')"></iframe>
+      <iframe id="hidden_iframe" class="d-none" name="hidden_iframe" onload="submitted&amp;&amp;(window.location='{{ page.url }}?response')"></iframe>
       <div id="form-request" class="jumbotron rounded bg-white">
         <h3 class="display-3">{{ page.form.request.header }}</h3>
         <p><sub>{{ page.form.request.subheader }}</sub></p>
@@ -51,7 +51,7 @@
       </div>
       <script type="text/javascript">
         let response = new URL(window.location.href).searchParams.has("response");
-        document.getElementById(response ? 'form-request' : 'form-response').classList.add("hide");
+        document.getElementById(response ? 'form-request' : 'form-response').classList.add("d-none");
       </script>
     </div>
     <div class="col-sm-3"></div>

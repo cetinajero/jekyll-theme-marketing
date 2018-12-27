@@ -2,7 +2,7 @@
 layout: default
 ---
 {% if page.layout == "product" %}
-  {% assign class = 'hide' %}
+  {% assign class = 'd-none' %}
 {% else %}
   {% assign url-size = page.url | size | minus: 2 %}
   {% assign i18n-id = page.url | slice: 1,url-size | replace: '/', '-' | remove_first: page.collection | remove_first: '-' %}
@@ -21,7 +21,7 @@ layout: default
     {% for level in (-1..page.categories.size) %}
       {% if forloop.first %}
         <li class="breadcrumb-item home"><a href="{{ '/' | relative_url }}"><i class="fas fa-home fa-lg" data-fa-transform="up-2"></i></a></li>
-        <li class="breadcrumb-item ellipsis hidden-xs hidden-sm hidden-md hidden-lg">...</li>
+        <li class="breadcrumb-item ellipsis d-none">...</li>
         {% if page.menu-father %}
           <li class="breadcrumb-item {{ page.collection }}"><a href="{{ page.collection | prepend: '/' | relative_url }}">{% if site.data.i18n.catalog[page.collection][site.lang][page.collection].title %}{{ site.data.i18n.catalog[page.collection][site.lang][page.collection].title }}{% else %}{{ page.collection | capitalize }}{% endif %}</a></li>
         {% endif %}
@@ -53,11 +53,11 @@ layout: default
 <script>
   var items = $('#breadcrumb > li.breadcrumb-item');
   if (items.length > 3){
-    if (items.length > 4) $('li.breadcrumb-item.ellipsis').removeClass('hidden-xs');
-    if (items.length > 5) $('li.breadcrumb-item.ellipsis').removeClass('hidden-sm');
+    if (items.length > 4) $('li.breadcrumb-item.ellipsis').removeClass('d-none').addClass('d-xs-inline d-md-none');
+    if (items.length > 5) $('li.breadcrumb-item.ellipsis').removeClass('d-md-none').addClass('d-lg-none');
     items.each(function( index ) {
-      if (index > 1 && index < items.length-3) $(this).addClass('hidden-sm');
-      if (index > 1 && index < items.length) if (index != items.length-2) $(this).addClass('hidden-xs');
+      if (index > 1 && index < items.length) if (index != items.length-2) $(this).addClass('d-none d-md-inline');
+      if (index > 1 && index < items.length-3) $(this).removeClass('d-md-inline').addClass('d-lg-inline');
     });
   }
 </script>

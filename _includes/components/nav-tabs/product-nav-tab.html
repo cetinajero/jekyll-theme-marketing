@@ -1,6 +1,6 @@
 <ul class="nav nav-tabs nav-justified">
   {% for tab in layout.tabs %}
-    <li role="presentation" {% if forloop.first == true %}class="active"{% endif %}{% if tab == 'special-offers' and site.original or site.special-offers.customers == false %}class="hide"{% endif %}><a data-toggle="tab" href="#{{ tab| downcase | replace: ' ', '-' }}">{{ site.data.i18n.common.product-layout[site.lang][tab] }}</a></li>
+    <li role="presentation" {% if forloop.first == true %}class="active"{% endif %}{% if tab == 'special-offers' and site.original or site.special-offers.customers == false %}class="d-none"{% endif %}><a data-toggle="tab" href="#{{ tab| downcase | replace: ' ', '-' }}">{{ site.data.i18n.common.product-layout[site.lang][tab] }}</a></li>
   {% endfor %}
 </ul>
 
