@@ -17,7 +17,7 @@
       </a>
     </div>
     <div id="special-offers-{{ forloop.index }}">
-      <img id="special-offers-promo{{ forloop.index }}" src="/img/special-offers/{{ page.collection }}/{{ page-categories }}{% if page.resources.special-offers.model %}{{ page.resources.special-offers.model | downcase }}{% else %}{{ page.title | downcase  }}{% endif %}{{ image-num | append: '.png' }}" alt="{{ page.title }}" title="{{ page.title }}">
+      <img id="special-offers-promo{{ forloop.index }}" src="/img/special-offers/{{ page.collection }}/{{ page-categories }}{% if page.resources.special-offers.model %}{{ page.resources.special-offers.model | downcase }}{% else %}{{ page.title | downcase  }}{% endif %}{{ image-num | append: '.jpg' }}" alt="{{ page.title }}" title="{{ page.title }}">
       <img id="special-offers-data{{ forloop.index }}" src="/img/special-offers/customers/{{ site.domain | replace:'.',' ' | truncatewords: 1,"" }}.png" alt="{{ page.title }}" title="{{ page.title }}">
       <canvas id="special-offers-promoCanvas{{ forloop.index }}" class="hide" width="{{ layout.special-offers.width | times: layout.special-offers.dpi }}" height="{{ layout.special-offers.height | times: layout.special-offers.dpi }}"></canvas>
       <canvas id="special-offers-dataCanvas{{ forloop.index }}" class="hide" width="{{ layout.special-offers.width | times: layout.special-offers.dpi }}" height="{{ layout.special-offers.height | minus: 10.5 | times: layout.special-offers.dpi | times: -1 }}"></canvas>
@@ -35,7 +35,7 @@
         var dataCanvas = document.getElementById("special-offers-dataCanvas{{ forloop.index }}");
         promoCanvas.getContext("2d").drawImage(promo, 0, 0);
         dataCanvas.getContext("2d").drawImage(data, 0, 0);
-        doc.addImage(promoCanvas.toDataURL(), 'PNG', {{ layout.special-offers.margin }}, {{ layout.special-offers.margin }}, {{ layout.special-offers.width }}, {{ layout.special-offers.height }},'promoImg','FAST')
+        doc.addImage(promoCanvas.toDataURL(), 'JPG', {{ layout.special-offers.margin }}, {{ layout.special-offers.margin }}, {{ layout.special-offers.width }}, {{ layout.special-offers.height }},'promoImg','FAST')
         doc.addImage(dataCanvas.toDataURL(), 'PNG', {{ layout.special-offers.margin }}, {{ layout.special-offers.margin }} + {{ layout.special-offers.height }}, {{ layout.special-offers.width }}, {{ 11 | minus: layout.special-offers.margin | minus: layout.special-offers.margin }} - {{ layout.special-offers.height }},'dataImg','FAST')
         doc.save('{{ page.title }}.pdf')
       }
