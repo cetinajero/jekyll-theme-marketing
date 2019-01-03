@@ -251,10 +251,10 @@ PLATFORMS
 
 DEPENDENCIES
   bump
-  bundler (~> 1.12)
+  bundler (~> 2.0)
   github-pages
   jekyll-theme-marketing!
   rake (~> 12.0)
 
 BUNDLED WITH
-   1.16.2
+   2.0.1
