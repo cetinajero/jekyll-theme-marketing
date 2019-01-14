@@ -1,5 +1,6 @@
 # jekyll-theme-marketing
 
+[![CI Status](https://travis-ci.org/cetinajero/jekyll-theme-marketing.svg?branch=master)](https://travis-ci.org/cetinajero/jekyll-theme-marketing)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=cetinajero/jekyll-theme-marketing)](https://dependabot.com)
 
 Right now just a test theme for Jekyll.
