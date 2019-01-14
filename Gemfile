@@ -8,3 +8,6 @@ gem 'github-pages', group: :jekyll_plugins
 
 # Install bump needed to publish new releases
 gem 'bump'
+
+# Install html-proofer to test and validate the HTML output
+gem "html-proofer"
