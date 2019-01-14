@@ -38,3 +38,4 @@ exclude:
   - jekyll-theme-marketing.gemspec
   - LICENSE.txt
   - README.md
+  - vendor
