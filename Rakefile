@@ -1,5 +1,6 @@
 require "rubygems"
 require "yaml"
+require "html-proofer"
 
 desc "Build website"
 task :build do
@@ -162,6 +163,16 @@ namespace :reset do
   end
 end
 
+desc "Continuous integration tests"
+namespace :test do
+  desc "Test HTML with html-proofer"
+  task :html do
+    sh "bundle exec jekyll build"
+    options = {}
+    HTMLProofer.check_directory("./_site", options).run
+  end
+end
+
 def alias_task(tasks)
     tasks.each do |new_name, old_name|
         task new_name, [*Rake.application[old_name].arg_names] => [old_name]
@@ -177,6 +188,7 @@ alias_task [
     [:dw,  'deploy:website'],
     [:dnv, 'deploy:new-version'],
     [:rs, 'reset:soft'],
+    [:th, 'test:html'],
 ]
 
 desc "Run local server with _config-dev.yml"

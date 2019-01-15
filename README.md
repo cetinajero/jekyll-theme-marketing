@@ -1,7 +1,9 @@
 # jekyll-theme-marketing
 
+[![Gem Version](https://badge.fury.io/rb/jekyll-theme-marketing.svg)](https://rubygems.org/gems/jekyll-theme-marketing)
 [![CI Status](https://travis-ci.org/cetinajero/jekyll-theme-marketing.svg?branch=master)](https://travis-ci.org/cetinajero/jekyll-theme-marketing)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=cetinajero/jekyll-theme-marketing)](https://dependabot.com)
+[![Gem Downloads](https://ruby-gem-downloads-badge.herokuapp.com/jekyll-theme-marketing?type=total&total_label=)](https://rubygems.org/gems/jekyll-theme-marketing)
 
 Right now just a test theme for Jekyll.
 
