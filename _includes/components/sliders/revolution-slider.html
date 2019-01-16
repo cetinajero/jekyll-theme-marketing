@@ -9,7 +9,7 @@
             {% for slider in site.data.sliders.common %}
               {% for collection-type in site.defaults %}
                 {% if collection-type.scope.type == slider.collection %}
-                  {% if collection-type.values.published == true and site.links.sliders[slider.name].disabled == false -%}
+                  {% if collection-type.values.published == true and site.links.sliders[slider.name].disabled == null -%}
                     <!-- start slider {{ slider.name }} -->
                     <li
                       data-transition="{{ slider.transition | default: 'random' }}"
