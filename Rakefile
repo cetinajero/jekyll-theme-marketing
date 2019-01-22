@@ -174,7 +174,6 @@ namespace :test do
       default_options = {
         :assume_extension => true,
         :error_sort => :desc,
-        :allow_hash_href => true,
         :url_ignore => ["https://mx.linkedin.com/company/grupo-pv-mexico"],
        }
 
