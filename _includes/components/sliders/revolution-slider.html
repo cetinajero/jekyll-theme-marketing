@@ -9,7 +9,7 @@
             {% for slider in site.data.sliders.common %}
               {% for collection-type in site.defaults %}
                 {% if collection-type.scope.type == slider.collection %}
-                  {% if collection-type.values.published == true -%}
+                  {% if collection-type.values.published == true and site.links.sliders[slider.name].disabled == null -%}
                     <!-- start slider {{ slider.name }} -->
                     <li
                       data-transition="{{ slider.transition | default: 'random' }}"
@@ -45,7 +45,7 @@
                           style="z-index: {{ forloop.index }};">
                           <img
                             src="/vendors/sliders/revolution-slider/assets/images/dummy.png"
-                            alt=""
+                            alt="{{ slider.name }}"
                             data-lazyload="{{ site.amazon-s3 }}/assets/img/common/sliders/{{ slider.name }}/{{ slider.name }}-{{ layer.src }}.png">
                         </div>
                       {% endfor %}

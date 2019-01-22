@@ -49,10 +49,6 @@
         <p><sub>{{ page.form.response.subheader }}</sub></p>
         <p class="marketing-theme red"><sub><sub>{{ page.form.response.footer-danger }}</sub></sub></p>
       </div>
-      <script type="text/javascript">
-        let response = new URL(window.location.href).searchParams.has("response");
-        document.getElementById(response ? 'form-request' : 'form-response').classList.add("d-none");
-      </script>
     </div>
     <div class="col-sm-3"></div>
   </div>
@@ -78,17 +74,19 @@
 </style>
 
 <script type="text/javascript">
+  let response = new URL(window.location.href).searchParams.has("response");
+  document.getElementById(response ? 'form-request' : 'form-response').classList.add("d-none");
+  document.getElementById(response ? 'progressive-progress-navbar' : 'form-response').classList.add("d-none");
+
   statusText = document.getElementById('progress-bar-status');
   formInputs = document.querySelectorAll("[required]");
   progressBar = document.getElementById('progressive-progress-bar');
   progressBar.style.width = "1%";
   progressBar.innerHTML = "1%";
   statusText.innerHTML = "1%";
-
   for (var i = 0; i < formInputs.length; i++) {
     formInputs[i].addEventListener("input", updateProgressBar);
   }
-
   function updateProgressBar() {
     progressBar.value = 0;
     for (var i = 0; i < formInputs.length; i++) {

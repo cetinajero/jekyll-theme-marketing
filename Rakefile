@@ -1,5 +1,6 @@
 require "rubygems"
 require "yaml"
+require "html-proofer"
 
 desc "Build website"
 task :build do
@@ -23,7 +24,7 @@ namespace :serve do
       config_prod.merge!({ "baseurl" => nil })
       config_prod.each do |key, value|
         if key == "defaults"
-          value[2].each do |key, value| # collections.radius.published = false
+          value[2].each do |key, value| # collections.radios.published = false
             key == "values" ? value.merge!({ "published" => false }) : nil
           end
           value[3].each do |key, value| # collections.cctv.published = false
@@ -55,14 +56,14 @@ namespace :serve do
   desc "Run local server without a collection"
   namespace :without do
 
-    desc "Run local server without radius collection"
-    task :radius do
+    desc "Run local server without radios collection"
+    task :radios do
       begin
         puts "## Running: bundle exec jekyll serve --config _config-dev.yml --host 0.0.0.0"
         config_prod=YAML.load_file("_config.yml")
         config_prod.each do |key, value|
           if key == "defaults"
-            value[2].each do |key, value| # collections.radius.published = false
+            value[2].each do |key, value| # collections.radios.published = false
               key == "values" ? value.merge!({ "published" => false }) : nil
             end
           end
@@ -162,6 +163,39 @@ namespace :reset do
   end
 end
 
+desc "Continuous integration tests"
+namespace :test do
+  desc "Test HTML with html-proofer"
+  task :html do
+    puts "## Running: bundle exec jekyll build --trace"
+    sh "bundle exec jekyll build --trace"
+
+    def get_options()
+      default_options = {
+        :assume_extension => true,
+        :error_sort => :desc,
+        :url_ignore => ["https://mx.linkedin.com/company/grupo-pv-mexico"],
+       }
+
+      tasks_options = {
+        :internal => { :disable_external => true },
+        :external => { :external_only => true },
+      }
+
+      ARGV.each { |a| task a.to_sym do ; end }
+      tasks_options.each do |key, value|
+        if key.to_s == ARGV[1]
+          default_options.merge!(value)
+        end
+      end
+
+      return default_options
+    end
+
+    HTMLProofer.check_directory("./_site", get_options).run
+  end
+end
+
 def alias_task(tasks)
     tasks.each do |new_name, old_name|
         task new_name, [*Rake.application[old_name].arg_names] => [old_name]
@@ -172,11 +206,16 @@ alias_task [
     [:b, :build],
     [:sd, 'serve:dev'],
     [:sp, 'serve:prod'],
-    [:swr, 'serve:without:radius'],
+    [:swr, 'serve:without:radios'],
     [:swc, 'serve:without:cctv'],
     [:dw,  'deploy:website'],
     [:dnv, 'deploy:new-version'],
     [:rs, 'reset:soft'],
+    [:th, 'test:html'],
+
+    [:deploy, 'deploy:new-version'],
+    [:full, 'serve:prod'],
+    [:test, 'test:html'],
 ]
 
 desc "Run local server with _config-dev.yml"
