@@ -1,0 +1,15 @@
+{% if  page.resources.downloads %}
+  {% for resource in page.resources.downloads %}
+    {% assign i18n-resource-text = page.i18n[site.lang].resources.downloads[forloop.index0].text %}
+    <p>
+      <a class="btn btn-primary btn-sm" href="{{ site.amazon-s3 }}{{ resource.link }}">
+        <strong><i class="fas fa-download fa-lg" data-fa-transform="left-4"></i> {{ site.data.i18n.common.product-layout[site.lang].download }}</strong>
+      </a>
+      <span class="product-downloads">
+      {% if i18n-resource-text %}{{ i18n-resource-text }}{% else %}{{ resource.text }}{% endif %}
+      </span>
+    </p>
+  {% endfor %}
+{% else %}
+  <p>{{ site.data.i18n.common.product-layout[site.lang].downloads-empty }}</p>
+{% endif %}
