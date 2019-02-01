@@ -1,5 +1,5 @@
-{% if page.resources.videos %}
-  {% assign ids = page.resources.videos | split: ", " %}
+{% if include.params.videos or page.resources.videos %}
+  {% assign ids = include.params.videos | default: page.resources.videos | split: ", " %}
   <div class="row">
     {% for id in ids %}
       <div class="col-lg-6">

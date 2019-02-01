@@ -1,22 +1,22 @@
 <hr>
 <nav>
   <div class="nav nav-pills nav-justified flex-column flex-sm-row" role="tablist">
-    {% for tab in layout.tabs %}
+    {% for tab in include.tabs %}
 
       {% if forloop.first == true %}
         {% assign tab_class = 'active' %}
-      {% elsif tab == 'special-offers' and site.original or site.special-offers.customers == false %}
+      {% elsif tab.name == 'special-offers' and site.original or site.special-offers.customers == false %}
         {% assign tab_class = 'd-none' %}
       {% else %}
         {% assign tab_class = '' %}
       {% endif %}
 
       {% capture tab_id %}
-        {{ tab | downcase | replace: ' ', '-' }}
+        {{ tab.name | downcase | replace: ' ', '-' }}
       {% endcapture %}
 
       <a class="nav-item nav-link {{ tab_class }}" data-toggle="tab" href="#{{ tab_id | strip }}" role="tab" aria-controls="{{ tab_id | strip }}" aria-selected="{{ forloop.first }}">
-        {{ site.data.i18n.common.product-layout[site.lang][tab] }}
+        {{ site.data.i18n.common.product-layout[site.lang][tab.name] | default: tab.name }}
       </a>
     {% endfor %}
   </div>
@@ -24,7 +24,7 @@
 <hr>
 
 <div class="tab-content">
-  {% for tab in layout.tabs %}
+  {% for tab in include.tabs %}
 
     {% if forloop.first == true %}
       {% assign tab_class = 'show active' %}
@@ -33,35 +33,14 @@
     {% endif %}
 
     {% capture tab_id %}
-      {{ tab | downcase | replace: ' ', '-' }}
+      {{ tab.name | downcase | replace: ' ', '-' }}
     {% endcapture %}
 
     <div class="tab-pane fade {{ tab_class }}" id="{{ tab_id | strip }}" role="tabpanel" aria-labelledby="{{ tab_id | strip | append: '-tab' }}">
       <div class="container">
-        {% case forloop.index %}
-
-          {% when 1 %}
-            {% include components/product-cards/product-details.html %}
-
-          {% when 2 %}
-            {% include components/assets/file-downloads.html %}
-
-          {% when 3 %}
-            {% include components/videos/youtube.html %}
-
-          {% else %}
-
-            {% if page.resources.special-offers.quantity > 0 %}
-              {% unless site.original or site.special-offers.customers == false %}
-                {% include components/generators/pdf/special-offers.html %}
-              {% endunless %}
-            {% else %}
-              <p>{{ site.data.i18n.common.product-layout[site.lang].special-offers-empty }}</p>
-            {% endif %}
-
-        {% endcase %}
-
+        {% include {{ tab.component | prepend: 'components/' | append: '.html' }} params=tab.params %}
       </div>
     </div>
+
   {% endfor %}
 </div>
