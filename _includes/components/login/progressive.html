@@ -62,10 +62,12 @@
             </div>
           </div>
           {% for file in page.files %}
-            <a class="btn btn-primary btn-sm" href="https://www.dropbox.com/s/{{ file.id }}/{{ file.filename }}{% if file.download %}{{ '?dl=1' }}{% endif %}" target="_blank">
-              <strong><i class="fas fa-download fa-lg" data-fa-transform="left-4"></i> {{ site.data.i18n.components.login[site.lang].download.title | default: 'Download'}}</strong>
-            </a>
-            <span class="download-resource">{{ file.name }}</span>
+            <div>
+              <a class="btn btn-primary btn-sm" href="https://www.dropbox.com/s/{{ file.id }}/{{ file.filename }}{% if file.download %}{{ '?dl=1' }}{% endif %}" target="_blank">
+                <strong><i class="fas fa-download fa-lg" data-fa-transform="left-4"></i> {{ site.data.i18n.components.login[site.lang].download.title | default: 'Download'}}</strong>
+              </a>
+              <span class="download-resource">{{ file.name }}</span>
+            </div>
           {% endfor %}
         </div>
       </div>
