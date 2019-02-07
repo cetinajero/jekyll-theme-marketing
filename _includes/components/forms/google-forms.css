@@ -1,0 +1,5 @@
+<style>
+  .blur-background:before {
+    background-image: url('{{ site.amazon-s3 }}/assets/img/common/forms/{{ page.form.id }}-bg.png');
+  }
+</style>

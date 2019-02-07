@@ -1,27 +1,29 @@
-#progressive-progress-navbar{
+#progressive-progress-navbar {
+
   margin-left: -2%;
-}
 
-.affix {
-  top: 105px;
-  width: 100%;
-  z-index: 9999 !important;
-}
-
-@media(max-width:992px){
-  .affix {
-    top: 0;
+  &.sticky {
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
+    top: 100px;
+    z-index: 1;
   }
+
 }
 
 div.form-group {
-  input{
+
+  input {
     margin-top: 4px;
     margin-bottom: 4px;
   }
+
   label.label-checkbox {
     margin-top: 8px;
     margin-left: 22px;
     font-size: 12px;
   }
+
 }
