@@ -633,9 +633,9 @@ verror@1.10.0:
     extsprintf "^1.2.0"
 
 vue@latest:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.2.tgz#1cc9c9c8f7ba8df45e9b97c284947de78b76301c"
-  integrity sha512-NZAb0H+t3/99g2nygURcEJ+ncvzNLPiEiFI5MGhc1Cjsw5uYprF+Ol7SOd1RXPcmVVzK7jUBl0th2tNgt+VQDg==
+  version "2.6.3"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.3.tgz#180017ba25b94a9864b2921db8644e1062ea82a0"
+  integrity sha512-yftjtahz4UTAtOlXXuw7UaYD86fWrMDAAzqTdqJJx2FIBqcPmBN6kPBHiBJFGaQELVblb5ijbFMXsx0i0F7q3g==
 
 webidl-conversions@^3.0.0, webidl-conversions@^3.0.1:
   version "3.0.1"
