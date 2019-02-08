@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-lg d-lg-none" data-component="navbars/bootstrap">
+
+  <button class="navbar-toggler mr-sm-4" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars mr-sm-5" data-fa-transform="down-1"></i>
+  </button>
+
+  {% include components/logos/progressive.html class="navbar-brand my-1" %} <!-- end navbar-brand -->
+  {% include components/icons/bootstrap.html %} <!-- end icons -->
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      {% include components/navbars/common.liquid component="nav-items/bootstrap" %}
+    </ul>
+  </div>
+
+</nav>

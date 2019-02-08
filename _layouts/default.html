@@ -24,13 +24,25 @@
 
     <div class="page-box">
       <div class="page-box-content">
-        {% include body/header.html %}
-        {{ content }}
-      </div>
-    </div>
 
-    {% include components/footers/progressive/footer.html %}
-    {% include body/scripts.html %}
+        {% include body/header/top-bar.html %} <!-- end top-bar -->
+
+        <header class="header header-two">
+          <div class="header-wrapper">
+
+            {% include components/navbars/progressive.html %} <!-- end progressive-navbar -->
+            {% include components/navbars/bootstrap.html %} <!-- end bootstrap-navbar -->
+
+          </div>
+        </header> <!-- end header -->
+
+        {{ content }} <!-- end content -->
+
+      </div>
+    </div> <!-- end page-box -->
+
+    {% include components/footers/progressive/footer.html %} <!-- end footer -->
+    {% include body/scripts.html %} <!-- end scripts -->
 
   </body>
 
