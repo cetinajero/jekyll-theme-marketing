@@ -1,15 +1,21 @@
-[data-component="icons/bootstrap"] a {
-  border-right: 1px solid rgba(204, 204, 204, 0.8);
-  color: $icon-color-menu;
-  display: inline-block;
-  height: 30px;
-  margin: 8px -4px 8px 0;
-  position: relative;
-  text-align: center;
-  vertical-align: top;
-  width: 41px;
+[data-component="icons/bootstrap"] {
+  a {
+    border-right: 1px solid rgba(204, 204, 204, 0.8);
+    color: $icon-color-menu;
+    display: inline-block;
+    height: 30px;
+    margin: 8px -4px 8px 0;
+    position: relative;
+    text-align: center;
+    vertical-align: top;
+    width: 41px;
 
-  &:last-child {
-    border-right: 0 none
+    &:last-child {
+      border-right: 0 none
+    }
+
+    &:visited {
+      color: $icon-color-menu;
+    }
   }
 }
