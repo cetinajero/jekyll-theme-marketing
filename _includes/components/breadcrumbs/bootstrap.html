@@ -1,0 +1,35 @@
+<nav class="breadcrumb-component" aria-label="breadcrumb">
+  <ol id="breadcrumb" class="breadcrumb">
+    {% for level in (-1..page.categories.size) %}
+      {% if forloop.first %}
+        <li class="breadcrumb-item home"><a href="{{ '/' | relative_url }}"><i class="fas fa-home fa-lg" data-fa-transform="up-2"></i></a></li>
+        <li class="breadcrumb-item ellipsis d-none pl-1">...</li>
+        {% if page.menu-father %}
+          <li class="breadcrumb-item {{ page.collection }} pl-1"><a href="{{ page.collection | prepend: '/' | relative_url }}">{% if site.data.i18n.catalog[page.collection][site.lang][page.collection].title %}{{ site.data.i18n.catalog[page.collection][site.lang][page.collection].title }}{% else %}{{ page.collection | capitalize }}{% endif %}</a></li>
+        {% endif %}
+      {% elsif forloop.last %}
+        <li class="breadcrumb-item {{ i18n-id }} pl-1 active" aria-current="page">{% if i18n-title %}{{ i18n-title }}{% else %}{{ page.title }}{% endif %}</li>
+      {% else %}
+        {% assign cat-num = forloop.index %}
+        {% assign url-size = page.url | size | minus: 2 %}
+        {% assign sections = page.url | slice: 1,url-size | split : '/' %}
+        {% capture level-url %}
+          {% for section in sections %}
+            {% if forloop.index > cat-num %} {% break %} {% endif %}
+            {{ section | append: '/' }}
+          {% endfor %}
+        {% endcapture %}
+        {% assign level-url = level-url | strip_newlines | replace: ' ', '' | relative_url %}
+        {% assign level-url-size = level-url | size | minus: 2 %}
+        {% assign level-i18n-id = level-url | slice: 1,level-url-size | replace: '/', '-' | remove_first: page.collection | remove_first: '-' %}
+        {% assign level-i18n-title = site.data.i18n.catalog[page.collection][site.lang][level-i18n-id].title %}
+        {% assign page-commercial-downcase = page.commercial | downcase | replace: ' ', '-' %}
+        {% unless page.categories[level] == page-commercial-downcase %}
+          <li class="breadcrumb-item {{ level-i18n-id }} pl-1"><a href="{{ level-url }}">{% if level-i18n-title %}{{ level-i18n-title }}{% else %}{{ page.categories[level] | replace: '-', ' ' | capitalize }}{% endif %}</a></li>
+        {% endunless %}
+      {% endif %}
+    {% endfor %}
+  </ol>
+</nav>
+
+{% include components/breadcrumbs/bootstrap.js %}

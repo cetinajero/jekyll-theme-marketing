@@ -1,20 +1,22 @@
 {% if site.address.size == 1 %}
   {% assign classes = "col-xs-10 col-sm-12 col-md-12" %}
 {% else %}
-  {% assign classes = "col-xs-5 col-sm-6 col-md-6" %}
+  {% assign classes = "col-5 col-sm-6 col-md-6" %}
 {% endif %}
 
 <div class="phone-active col-sm-9 col-md-9">
   <a href="#" class="close" data-proofer-ignore><span>{{ site.data.i18n.common.menu[site.lang].close.title }}</span>×</a>
 
   <div class="custom col-sm-10">
-    {% for address in site.address %}
-      <div class="{{ classes }}">
-        <span class="phone">
-          <strong>{{ address.name }}:</strong>
-          <a href="tel:{{ address.phone[0].number }}">{{ address.phone[0].number }}</a>
-        </span>
-      </div>
-    {% endfor %}
+    <div class="row">
+      {% for address in site.address %}
+        <div class="{{ classes }}">
+          <span class="phone">
+            <strong>{{ address.name }}:</strong>
+            <a href="tel:{{ address.phone[0].number }}">{{ address.phone[0].number }}</a>
+          </span>
+        </div>
+      {% endfor %}
+    </div>
   </div>
 </div>

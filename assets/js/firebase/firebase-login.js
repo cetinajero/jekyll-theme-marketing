@@ -17,16 +17,16 @@ jQuery(document).ready(function(){
         user.getIdToken().then(function(accessToken) {
           document.getElementById('sign-in-welcome').textContent = welcome;
           document.getElementById('sign-in-name').textContent = displayName;
-          btnLogin.classList.add('hide');
-          btnLogout.classList.remove('hide');
+          btnLogin.classList.add('d-none');
+          btnLogout.classList.remove('d-none');
 
         });
       } else {
         // User is signed out.
         document.getElementById('sign-in-welcome').textContent = '';
         document.getElementById('sign-in-name').textContent = '';
-        btnLogin.classList.remove('hide');
-        btnLogout.classList.add('hide');
+        btnLogin.classList.remove('d-none');
+        btnLogout.classList.add('d-none');
       }
     }, function(error) {
       console.log(error);

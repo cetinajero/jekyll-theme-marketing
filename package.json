@@ -11,7 +11,7 @@
     "@fortawesome/fontawesome-free-brands": "latest",
     "@fortawesome/fontawesome-free-regular": "latest",
     "@fortawesome/fontawesome-free-solid": "latest",
-    "bootstrap": "3.4.0",
+    "bootstrap": "latest",
     "flag-icon-css": "latest",
     "jquery": "1.11.2",
     "js-md5": "latest",

@@ -1,6 +1,10 @@
 ---
 layout: page
-tabs: [description, downloads, videos, special-offers]
+tabs:
+  - { name: description, component: product-cards/product-details }
+  - { name: downloads, component: assets/file-downloads }
+  - { name: videos, component: videos/youtube }
+  - { name: special-offers, component: generators/pdf/special-offers }
 special-offers:
   format: letter
   orientation: portrait
@@ -30,20 +34,8 @@ special-offers:
     </div>
     {% include components/product-cards/product-generals.html %}
   </div>
-  <div class="row">
-    {% include components/nav-tabs/product-nav-tab.html %}
+  <div>
+    {% include components/nav-tabs/product-nav-tab.html tabs=layout.tabs %}
   </div>
 </div> <!-- /container -->
-<script type="text/javascript">
-  jQuery('#lightSlider').lightSlider({
-    gallery: true,
-    item: 1,
-    loop: true,
-    slideMargin: 10,
-    thumbItem: 4,
-
-    galleryMargin: 5,
-    thumbMargin: 5
-  });
-</script>
-<script src="/assets/js/bootstrap/nav-tabs.js"></script>
+{% include components/nav-tabs/product-nav-tab.js %}

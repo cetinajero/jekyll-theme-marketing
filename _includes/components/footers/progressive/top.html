@@ -1,6 +1,6 @@
 {% for section in site.data.components.footers.progressive.common %}
   {% unless site.links.footer[section.name.title].disabled %}
-    <aside class="col-sm-{{ section.grid-class }} col-md-{{ section.grid-class }}">
+    <aside class="col-md-{{ section.grid-class }}">
       <div class="title-block">
         <h3 class="title">
           <i class="{{ section.icon }}"></i>

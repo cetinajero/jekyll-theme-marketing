@@ -5,10 +5,10 @@
         {% if site.exchange-rates.usd %} {% include body/header/exchange-rates/usd.html %} {% endif %}
       </div>
       <div id="sign-in">
-        <span id="sign-in-welcome" class="hidden-xs"></span>
+        <span id="sign-in-welcome" class="d-none d-md-inline"></span>
         <strong id="sign-in-name"></strong>
-        <a id="login-button" class="btn btn-xs btn-warning hide" href="/login/?mode=select&signInSuccessUrl={{ page.url }}"><i class="fas fa-sign-in-alt fa-lg" data-fa-transform="grow-2 left-3"></i> {{ site.data.i18n.common.firebase[site.lang].login.title }}</a>
-        <button id="logout-button" class="btn btn-xs btn-warning hide"><i class="fas fa-sign-out-alt fa-lg" data-fa-transform="grow-2 left-3"></i> {{ site.data.i18n.common.firebase[site.lang].logout.title }}</button>
+        <a id="login-button" class="btn btn-xs btn-warning d-none" href="/login/?mode=select&signInSuccessUrl={{ page.url }}"><i class="fas fa-sign-in-alt fa-lg" data-fa-transform="grow-2 left-3"></i> {{ site.data.i18n.common.firebase[site.lang].login.title }}</a>
+        <button id="logout-button" class="btn btn-xs btn-warning d-none"><i class="fas fa-sign-out-alt fa-lg" data-fa-transform="grow-2 left-3"></i> {{ site.data.i18n.common.firebase[site.lang].logout.title }}</button>
       </div>
     </div>
     <script>

@@ -6,7 +6,7 @@
         <div class="row sidebar">
           {% include components/footers/progressive/top.html %}
           {% if site.title == 'Denac' %}
-            <aside class="col-sm-3 col-md-3">
+            <aside class="col-md-3">
               {% include components/social-media/progressive.html %}
             </aside>
           {% endif %}
@@ -21,7 +21,7 @@
         {% include components/copyrights/progressive.html %}
 
         {% if site.title == 'Grupo PV' %}
-          <aside class="col-sm-4 col-md-4">
+          <aside class="col-md-4">
             <div class="title-block"><h3 class="title"><i class="fas fa-gavel"></i> {{ site.data.i18n.common.footer[site.lang].policies.title }}</h3></div>
             <div class="custom">
               <ul class="footer-list">
@@ -33,14 +33,14 @@
               </ul>
             </div>
           </aside>
-          <aside class="col-sm-3 col-md-3">
+          <aside class="col-md-3">
             {% include components/social-media/progressive.html %}
           </aside>
         {% elsif site.original == false %}
           {% include components/contact-cards/phone-card.html %}
         {% endif %}
 
-        <div class="col-xs-12 col-sm-1 col-md-1">
+        <div class="col-md-1">
           {% include components/scroll-to-tops/progressive.html %}
           {% include components/lang-switchers/two-langs.html %}
         </div>

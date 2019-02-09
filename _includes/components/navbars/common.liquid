@@ -1,0 +1,14 @@
+{% assign sorted-menus = site.data.menus | sort %}
+{% for menu-types in sorted-menus %}
+  {% for menu in menu-types[1] %}
+    {% if menu-types[0] == 'common' or menu-types[0] == 'customers' and site.original == false %}
+      {% for collection-type in site.defaults %}
+        {% if collection-type.scope.type == menu.collection %}
+          {% if collection-type.values.published == true -%}
+            {% include {{ include.component | prepend: 'components/' | append: '.html' }} %}
+          {% endif -%}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}

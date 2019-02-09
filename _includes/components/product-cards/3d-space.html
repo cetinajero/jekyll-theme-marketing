@@ -4,7 +4,7 @@
             <div class="shadow"></div>
             <img src="{{ include.img }}" alt="{{ include.model }}" class="img-center"/>
             <a href="{{ include.href }}{% if site.special-offers.customers %}{{ '#special-offers' }}{% endif %}"><div class="image_overlay"></div></a>
-            <div id="view_details-{{ include.id }}" class="view_details hide" data-id="{{ include.id }}">View details</div>
+            <div id="view_details-{{ include.id }}" class="view_details d-none" data-id="{{ include.id }}">View details</div>
             <div class="stats">
               <a href="{{ include.href }}{% if site.special-offers.customers %}{{ '#special-offers' }}{% endif %}">
                 <div class="stats-container">

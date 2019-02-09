@@ -5,7 +5,7 @@
     <div class="col-sm-12 col-md-12 vg_component_box">
       <div class="container-disabled">
         <div class="login" id="donwload_login">
-          <div class="hide page-header">
+          <div class="d-none page-header">
             <div class="container">
               <h1 class="title">{{ site.data.i18n.components.login[site.lang].login.title | default: 'Login'}}</h1>
             </div>
@@ -28,7 +28,7 @@
                   <input type="password" name="password" id="password" value="" class="validate-password required" size="25" maxlength="99" required="" aria-required="true">
                 </div>
               </div>
-              <div class="hide control-group margin-bottom-only">
+              <div class="d-none control-group margin-bottom-only">
                 <div class="control-label">
                   <label>{{ site.data.i18n.components.login[site.lang].remember-me.title | default: 'Login'}}</label>
                   <div class="new-checkbox">
@@ -39,7 +39,7 @@
                   </div>
                 </div>
               </div>
-              <div id="donwload_alert" class="hide alert alert-danger">
+              <div id="donwload_alert" class="d-none alert alert-danger">
                 <div class="fas fa-exclamation-circle alert-icon fa-lg" data-fa-transform="up-1"></div>
                 <span>{{ site.data.i18n.components.login[site.lang].wrong-credentials.title | default: 'The user credentials are incorrect, please verify them and try again.'}}</span>
               </div>
@@ -51,11 +51,11 @@
             </fieldset>
           </form>
         </div>
-        <div class="hide list-group article-links">
+        <div class="d-none list-group article-links">
           <a class="list-group-item" href="#" data-proofer-ignore>{{ site.data.i18n.components.login[site.lang].lost-password.title | default: 'Forgot your password?'}}</a>
           <a class="list-group-item" href="#" data-proofer-ignore>{{ site.data.i18n.components.login[site.lang].lost-username.title | default: 'Forgot your username?'}}</a>
         </div>
-        <div id="donwload_list" class="hide">
+        <div id="donwload_list" class="d-none">
           <div class="page-header">
             <div class="container">
               <h4 class="title">{{ site.data.i18n.components.login[site.lang].downloads.title | default: 'Downloads'}}</h4>
@@ -79,11 +79,11 @@
   function donwload_login(){
     hash = md5(document.getElementById("username").value)+md5(document.getElementById("password").value);
     if (hash == '{{ page.username | append: page.password }}'){
-      document.getElementById("donwload_login").classList.add("hide");
-      document.getElementById("donwload_alert").classList.add("hide");
-      document.getElementById("donwload_list").classList.remove("hide");
+      document.getElementById("donwload_login").classList.add("d-none");
+      document.getElementById("donwload_alert").classList.add("d-none");
+      document.getElementById("donwload_list").classList.remove("d-none");
     } else {
-      document.getElementById("donwload_alert").classList.remove("hide");
+      document.getElementById("donwload_alert").classList.remove("d-none");
     }
   }
 </script>
