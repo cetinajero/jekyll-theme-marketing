@@ -7,11 +7,15 @@
     <div class="dropdown-menu" aria-labelledby="{{ menu-name }}-dropdown">
       {% for sub-menu in menu.sub-menus %}
         {% assign sub-menu-name = sub-menu.name | split: ' => ' | first %}
-        <a class="dropdown-item" href="{{ sub-menu.name | split: ' => ' | last }}">{{ site.data.i18n.catalog[menu.collection][site.lang][sub-menu-name].title | default: sub-menu-name }}</a>
+        <a class="dropdown-item" href="{{ sub-menu.name | split: ' => ' | last }}">
+          {{ site.data.i18n.catalog[menu.collection][site.lang][sub-menu-name].title | default: sub-menu-name }}
+        </a>
       {% endfor %}
     </div>
   </li>
 {% else %}
-  <a class="nav-item nav-link" href="{{ menu.name | split: ' => ' | last }}">{{ site.data.i18n.catalog[menu.collection][site.lang][menu-name].title | default: menu-name }}</a>
+  <a class="nav-item nav-link" href="{{ menu.name | split: ' => ' | last }}" data-component="nav-items/bootstrap">
+    {{ site.data.i18n.catalog[menu.collection][site.lang][menu-name].title | default: menu-name }}
+  </a>
 {% endif %}
 <!-- <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a> -->

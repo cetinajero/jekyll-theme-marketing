@@ -11,12 +11,12 @@
       {% seo title=false %}
     {% endif %}
 
-    {% include head/meta.html %}
-    {% include head/scripts.html %}
-    {% include head/firebase/sdk.html %}
-    {% include head/fonts.html %}
-    {% include head/style.html %}
-    {% include head/google-analytics.html %}
+    {% include components/meta/progressive.html %}
+    {% include components/scripts/head.js %}
+    {% include components/firebase/sdk.js %}
+    {% include components/fonts/google.html %}
+    {% include components/stylesheets/progressive.html %}
+    {% include components/analytics/google.js %}
 
   </head>
 
@@ -25,7 +25,7 @@
     <div class="page-box">
       <div class="page-box-content">
 
-        {% include body/header/top-bar.html %} <!-- end top-bar -->
+        {% include components/topbars/progressive.html %} <!-- end top-bar -->
 
         <header class="header header-two">
           <div class="header-wrapper">
@@ -42,7 +42,7 @@
     </div> <!-- end page-box -->
 
     {% include components/footers/progressive/footer.html %} <!-- end footer -->
-    {% include body/scripts.html %} <!-- end scripts -->
+    {% include components/scripts/body.js %} <!-- end scripts -->
 
   </body>
 
