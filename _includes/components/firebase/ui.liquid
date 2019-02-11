@@ -1,6 +1,7 @@
 {% capture firebase-lang %}
-  {{ site.lang |  slice: 0,2 | default: "en" }}
+  {{ site.lang | slice: 0,2 | default: "en" }}
 {% endcapture %}
+{% assign firebase-lang = firebase-lang | strip %}
 {% if firebase-lang == "es" %}
   {% assign firebase-lang = "es_419" %}
 {% endif %}
