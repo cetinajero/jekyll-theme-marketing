@@ -4,6 +4,12 @@
     &:hover {
       text-decoration: none;
     }
+    @include media-breakpoint-only(lg) {
+      font-size: 7.6pt!important;
+      &:visited {
+        font-size: 7.6pt!important;
+      }
+    }
   }
 
 }

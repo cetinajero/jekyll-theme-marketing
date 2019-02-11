@@ -1,0 +1,24 @@
+<div id="top-box">
+  <div class="container-fluid mx-xl-5">
+    <div class="custom">
+      <div id="exchange-rates">
+        {% if site.exchange-rates.usd %}
+          {% include components/exchange-rates/progressive.html %}
+        {% endif %}
+      </div>
+      <div id="sign-in">
+        <span id="sign-in-welcome" class="d-none d-md-inline"></span>
+        <strong id="sign-in-name"></strong>
+        <a id="login-button" class="btn btn-xs btn-warning d-none" href="/login/?mode=select&signInSuccessUrl={{ page.url }}">
+          <i class="fas fa-sign-in-alt fa-lg" data-fa-transform="grow-2 left-3"></i>
+          {{ site.data.i18n.common.firebase[site.lang].login.title }}
+        </a>
+        <button id="logout-button" class="btn btn-xs btn-warning d-none">
+          <i class="fas fa-sign-out-alt fa-lg" data-fa-transform="grow-2 left-3"></i>
+          {{ site.data.i18n.common.firebase[site.lang].logout.title }}
+        </button>
+      </div>
+    </div>
+    {% include components/topbars/progressive.js %}
+  </div>
+</div>

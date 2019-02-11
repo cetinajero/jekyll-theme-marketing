@@ -8,9 +8,15 @@
 $font-color-menu: {{ site.css.menu.font-color }};
 $icon-color-menu: {{ site.css.menu.icons }};
 
-// Import partials.
+// Import bootstrap partials
+@import "../assets/node_modules/bootstrap/scss/functions";
+@import "../assets/node_modules/bootstrap/scss/variables";
+@import "../assets/node_modules/bootstrap/scss/mixins/breakpoints";
+
+// Import flag-icon partials
 @import "../assets/node_modules/flag-icon-css/sass/flag-icon";
 
+// Import layout partials
 @import "grupopv/navbar";
 @import "layouts/404";
 @import "layouts/default";
@@ -20,6 +26,7 @@ $icon-color-menu: {{ site.css.menu.icons }};
 @import "common/common";
 @import "common/custom";
 
+// Import component partials
 @import "components/breadcrumbs/bootstrap";
 @import "components/contact-cards/location";
 @import "components/contact-cards/phone-card";
@@ -29,6 +36,7 @@ $icon-color-menu: {{ site.css.menu.icons }};
 @import "components/icons/bootstrap";
 @import "components/lang-switchers/toogle-lang";
 @import "components/login/progressive";
+@import "components/logos/progressive";
 @import "components/megamenu/progressive";
 @import "components/nav-items/bootstrap";
 @import "components/navbars/bootstrap";

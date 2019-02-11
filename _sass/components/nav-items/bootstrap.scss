@@ -1,12 +1,16 @@
 [data-component="nav-items/bootstrap"] {
 
+  color: $icon-color-menu;
+  &:hover,
+  &:visited {
+    color: $icon-color-menu;
+  }
   .nav-link {
     color: $icon-color-menu;
   }
 
   .dropdown-menu {
     background-color: $icon-color-menu;
-
     .dropdown-item {
       color: #ddd;
       &:hover {

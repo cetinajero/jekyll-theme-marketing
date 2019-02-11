@@ -57,7 +57,10 @@ yarn-error.log
 /assets/node_modules/bootstrap/grunt/
 /assets/node_modules/bootstrap/js/
 /assets/node_modules/bootstrap/less/
-/assets/node_modules/bootstrap/scss/
+/assets/node_modules/bootstrap/scss/**/*.scss
+!/assets/node_modules/bootstrap/scss/_functions.scss
+!/assets/node_modules/bootstrap/scss/_variables.scss
+!/assets/node_modules/bootstrap/scss/mixins/_breakpoints.scss
 /assets/node_modules/bootstrap/test-infra/
 /assets/node_modules/bootstrap/dist/**/*.js
 /assets/node_modules/bootstrap/dist/**/*.css

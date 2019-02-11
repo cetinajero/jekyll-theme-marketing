@@ -1,4 +1,7 @@
 <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase-firestore.js"></script>
 <script src="{{ '/assets/js/firebase/firebase-sdk.js' | relative_url }}"></script>
-{% if site.original %}<script src="{{ '/assets/js/firebase/firebase-login.js' | relative_url }}"></script>{% endif %}
+
+{% if site.original %}
+  <script src="{{ '/assets/js/firebase/firebase-login.js' | relative_url }}"></script>
+{% endif %}
