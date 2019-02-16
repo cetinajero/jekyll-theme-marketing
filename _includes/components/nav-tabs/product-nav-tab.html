@@ -11,13 +11,15 @@
         {% assign tab_class = '' %}
       {% endif %}
 
-      {% capture tab_id %}
-        {{ tab.name | downcase | replace: ' ', '-' }}
-      {% endcapture %}
+      {% if site.links.videos[tab.name].disabled == null %}
+        {% capture tab_id %}
+          {{ tab.name | downcase | replace: ' ', '-' }}
+        {% endcapture %}
 
-      <a class="nav-item nav-link {{ tab_class }}" data-toggle="tab" href="#{{ tab_id | strip }}" role="tab" aria-controls="{{ tab_id | strip }}" aria-selected="{{ forloop.first }}">
-        {{ site.data.i18n.common.product-layout[site.lang][tab.name] | default: tab.name }}
-      </a>
+        <a class="nav-item nav-link {{ tab_class }}" data-toggle="tab" href="#{{ tab_id | strip }}" role="tab" aria-controls="{{ tab_id | strip }}" aria-selected="{{ forloop.first }}">
+          {{ site.data.i18n.common.product-layout[site.lang][tab.name] | default: tab.name }}
+        </a>
+      {% endif %}
     {% endfor %}
   </div>
 </nav>

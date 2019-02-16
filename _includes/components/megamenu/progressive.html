@@ -7,16 +7,22 @@
         <div class="custom">
           <div class="sub-list"> <!-- START SECTIONS -->
             {% for sub-menu in menu.sub-menus %}
-              <div class="box closed">
-                {% assign sub-menu-name = sub-menu.name | split: ' => ' | first %}
-                <h6 class="title"><a href="{{ sub-menu.name | split: ' => ' | last }}">{{ site.data.i18n.catalog[menu.collection][site.lang][sub-menu-name].title | default: sub-menu-name }}</a></h6>
-                <ul>
-                  {% for sub-sub-menu in sub-menu.sub-menus %}
-                    {% assign sub-sub-menu-name = sub-sub-menu | split: ' => ' | first %}
-                    <li><a href="{{ sub-sub-menu | split: ' => ' | last }}">{{ site.data.i18n.catalog[menu.collection][site.lang][sub-sub-menu-name].title | default: sub-sub-menu-name }}</a></li>
-                  {% endfor %}
-                </ul>
-              </div>
+              {% assign sub-menu-name = sub-menu.name | split: ' => ' | first %}
+              {% if site.links.dropdown[sub-menu-name].disabled == null %}
+                <div class="box closed">
+                  <h6 class="title">
+                    <a href="{{ sub-menu.name | split: ' => ' | last }}">
+                      {{ site.data.i18n.catalog[menu.collection][site.lang][sub-menu-name].title | default: sub-menu-name }}
+                    </a>
+                  </h6>
+                  <ul>
+                    {% for sub-sub-menu in sub-menu.sub-menus %}
+                      {% assign sub-sub-menu-name = sub-sub-menu | split: ' => ' | first %}
+                      <li><a href="{{ sub-sub-menu | split: ' => ' | last }}">{{ site.data.i18n.catalog[menu.collection][site.lang][sub-sub-menu-name].title | default: sub-sub-menu-name }}</a></li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              {% endif %}
             {% endfor %}
           </div> <!-- END SECTIONS -->
           <div class="promo-block">

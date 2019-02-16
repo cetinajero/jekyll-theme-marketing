@@ -7,9 +7,11 @@
     <div class="dropdown-menu" aria-labelledby="{{ menu-name }}-dropdown">
       {% for sub-menu in menu.sub-menus %}
         {% assign sub-menu-name = sub-menu.name | split: ' => ' | first %}
-        <a class="dropdown-item" href="{{ sub-menu.name | split: ' => ' | last }}">
-          {{ site.data.i18n.catalog[menu.collection][site.lang][sub-menu-name].title | default: sub-menu-name }}
-        </a>
+        {% if site.links.dropdown[sub-menu-name].disabled == null %}
+          <a class="dropdown-item" href="{{ sub-menu.name | split: ' => ' | last }}">
+            {{ site.data.i18n.catalog[menu.collection][site.lang][sub-menu-name].title | default: sub-menu-name }}
+          </a>
+        {% endif %}
       {% endfor %}
     </div>
   </li>
