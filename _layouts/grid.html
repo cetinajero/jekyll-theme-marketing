@@ -10,12 +10,14 @@ layout: page
         {% assign url-size = doc.url | size | minus: 2 %}
         {% assign i18n-id = doc.url | slice: 1,url-size | replace: '/', '-' | remove_first: collection.label | remove_first: '-' %}
         {% assign i18n-title = site.data.i18n.catalog[collection.label][site.lang][i18n-id].title %}
-        {% if doc.i18n[site.lang].description %}
-          {% assign i18n-description = doc.i18n[site.lang].description %}
-        {% else %}
-          {% assign i18n-description = site.data.i18n.catalog[collection.label][site.lang][i18n-id].desc %}
+        {% if site.links.product[i18n-id].disabled == null %}
+          {% if doc.i18n[site.lang].description %}
+            {% assign i18n-description = doc.i18n[site.lang].description %}
+          {% else %}
+            {% assign i18n-description = site.data.i18n.catalog[collection.label][site.lang][i18n-id].desc %}
+          {% endif %}
+          {% include components/product-cards/progressive.html %}
         {% endif %}
-        {% include components/product-cards/progressive.html %}
       {% endfor %}
     {% endfor %}
   </div>
