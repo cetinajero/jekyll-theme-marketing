@@ -19,7 +19,7 @@ layout: default
 {% include components/breadcrumbs/bootstrap.html %}
 
 <h2 id="{{ i18n-id }}" class="post {{ class }}">{% if i18n-title %}{{ i18n-title }}{% else %}{{ page.title }}{% endif %}</h2>
-<h3 id="{{ i18n-id }}" class="post {{ class }}">{% if i18n-subtitle %}{{ i18n-subtitle }}{% else %}{{ page.subtitle }}{% endif %}</h3>
+<h3 id="{{ i18n-id }}" class="post text-muted {{ class }}">{% if i18n-subtitle %}{{ i18n-subtitle }}{% else %}{{ page.subtitle }}{% endif %}</h3>
 
 <div class="post">
   <div id="sign-in-content"></div>
