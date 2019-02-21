@@ -1,0 +1,22 @@
+<div data-component="videos/background">
+  <div id="cm-video-bg" class="full-width-box background-image-available">
+    <div class="fwb-bg fwb-video my-4 my-sm-0" style="background-image: url('https://s3-us-west-2.amazonaws.com/grupopv-public/assets/components/videos/background/{{ include.background }}');">
+      <video autoplay muted loop>
+        <source src="https://s3-us-west-2.amazonaws.com/grupopv-public/assets/components/videos/background/{{ include.video }}" type="video/mp4">
+      </video>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="white text-center col">
+          <div class="title-box text-center title-white">
+            <h1 class="title">{{ include.title }}</h1>
+          </div>
+          <p>
+            {{ include.desc }}
+          </p>
+          <a href="{{ include.href }}" class="btn btn-default">{{ include.button }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
