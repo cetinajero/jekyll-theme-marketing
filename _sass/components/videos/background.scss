@@ -1,0 +1,19 @@
+[data-component="videos/background"] {
+  @include media-breakpoint-up(lg) {
+    .fwb-video {
+      height: 900px;
+    }
+  }
+  @include media-breakpoint-between(sm, md) {
+    .fwb-video {
+      height: 620px;
+    }
+  }
+  @include media-breakpoint-only(xs) {
+    .fwb-video {
+      video {
+        width: 100%!important;
+      }
+    }
+  }
+}
