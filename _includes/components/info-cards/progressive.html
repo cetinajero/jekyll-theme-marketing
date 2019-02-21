@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="row services">
+    {% for info-card in page.info-cards %}
+      <div class="text-center col-12 col-sm my-4 my-sm-0">
+        <a href="{{ info-card.href }}">
+          <div class="big-icon bg text-primary" data-appear-animation="{{ info-card.animation }}">
+            {{ info-card.icon }}
+          </div>
+        </a>
+        <h4 class="title" data-appear-animation="{{ info-card.animation }}">{{ info-card.title }}</h4>
+        <div class="text-small" data-appear-animation="{{ info-card.animation }}">
+          {{ info-card.desc }}
+          <div class="clearfix"></div>
+          <br>
+          <button onclick="window.location.href='{{ info-card.href }}'" class="btn btn-default" data-appear-animation="{{ info-card.animation }}">{{ info-card.button }}</button>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
