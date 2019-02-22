@@ -33,6 +33,7 @@
     var markerCluster = new MarkerClusterer(map, createMarkers(),
        { imagePath: cluster_image }
     );
+    hideMarkersOnLatLng(markerCluster, 0, 0);
   }
 
   function createMarkers() {
@@ -76,6 +77,15 @@
       });
       infowindow.open(map, marker);
     });
+  }
+
+  function hideMarkersOnLatLng(cluster, lat, lng) {
+    markers = cluster.getMarkers();
+    for (var i = 0; i < markers.length; i++) {
+      if (markers[i].position.lat() == lat && markers[i].position.lng() == lng) {
+        cluster.removeMarker(markers[i]);
+      }
+    }
   }
 
   function infoWindowContent(data) {
