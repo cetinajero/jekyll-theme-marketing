@@ -1,4 +1,13 @@
 [data-component="maps/google-maps"] {
   height: 600px;
   width: 100%;
+
+  @include media-breakpoint-down(xs) {
+    #content {
+      max-width: 200px!important;
+      img {
+        max-width: 150px!important;
+      }
+    }
+  }
 }
