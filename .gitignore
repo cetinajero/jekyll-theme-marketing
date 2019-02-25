@@ -74,6 +74,9 @@ yarn-error.log
 
 # flag-icon-css
 /assets/node_modules/flag-icon-css/*.html
+/assets/node_modules/flag-icon-css/*.json
+/assets/node_modules/flag-icon-css/*.prettierignore
+/assets/node_modules/flag-icon-css/*.sh
 /assets/node_modules/flag-icon-css/assets/
 /assets/node_modules/flag-icon-css/css/
 /assets/node_modules/flag-icon-css/less/
