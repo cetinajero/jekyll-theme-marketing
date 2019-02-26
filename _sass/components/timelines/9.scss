@@ -1,0 +1,152 @@
+[data-component="timelines/9"] {
+  .circle {
+    img {
+      border-radius: 50%;
+    }
+  }
+}
+
+.main-timeline9{position:relative}
+
+.main-timeline9:after,.main-timeline9:before{content:"";display:block;width:100%;clear:both}
+
+/* Linea central */
+
+.main-timeline9:before{content:"";width:3px;height:100%;background:#302124;position:absolute;top:0;left:50%}
+
+.main-timeline9 .timeline{width:50%;float:left;position:relative;z-index:1}
+
+.main-timeline9 .timeline:after,.main-timeline9 .timeline:before{content:"";display:block;width:0%;clear:both}
+
+.main-timeline9 .timeline:last-child:before{top:auto;bottom:0}
+
+.main-timeline9 .timeline:last-child:nth-child(even):before{right:auto;left:-12px;bottom:-2px}
+
+.main-timeline9 .timeline-content{text-align:center;margin-top:8px;position:relative;transition:all .3s ease 0s}
+
+
+/* lineas Horizontales */
+
+.main-timeline9 .timeline-content:before{content:"";width:100%;height:5px;background:#1D6BD6;position:absolute;top:88px;left:0;z-index:-1}
+
+
+/* Circulos grandes */
+
+.main-timeline9 .circle{width:180px;height:180px;border-radius:50%;background:#fff;border:8px solid #1D6BD6;float:left;margin-right:25px;position:relative}
+
+.main-timeline9 .circle span:after,.main-timeline9 .circle span:before,.main-timeline9 .circle:before{content:"";margin:auto;position:absolute;right:-33px;bottom:0;z-index:-1}
+
+.main-timeline9 .circle span{display:block;width:100%;height:100%;border-radius:50%;line-height:160px;border:3px solid #adabab;font-size:80px;color:#454344}
+
+.main-timeline9 .circle span:after,.main-timeline9 .circle span:before{width:28px;height:50px;background:#fff;border-radius:0 0 0 21px;top:-54px}
+
+.main-timeline9 .circle span:after{border-radius:21px 0 0;top:0;bottom:-56px}
+
+.main-timeline9 .content{display:table;padding-right:40px;position:relative}
+
+
+/* Contenedor del año */
+
+.main-timeline9 .year{display:block;padding:10px;margin:10px 0 50px;background:#1D6BD6;border-radius:7px;font-size:25px;color:#fff}
+
+
+/* Titulos */
+
+.main-timeline9 .title{font-size:25px;font-weight:700;color:#1D6BD6;margin-top:0}
+
+.main-timeline9 .icon span:after,.main-timeline9 .icon span:before,.main-timeline9 .icon:before{content:"";height:25px;margin:auto;position:absolute;bottom:0;z-index:-1;left:-15px}
+
+.main-timeline9 .description{font-size:14px;color:#a6a6a6;text-align:justify}
+
+
+/* Circulos centrales en linea del tiempo */
+
+.main-timeline9 .icon{width:25px;height:25px;border-radius:50%;background:#fff;border:4px solid #1D6BD6;position:absolute;top:78px;right:-14px}
+
+.main-timeline9 .icon:before{width:15px;background:#1D6BD6;top:-1px}
+
+.main-timeline9 .icon span:after,.main-timeline9 .icon span:before{width:21px;background:#fff;border-radius:0 0 21px;top:-30px}
+
+.main-timeline9 .icon span:after{border-radius:0 21px 0 0;top:0;left:-15px;bottom:-30px}
+
+.main-timeline9 .timeline:nth-child(2n) .circle,.main-timeline9 .timeline:nth-child(2n) .timeline-content{float:right}
+
+.main-timeline9 .timeline:nth-child(2n) .circle{margin:0 0 0 25px}
+
+.main-timeline9 .timeline:nth-child(2n) .circle:before{right:auto;left:-33px;box-shadow:-7px 0 9px -7px #444 inset}
+
+.main-timeline9 .timeline:nth-child(2n) .circle span:after,.main-timeline9 .timeline:nth-child(2n) .circle span:before{right:auto;left:-33px;border-radius:0 0 21px}
+
+.main-timeline9 .timeline:nth-child(2n) .circle span:after{border-radius:0 21px 0 0}
+
+.main-timeline9 .timeline:nth-child(2n) .content{padding:0 0 0 40px;margin-left:2px}
+
+.main-timeline9 .timeline:nth-child(2n) .icon{right:auto;left:-14px}
+
+.main-timeline9 .timeline:nth-child(2n) .icon span:after,.main-timeline9 .timeline:nth-child(2n) .icon span:before,.main-timeline9 .timeline:nth-child(2n) .icon:before{left:auto;right:-15px}
+
+.main-timeline9 .timeline:nth-child(2n) .icon span:before{border-radius:0 0 0 21px}
+
+.main-timeline9 .timeline:nth-child(2n) .icon span:after{border-radius:21px 0 0}
+
+.main-timeline9 .timeline:nth-child(2){margin-top:180px}
+
+.main-timeline9 .timeline:nth-child(odd){margin:-175px 0 0}
+
+.main-timeline9 .timeline:nth-child(even){margin-bottom:80px}
+
+.main-timeline9 .timeline:first-child,.main-timeline9 .timeline:last-child:nth-child(even){margin:0}
+
+
+@media only screen and (max-width:990px) {
+
+  .main-timeline9:before{left:100%}
+
+  .main-timeline9 .timeline{width:100%;float:none;margin-bottom:20px!important}
+
+  .main-timeline9 .timeline:first-child:before,.main-timeline9 .timeline:last-child:before{left:auto!important;right:-13px!important}
+
+  .main-timeline9 .timeline:nth-child(2n) .circle{float:left;margin:0 25px 0 0}
+
+  .main-timeline9 .timeline:nth-child(2n) .circle:before{right:-33px;left:auto;box-shadow:7px 0 9px -7px #444 inset}
+
+  .main-timeline9 .timeline:nth-child(2n) .circle span:after,.main-timeline9 .timeline:nth-child(2n) .circle span:before{right:-33px;left:auto;border-radius:0 0 0 21px}
+
+  .main-timeline9 .timeline:nth-child(2n) .circle span:after{border-radius:21px 0 0}
+
+  .main-timeline9 .timeline:nth-child(2n) .content{padding:0 40px 0 0;margin-left:0}
+
+  .main-timeline9 .timeline:nth-child(2n) .icon{right:-14px;left:auto}
+
+  .main-timeline9 .timeline:nth-child(2n) .icon span:after,.main-timeline9 .timeline:nth-child(2n) .icon span:before,.main-timeline9 .timeline:nth-child(2n) .icon:before{left:-15px;right:auto}
+
+  .main-timeline9 .timeline:nth-child(2n) .icon span:before{border-radius:0 0 21px}
+
+  .main-timeline9 .timeline:nth-child(2n) .icon span:after{border-radius:0 21px 0 0}
+
+  .main-timeline9 .timeline:nth-child(2),.main-timeline9 .timeline:nth-child(even),.main-timeline9 .timeline:nth-child(odd){margin:0}
+
+}
+
+
+@media only screen and (max-width:480px) {
+
+  .main-timeline9:before{left:0}
+
+  .main-timeline9 .timeline:first-child:before,.main-timeline9 .timeline:last-child:before{left:-12px!important;right:auto!important}
+
+  .main-timeline9 .circle,.main-timeline9 .timeline:nth-child(2n) .circle{width:130px;height:130px;float:none;margin:0 auto}
+
+  .main-timeline9 .timeline-content:before{width:99.5%;top:68px;left:.5%}
+
+  .main-timeline9 .circle span{line-height:115px;font-size:60px}
+
+  .main-timeline9 .circle span:after,.main-timeline9 .circle span:before,.main-timeline9 .circle:before,.main-timeline9 .icon{display:none}
+
+  .main-timeline9 .content,.main-timeline9 .timeline:nth-child(2n) .content{padding:0 10px}
+
+  .main-timeline9 .year{margin-bottom:15px}
+
+  .main-timeline9 .description{text-align:center}
+
+}

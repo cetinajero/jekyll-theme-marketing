@@ -1,0 +1,27 @@
+<!-- Based on: https://bootsnipp.com/snippets/Q0ppE -->
+
+<div class="container py-5" data-component="timelines/9">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="main-timeline9">
+        {% for item in page.timeline %}
+          <div class="timeline" data-appear-animation="fadeInUp">
+            <div class="timeline-content">
+              <div class="circle">
+                <img src="{{ site.amazon-s3 }}/assets/components/timelines/9{{ page.permalink }}{{ item.img }}.png" alt="{{ item.title }}">
+              </div>
+              <div class="content">
+                <span class="year">{{ item.year }}</span>
+                <h4 class="title">{{ item.title }}</h4>
+                <p class="description">{{ item.desc }}</p>
+                <div class="icon">
+                  <span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
