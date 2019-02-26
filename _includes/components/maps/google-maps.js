@@ -20,9 +20,9 @@
 
   function initMap() {
     // Map configuration
-    var latlng = new google.maps.LatLng(23.2927863, -101.6617556);
+    var latlng = new google.maps.LatLng({{ include.lat }}, {{ include.lng }});
     var mapOptions = {
-      zoom: 5,
+      zoom: {{ include.zoom }},
       center: latlng
     }
 
