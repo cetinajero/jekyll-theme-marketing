@@ -6,13 +6,15 @@
   let cluster_image = 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m';
 
   let markers_data = [
-    {% for customer in site.data.customers %}{
-        "title":"{{ customer[1].title }}",
-        "website":"{{ customer[1].url }}",
-        "phone":"{{ customer[1].address[0].phone[0].number }}",
-        "address":"{{ customer[1].address[0].street }}, {{ customer[1].address[0].block }}, {{ customer[1].address[0].city }}",
-        "map_url":"{{ customer[1].address[0].google-maps }}"
-      },
+    {% for customer in site.data.customers %}
+      {% for address in customer[1].address %}{
+          "title":"{{ customer[1].title }}",
+          "website":"{{ customer[1].url }}",
+          "phone":"{{ address.phone[0].number }}",
+          "address":"{{ address.street }}, {{ address.block }}, {{ address.city }}",
+          "map_url":"{{ address.google-maps }}"
+        },
+      {% endfor %}
     {% endfor %}
   ]
 
