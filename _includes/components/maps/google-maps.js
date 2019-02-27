@@ -86,6 +86,7 @@
     for (var i = 0; i < markers.length; i++) {
       if (markers[i].position.lat() == lat && markers[i].position.lng() == lng) {
         cluster.removeMarker(markers[i]);
+        i--;
       }
     }
   }
