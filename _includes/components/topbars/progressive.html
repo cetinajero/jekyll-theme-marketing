@@ -9,7 +9,7 @@
       <div id="sign-in">
         <span id="sign-in-welcome" class="d-none d-md-inline"></span>
         <strong id="sign-in-name"></strong>
-        <a id="login-button" class="btn btn-xs btn-warning d-none" href="/login/?mode=select&signInSuccessUrl={{ page.url }}">
+        <a id="login-button" class="btn btn-xs btn-warning d-none" href="/">
           <i class="fas fa-sign-in-alt fa-lg" data-fa-transform="grow-2 left-3"></i>
           {{ site.data.i18n.common.firebase[site.lang].login.title }}
         </a>
@@ -22,3 +22,8 @@
     {% include components/topbars/progressive.js %}
   </div>
 </div>
+
+<script type="text/javascript">
+  const path = location.pathname.substring(1);
+  document.getElementById('login-button').href = '/login/?mode=select&signInSuccessUrl=/' + path;
+</script>
