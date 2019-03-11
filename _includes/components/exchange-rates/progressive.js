@@ -26,7 +26,7 @@
       if (doc && doc.exists) {
         const data = doc.data();
         usdSell.innerText = "USD: " + data.sell.toFixed(2);
-        usdUpdatedAt.innerText = parseDate(new Date(data.updated_at));
+        usdUpdatedAt.innerText = parseDate(new Date(data.updated_at.toDate()));
       }
     });
   }

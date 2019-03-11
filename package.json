@@ -12,6 +12,7 @@
     "@fortawesome/fontawesome-free-regular": "latest",
     "@fortawesome/fontawesome-free-solid": "latest",
     "bootstrap": "latest",
+    "firebase": "latest",
     "flag-icon-css": "latest",
     "jquery": "1.11.2",
     "js-md5": "latest",
