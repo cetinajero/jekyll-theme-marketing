@@ -5,7 +5,7 @@
   let pin_image = 'https://s3-us-west-2.amazonaws.com/grupopv-public/assets/img/components/maps/google-maps/pin.png';
   let cluster_image = 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m';
 
-  let markers_data = [
+  let partners_markers_data = [
     {% for customer in site.data.customers %}
       {% for address in customer[1].address %}{
           "title":"{{ customer[1].title }}",
@@ -14,6 +14,25 @@
           "address":"{{ address.street }}, {{ address.block }}, {{ address.city }}",
           "map_url":"{{ address.google-maps }}"
         },
+      {% endfor %}
+    {% endfor %}
+  ]
+
+  let csapv_markers_data = [
+    {% for customer in site.data.customers %}
+      {% for awards_category in customer[1].awards %}
+        {% for award in awards_category.awards %}
+          {% if award == "csapv-2019" %}
+            {% for address in customer[1].address %}{
+                "title":"{{ customer[1].title }}",
+                "website":"{{ customer[1].url }}",
+                "phone":"{{ address.phone[0].number }}",
+                "address":"{{ address.street }}, {{ address.block }}, {{ address.city }}",
+                "map_url":"{{ address.google-maps }}"
+              },
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
       {% endfor %}
     {% endfor %}
   ]
@@ -31,14 +50,17 @@
   }
 
   function initClusters() {
+    const map_type = new URL(window.location.href).searchParams.has("csapv");
     // Add a marker clusterer to manage the markers
-    var markerCluster = new MarkerClusterer(map, createMarkers(),
+    var markerCluster = new MarkerClusterer(
+      map,
+      createMarkers(map_type ? csapv_markers_data : partners_markers_data),
        { imagePath: cluster_image }
     );
     hideMarkersOnLatLng(markerCluster, 0, 0);
   }
 
-  function createMarkers() {
+  function createMarkers(markers_data) {
     var markers = markers_data.map(function(location, i) {
       var marker = new google.maps.Marker({
         position: createLatLng(location.map_url),
