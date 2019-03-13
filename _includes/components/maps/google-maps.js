@@ -5,36 +5,8 @@
   let pin_image = 'https://s3-us-west-2.amazonaws.com/grupopv-public/assets/img/components/maps/google-maps/pin.png';
   let cluster_image = 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m';
 
-  let partners_markers_data = [
-    {% for customer in site.data.customers %}
-      {% for address in customer[1].address %}{
-          "title":"{{ customer[1].title }}",
-          "website":"{{ customer[1].url }}",
-          "phone":"{{ address.phone[0].number }}",
-          "address":"{{ address.street }}, {{ address.block }}, {{ address.city }}",
-          "map_url":"{{ address.google-maps }}"
-        },
-      {% endfor %}
-    {% endfor %}
-  ]
-
-  let csapv_markers_data = [
-    {% for customer in site.data.customers %}
-      {% for awards_category in customer[1].awards %}
-        {% for award in awards_category.awards %}
-          {% if award == "csapv-2019" %}
-            {% for address in customer[1].address %}{
-                "title":"{{ customer[1].title }}",
-                "website":"{{ customer[1].url }}",
-                "phone":"{{ address.phone[0].number }}",
-                "address":"{{ address.street }}, {{ address.block }}, {{ address.city }}",
-                "map_url":"{{ address.google-maps }}"
-              },
-            {% endfor %}
-          {% endif %}
-        {% endfor %}
-      {% endfor %}
-    {% endfor %}
+  let markers_data = [
+    {{ include.markers }}
   ]
 
   function initMap() {
@@ -50,17 +22,14 @@
   }
 
   function initClusters() {
-    const map_type = new URL(window.location.href).searchParams.has("csapv");
     // Add a marker clusterer to manage the markers
-    var markerCluster = new MarkerClusterer(
-      map,
-      createMarkers(map_type ? csapv_markers_data : partners_markers_data),
+    var markerCluster = new MarkerClusterer(map, createMarkers(),
        { imagePath: cluster_image }
     );
     hideMarkersOnLatLng(markerCluster, 0, 0);
   }
 
-  function createMarkers(markers_data) {
+  function createMarkers() {
     var markers = markers_data.map(function(location, i) {
       var marker = new google.maps.Marker({
         position: createLatLng(location.map_url),
@@ -114,20 +83,7 @@
   }
 
   function infoWindowContent(data) {
-    return  '<div id="content" style="max-width:350px;">' +
-              '<div class="text-center mt-2">' +
-                '<img src="/img/common/logos/' + data.website.split('.')[1] + '.png" style="max-width:290px;" data-coordinates="' + getLat(data.map_url) + ', ' + getLng(data.map_url) + '"/>' +
-              '</div>' +
-              '<hr>' +
-              '<h4 id="firstHeading" class="text-center">' + data.title + '</h4>' +
-              '<div id="bodyContent">' +
-                '<ul class="pl-2">' +
-                  '<li class="mb-1">Dirección: <b>' + data.address + '</b></li>' +
-                  '<li class="mb-1">Teléfono: <a href="tel:' + data.phone + '"><b>' + data.phone + '</b></a></li>' +
-                  '<li class="mb-1">Página web: <a href="' + data.website + '"><b>' + data.website + '</b></a></li>' +
-                '</ul>' +
-              '</div>' +
-            '</div>';
+    return  `{{ include.info_window }}`;
   }
 </script>
 
