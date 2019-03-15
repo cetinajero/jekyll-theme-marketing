@@ -169,13 +169,13 @@ yarn-error.log
 /assets/node_modules/xmlhttprequest/
 /assets/node_modules/firebase/externs/
 /assets/node_modules/firebase/**/*.ts
-/assets/node_modules/firebase/**/*.cjs.js
-/assets/node_modules/firebase/**/*.esm.js
+/assets/node_modules/firebase/**/*.cjs.js*
+/assets/node_modules/firebase/**/*.esm.js*
 /assets/node_modules/firebase/firebase-database.*
 /assets/node_modules/firebase/firebase-functions.*
 /assets/node_modules/firebase/firebase-messaging.*
 /assets/node_modules/firebase/firebase-storage.*
-/assets/node_modules/firebase/firebase.js
+/assets/node_modules/firebase/firebase.js*
 
 # flag-icon-css
 /assets/node_modules/flag-icon-css/*.html
