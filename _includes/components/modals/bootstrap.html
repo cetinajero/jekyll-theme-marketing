@@ -1,0 +1,124 @@
+<div class="modal fade" id="bootstrapModal" tabindex="-1" role="dialog" aria-labelledby="bootstrapModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="bootstrapModalCenterTitle"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">
+            <i class="fas fa-times fa-lg"></i>
+          </span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="row p-2">
+          <div class="col col-lg-5 d-none d-lg-flex align-items-center">
+            {% include components/logos/progressive.html %}
+          </div>
+          <div class="col col-lg-7 ml-auto">
+            <div class="card">
+              <div class="card-body">
+                <p class="mb-2">Estado: <b id="listItemStatus"></b></p>
+                <p class="mb-2">Fecha de creación: <b id="listItemCreatedAt"></b></p>
+                <p class="mb-0">Revisado por: <b id="listItemCreatedBy"></b></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <i class="fas fa-info-circle"></i> Datos del artículo
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-12 col-sm py-2">
+                Fabricante: <b id="listItemProductManufacturer"></b>
+              </div>
+              <div class="col-12 col-sm py-2">
+                Modelo: <b id="listItemProductModel"></b>
+              </div>
+              <div class="col-12 col-sm py-2">
+                Serie: <b id="listItemSerialNum"></b>
+              </div>
+              <div class="col-12 py-2">
+                Descripción: <b id="listItemProductDesc"></b>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+
+        <div class="card d-none">
+          <div class="card-header">
+            <i class="fas fa-truck"></i> Paquetería de envío
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-12 col-sm py-2">
+                Paquetería de entrada: <b id="listItemSendParcel"></b>
+              </div>
+              <div class="col-12 col-sm py-2">
+                Número de rastreo: <b id="listItemSendTrackNum"></b>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <i class="fas fa-briefcase-medical"></i> Detalle de la reparación
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-12 col-sm py-2">
+                Síntoma: <b id="listItemSymptom"></b>
+              </div>
+              <div class="col-12 col-sm py-2">
+                Falla: <b id="listItemProductFlaw"></b>
+              </div>
+              <div class="col-12 col-sm py-2">
+                Reparación: <b id="listItemRepairCode"></b>
+              </div>
+              <div class="col-12 py-2">
+                Solución: <b id="listItemSolution"></b>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card d-none">
+          <div class="card-header">
+            <i class="fas fa-truck fa-flip-horizontal"></i> Paquetería de regreso
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-12 col-sm py-2">
+                Paquetería de salida: <b id="listItemReturnParcel"></b>
+              </div>
+              <div class="col-12 col-sm py-2">
+                Número de rastreo: <b id="listItemReturnTrackNum"></b>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+
+        <div class="card">
+          <div class="card-header">
+            <i class="fas fa-user-check"></i> Repair Tracker
+          </div>
+          <div class="card-body">
+            <p>Monto a reembolsar: <b id="listItemAmount"></b></p>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include components/modals/bootstrap.js %}
