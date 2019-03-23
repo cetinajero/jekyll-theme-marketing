@@ -14,7 +14,7 @@
     "bootstrap": "latest",
     "firebase": "latest",
     "flag-icon-css": "latest",
-    "jquery": "1.11.2",
+    "jquery": "3.3.1",
     "js-md5": "latest",
     "jspdf": "latest",
     "lightslider": "latest",
