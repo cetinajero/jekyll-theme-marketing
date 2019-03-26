@@ -19,8 +19,8 @@
           </a>
         </div>
         <div id="special-offers-{{ forloop.index }}">
-          <img id="special-offers-promo{{ forloop.index }}" src="/img/special-offers/{{ page.collection }}/{{ page-categories }}{% if page.resources.special-offers.model %}{{ page.resources.special-offers.model | downcase }}{% else %}{{ page.title | downcase  }}{% endif %}{{ image-num | append: '.jpg' }}" alt="{{ page.title }}" title="{{ page.title }}">
-          <img id="special-offers-data{{ forloop.index }}" src="/img/special-offers/customers/{{ site.domain | replace:'.',' ' | truncatewords: 1,"" }}.png" alt="{{ page.title }}" title="{{ page.title }}">
+          <img id="special-offers-promo{{ forloop.index }}" crossOrigin="Anonymous" src="https://s3-us-west-2.amazonaws.com/grupopv-public/components/generators/pdf/special-offers/img/{{ page.collection }}/{{ page-categories }}{% if page.resources.special-offers.model %}{{ page.resources.special-offers.model | downcase }}{% else %}{{ page.title | downcase  }}{% endif %}{{ image-num | append: '.jpg' }}" alt="{{ page.title }}" title="{{ page.title }}">
+          <img id="special-offers-data{{ forloop.index }}" crossOrigin="Anonymous" src="https://s3-us-west-2.amazonaws.com/grupopv-public/components/generators/pdf/special-offers/img/customers/{{ site.domain | replace:'.',' ' | truncatewords: 1,"" }}.png" alt="{{ page.title }}" title="{{ page.title }}">
           <canvas id="special-offers-promoCanvas{{ forloop.index }}" class="d-none" width="{{ layout.special-offers.width | times: layout.special-offers.dpi }}" height="{{ layout.special-offers.height | times: layout.special-offers.dpi }}"></canvas>
           <canvas id="special-offers-dataCanvas{{ forloop.index }}" class="d-none" width="{{ layout.special-offers.width | times: layout.special-offers.dpi }}" height="{{ layout.special-offers.height | minus: 10.5 | times: layout.special-offers.dpi | times: -1 }}"></canvas>
         </div>
