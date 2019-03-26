@@ -20,7 +20,7 @@
   <script src="/vendors/themes/vg_progressive/js/jquery.fancybox.pack.js"></script>
   <script src="/vendors/themes/vg_progressive/js/isotope.pkgd.min.js"></script>
   <script src="/vendors/themes/vg_progressive/js/jquery.knob.js"></script>
-  <script src="/vendors/themes/vg_progressive/js/jquery.stellar.min.js"></script>
+  <script src="{{ '/assets/node_modules/jquery.stellar/jquery.stellar.min.js' | relative_url }}"></script>
   <script src="/vendors/themes/vg_progressive/js/jquery.selectBox.min.js"></script>
   <script src="/vendors/themes/vg_progressive/js/jquery.tubular.1.0.js"></script>
   <script src="/vendors/themes/vg_progressive/js/SmoothScroll.js"></script>
