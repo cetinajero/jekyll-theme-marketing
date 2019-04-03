@@ -1,0 +1,24 @@
+<li id="${results[i].ref}" class="px-2 my-4" data-component="info-cards/search-results">
+
+  <div class="mb-1">
+    <a href="${item.url}">
+      <i class="fas fa-angle-right fa-xs text-muted ml-1" data-fa-transform="left-2"></i>
+      ${item.title}
+    </a>
+  </div>
+
+  <div class="mb-1">
+    <a href="${item.url}" class="nav-link p-0 text-success">
+      <i class="fas fa-link fa-xs"></i>
+      ${window.location.protocol}//${window.location.hostname}${item.url}
+    </a>
+  </div>
+
+  <div class="line-clamp">
+    <span class="badge badge-info">
+      <i class="fas fa-star"></i> ${results[i].score.toFixed(1)}
+    </span>
+    <span>${(item.description ? item.description : item.content)}</span>
+  </div>
+
+</li>

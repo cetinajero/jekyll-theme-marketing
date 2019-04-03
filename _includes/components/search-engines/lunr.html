@@ -1,0 +1,13 @@
+<form action="/search/" method="get">
+  <input type="text" id="search-box" name="query" class="mb-3" placeholder="Ingresa el texto a buscar">
+  <div class="text-right">
+    <input class="btn" type="submit" value="Buscar">
+  </div>
+</form>
+
+<ul id="search-results" class="list-unstyled"></ul>
+
+<script src="{{ 'assets/node_modules/lunr/lunr.min.js' | relative_url }}"></script>
+
+{% include components/spinners/bootstrap.html %}
+{% include components/search-engines/lunr.js %}
