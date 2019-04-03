@@ -19,6 +19,7 @@
     "js-md5": "latest",
     "jspdf": "latest",
     "lightslider": "latest",
+    "lunr": "latest",
     "vue": "latest"
   }
 }
