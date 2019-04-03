@@ -11,27 +11,33 @@ yarn-error.log
 # Node.JS modules
 /assets/node_modules/.bin/
 /assets/node_modules/**/.bowerrc
+/assets/node_modules/**/.eslintrc.json
 /assets/node_modules/**/.gitattributes
 /assets/node_modules/**/.gitignore
 /assets/node_modules/**/.jscsrc
 /assets/node_modules/**/.npmignore
 /assets/node_modules/**/.travis.yml
 /assets/node_modules/**/_config.yml
-/assets/node_modules/**/AUTHORS.txt
-/assets/node_modules/**/CNAME
-/assets/node_modules/**/MIT-LICENSE.txt
 /assets/node_modules/**/*.md
 /assets/node_modules/**/*.editorconfig
+/assets/node_modules/**/AUTHORS.txt
 /assets/node_modules/**/bower.json
+/assets/node_modules/**/CNAME
+/assets/node_modules/**/component.json
 /assets/node_modules/**/composer.json
 /assets/node_modules/**/Gruntfile.coffee
 /assets/node_modules/**/Gruntfile.js
+/assets/node_modules/**/index.html
 /assets/node_modules/**/LICENSE
 /assets/node_modules/**/LICENSE-MIT
 /assets/node_modules/**/LICENSE.txt
+/assets/node_modules/**/Makefile
+/assets/node_modules/**/MIT-LICENSE.txt
+/assets/node_modules/**/notes
 /assets/node_modules/**/package.json
 /assets/node_modules/**/package-lock.json
 /assets/node_modules/**/svgo.yaml
+/assets/node_modules/**/VERSION
 /assets/node_modules/**/yarn.lock
 
 # @fortawesome/fontawesome
@@ -314,6 +320,11 @@ yarn-error.log
 /assets/node_modules/lightslider/node_modules/
 /assets/node_modules/lightslider/src/
 /assets/node_modules/lightslider/test/
+
+# lunr
+/assets/node_modules/lunr/*/
+/assets/node_modules/lunr/lunr.js
+/assets/node_modules/lunr/styles.css
 
 # vue
 /assets/node_modules/vue/src/
