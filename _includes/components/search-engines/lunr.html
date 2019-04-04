@@ -1,7 +1,10 @@
 <form action="/search/" method="get">
-  <input type="text" id="search-box" name="query" class="mb-3" placeholder="Ingresa el texto a buscar">
+  <input type="text" id="search-box" name="q" class="mb-3" placeholder="Ingresa el texto a buscar" autocomplete="off" autofocus>
   <div class="text-right">
-    <input class="btn" type="submit" value="Buscar">
+    <button class="btn" type="submit">
+      <i class="fas fa-search"></i>
+      Buscar
+    </button>
   </div>
 </form>
 

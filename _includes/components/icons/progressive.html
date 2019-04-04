@@ -1,8 +1,8 @@
 <div class="header-icons">
 
-  <div class="d-none search-header hidden-600"> <!-- start search button -->
+  <div id="navbarSearchButton" class="search-header hidden-600"> <!-- start search button -->
     <a href="#" data-proofer-ignore>
-      <i class="fas fa-search fa-lg"></i>
+      <i class="fas fa-search fa-lg" data-fa-transform="up-1 shrink-2"></i>
     </a>
   </div> <!-- end search button -->
 
@@ -20,8 +20,10 @@
 
   <div class="phone-header hidden-600"> <!-- start phone button -->
     <a href="#" data-proofer-ignore>
-      <i class="fas fa-phone fa-lg"></i>
+      <i class="fas fa-phone fa-lg" data-fa-transform="shrink-1"></i>
     </a>
   </div> <!-- end phone button -->
 
 </div>
+
+{% include components/icons/progressive.js %}

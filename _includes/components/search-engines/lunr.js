@@ -93,15 +93,16 @@
       }
       searchResults.innerHTML = appendString;
     } else {
-      searchResults.innerHTML = '<li>No results found</li>';
+      searchResults.innerHTML = '<li>No se encontraron resultados</li>';
     }
   }
 
   function startApp() {
-    document.getElementById("search").classList.add("d-none")
-    const query = getQueryParamsVariable('query');
+    document.getElementById("search").classList.add("d-none");
+    const query = getQueryParamsVariable('q');
     if (query) {
       document.getElementById('search-box').setAttribute("value", query);
+      document.getElementById('mod-search-searchword').setAttribute("value", query);
       searchResults(query);
     } else {
       document.querySelector(".spinner-border").classList.add('d-none');

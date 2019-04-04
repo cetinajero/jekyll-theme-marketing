@@ -3008,25 +3008,6 @@ blockquote small {
   color: #fff;
   color: rgba(255,255,255,.3);
 }
-.top-search .search-submit {
-  background: none;
-  height: 30px;
-  opacity: .5;
-  filter: alpha(opacity=50);
-  padding: 6px 0 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  -webkit-transition: opacity .2s linear;
-  transition: opacity .2s linear;
-  width: 30px;
-}
-.top-search .search-submit:hover {
-  opacity: .7;
-  filter: alpha(opacity=70);
-  -webkit-transition: opacity .2s linear;
-  transition: opacity .2s linear;
-}
 /* Info */
 .top-info {
   color: #fff;
@@ -3910,33 +3891,6 @@ blockquote small {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-}
-.search-active .search-submit {
-  background: none;
-  border-left-width: 1px;
-  height: 30px;
-  line-height: 1;
-  margin: 0;
-  outline: none;
-  padding: 0;
-  position: absolute;
-  right: 1px;
-  top: 17px;
-  width: 46px;
-  -webkit-transition: all .3s linear;
-  transition: all .3s linear;
-}
-.search-active .search-submit svg {
-  margin-top: 2px;
-}
-.search-active .search-submit svg path {
-  fill: #1e1e1e;
-}
-.search-active .search-submit:hover {
-  opacity: .5;
-  filter: alpha(opacity=50);
-  -webkit-transition: all .3s linear;
-  transition: all .3s linear;
 }
 
 .header.header-two .phone-header {
@@ -8492,28 +8446,6 @@ div.post p + div.post p {
 }
 .search-result .search-form .search-string:focus {
   border-color: #ccc;
-}
-.search-result .search-form .search-submit {
-  background: none;
-  border-left: 1px solid #e1e1e1;
-  height: 30px;
-  line-height: 1;
-  position: absolute;
-  right: 0;
-  top: 15px;
-  text-align: center;
-  width: 46px;
-  -webkit-transition: opacity .2s linear;
-  transition: opacity .2s linear;
-}
-.search-result .search-form .search-submit svg {
-  margin-top: 2px;
-}
-.search-result .search-form .search-submit:hover {
-  opacity: .5;
-  filter: alpha(opacity=50);
-  -webkit-transition: opacity .2s linear;
-  transition: opacity .2s linear;
 }
 .search-result .filter-buttons,
 .search-result .text-results {
