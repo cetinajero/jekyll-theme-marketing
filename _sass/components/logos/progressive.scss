@@ -1,7 +1,12 @@
 [data-component="logos/progressive"] {
-
   .logo-img {
     max-width: 270px;
+  }
+
+  @include media-breakpoint-only(sm) {
+    .logo-img {
+      max-width: 250px;
+    }
   }
 
 }
