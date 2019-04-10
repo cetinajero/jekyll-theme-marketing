@@ -1,0 +1,11 @@
+@mixin card-group-column-count($count: 1) {
+  flex: 0 0 calc(100% / #{$count} - #{$card-deck-margin} * 2);
+}
+
+.card-group {
+  .card {
+    @include media-breakpoint-between(sm, md) {
+      @include card-group-column-count(1);
+    }
+  }
+}

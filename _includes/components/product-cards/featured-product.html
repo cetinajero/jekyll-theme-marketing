@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="card-group">
+    {% for featured-product in page.featured-products %}
+      <div class="card">
+        <a href="{{ featured-product.href }}">
+          <img src="{{ site.amazon-s3 }}/components/product-cards/featured-product/img/{{ featured-product.img }}.png" class="card-img-top" alt="{{ featured-product.img }}" data-appear-animation="fadeInDown">
+        </a>
+        <div class="card-body" data-appear-animation="fadeInDown">
+          <h5 class="card-title">{{ featured-product.product }}</h5>
+          <p class="card-text">{{ featured-product.text }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
