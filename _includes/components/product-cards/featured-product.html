@@ -3,7 +3,7 @@
     {% for featured-product in page.featured-products %}
       <div class="card">
         <a href="{{ featured-product.href }}">
-          <img src="https://s3-us-west-2.amazonaws.com/grupopv-public/assets/img/components/product-cards/featured-product/{{ featured-product.img }}.png" class="card-img-top" alt="{{ featured-product.img }}" data-appear-animation="fadeInDown">
+          <img src="{{ site.amazon-s3 }}/components/product-cards/featured-product/img/{{ featured-product.img }}.png" class="card-img-top" alt="{{ featured-product.img }}" data-appear-animation="fadeInDown">
         </a>
         <div class="card-body" data-appear-animation="fadeInDown">
           <h5 class="card-title">{{ featured-product.product }}</h5>
