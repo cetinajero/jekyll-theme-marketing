@@ -1,0 +1,22 @@
+<h4>{{ carousel.i18n[site.lang] | default: carousel.title }}</h4>
+<div id="{{ carousel.id }}BootstrapCarousel" class="carousel slide" data-ride="carousel">
+
+  <div class="carousel-inner">
+    {% for photo in (1..carousel.photos) %}
+      <div class="carousel-item {% if forloop.index == 1 %}active{% endif %}">
+        <img src="{{ site.amazon-s3 }}/components/sliders /bootstrap/img/{{ carousel.id }}/{{ forloop.index }}.jpg" class="d-block w-100" alt="{{ carousel.title }}">
+      </div>
+    {% endfor %}
+  </div>
+
+  <a class="carousel-control-prev" href="#{{ carousel.id }}BootstrapCarousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+
+  <a class="carousel-control-next" href="#{{ carousel.id }}BootstrapCarousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+
+</div>
