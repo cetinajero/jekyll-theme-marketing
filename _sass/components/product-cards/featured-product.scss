@@ -1,5 +1,6 @@
 @mixin card-group-column-count($count: 1) {
   flex: 0 0 calc(100% / #{$count} - #{$card-deck-margin} * 2);
+  border: none;
 }
 
 .card-group {
