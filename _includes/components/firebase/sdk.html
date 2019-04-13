@@ -4,6 +4,14 @@
 
 <script src="{{ '/assets/js/firebase/firebase-sdk.js' | relative_url }}"></script>
 
-{% if site.original %}
+{% for awards_category in site.awards %}
+  {% for award in awards_category.awards %}
+    {% if award == "csapv-2019" %}
+      {% assign customer_csapv = true %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+{% if site.original or customer_csapv %}
   <script src="{{ '/assets/js/firebase/firebase-login.js' | relative_url }}"></script>
 {% endif %}
