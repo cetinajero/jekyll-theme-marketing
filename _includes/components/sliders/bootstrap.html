@@ -4,7 +4,7 @@
   <div class="carousel-inner">
     {% for photo in (1..carousel.photos) %}
       <div class="carousel-item {% if forloop.index == 1 %}active{% endif %}">
-        <img src="{{ site.amazon-s3 }}/components/sliders /bootstrap/img/{{ carousel.id }}/{{ forloop.index }}.jpg" class="d-block w-100" alt="{{ carousel.title }}">
+        <img src="{{ site.amazon-s3 }}/components/sliders/bootstrap/img/{{ carousel.id }}/{{ forloop.index }}.jpg" class="d-block w-100" alt="{{ carousel.title }}">
       </div>
     {% endfor %}
   </div>
