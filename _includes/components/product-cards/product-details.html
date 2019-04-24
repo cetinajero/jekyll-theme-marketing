@@ -30,6 +30,8 @@
   </section>
 {% endif %}
 
+{{ content }}
+
 <div class="row">
   <p id="product-details-footer" class="mx-auto">
     {% for resource in page.resources.spec-sheets.catalog %}
@@ -43,5 +45,3 @@
     <p class="text-muted text-center">{{ site.data.i18n.components.product-cards[site.lang].product-details.pricelists-notice.title }}</p>
   </article>
 </section>
-
-{{ content }}
