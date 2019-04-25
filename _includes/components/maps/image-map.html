@@ -1,0 +1,21 @@
+<div class="title-box">
+  <h3>Aplicaciones del producto</h3>
+</div>
+
+<p>Para mayor información de los productos, es necesario dar clic sobre el artículo de interes.</p>
+
+<img src="{{ site.amazon-s3 }}/components/maps/image-map/img/{{ page.image-map.img }}/{{ page.image-map.img }}.jpg" usemap="#{{ page.image-map.img }}">
+
+<map name="{{ page.image-map.img }}">
+  {% for area in page.image-map.areas %}
+    <area target="_blank" alt="{{ area.title }}" title="{{ area.title }}" href="{{ area.href }}" coords="{{ area.coords }}" shape="{{ area.shape }}">
+  {% endfor %}
+</map>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-rwdImageMaps/1.6/jquery.rwdImageMaps.min.js"></script>
+
+<script>
+  $(document).ready(function(e) {
+  	$('img[usemap]').rwdImageMaps();
+  });
+</script>
