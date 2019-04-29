@@ -69,7 +69,17 @@ yarn-error.log
 /assets/node_modules/bootstrap/scss/**/*.scss
 !/assets/node_modules/bootstrap/scss/_functions.scss
 !/assets/node_modules/bootstrap/scss/_variables.scss
+!/assets/node_modules/bootstrap/scss/vendor/_rfs.scss
 !/assets/node_modules/bootstrap/scss/mixins/_breakpoints.scss
+!/assets/node_modules/bootstrap/scss/mixins/_hover.scss
+!/assets/node_modules/bootstrap/scss/mixins/_badge.scss
+!/assets/node_modules/bootstrap/scss/mixins/_text-emphasis.scss
+!/assets/node_modules/bootstrap/scss/mixins/_text-truncate.scss
+!/assets/node_modules/bootstrap/scss/mixins/_border-radius.scss
+!/assets/node_modules/bootstrap/scss/mixins/_transition.scss
+!/assets/node_modules/bootstrap/scss/_nav.scss
+!/assets/node_modules/bootstrap/scss/_badge.scss
+!/assets/node_modules/bootstrap/scss/utilities/_text.scss
 /assets/node_modules/bootstrap/test-infra/
 /assets/node_modules/bootstrap/dist/**/*.js
 /assets/node_modules/bootstrap/dist/**/*.css
