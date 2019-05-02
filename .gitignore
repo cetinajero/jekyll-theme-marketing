@@ -79,6 +79,7 @@ yarn-error.log
 !/assets/node_modules/bootstrap/scss/mixins/_text-truncate.scss
 !/assets/node_modules/bootstrap/scss/mixins/_border-radius.scss
 !/assets/node_modules/bootstrap/scss/mixins/_transition.scss
+!/assets/node_modules/bootstrap/scss/_reboot.scss
 !/assets/node_modules/bootstrap/scss/_nav.scss
 !/assets/node_modules/bootstrap/scss/_badge.scss
 !/assets/node_modules/bootstrap/scss/utilities/_text.scss
