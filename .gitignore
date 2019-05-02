@@ -124,6 +124,7 @@ yarn-error.log
 /assets/node_modules/grpc/
 /assets/node_modules/has-unicode/
 /assets/node_modules/http-parser-js/
+/assets/node_modules/idb/
 /assets/node_modules/ignore-walk/
 /assets/node_modules/inflight/
 /assets/node_modules/inherits/
@@ -193,6 +194,7 @@ yarn-error.log
 /assets/node_modules/firebase/firebase-database.*
 /assets/node_modules/firebase/firebase-functions.*
 /assets/node_modules/firebase/firebase-messaging.*
+/assets/node_modules/firebase/firebase-performance*
 /assets/node_modules/firebase/firebase-storage.*
 /assets/node_modules/firebase/firebase.js*
 
