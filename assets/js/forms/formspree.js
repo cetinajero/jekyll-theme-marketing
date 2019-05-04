@@ -32,7 +32,7 @@ $contactForm.submit(function(e) {
 			},
 			error: function(err) {
 				setTimeout(function(){
-					if(err.responseJSON.error == "To prevent spam, only Gold accounts may create AJAX forms."){
+					if(err.responseJSON.error == "To prevent spam, only paying accounts may create AJAX forms."){
 						console.log("This form doesn't support AJAX, switching to POST instead...");
 						$contactForm.attr('action', '//formspree.io/' + user + '@' + company + '.' + global_domain);
 						$contactForm.unbind().submit();
