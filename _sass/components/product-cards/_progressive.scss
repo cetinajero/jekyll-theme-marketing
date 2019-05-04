@@ -1,11 +1,39 @@
-div#progressive-product-card{
-  div.product-price{
-    span{
-      &.disabled-price{
-        font-size: 11px;
-        text-decoration: line-through;
-        background-color: lightgray;
-      }
+[data-component="product-cards/progressive"] {
+
+  .cover-image {
+    object-fit: cover;
+    width: auto;
+    height: 170px;
+  }
+
+  .opacity-80 {
+    -webkit-transition: opacity 0.2s linear;
+    transition: opacity 0.2s linear;
+    &:hover {
+      opacity: .8;
+      filter: alpha(opacity=80);
+      -webkit-transition: opacity 0.2s linear;
+      transition: opacity 0.2s linear;
     }
   }
+
+  .line-clamp-2 {
+    height: 28px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .text-sm {
+    font-size: 0.9rem;
+  }
+
+  .disabled-price{
+    font-size: 0.6rem!important;
+    text-decoration: line-through;
+    background-color: lightgray;
+  }
+
 }

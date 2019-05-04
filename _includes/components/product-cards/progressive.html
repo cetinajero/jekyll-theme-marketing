@@ -1,18 +1,28 @@
-<div id="progressive-product-card" class="col-12 col-sm-6 col-md-4 col-lg-3">
-  <div>
+<div class="col-12 col-sm-6 col-md-4 col-lg-3" data-component="product-cards/progressive">
+
+  <div class="p-2 m-0" style="border: 1px solid #eee; border-radius: 15px; -moz-border-radius: 15px;">
     <a {% if doc.menu-name or collection.products.detail or doc.menu-name %}{{ doc.url | prepend: 'href="' | append: '"' }}{% endif %}>
-      <img id="{{ i18n-id }}" class="product-image" src="{{ doc.image }}" alt="{% if i18n-title %}{{ i18n-title }}{% else %}{{ doc.title | default: i18n-id }}{% endif %}" />
+      <img id="{{ i18n-id }}" class="d-block mx-auto cover-image opacity-80" src="{{ doc.image }}" alt="{% if i18n-title %}{{ i18n-title }}{% else %}{{ doc.title | default: i18n-id }}{% endif %}" />
     </a>
-  </div>
-  <div class="product-model">
-    <a id="{{ i18n-id }}" {% if doc.menu-name or collection.products.detail or doc.menu-name %}{{ doc.url | prepend: 'href="' | append: '"' }}{% endif %}>{% if i18n-title %}{{ i18n-title }}{% else %}{{ doc.title }}{% endif %}</a>
-  </div>
-  <div class="product-brand">{{ doc.brand }} {{ doc.commercial }}</div>
-  <div id="{{ i18n-id }}" class="product-description">{% if i18n-description %}{{ i18n-description }}{% else %}{{ doc.description }}{% endif %}</div>
-  {% unless site.product.price.disabled %}
-    <div class="product-price">
-      <span class="badge label-primary text-white {% if doc.promotion-price and site.original == false %}{{ 'disabled-price' }}{% endif %}">{% if doc.price %}{{ doc.price | prepend: '$ ' }}{% endif %}{% assign doc-price-size = doc.price | downcase | split: '.' | last | size %}{% if doc-price-size == 1 %}{{ "0" }}{% endif %}{% if doc.currency %}{{ doc.currency | prepend: ' ' }}{% endif %}</span>
-      <span class="badge label-primary text-white">{% unless site.original %}{% if site.special-offers.customers %}{% if doc.promotion-price %}{{ doc.promotion-price | prepend: '$ ' }}{% endif %}{% assign promotion-price-size = doc.promotion-price | downcase | split: '.' | last | size %}{% if promotion-price-size == 1 %}{{ "0" }}{% endif %}{% if doc.promotion-currency %}{{ doc.promotion-currency | prepend: ' ' }}{% endif %}{% endif %}{% endunless %}</span>
+
+    <a class="text-primary d-block text-center font-weight-bold text-decoration-none mt-1" id="{{ i18n-id }}" {% if doc.menu-name or collection.products.detail or doc.menu-name %}{{ doc.url | prepend: 'href="' | append: '"' }}{% endif %}>
+      {% if i18n-title %}{{ i18n-title }}{% else %}{{ doc.title }}{% endif %}
+    </a>
+
+    <div class="text-center font-weight-bold small">
+      {{ doc.brand }} {{ doc.commercial }}
     </div>
-  {% endunless %}
+
+    <div id="{{ i18n-id }}" class="text-secondary text-center small line-clamp-2 mx-1">
+      {% if i18n-description %}{{ i18n-description }}{% else %}{{ doc.description }}{% endif %}
+    </div>
+
+    {% unless site.product.price.disabled %}
+      <div class="text-right mb-1">
+        <span class="badge badge-primary text-white text-sm {% if doc.promotion-price and site.original == false %}{{ 'disabled-price' }}{% endif %}">{% if doc.price %}{{ doc.price | prepend: '$ ' }}{% endif %}{% assign doc-price-size = doc.price | downcase | split: '.' | last | size %}{% if doc-price-size == 1 %}{{ "0" }}{% endif %}{% if doc.currency %}{{ doc.currency | prepend: ' ' }}{% endif %}</span>
+        <span class="badge badge-primary text-white text-sm">{% unless site.original %}{% if site.special-offers.customers %}{% if doc.promotion-price %}{{ doc.promotion-price | prepend: '$ ' }}{% endif %}{% assign promotion-price-size = doc.promotion-price | downcase | split: '.' | last | size %}{% if promotion-price-size == 1 %}{{ "0" }}{% endif %}{% if doc.promotion-currency %}{{ doc.promotion-currency | prepend: ' ' }}{% endif %}{% endif %}{% endunless %}</span>
+      </div>
+    {% endunless %}
+  </div>
+
 </div>
