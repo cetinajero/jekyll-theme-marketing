@@ -8,8 +8,9 @@
   {% assign classes = "col-md-6" %}
 {% endif -%}
 
-<div class="copyright {{ classes }}">
-  <p>{{ site.data.i18n.common.footer[site.lang].copyrights.title }}, {{ 'now' | date: "%Y" }}.</p>
-  <p>{{ site.data.i18n.common.footer[site.lang].price_list_message.title }}</p>
-  <p>{{ site.data.i18n.common.footer[site.lang].price_changes.title }}</p>
+<div class="copyright {{ classes }} d-flex align-items-center">
+  <div>
+    <p>{{ site.data.i18n.common.footer[site.lang].price_list_message.title }}</p>
+    <p>{{ site.data.i18n.common.footer[site.lang].price_changes.title }}</p>
+  </div>
 </div>
