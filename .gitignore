@@ -96,6 +96,9 @@ yarn-error.log
 
 # firebase
 /assets/node_modules/@firebase/
+/assets/node_modules/@grpc/
+/assets/node_modules/@protobufjs/
+/assets/node_modules/@types/
 /assets/node_modules/abbrev/
 /assets/node_modules/ansi-regex/
 /assets/node_modules/aproba/
