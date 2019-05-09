@@ -34,6 +34,7 @@ $theme-colors: (
 
 // Import flag-icon partials
 $include: 'br', 'mx', 'us';
+$flag-icon-css-path: '../node_modules/flag-icon-css/flags';
 @import "../assets/node_modules/flag-icon-css/sass/flag-icon";
 
 // Import layout partials
