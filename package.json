@@ -22,6 +22,7 @@
     "jspdf": "latest",
     "lightslider": "latest",
     "lunr": "latest",
+    "popper.js": "latest",
     "vue": "latest"
   }
 }
