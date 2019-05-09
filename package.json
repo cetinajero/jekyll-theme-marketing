@@ -16,6 +16,7 @@
     "bootstrap": "latest",
     "firebase": "latest",
     "flag-icon-css": "latest",
+    "isotope-layout": "latest",
     "jquery": "latest",
     "jquery.stellar": "github:markdalgleish/stellar.js#9b0b5e1",
     "js-md5": "latest",
