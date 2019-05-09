@@ -61,6 +61,7 @@ yarn-error.log
 !/assets/node_modules/@fortawesome/fontawesome-free-solid/index.js
 
 # bootstrap
+/assets/node_modules/popper.js/
 /assets/node_modules/bootstrap/docs/
 /assets/node_modules/bootstrap/fonts/
 /assets/node_modules/bootstrap/grunt/
