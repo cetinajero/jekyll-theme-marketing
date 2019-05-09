@@ -1,7 +1,7 @@
 // FirebaseUI config.
 var uiConfig = {
   callbacks: {
-    signInSuccess: function(currentUser, credential, redirectUrl) {
+    signInSuccessWithAuthResult: function(currentUser, credential, redirectUrl) {
       // Return type determines whether we continue the redirect automatically
       // or whether we leave that to developer to handle.
       return true;
@@ -19,7 +19,11 @@ var uiConfig = {
   // Comment the next line to activate CredentialHelper
   credentialHelper: firebaseui.auth.CredentialHelper.NONE,
   // Terms of service url can be specified and will show up in the widget.
-  tosUrl: '{{ site.amazon-s3 }}/assets/pdf/documents/terms-and-conditions.pdf'
+  tosUrl: '{{ site.amazon-s3 }}/assets/pdf/documents/terms-and-conditions.pdf',
+  // Privacy policy url/callback.
+  privacyPolicyUrl: function() {
+    window.location.assign('{{ site.amazon-s3 }}/assets/pdf/documents/privacy-notice.pdf');
+  }
 };
 
 // Initialize the FirebaseUI Widget using Firebase.
