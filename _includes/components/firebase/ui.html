@@ -1,0 +1,13 @@
+{% capture firebase-lang %}
+  {{ site.lang | slice: 0,2 | default: "en" }}
+{% endcapture %}
+{% assign firebase-lang = firebase-lang | strip %}
+{% if firebase-lang == "es" %}
+  {% assign firebase-lang = "es_419" %}
+{% endif %}
+
+<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/3.6.1/firebase-ui-auth.css" />
+<script src="https://www.gstatic.com/firebasejs/ui/3.6.1/firebase-ui-auth__{{ firebase-lang }}.js"></script>
+<script type="text/javascript">
+  {% include components/firebase/ui.js %}
+</script>

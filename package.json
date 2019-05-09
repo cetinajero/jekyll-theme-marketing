@@ -7,6 +7,8 @@
   "author": "<cetinajero@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@firebase/app-types": "latest",
+    "@firebase/util": "latest",
     "@fortawesome/fontawesome": "latest",
     "@fortawesome/fontawesome-free-brands": "latest",
     "@fortawesome/fontawesome-free-regular": "latest",
