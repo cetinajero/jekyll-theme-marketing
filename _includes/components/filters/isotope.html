@@ -1,14 +1,14 @@
 {% for filter in page.filters %}
-<h5>{{ filter.title }}</h5>
-<div class="button-group filters-button-group">
-  <button class="button is-checked d-block m-1" data-filter="*">Todas</button>
-  {% for option in filter.options %}
-    <button class="button d-block m-1" data-filter=".{{ option | downcase }}">{{ option }}</button>
-  {% endfor %}
-  <button class="button d-block m-1" data-filter=".pv, .iridium">PV & Iridium</button>
-  <button class="button d-block m-1" data-filter=":not(.iridium)">No Iridium</button>
-  <button class="button d-block m-1" data-filter=".iridium:not(.smn20850)">Si Iridium pero no SMN20850</button>
-  <button class="button d-block m-1" data-filter="priceGreaterThan3000">Precio mayor de 3000</button>
-  <button class="button d-block m-1" data-filter="ium">La descripcion cotiene 'Telefono'</button>
-</div>
+  <h5>{{ filter.title }}</h5>
+  <div class="btn-group btn-group-toggle btn-group-vertical filters-button-group" role="group" data-toggle="buttons">
+    <button type="button" class="btn btn-light text-decoration-none btn-sm text-left" data-toggle="button" data-filter="*">Todas</button>
+    {% for option in filter.options %}
+      <button type="button" class="btn btn-light text-decoration-none btn-sm text-left" data-toggle="button" data-filter=".{{ option | downcase }}">{{ option }}</button>
+    {% endfor %}
+    <button type="button" class="btn btn-light text-decoration-none btn-sm text-left" data-toggle="button" data-filter=".pv, .iridium">PV & Iridium</button>
+    <button type="button" class="btn btn-light text-decoration-none btn-sm text-left active" data-toggle="button" data-filter=":not(.iridium)" active>No Iridium</button>
+    <button type="button" class="btn btn-light text-decoration-none btn-sm text-left" data-toggle="button" data-filter=".iridium:not(.smn20850)">Si Iridium pero no SMN20850</button>
+    <button type="button" class="btn btn-light text-decoration-none btn-sm text-left" data-toggle="button" data-filter="priceGreaterThan3000">Precio mayor de 3000</button>
+    <button type="button" class="btn btn-light text-decoration-none btn-sm text-left" data-toggle="button" data-filter="ium">La descripcion cotiene 'Telefono'</button>
+  </div>
 {% endfor %}
