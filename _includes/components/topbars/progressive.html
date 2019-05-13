@@ -1,4 +1,4 @@
-<div id="top-box" class="d-flex align-items-center">
+<div id="top-box" class="d-flex align-items-center bg-primary p-0">
   <div class="container-fluid">
     <div class="d-flex justify-content-between align-items-center pl-xl-5 px-xl-4">
 
@@ -15,13 +15,13 @@
       <span id="sign-in">
         <span id="sign-in-welcome" class="d-none d-md-inline"></span>
         <strong id="sign-in-name"></strong>
-        <a id="login-button" class="btn btn-xs btn-warning d-none" href="/">
-          <i class="fas fa-sign-in-alt fa-lg" data-fa-transform="grow-2 left-3"></i>
-          {{ site.data.i18n.common.firebase[site.lang].login.title }}
+        <a id="login-button" class="btn btn-sm btn-outline-primary text-white border-0 d-none" href="/">
+          <i class="fas fa-sign-in-alt fa-lg" data-fa-transform="left-3"></i>
+          <span style="font-size:12px">{{ site.data.i18n.common.firebase[site.lang].login.title }}</span>
         </a>
-        <button id="logout-button" class="btn btn-xs btn-warning d-none">
-          <i class="fas fa-sign-out-alt fa-lg" data-fa-transform="grow-2 left-3"></i>
-          {{ site.data.i18n.common.firebase[site.lang].logout.title }}
+        <button id="logout-button" class="btn btn-sm btn-outline-primary text-white border-0 d-none">
+          <i class="fas fa-sign-out-alt fa-lg" data-fa-transform="left-3"></i>
+          <span style="font-size:12px">{{ site.data.i18n.common.firebase[site.lang].logout.title }}</span>
         </button>
       </span>
 
