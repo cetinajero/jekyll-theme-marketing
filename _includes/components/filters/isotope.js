@@ -1,34 +1,47 @@
+// store filter for each group
+var filters = {};
+
 // init Isotope
-var $grid = $('[data-layout="grid"]').isotope({
-  // options
+var $grid = $('[data-layout="grid"] .grid').isotope({
   itemSelector: '[data-component="product-cards/progressive"]',
-  layoutMode: 'fitRows'
-});
-// filter functions
-var filterFns = {
-  // show if number is greater than 50
-  priceGreaterThan3000: function() {
-    var number = $(this).find('.product-price').text().replace('$ ','').replace(' USD','');
-    return parseInt( number, 10 ) > 3000;
-  },
-  // show if name ends with -ium
-  ium: function() {
-    var name = $(this).find('.description').text();
-    return name.match( /Telefono/ );
+  filter: function() {
+
+    var isMatched = true;
+    var $this = $(this);
+
+    for ( var prop in filters ) {
+      var filter = filters[ prop ];
+      // use function if it matches
+      filter = filterFns[ filter ] || filter;
+      // test each filter
+      if ( filter ) {
+        isMatched = isMatched && $(this).is( filter );
+      }
+      // break if not matched
+      if ( !isMatched ) {
+        break;
+      }
+    }
+    return isMatched;
   }
-};
-// bind filter button click
-$('.filters-button-group').on( 'click', 'button', function() {
-  var filterValue = $( this ).attr('data-filter');
-  // use filterFn if matches value
-  filterValue = filterFns[ filterValue ] || filterValue;
-  $grid.isotope({ filter: filterValue });
 });
+
+$('#filters').on( 'click', '.btn', function() {
+  var $this = $(this);
+  // get group key
+  var $buttonGroup = $this.parents('.btn-group-vertical');
+  var filterGroup = $buttonGroup.attr('data-filter-group');
+  // set filter for group
+  filters[ filterGroup ] = $this.attr('data-filter');
+  // arrange, and use filter fn
+  $grid.isotope();
+});
+
 // change is-checked class on buttons
-$('.button-group').each( function( i, buttonGroup ) {
+$('.btn-group-vertical').each( function( i, buttonGroup ) {
   var $buttonGroup = $( buttonGroup );
   $buttonGroup.on( 'click', 'button', function() {
-    $buttonGroup.find('.is-checked').removeClass('is-checked');
-    $( this ).addClass('is-checked');
+    $buttonGroup.find('.active').removeClass('active');
+    $( this ).addClass('active');
   });
 });
