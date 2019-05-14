@@ -1,0 +1,32 @@
+<script type="text/javascript">
+  // Initialize filter functions variable
+  var filterFns = {};
+</script>
+
+<div id="filters">
+  {% for filter in page.filters %}
+    <div class="ui-group mb-3">
+      <h5>{{ filter.title }}</h5>
+      <div class="btn-group-vertical w-100" role="group" data-filter-group="{{ filter.title }}">
+        <button type="button" class="btn btn-light text-decoration-none btn-sm text-left active" data-filter="">{{ filter.genre }}</button>
+        {% for option in filter.options %}
+          {% capture filter_name %}
+            {{ filter.title | replace: ' ', '_' }}_{{ option.title | replace: ' ', '_' }}
+          {% endcapture%}
+          <button type="button" class="btn btn-light text-decoration-none btn-sm text-left" data-filter="{% if option.filter.rule %}{{ filter_name | strip }}{% else %}{{ option.filter }}{% endif %}">{{ option.title }}</button>
+          {% if option.filter.rule %}
+            <script type="text/javascript">
+              var newItem = {
+                {{ filter_name | strip }}: function() {
+                  var target = $(this).{{ option.filter.target }};
+                  return {{ option.filter.rule }};
+                }
+              }
+              Object.assign(filterFns, newItem);
+            </script>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</div>

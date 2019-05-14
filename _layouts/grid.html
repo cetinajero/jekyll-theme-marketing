@@ -1,24 +1,40 @@
 ---
 layout: page
 ---
-<div class="container" data-layout="grid">
+<script src="{{ '/assets/node_modules/isotope-layout/dist/isotope.pkgd.min.js' | relative_url }}"></script>
+
+<div class="container-fluid" data-layout="grid">
   <div class="row">
-    {% assign collections = site.collections | where: "label", page.collection %}
-    {% for collection in collections %}
-      {% assign docs = collection.docs | where: "menu-father", page.menu-name %}
-      {% for doc in docs %}
-        {% assign url-size = doc.url | size | minus: 2 %}
-        {% assign i18n-id = doc.url | slice: 1,url-size | replace: '/', '-' | remove_first: collection.label | remove_first: '-' %}
-        {% assign i18n-title = site.data.i18n.catalog[collection.label][site.lang][i18n-id].title %}
-        {% if site.links.product[i18n-id].disabled == null %}
-          {% if doc.i18n[site.lang].description %}
-            {% assign i18n-description = doc.i18n[site.lang].description %}
-          {% else %}
-            {% assign i18n-description = site.data.i18n.catalog[collection.label][site.lang][i18n-id].desc %}
-          {% endif %}
-          {% include components/product-cards/progressive.html %}
-        {% endif %}
-      {% endfor %}
-    {% endfor %}
+
+    <div class="col-4 col-md-3 col-xl-2">
+      {% include components/filters/isotope.html %}
+    </div>
+
+    <div class="col-8 col-md-9 col-xl-10">
+      <div class="row grid">
+        {% assign collections = site.collections | where: "label", page.collection %}
+        {% for collection in collections %}
+          {% assign docs = collection.docs | where: "menu-father", page.menu-name %}
+          {% for doc in docs %}
+            {% assign url-size = doc.url | size | minus: 2 %}
+            {% assign i18n-id = doc.url | slice: 1,url-size | replace: '/', '-' | remove_first: collection.label | remove_first: '-' %}
+            {% assign i18n-title = site.data.i18n.catalog[collection.label][site.lang][i18n-id].title %}
+            {% if site.links.product[i18n-id].disabled == null %}
+              {% if doc.i18n[site.lang].description %}
+                {% assign i18n-description = doc.i18n[site.lang].description %}
+              {% else %}
+                {% assign i18n-description = site.data.i18n.catalog[collection.label][site.lang][i18n-id].desc %}
+              {% endif %}
+              {% include components/product-cards/progressive.html %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+
   </div>
 </div> <!-- /container -->
+
+<script type="text/javascript">
+  {% include components/filters/isotope.js %}
+</script>
