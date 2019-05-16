@@ -11,7 +11,7 @@
         <button type="button" class="btn btn-light text-decoration-none btn-sm text-left active" data-filter="">{{ filter.genre }}</button>
         {% for option in filter.options %}
           {% capture filter_name %}
-            {{ filter.title | replace: ' ', '_' }}_{{ option.title | replace: ' ', '_' | replace: '-', '_' }}
+            {{ filter.title | replace: ' ', '_' }}_{{ option.title | replace: ' ', '_' | replace: '-', '_' | replace: '.', '_' }}
           {% endcapture%}
           <button type="button" class="btn btn-light text-decoration-none btn-sm text-left" data-filter="{% if option.filter.rule %}{{ filter_name | strip }}{% else %}{{ option.filter }}{% endif %}">{{ option.title }}</button>
           {% if option.filter.rule %}
