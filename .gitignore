@@ -206,6 +206,7 @@ yarn-error.log
 /assets/node_modules/firebase/**/*.esm.js*
 /assets/node_modules/firebase/firebase-database.*
 /assets/node_modules/firebase/firebase-functions.*
+/assets/node_modules/firebase/firebase-installations.*
 /assets/node_modules/firebase/firebase-messaging.*
 /assets/node_modules/firebase/firebase-performance*
 /assets/node_modules/firebase/firebase-storage.*
