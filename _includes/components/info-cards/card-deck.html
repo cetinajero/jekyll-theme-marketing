@@ -1,0 +1,16 @@
+<div class="card-deck">
+  {% for info-card in page.info-cards %}
+    <div class="card pt-0 pt-sm-5 pt-lg-0" data-appear-animation="{{ info-card.animation }}">
+      <a href="{{ info-card.href }}">
+        <img src="{{ site.amazon-s3 }}/components/info-cards/card-deck/img/{{ info-card.img }}.png" class="card-img-top" alt="{{ info-card.title }}">
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">{{ info-card.title }}</h5>
+        <p class="card-text">{{ info-card.desc }}</p>
+      </div>
+      <div class="card-footer text-right bg-white border-top-0">
+        <a class="btn btn-primary" href="{{ info-card.href }}">{{ info-card.button }}</a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
