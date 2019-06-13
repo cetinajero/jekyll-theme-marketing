@@ -1,0 +1,59 @@
+<form id="contact-form" method="POST" class="needs-validation" data-component="forms/formspree" novalidate>
+
+  <!-- Start Formspree configuration -->
+  <input type="hidden" name="_subject" value="{{ page.form.request.subject | default: page.title }} | {{ site.title }}" /> <!-- email's subject -->
+  <input type="hidden" name="_next" value="{{ page.form.response.url | default: page.url | append: '?response' }}" /> <!-- thank-you page -->
+  <input type="hidden" name="_language" value="{{ page.form.lang | default: 'en' }}" /> <!-- reCAPTCHA language -->
+  <input type="hidden" name="_format" value="{{ page.form.body-style | default: 'plain' }}" /> <!-- email's style -->
+  <input type="hidden" name="_cc" value="{{ page.form.cc | default: site.formspree.contact-form.cc }}" /> <!-- email's cc -->
+  <input type="text" name="_gotcha" class="candy-gotcha" /> <!-- avoid SPAM -->
+  <!-- End Formspree configuration -->
+
+  <p data-appear-animation="fadeInUp">
+    {{ page.i18n[site.lang].form.request.header | default: page.form.request.header }}
+  </p>
+
+  {% for field in page.form.request.fields %}
+    <div class="form-group" data-appear-animation="fadeInUp">
+      <label>{{ field.label }}</label>
+      {% if field.type == 'checkbox' %}
+        {% for value in field.values %}
+          <input type="{{ field.type }}" name="{{ field.label }}" id="a{{ forloop.index }}" value="{{ value }}"/>
+          <label class="label-checkbox text-muted" for="a{{ forloop.index }}">{{ value }}</label>
+        {% endfor %}
+      {% elsif field.type == 'select' %}
+        <select name="{{ field.label }}">
+          <option selected disabled>Selecciona</option>
+          {% for value in field.values %}
+            <option value="{{ value }}">{{ value }}</option>
+          {% endfor %}
+        </select>
+      {% elsif field.type == 'date' %}
+        <input name="{{ field.label }}_day" type="{{ field.type }}" aria-describedby="{{ field.label | downcase }}Help" placeholder="{{ field.placeholder }}" required/>
+        <input name="{{ field.label }}_month" type="{{ field.type }}" aria-describedby="{{ field.label | downcase }}Help" placeholder="{{ field.placeholder }}" required/>
+        <input name="{{ field.label }}_year" type="{{ field.type }}" aria-describedby="{{ field.label | downcase }}Help" placeholder="{{ field.placeholder }}" required/>
+      {% elsif field.type == 'textarea' %}
+        <textarea name="{{ field.label }}" placeholder="{{ field.placeholder }}" class="form-control" rows="3" required></textarea>
+      {% else %}
+        <input name="{{ field.label }}" type="{{ field.type }}" class="form-control" aria-describedby="{{ field.label | downcase }}Help" placeholder="{{ field.placeholder }}" required/>
+      {% endif %}
+      <small id="{{ field.label | downcase }}Help" class="form-text text-muted">{{ field.caption }}</small>
+    </div>
+  {% endfor %}
+
+  <hr class="my-4" data-appear-animation="fadeInUp">
+  <button type="submit" class="btn btn-primary" data-appear-animation="bounceIn">{{ page.form.request.send-button }}</button>
+
+</form>
+
+<div id="form-response" class="jumbotron rounded bg-white text-center">
+  <span class="text-success">
+    <h1>{{ page.form.response.header }}</h1>
+    <i class="fas fa-check fa-8x"></i>
+  </span>
+  <p class="lead">{{ page.form.response.subheader }}</p>
+</div>
+
+<script type="text/javascript">
+  {% include components/forms/formspree.js %}
+</script>
