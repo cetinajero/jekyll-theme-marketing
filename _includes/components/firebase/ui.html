@@ -4,6 +4,8 @@
 {% assign firebase-lang = firebase-lang | strip %}
 {% if firebase-lang == "es" %}
   {% assign firebase-lang = "es_419" %}
+{% elsif firebase-lang == "pt" %}
+  {% assign firebase-lang = "pt_br" %}
 {% endif %}
 
 <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/3.6.1/firebase-ui-auth.css" />
