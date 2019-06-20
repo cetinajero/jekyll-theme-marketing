@@ -1,4 +1,4 @@
-<div class="col-12 col-md-6 col-lg-4 col-xl-3 {{ doc.brand | downcase }} {{ doc.commercial | downcase }}" data-component="product-cards/progressive">
+<div class="col-12 col-md-6 col-lg-4 col-xl-3 pb-4 {{ doc.brand | downcase }} {{ doc.commercial | downcase }}" data-component="product-cards/progressive">
 
   <div class="p-2 m-0" style="border: 1px solid #eee; border-radius: 15px; -moz-border-radius: 15px;">
     <a {% if doc.menu-name or collection.products.detail or doc.menu-name %}{{ doc.url | prepend: 'href="' | append: '"' }}{% endif %}>
