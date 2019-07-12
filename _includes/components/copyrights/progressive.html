@@ -1,29 +1,19 @@
 {% if site.original -%}
   {% if site.title == 'Grupo PV' %}
     {% assign classes = "col-md-8" %}
-    <div class="copyright {{ classes }} d-flex align-items-center">
-      <div>
-        <p>{{ site.data.i18n.common.footer[site.lang].price_list_message.title }}</p>
-        <p>{{ site.data.i18n.common.footer[site.lang].price_changes.title }}</p>
-      </div>
-    </div>
   {% else -%}
     {% assign classes = "col-md-11" %}
-    <div class="copyright {{ classes }} d-flex align-items-center">
-      <div>
-        <p>{{ site.data.i18n.common.footer[site.lang].price_list_message.title }}</p>
-        <p>{{ site.data.i18n.common.footer[site.lang].price_changes.title }}</p>
-        <p>{{ site.data.i18n.common.footer[site.lang].motorola.title }}<a href="https://www.motorolasolutions.com/es_xl/partner-central.html">  Motorola Solutions</a> </p>
-      </div>
-    </div>
   {% endif -%}
 {% else -%}
   {% assign classes = "col-md-6" %}
-  <div class="copyright {{ classes }} d-flex align-items-center">
-    <div>
-      <p>{{ site.data.i18n.common.footer[site.lang].price_list_message.title }}</p>
-      <p>{{ site.data.i18n.common.footer[site.lang].price_changes.title }}</p>
-      <p>{{ site.data.i18n.common.footer[site.lang].motorola.title }}<a href="https://www.motorolasolutions.com/es_xl/partner-central.html">  Motorola Solutions</a> </p>
-    </div>
-  </div>
 {% endif -%}
+
+<div class="copyright {{ classes }} d-flex align-items-center">
+  <div>
+    <p>{{ site.data.i18n.common.footer[site.lang].price_list_message.title }}</p>
+    <p>{{ site.data.i18n.common.footer[site.lang].price_changes.title }}</p>
+    {% if site.original == false %}
+      <p>{{ site.data.i18n.common.footer[site.lang].motorola_legend.title }}</p>
+    {% endif %}
+  </div>
+</div>

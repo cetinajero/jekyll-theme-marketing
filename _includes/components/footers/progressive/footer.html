@@ -25,7 +25,10 @@
             {% include components/social-media/progressive.html %}
           </aside>
         {% elsif site.original == false %}
-          {% include components/contact-cards/phone-card.html %}
+          <div class="col-md-5 text-center">
+            {% include components/contact-cards/phone-card.html %}
+            {% include components/logos/motorola.html %}
+          </div>
         {% endif %}
 
         <div class="col-md-1">
