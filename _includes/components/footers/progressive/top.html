@@ -1,8 +1,8 @@
 {% for section in site.data.components.footers.progressive.common %}
   {% unless site.links.footer[section.name.title].disabled %}
     <aside class="col-md-{{ section.grid-class }}">
-      <div class="title-block">
-        <h3 class="title">
+      <div class="title-block pb-2 mb-3">
+        <h3 class="title text-white m-0">
           <i class="{{ section.icon }}"></i>
           {% include components/footers/progressive/custom-title.html %}
         </h3>
