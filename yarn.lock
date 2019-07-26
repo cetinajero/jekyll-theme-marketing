@@ -158,10 +158,17 @@
     "@firebase/util" "0.2.22"
     tslib "1.10.0"
 
-"@firebase/util@0.2.22", "@firebase/util@latest":
+"@firebase/util@0.2.22":
   version "0.2.22"
   resolved "https://registry.yarnpkg.com/@firebase/util/-/util-0.2.22.tgz#adf9773778b475e016048c7d5a527c2984e58474"
   integrity sha512-Wyo1BY6KQK3DOGmk4s0KMaCMj6L9Ndhj0tLVBfVfG6NWsPEL5ixZHhG942Lzm3hNNZo2ThITMIcP1pXszew3Fw==
+  dependencies:
+    tslib "1.10.0"
+
+"@firebase/util@latest":
+  version "0.2.23"
+  resolved "https://registry.yarnpkg.com/@firebase/util/-/util-0.2.23.tgz#3e4090be9e2b8e720d72730724f026ce83f71736"
+  integrity sha512-Zfc9Oo656ad/a51pow3zJvc2kGJR/KvacaL8MgHAWxYzOsiN6RofcgRlanWO2zLy76KCVI4ZRDrvcmGRnD7e+w==
   dependencies:
     tslib "1.10.0"
 
