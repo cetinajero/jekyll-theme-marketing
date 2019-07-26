@@ -1,5 +1,5 @@
 ---
-title: Tenis corte medio
+title: Mid
 layout: grid
 menu-name: mid
 menu-father: shoes-woman

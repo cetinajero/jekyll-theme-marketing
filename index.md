@@ -9,30 +9,30 @@ title: Home
 
 featured-products:
   - img: "565396f"
-    product: "Chuck Taylor All Star explotando estrella alta superior"
-    text: "Cuando se trata de un atractivo estrella, no busque más que estos mandriles de colores vibrantes. Un gráfico estelar explosivo aporta un estilo destacado al lienzo clásico y cómodo."
+    product: "Chuck Taylor All Star Exploding Star High Top"
+    text: "When it comes to major star appeal, look no further than these vibrantly colored Chucks. An exploding star graphic brings standout style to classic and comfortable canvas."
     href: "/jekyll-theme-marketing/shoes-woman/high/565396f/"
 
   - img: "563512f"
-    product: "Chuck Taylor All Star madison mediados"
-    text: "Amplifica el confort con mandriles amortiguados y estructurados. Con acolchado en el cuello, el talón y la lengua, tienen todo lo que necesitas para seguir adelante."
+    product: "Chuck Taylor All Star Madison Mid"
+    text: "Amp up the comfort with cushioned and structured Chucks. With padding on the collar, heel and tongue, they've got everything you need to keep going."
     href: "/jekyll-theme-marketing/shoes-woman/mid/563512f/"
 
   - img: "564995c"
-    product: "Chuck Taylor All Star plataforma arcoiris baja"
-    text: "El lienzo con paneles y una entresuela de bloques de colores brindan una ventaja vibrante a tus Chucks cotidianos, mientras que la suela de plataforma te da un impulso. Estar de pie."
+    product: "Chuck Taylor All Star Rainbow Platform Low Top"
+    text: "Paneled canvas and a colorblocked midsole bring a vibrant edge to your everyday Chucks, while a platform sole gives you a boost. Stand tall."
     href: "/jekyll-theme-marketing/shoes-woman/platform/564995c/"
 
 info-cards:
-  - title: "Quien es CONVERSE"
-    desc: "Nuestra ropa y zapatillas deportivas son usadas por rebeldes, rockeros, raperos, artistas, soñadores, pensadores y originales. Celebramos la individualidad. Si eres único en su clase, deberías probarnos."
-    button: "Ver valores"
+  - title: "About CONVERSE"
+    desc: "Our clothes and sneakers get worn by rebels, rockers, rappers, artists, dreamers, thinkers and originals. We celebrate individuality. If you’re one-of-a-kind, you should try us on."
+    button: "Our Culture"
     href: "/values/"
     animation: "fadeInLeft"
     img: values
 
-  - title: "IMPACTO EN LA COMUNIDAD"
-    desc: "Nos esforzamos por tener un impacto positivo para las comunidades en las que vivimos y trabajamos."
+  - title: "Community Impact"
+    desc: "We strive to make a positive impact for the communities in which we live and work."
     button: "Ver más"
     href: "/community-impact/"
     animation: "fadeInUp"
@@ -75,8 +75,8 @@ special-offers:
 
 <section class="pt-5">
   {%  include components/jumbotron/bootstrap.html
-      desc="Encuentra la tienda más cercana a tu localidad"
-      button='<i class="fas fa-search"></i> Buscar'
+      desc="Find the store closest to your location"
+      button='<i class="fas fa-search"></i> Search'
       href="/shops/"
       img="shops"
   %}
@@ -89,9 +89,9 @@ special-offers:
     </article>
     <article class="col-12 col-md pt-5 pt-md-0">
       {%  include components/jumbotron/bootstrap.html
-          title="Ediciones especiales"
-          desc="Elige los que más vayan contigo"
-          button='<i class="fas fa-star"></i> Ver contenido'
+          title="Special edition"
+          desc="Choose the ones that go with you the most"
+          button='<i class="fas fa-star"></i> See content'
           href="https://www.converse.com/shop/galaxy-styles"
           img="special-edition"
       %}
@@ -108,7 +108,7 @@ special-offers:
       video="renew.gif"
       background="renew.mp4"
       title="CONVERSE RENEW CANVAS"
-      button="Compra la colección"
+      button="Buy the collection"
       href="/renew/"
   %}
 </section>

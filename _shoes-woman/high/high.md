@@ -1,5 +1,5 @@
 ---
-title: Tenis tipo bota
+title: High
 layout: grid
 menu-name: high
 menu-father: shoes-woman

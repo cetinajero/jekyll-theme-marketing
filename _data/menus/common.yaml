@@ -1,16 +1,16 @@
 - collection: shoes-woman
-  name: "Mujer => #"
+  name: "Woman => #"
   sub-menus:
-    - name: Tenis => /jekyll-theme-marketing/shoes-woman/
+    - name: Shoes => /jekyll-theme-marketing/shoes-woman/
       sub-menus:
-        - Altos => /shoes-woman/high/
-        - Medianos => /shoes-woman/mid/
-        - Plataforma => /shoes-woman/platform/
-- collection: hombre
-  name: "Hombre => #"
+        - High => /shoes-woman/high/
+        - Mid => /shoes-woman/mid/
+        - Platform => /shoes-woman/platform/
+- collection: shoes-men
+  name: "Men => #"
   sub-menus:
-    - name: Tenis => /shoes-men/
+    - name: Shoes => /shoes-men/
       sub-menus:
-        - Altos => /shoes-men/high/
-        - Medianos => /shoes-men/mid/
-        - Bajos => /shoes-men/low/
+        - High => /shoes-men/high/
+        - Mid => /shoes-men/mid/
+        - Low => /shoes-men/low/
