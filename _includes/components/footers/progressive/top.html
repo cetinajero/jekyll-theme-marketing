@@ -12,7 +12,7 @@
           {% for item in section.items %}
             {% unless site.links.footer[item.title].disabled %}
               <li class="footer-list">
-                <a class="white" href="{{ item.link }}">
+                <a class="white" href="{{ item.link | relative_url }}">
                   <i class="{{ item.pre-icon }}" data-fa-transform="grow-2 left-3 up-1"></i>
                   {% include components/footers/progressive/custom-item.html %}
                    <i class="{{ item.post-icon }}"></i>
