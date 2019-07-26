@@ -1,0 +1,42 @@
+---
+title: Locations
+subtitle: Locate our nearest distributor
+permalink: /locations/
+---
+{% capture markers_data %}
+  {% for customer in site.data.customers %}
+    {% for address in customer[1].address %}{
+        "title":"{{ customer[1].title }}",
+        "website":"{{ customer[1].url }}",
+        "phone":"{{ address.phone[0].number }}",
+        "address":"{{ address.street }}, {{ address.block }}, {{ address.city }}",
+        "map_url":"{{ address.google-maps }}"
+      },
+    {% endfor %}
+  {% endfor %}
+{% endcapture %}
+
+{% capture info_window %}
+  <div id="content" style="max-width:350px;">
+    <div class="text-center mt-2">
+      <img src="https://s3-us-west-2.amazonaws.com/grupopv-public/components/logos/progressive/img/${data.website.split('.')[1]}.png" style="max-width:290px;" data-coordinates="${getLat(data.map_url)},${getLng(data.map_url)}"/>
+    </div>
+    <hr>
+    <h4 id="firstHeading" class="text-center">${data.title}</h4>
+    <div id="bodyContent">
+      <ul class="pl-2">
+        <li class="mb-1">Dirección: <b>${data.address}</b></li>
+        <li class="mb-1">Teléfono: <a href="tel:${data.phone}"><b>${data.phone}</b></a></li>
+        <li class="mb-1">Página web: <a href="${data.website}"><b>${data.website}</b></a></li>
+      </ul>
+    </div>
+  </div>
+{% endcapture %}
+
+{%  include components/maps/google-maps.html
+    lat=5
+    lng=-80
+    zoom=3
+    markers=markers_data
+    info_window=info_window
+%}

@@ -1,8 +1,8 @@
 {% for section in site.data.components.footers.progressive.common %}
   {% unless site.links.footer[section.name.title].disabled %}
     <aside class="col-md-{{ section.grid-class }}">
-      <div class="title-block">
-        <h3 class="title">
+      <div class="title-block pb-2 mb-3">
+        <h3 class="title text-white m-0">
           <i class="{{ section.icon }}"></i>
           {% include components/footers/progressive/custom-title.html %}
         </h3>
@@ -12,7 +12,7 @@
           {% for item in section.items %}
             {% unless site.links.footer[item.title].disabled %}
               <li class="footer-list">
-                <a class="white" href="{{ item.link }}">
+                <a class="white" href="{{ item.link | relative_url }}">
                   <i class="{{ item.pre-icon }}" data-fa-transform="grow-2 left-3 up-1"></i>
                   {% include components/footers/progressive/custom-item.html %}
                    <i class="{{ item.post-icon }}"></i>

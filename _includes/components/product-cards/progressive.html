@@ -1,11 +1,11 @@
 <div class="col-12 col-md-6 col-lg-4 col-xl-3 pb-4 {{ doc.brand | downcase }} {{ doc.commercial | downcase }}" data-component="product-cards/progressive">
 
   <div class="p-2 m-0" style="border: 1px solid #eee; border-radius: 15px; -moz-border-radius: 15px;">
-    <a {% if doc.menu-name or collection.products.detail or doc.menu-name %}{{ doc.url | prepend: 'href="' | append: '"' }}{% endif %}>
+    <a {% if doc.menu-name or collection.products.detail or doc.menu-name %}{{ doc.url | relative_url | prepend: 'href="' | append: '"' }}{% endif %}>
       <img id="{{ i18n-id }}" class="d-block mx-auto cover-image opacity-80" src="{{ doc.image }}" alt="{% if i18n-title %}{{ i18n-title }}{% else %}{{ doc.title | default: i18n-id }}{% endif %}" />
     </a>
 
-    <a class="text-primary d-block text-center font-weight-bold text-decoration-none mt-1" id="{{ i18n-id }}" {% if doc.menu-name or collection.products.detail or doc.menu-name %}{{ doc.url | prepend: 'href="' | append: '"' }}{% endif %}>
+    <a class="text-primary d-block text-center font-weight-bold text-decoration-none mt-1" id="{{ i18n-id }}" {% if doc.menu-name or collection.products.detail or doc.menu-name %}{{ doc.url | relative_url | prepend: 'href="' | append: '"' }}{% endif %}>
       {% if i18n-title %}{{ i18n-title }}{% else %}{{ doc.title }}{% endif %}
     </a>
 

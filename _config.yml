@@ -6,9 +6,52 @@ description: > # this means to ignore newlines until "keywords:"
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 keywords: Jekyll, GitHub Pages, theme, website, blog
-baseurl: /jekyll-theme-marketing
+baseurl: /jekyll-theme-marketing/
+domain: converse.mx
+original: true
 lang: en_US
+timezone: America/Chihuahua
 google-analytics: UA-69457978-1
+exchange-rates:
+  usd: true
+
+social-media:
+  - name: facebook
+    link: https://www.facebook.com/converse/
+  - name: youtube
+    link: /youtube/
+  - name: twitter
+    link: https://twitter.com/converse
+  - name: linkedin
+    link: https://mx.linkedin.com
+  - name: email
+    link: /contact/
+
+
+address:
+  -
+    name: "Matriz Chihuahua"
+    street: "Calle Colegio No. 6300 Int 103"
+    block: "Col. Cima Comercial"
+    city: "Chihuahua, Chih., México"
+    zip: "31216"
+    phone:
+      - { number: (614) 439 0707 }
+    email: "contacto@grupopv.mx"
+    custom-html:
+    google-maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.8545936139944!2d-106.123450!3d28.633913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ea42ce37814dcd%3A0x42787422e7151f85!2sGRUPO+PV!5e0!3m2!1ses-419!2smx!4v1467400506119"
+  -
+    name: "Matriz Chihuahua"
+    street: "Calle Colegio No. 6300 Int 103"
+    block: "Col. Cima Comercial"
+    city: "Chihuahua, Chih., México"
+    zip: "31216"
+    phone:
+      - { number: (614) 439 0707 }
+    email: "contacto@grupopv.mx"
+    custom-html:
+    google-maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.8545936139944!2d-106.123450!3d28.633913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ea42ce37814dcd%3A0x42787422e7151f85!2sGRUPO+PV!5e0!3m2!1ses-419!2smx!4v1467400506119"
+
 css:
   header:
     background-color: "#1A69D5"
@@ -18,6 +61,34 @@ css:
   footer:
     background-color: "#1D6BD6"
 
+
+awards:
+  -
+    label: Kenny Davis Award 2014
+    awards: ["award-2014"]
+    type: Kenny Davis Award
+  -
+    label: Store Manager of the year 2015
+    awards: ["award-2015"]
+    type: Store manager
+
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+    products:
+      detail: true
+  shoes-woman:
+    output: true
+    permalink: /:collection/:categories/:name/
+    products:
+      detail: true
+  shoes-man:
+    output: true
+    permalink: /:collection/:categories/:name/
+    products:
+      detail: true
+
 defaults:
   -
     scope:
@@ -26,6 +97,36 @@ defaults:
     values:
       layout: page
       published: true
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: page
+      image: https://s3-us-west-2.amazonaws.com/grupopv-public/components/logos/progressive/img/grupopv-og.png
+      published: true
+  -
+    scope:
+      path: ""
+      type: "shoes-woman"
+    values:
+      layout: product
+      published: true
+  -
+    scope:
+      path: ""
+      type: "shoes-man"
+    values:
+      layout: product
+      published: true
+
+amazon-s3: https://grupopv-public.s3.amazonaws.com
+permalink: /:categories/:title/
+markdown: kramdown
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jemoji
 
 # Build settings
 markdown: kramdown

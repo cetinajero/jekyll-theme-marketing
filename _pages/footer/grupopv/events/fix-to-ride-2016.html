@@ -1,0 +1,26 @@
+---
+title: Fix to Ride
+permalink: /events/fix-to-ride-2016/
+carousels:
+  - { title: "MONTERREY", i18n: { es_MX: 'MONTERREY', pt_BR: '' }, id: "csapv-monterrey", photos: 11 }
+  - { title: "GUADALAJARA", i18n: { es_MX: 'GUADALAJARA', pt_BR: '' }, id: "csapv-guadalajara", photos: 7 }
+  - { title: "MÉXICO", i18n: { es_MX: 'MEXICO', pt_BR: '' }, id: "csapv-mexico", photos: 5 }
+---
+<script src='//static.fliphtml5.com/web/js/plugin/LightBox/js/fliphtml5-light-box-api-min.js'></script>
+
+<h3>Revista</h3>
+<div class="row">
+  <div class="col text-center">
+    <img src='https://online.fliphtml5.com/ggpn/bkmz/files/shot.jpg' data-rel='fh5-light-box-demo' data-href='https://online.fliphtml5.com/ggpn/bkmz/#p=1' data-width='700' data-height='425' data-title='Curso técnico para Centros de Servicio MTY' style="width: 320px;" alt="...">
+  </div>
+</div>
+<p class="pt-5 text-center">Para ver la revista digital es necesario dar click sobre la imagen</p>
+
+<h3 class="pt-5">Fotos</h3>
+<div class="row">
+  {% for carousel in page.carousels %}
+    <div class="col-12 col-lg-6">
+      {% include components/sliders/bootstrap.html %}
+    </div>
+  {% endfor %}
+</div>

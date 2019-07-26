@@ -1,12 +1,16 @@
-- collection: posts
-  name: First menu => /#first-menu
+- collection: shoes-woman
+  name: "Woman => #"
   sub-menus:
-    - name: First sub-menu => /#first-sub-menu
+    - name: Shoes => /jekyll-theme-marketing/shoes-woman/
       sub-menus:
-        - First sub-sub-menu => /#first-sub-sub-menu
-        - Second sub-sub-menu => /#second-sub-sub-menu
-        - Third sub-sub-menu => /#Third-sub-sub-menu
-    - name: Second sub-menu => /#second-sub-menu
+        - High => /shoes-woman/high/
+        - Mid => /shoes-woman/mid/
+        - Platform => /shoes-woman/platform/
+- collection: shoes-man
+  name: "Man => #"
+  sub-menus:
+    - name: Shoes => /shoes-man/
       sub-menus:
-        - First sub-sub-menu => /#first-sub-sub-menu
-        - Second sub-sub-menu => /#second-sub-sub-menu
+        - High => /shoes-man/high/
+        - Mid => /shoes-man/mid/
+        - Low => /shoes-man/low/
