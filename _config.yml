@@ -83,7 +83,7 @@ collections:
     permalink: /:collection/:categories/:name/
     products:
       detail: true
-  shoes-men:
+  shoes-man:
     output: true
     permalink: /:collection/:categories/:name/
     products:
@@ -115,7 +115,7 @@ defaults:
   -
     scope:
       path: ""
-      type: "shoes-men"
+      type: "shoes-man"
     values:
       layout: product
       published: true

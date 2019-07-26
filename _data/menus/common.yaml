@@ -6,11 +6,11 @@
         - High => /shoes-woman/high/
         - Mid => /shoes-woman/mid/
         - Platform => /shoes-woman/platform/
-- collection: shoes-men
-  name: "Men => #"
+- collection: shoes-man
+  name: "Man => #"
   sub-menus:
-    - name: Shoes => /shoes-men/
+    - name: Shoes => /shoes-man/
       sub-menus:
-        - High => /shoes-men/high/
-        - Mid => /shoes-men/mid/
-        - Low => /shoes-men/low/
+        - High => /shoes-man/high/
+        - Mid => /shoes-man/mid/
+        - Low => /shoes-man/low/
