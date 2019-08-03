@@ -20,14 +20,14 @@
   grid-class: 4
   items:
     - { title: 'Search', i18n: { es_MX: 'Buscar', pt_BR: '' }, link: '/search/', pre-icon: 'fas fa-search' }
-    - { title: 'Approvals', i18n: { es_MX: 'Homologaciones', pt_BR: '' }, link: '/approvals/', pre-icon: 'fas fa-book' }
-    - { title: 'Programming software', i18n: { es_MX: 'Software de programación', pt_BR: '' }, link: '/programming-software/', pre-icon: 'fas fa-laptop' }
+    - { title: 'Sizes lists', i18n: { es_MX: 'Lista de tallas', pt_BR: '' }, link: '/sizes-lists/', pre-icon: 'fas fa-list-alt' }
+    - { title: 'Shop gift cards', i18n: { es_MX: 'Compra tarjeta de regalo', pt_BR: '' }, link: '/gift-cards/', pre-icon: 'fas fa-gift' }
     - { title: 'Video section', i18n: { es_MX: 'Sección de videos', pt_BR: '' }, link: '/videos/', pre-icon: 'fas fa-video' }
     - { title: 'YouTube', link: '/youtube/', pre-icon: 'fab fa-youtube' }
     - { title: 'Marketing support', i18n: { es_MX: 'Apoyo de mercadotecnia', pt_BR: '' }, link: '/marketing/', pre-icon: 'fas fa-edit' }
-    - { title: 'Service center', i18n: { es_MX: 'Centros de servicio', pt_BR: '' }, link: '/csapv-map/', pre-icon: 'fas fa-map-marker-alt' }
-    - { title: 'Guarantees', i18n: { es_MX: 'Garantías', pt_BR: 'Garantias' }, link: 'https://grupopv-public.s3.amazonaws.com/assets/pdf/documents/guarantees.pdf', pre-icon: 'fas fa-briefcase-medical', post-icon: 'fas fa-download' }
-    - { title: 'Repair request', i18n: { es_MX: 'Solicitud de reparación', pt_BR: 'Pedido de reparação' }, link: 'https://grupopv-public.s3.amazonaws.com/assets/pdf/formats/repair-request.pdf', pre-icon: 'fas fa-wrench', post-icon: 'fas fa-download' }
+    - { title: 'Stores all', i18n: { es_MX: 'Todas las tiendas', pt_BR: '' }, link: '/stores-all/', pre-icon: 'fas fa-map-marker-alt' }
+    - { title: 'Returns', i18n: { es_MX: 'Devoluciones', pt_BR: '' }, link: 'https://grupopv-public.s3.amazonaws.com/assets/pdf/documents/returns.pdf', pre-icon: 'fas fa-briefcase-medical', post-icon: 'fas fa-download' }
+    - { title: 'Return Policy', i18n: { es_MX: 'Políticas de devolución', pt_BR: '' }, link: 'https://grupopv-public.s3.amazonaws.com/assets/pdf/documents/return-policy.pdf', pre-icon: 'fas fa-wrench', post-icon: 'fas fa-download' }
     - { title: 'Engineering', i18n: { es_MX: 'Ingeniería', pt_BR: '' }, link: 'https://www.netguard.video/tools/downloads', pre-icon: 'fas fa-user-cog', post-icon: 'fas fa-external-link-alt fa-sm' }
     - { title: 'TeamViewer', link: 'https://get.teamviewer.com/grupopv', post-icon: 'fas fa-external-link-alt fa-sm', pre-icon: 'fas fa-desktop' }
 
