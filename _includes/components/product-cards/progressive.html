@@ -17,12 +17,40 @@
       {% if i18n-description %}{{ i18n-description }}{% else %}{{ doc.description }}{% endif %}
     </div>
 
-    {% unless site.product.price.disabled %}
-      <div class="text-right mb-1 mt-2">
-        <span class="product-price badge badge-primary text-white text-sm {% if doc.promotion-price and site.original == false %}{{ 'disabled-price' }}{% endif %}">{% if doc.price %}{{ doc.price | prepend: '$ ' }}{% endif %}{% assign doc-price-size = doc.price | downcase | split: '.' | last | size %}{% if doc-price-size == 1 %}{{ "0" }}{% endif %}{% if doc.currency %}{{ doc.currency | prepend: ' ' }}{% endif %}</span>
-        <span class="badge badge-primary text-white text-sm">{% unless site.original %}{% if site.special-offers.customers %}{% if doc.promotion-price %}{{ doc.promotion-price | prepend: '$ ' }}{% endif %}{% assign promotion-price-size = doc.promotion-price | downcase | split: '.' | last | size %}{% if promotion-price-size == 1 %}{{ "0" }}{% endif %}{% if doc.promotion-currency %}{{ doc.promotion-currency | prepend: ' ' }}{% endif %}{% endif %}{% endunless %}</span>
-      </div>
-    {% endunless %}
+    {% assign collections = site.collections | where: "label", page.collection %}
+    {% for collection in collections %}
+      {% unless collection.prices == false %} <!-- disable prices per collection thru config file -->
+
+        {% unless site.product.price.disabled %} <!-- disable prices to all products -->
+          <div class="text-right mb-1 mt-2">
+
+            <span class="product-price badge badge-primary text-white text-sm {% if doc.promotion-price and site.original == false %}{{ 'disabled-price' }}{% endif %}">
+              {% assign doc-price-size = doc.price | downcase | split: '.' | last | size %}
+              {% if doc.price %}{{ doc.price | prepend: '$ ' }}{% endif %}{% if doc-price-size == 1 %}{{ "0" }}{% endif %} <!-- add decimals and currency sing ($) to prices -->
+              {% if doc.currency %}
+                {{ doc.currency | prepend: ' ' }} <!-- prepand currency (USD) -->
+              {% endif %}
+            </span>
+
+            {% capture promotion-price %}
+              {% unless site.original %} <!-- only to customers -->
+                {% if site.special-offers.customers %} <!-- if the product has an special offer -->
+                  {% assign promotion-price-size = doc.promotion-price | downcase | split: '.' | last | size %}
+                  {% if doc.promotion-price %}{{ doc.promotion-price | prepend: '$ ' }}{% endif %}{% if promotion-price-size == 1 %}{{ "0" }}{% endif %} <!-- add decimals and currency sing ($) to prices -->
+                  {% if doc.promotion-currency %}
+                    {{ doc.promotion-currency | prepend: ' ' }} <!-- prepand currency (USD) -->
+                  {% endif %}
+                {% endif %}
+              {% endunless %}
+            {% endcapture %}
+            <span class="badge badge-primary text-white text-sm">{{ promotion-price | strip }}</span>
+
+          </div>
+        {% endunless %}
+
+      {% endunless %}
+    {% endfor %}
+
   </div>
 
 </div>

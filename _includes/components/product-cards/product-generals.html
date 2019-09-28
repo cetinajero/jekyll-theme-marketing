@@ -5,7 +5,40 @@
     <p class="product-commercial {% unless page.commercial %}{{ 'd-none' }}{% endunless %}">{{ site.data.i18n.common.product-layout[site.lang].commercial | default: 'Commercial' }}: <strong>{{ page.commercial }}</strong></p>
     <p class="product-sat-code {% unless page.sat-code %}{{ 'd-none' }}{% endunless %}">{{ site.data.i18n.components.product-cards[site.lang].product-generals.sat-code.title | default: 'SAT code' }}: <strong>{{ page.sat-code }}</strong></p>
     <div class="product-price">
-      {% unless site.product.price.disabled %}<span class="badge badge-primary text-white {% if page.promotion-price and site.original == false %}{{ 'disabled-price' }}{% endif %}">{% if page.price %}{{ page.price | prepend: '$ ' }}{% endif %}{% assign price-size = page.price | downcase | split: '.' | last | size %}{% if price-size == 1 %}{{ "0" }}{% endif %}{% if page.currency %}{{ page.currency | prepend: ' ' }}{% endif %}</span>{% endunless %}
-      <span class="badge badge-primary text-white">{% unless site.original %}{% if site.special-offers.customers %}{% if page.promotion-price %}{{ page.promotion-price | prepend: '$ ' }}{% endif %}{% assign promotion-price-size = page.promotion-price | downcase | split: '.' | last | size %}{% if promotion-price-size == 1 %}{{ "0" }}{% endif %}{% if page.promotion-currency %}{{ page.promotion-currency | prepend: ' ' }}{% endif %}{% else %}{{ '<a href="/our-offices/" title="Our offices" class="white">Contáctanos para un precio especial</a>' }}{% endif %}{% endunless %}</span>
+
+      {% assign collections = site.collections | where: "label", page.collection %}
+      {% for collection in collections %}
+        {% unless collection.prices == false %} <!-- disable prices per collection thru config file -->
+
+          {% unless site.product.price.disabled %}  <!-- disable prices to all products -->
+            <span class="badge badge-primary text-white {% if page.promotion-price and site.original == false %}{{ 'disabled-price' }}{% endif %}">
+              {% assign price-size = page.price | downcase | split: '.' | last | size %}
+              {% if page.price %}{{ page.price | prepend: '$ ' }}{% endif %}{% if price-size == 1 %}{{ "0" }}{% endif %}  <!-- add decimals and currency sing ($) to prices -->
+              {% if page.currency %}
+                {{ page.currency | prepend: ' ' }}  <!-- prepand currency (USD) -->
+              {% endif %}
+            </span>
+          {% endunless %}
+
+          {% capture promotion-price %}
+            {% unless site.original %}  <!-- only to customers -->
+              {% if site.special-offers.customers %} <!-- if the product has an special offer -->
+                {% assign promotion-price-size = page.promotion-price | downcase | split: '.' | last | size %}
+                {% if page.promotion-price %}{{ page.promotion-price | prepend: '$ ' }}{% endif %}{% if promotion-price-size == 1 %}{{ "0" }}{% endif %}   <!-- add decimals and currency sing ($) to prices -->
+                {% if page.promotion-currency %}
+                  {{ page.promotion-currency | prepend: ' ' }}  <!-- prepand currency (USD) -->
+                {% endif %}
+              {% else %}
+                <a href="/our-offices/" title="Our offices" class="white">
+                  Contáctanos para un precio especial
+                </a>
+              {% endif %}
+            {% endunless %}
+          {% endcapture %}
+          <span class="badge badge-primary text-white">{{ promotion-price | strip }}</span>
+
+        {% endunless %}
+      {% endfor %}
+
     </div>
 </div>
