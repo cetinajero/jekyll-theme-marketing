@@ -8,25 +8,26 @@
 
       {% assign collections = site.collections | where: "label", page.collection %}
       {% for collection in collections %}
-        {% unless collection.prices == false %} <!-- disable prices per collection thru config file -->
+        {% unless collection.prices == false %}
 
-          {% unless site.product.price.disabled %}  <!-- disable prices to all products -->
-            <span class="badge badge-primary text-white {% if page.promotion-price and site.original == false %}{{ 'disabled-price' }}{% endif %}">
+          {% capture price %}
+            {% unless site.product.price.disabled %}
               {% assign price-size = page.price | downcase | split: '.' | last | size %}
-              {% if page.price %}{{ page.price | prepend: '$ ' }}{% endif %}{% if price-size == 1 %}{{ "0" }}{% endif %}  <!-- add decimals and currency sing ($) to prices -->
+              {% if page.price %}{{ page.price | prepend: '$ ' }}{% endif %}{% if price-size == 1 %}{{ "0" }}{% endif %}
               {% if page.currency %}
-                {{ page.currency | prepend: ' ' }}  <!-- prepand currency (USD) -->
+                {{ page.currency | prepend: ' ' }}
               {% endif %}
-            </span>
-          {% endunless %}
+            {% endunless %}
+          {% endcapture %}
+          <span class="badge badge-primary text-white {% if page.promotion-price and site.original == false %}{{ 'disabled-price' }}{% endif %}">{{ price | strip }}</span>
 
           {% capture promotion-price %}
-            {% unless site.original %}  <!-- only to customers -->
-              {% if site.special-offers.customers %} <!-- if the product has an special offer -->
+            {% unless site.original %}
+              {% if site.special-offers.customers %}
                 {% assign promotion-price-size = page.promotion-price | downcase | split: '.' | last | size %}
-                {% if page.promotion-price %}{{ page.promotion-price | prepend: '$ ' }}{% endif %}{% if promotion-price-size == 1 %}{{ "0" }}{% endif %}   <!-- add decimals and currency sing ($) to prices -->
+                {% if page.promotion-price %}{{ page.promotion-price | prepend: '$ ' }}{% endif %}{% if promotion-price-size == 1 %}{{ "0" }}{% endif %}
                 {% if page.promotion-currency %}
-                  {{ page.promotion-currency | prepend: ' ' }}  <!-- prepand currency (USD) -->
+                  {{ page.promotion-currency | prepend: ' ' }}
                 {% endif %}
               {% else %}
                 <a href="/our-offices/" title="Our offices" class="white">
