@@ -8,6 +8,15 @@
 
       {% assign collections = site.collections | where: "label", page.collection %}
       {% for collection in collections %}
+
+        {% if collection.prices == false %}
+          <span class="badge badge-primary text-white">
+            <a href="/our-offices/" title="Our offices" class="white">
+              Contáctanos para un precio especial
+            </a>
+          </span>
+        {% endif %}
+
         {% unless collection.prices == false %}
 
           {% capture price %}
