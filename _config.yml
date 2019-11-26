@@ -62,7 +62,11 @@ css:
     font-color: "#1A69D5"
     icons: "#1A69D5"
   footer:
-    background-color: "#1D6BD6"
+    top:
+      background-color: "#1D6BD6"
+    bottom:
+      background-color: "#1A69D5"
+      font-color: "#FFF"
 
 awards:
   -
