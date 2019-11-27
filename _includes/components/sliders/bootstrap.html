@@ -1,10 +1,25 @@
-<h4 class="pt-4">{{ carousel.i18n[site.lang] | default: carousel.title }}</h4>
+{% if carousel.title %}
+  <h4 class="pt-4">{{ carousel.i18n[site.lang] | default: carousel.title }}</h4>
+{% endif %}
+
 <div id="{{ carousel.id }}BootstrapCarousel" class="carousel slide" data-ride="carousel">
+
+  {% if carousel.indicators %}
+    <ol class="carousel-indicators">
+      {% for photo in (1..carousel.photos) %}
+        <li data-target="#{{ carousel.id }}BootstrapCarousel" data-slide-to="{{ forloop.index0 }}" class="{% if forloop.index == 1 %}active{% endif %}"></li>
+      {% endfor %}
+    </ol>
+  {% endif %}
 
   <div class="carousel-inner">
     {% for photo in (1..carousel.photos) %}
       <div class="carousel-item {% if forloop.index == 1 %}active{% endif %}">
         <img src="{{ site.amazon-s3 }}/components/sliders/bootstrap/img/{{ carousel.id }}/{{ forloop.index }}.jpg" class="d-block w-100" alt="{{ carousel.title }}">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{ carousel.captions[forloop.index0].title }}</h5>
+          <p>{{ carousel.captions[forloop.index0].text }}</p>
+        </div>
       </div>
     {% endfor %}
   </div>
