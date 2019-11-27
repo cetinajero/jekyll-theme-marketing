@@ -1,4 +1,7 @@
 [data-component="videos/background"] {
+  #cm-video-bg .white.text-center {
+    padding: 112px 0px;
+  }
   @include media-breakpoint-up(lg) {
     .fwb-video {
       height: 900px;
