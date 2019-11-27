@@ -8,10 +8,14 @@
 $amazon-s3: '{{ site.amazon-s3 }}';
 $font-color-menu: {{ site.css.menu.font-color }};
 $icon-color-menu: {{ site.css.menu.icons }};
+$navbar-background-color: {{ site.css.navbar.background-color | default: '#fff' }};
+$footer-top-background-color: {{ site.css.footer.top.background-color | default: site.css.menu.font-color }};
+$footer-bottom-background-color: {{ site.css.footer.bottom.background-color | default: "#f7f7f7" }};
+$footer-bottom-font-color: {{ site.css.footer.bottom.font-color | default: "#7f7f7f" }};
 
 // Define bootstrap variables
 $theme-colors: (
-  "primary": {{ site.css.menu.font-color }}
+  "primary": {{ site.css.bootstrap.primary | default: site.css.menu.font-color }}
 );
 
 // Import bootstrap partials

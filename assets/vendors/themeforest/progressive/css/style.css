@@ -2451,22 +2451,6 @@ blockquote small {
   -webkit-transition: margin-top 0.2s linear;
   transition: margin-top 0.2s linear;
 }
-.fixed-header .header-wrapper {
-  background: #fff;
-  -webkit-transition: background 0.2s linear;
-  transition: background 0.2s linear;
-}
-.fixed-header.background-opacity .header-wrapper {
-  background: rgba(255,255,255,.97);
-  -webkit-transition: background 0.2s linear;
-  transition: background 0.2s linear;
-}
-.fixed-header.hidden-top.visible-top .header-wrapper,
-.fixed-header.fixed .header-wrapper {
-  -webkit-box-shadow: 0 0 5px rgba(0,0,0,.15);
-  -moz-box-shadow: 0 0 5px rgba(0,0,0,.15);
-  box-shadow: 0 0 5px rgba(0,0,0,.15);
-}
 
 .fixed-header.hidden-top .page-box {
   padding-top: 112px;
@@ -2617,18 +2601,6 @@ blockquote small {
 .header .primary .navbar .nav .sub .item-new .before,
 .header .primary .navbar .nav .sub .item-new:before {
   display: none;
-}
-.header .primary .navbar .nav > li:hover > a {
-  background: #fff;
-  border-color: #ccc;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-box-shadow: 0 0 5px rgba(0,0,0,.15);
-  -moz-box-shadow: 0 0 5px rgba(0,0,0,.15);
-  box-shadow: 0 0 5px rgba(0,0,0,.15);
-  -webkit-transition: all 0.2s linear;
-  transition: all 0.2s linear;
 }
 .header .primary .navbar .nav .parent {
   position: relative;
@@ -9310,12 +9282,6 @@ div.post p + div.post p {
 #footer.footer-two {
   margin: -176px 0 0 0;
 }
-#footer .footer-top {
-  background: #f2f2f2;
-  font-size: 12px;
-  line-height: 21px;
-  padding: 50px 0 13px;
-}
 #footer.footer-two .footer-top {
   padding-bottom: 43px;
 }
@@ -9368,13 +9334,6 @@ div.post p + div.post p {
   display: inline-block;
   float: none;
   margin: 0 3px;
-}
-#footer .footer-bottom {
-  background: #f7f7f7;
-  border-top-width: 1px;
-  font-size: 11px;
-  line-height: 17px;
-  padding: 21px 0 20px;
 }
 #footer .phone,
 #footer .address {

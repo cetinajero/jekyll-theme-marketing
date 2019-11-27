@@ -1,4 +1,4 @@
-<div class="jumbotron bg-cover h-100" data-component="jumbotron/bootstrap" style="background-image: url('https://s3-us-west-2.amazonaws.com/grupopv-public/assets/img/components/jumbotron/bootstrap/{{ include.img }}.jpg');">
+<div class="jumbotron bg-cover h-100" data-component="jumbotron/bootstrap" style="background-image: url('{{ site.amazon-s3 }}/assets/img/components/jumbotron/bootstrap/{{ include.img }}.jpg');">
   <h2 class="display-4 text-white" data-appear-animation="fadeInDown">{{ include.title }}</h2>
   <p class="lead text-white" data-appear-animation="fadeInUp">{{ include.desc }}</p>
   <a class="btn btn-primary" href="{{ include.href | relative_url }}" role="button" data-appear-animation="fadeInUp">{{ include.button }}</a>

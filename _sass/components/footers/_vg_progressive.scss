@@ -1,3 +1,21 @@
+#footer .footer-top {
+  background-color: $footer-top-background-color;
+  padding-top: 25px;
+  color: #fff ;
+  font-size: 12px;
+  line-height: 21px;
+  padding: 50px 0 13px;
+}
+
+#footer .footer-bottom {
+  background: $footer-bottom-background-color;
+  color: $footer-bottom-font-color;
+  border-top-width: 1px;
+  font-size: 11px;
+  line-height: 17px;
+  padding: 21px 0 20px;
+}
+
 [data-component="footers/progressive"] {
   .title-block {
     border-bottom: 1px solid #e1e1e1;

@@ -349,20 +349,20 @@ div.shadow{
 		 -o-transition: all 100ms ease-out;
 			transition: all 100ms ease-out;
 }
-.carousel{
+.product-back .carousel{
 	width: 100%;
 	height:500px;
 	overflow:hidden;
 	position:relative;
 
 }
-.carousel ul{
+.product-back .carousel ul{
 	position:absolute;
 	top:0;
 	left:0;
 	padding:0;
 }
-.carousel li{
+.product-back .carousel li{
 	height:500px;
 	float:left;
 	overflow:hidden;
@@ -374,7 +374,7 @@ div.shadow{
 	transform-style: preserve-3d;
   transition: transform 5s;
 }
-.carouselPrev, .carouselNext{
+.product-back .carouselPrev,.product-back .carouselNext{
 	width: 50px;
 	height: 55px;
 	background: #ccc;
@@ -384,7 +384,7 @@ div.shadow{
 	opacity:0.9;
 	cursor:pointer;
 }
-.carouselNext{
+.product-back .carouselNext{
 	top:0;
 	right: -26px;
 	-webkit-transform: rotateY( -117deg );
@@ -394,7 +394,7 @@ div.shadow{
 			  transition: all 200ms ease-out;
 
 }
-.carouselNext.visible{
+.product-back .carouselNext.visible{
 		right:0;
 		opacity:0.8;
 		background: #efefef;
@@ -404,7 +404,7 @@ div.shadow{
               transform: rotateY( 0deg );
 			  transition: all 200ms ease-out;
 }
-.carouselPrev{
+.product-back .carouselPrev{
 	left:-26px;
 	top:0;
 	-webkit-transform: rotateY( 117deg );
@@ -414,7 +414,7 @@ div.shadow{
 			  transition: all 200ms ease-out;
 
 }
-.carouselPrev.visible{
+.product-back .carouselPrev.visible{
 		left:0;
 		opacity:0.8;
 		background: #eee;
@@ -424,7 +424,7 @@ div.shadow{
               transform: rotateY( 0deg );
 			  transition: all 200ms ease-out;
 }
-.carousel .x, .carousel .y{
+.product-back .carousel .x,.product-back  .carousel .y{
 	height:2px;
 	width:15px;
 	background: $space-overlay-color;
@@ -435,18 +435,18 @@ div.shadow{
 	-webkit-transform: rotate(45deg);
 	transform: rotate(45deg);
 }
-.carousel .x{
+.product-back .carousel .x{
 	-ms-transform: rotate(135deg);
 	-webkit-transform: rotate(135deg);
 	transform: rotate(135deg);
 	top:21px;
 }
-.carousel .carouselNext .x{
+.product-back .carousel .carouselNext .x{
 	-ms-transform: rotate(45deg);
 	-webkit-transform: rotate(45deg);
 	transform: rotate(45deg);
 }
-.carousel .carouselNext .y{
+.product-back .carousel .carouselNext .y{
 	-ms-transform: rotate(135deg);
 	-webkit-transform: rotate(135deg);
 	transform: rotate(135deg);

@@ -27,7 +27,6 @@ social-media:
   - name: email
     link: /contact/
 
-
 address:
   -
     name: "Matriz Chihuahua"
@@ -53,14 +52,21 @@ address:
     google-maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.8545936139944!2d-106.123450!3d28.633913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ea42ce37814dcd%3A0x42787422e7151f85!2sGRUPO+PV!5e0!3m2!1ses-419!2smx!4v1467400506119"
 
 css:
+  bootstrap:
+    primary: "#1A69D5"
+  navbar:
+    background-color: "#1A69D5"
   header:
     background-color: "#1A69D5"
   menu:
     font-color: "#1A69D5"
     icons: "#1A69D5"
   footer:
-    background-color: "#1D6BD6"
-
+    top:
+      background-color: "#1D6BD6"
+    bottom:
+      background-color: "#1A69D5"
+      font-color: "#FFF"
 
 awards:
   -
