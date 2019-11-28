@@ -4,7 +4,7 @@
       <div class="title-block pb-2 mb-3">
         <h3 class="title text-white m-0">
           <i class="{{ section.icon }}"></i>
-          {% include components/footers/progressive/custom-title.html %}
+          {% include components/footers/progressive/custom-title.liquid %}
         </h3>
       </div>
       <div class="custom">
@@ -14,7 +14,7 @@
               <li class="footer-list">
                 <a class="white" href="{{ item.link | relative_url }}">
                   <i class="{{ item.pre-icon }}" data-fa-transform="grow-2 left-3 up-1"></i>
-                  {% include components/footers/progressive/custom-item.html %}
+                  {% include components/footers/progressive/custom-item.liquid %}
                    <i class="{{ item.post-icon }}"></i>
                 </a>
               </li>

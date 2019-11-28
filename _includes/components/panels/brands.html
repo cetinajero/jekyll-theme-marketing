@@ -5,7 +5,7 @@
   {% for brand in page.brand-panel.brands %}
     <article class="col-12 col-md">
       <a href="{{ brand.href }}">
-        <img src="https://grupopv-public.s3.amazonaws.com/assets/img/logos-provider/{{ brand.img }}.png" alt="{{ brand.name }}" title="{{ brand.name }}">
+        <img src="{{ site.amazon-s3 }}/components/panels/brands/img/{{ brand.img }}.png" alt="{{ brand.name }}" title="{{ brand.name }}">
       </a>
     </article>
   {% endfor %}
