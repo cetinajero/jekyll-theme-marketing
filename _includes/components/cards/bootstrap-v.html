@@ -1,0 +1,13 @@
+<div class="card m-3" style="width: 18rem;">
+   <a href="{{ card.href }}" class="card-link">
+     <img src="{{ site.amazon-s3 }}/assets/img/catalog/thumbnails/{{ card.img }}.png" class="card-img-top" alt="{{ card.title }}">
+   </a>
+  <div class="card-body">
+    <a href="{{ card.href }}" class="card-link">
+      <h5 class="card-title">{{ card.title }}</h5>
+    </a>
+  </div>
+  <div class="card-body">
+    <a href="{{ card.href }}" class="card-link">{{ card.button }}</a>
+  </div>
+</div>
