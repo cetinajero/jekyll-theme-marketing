@@ -23,10 +23,7 @@
       <div class="row">
         {% for resource in page.resources.spec-sheets.specs %}
           {% assign i18n-resource-text = page.i18n[site.lang].resources.spec-sheets.specs.[forloop.index0] %}
-          <article class="col-sm-6 col-lg-4" style="padding:0px">
-            <span class="text-muted"><i class="text-primary fas fa-check-circle"></i> {% if i18n-resource-text %}{{ i18n-resource-text.name }}{% else %}{{ resource.name }}{% endif %}</span>
-            <div class="lead">{% if i18n-resource-text %}{{ i18n-resource-text.value }}{% else %}{{ resource.value }}{% endif %}</div>
-          </article>
+          {% include components/bullets/fontawesome.html %}
         {% endfor %}
       </div>
     </section>

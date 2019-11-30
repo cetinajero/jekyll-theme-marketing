@@ -1,0 +1,20 @@
+<div class="card m-2" style="max-width: 500px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <a href="{{ card.href }}" class="card-link">
+        <img src="{{ site.amazon-s3 }}/assets/img/catalog/thumbnails/{{ card.img }}.png" class="card-img" alt="{{ card.title }}">
+      </a>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <a href="{{ card.href }}" class="card-link">
+          <h5 class="card-title">{{ card.title }}</h5>
+        </a>
+        <p class="card-text">{{ card.text }}</p>
+        <div class="card-body">
+          <a href="{{ card.href }}" class="card-link">{{ card.button }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
