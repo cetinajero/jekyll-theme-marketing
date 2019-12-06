@@ -1,14 +1,16 @@
-<div class="card m-3" style="width: 18rem;">
-   <a href="{{ card.href }}" class="card-link">
-     <img src="{{ site.amazon-s3 }}/assets/img/catalog/thumbnails/{{ card.img }}.png" class="card-img-top" alt="{{ card.title }}">
-   </a>
-  <div class="card-body">
-    <a href="{{ card.href }}" class="card-link">
-      <h5 class="card-title">{{ card.title }}</h5>
-    </a>
-    <p class="card-text">{{ card.text }}</p>
-  </div>
-  <div class="card-body">
-    <a href="{{ card.href }}" class="card-link">{{ card.button }}</a>
+<div class="col-6 col-md-4 col-lg-3">
+  <div class="card my-3">
+     <a href="{{ card.href }}" class="card-link px-3">
+       <img src="{{ site.amazon-s3 }}/assets/img/catalog/thumbnails/{{ card.img }}.png" class="card-img-top" alt="{{ card.title }}">
+     </a>
+    <div class="card-body">
+      <a href="{{ card.href }}" class="card-link">
+        <h5 class="card-title">{{ card.title }}</h5>
+      </a>
+      <p class="card-text small line-clamp-2">{{ card.text }}</p>
+    </div>
+    <div class="card-body">
+      <a href="{{ card.href }}" class="card-link float-right pt-3">{{ card.button }}</a>
+    </div>
   </div>
 </div>

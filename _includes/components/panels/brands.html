@@ -1,9 +1,9 @@
 <h5 class="post pt-4">{{ page.brand-panel.title }}</h5>
 <p class="footer-font text-right">{{ page.brand-panel.text }}</p>
 <hr>
-<div class="row">
+<div class="row justify-content-center">
   {% for brand in page.brand-panel.brands %}
-    <article class="col-12 col-md">
+    <article class="col-4 col-md-3 col-lg-2 py-3">
       <a href="{{ brand.href }}">
         <img src="{{ site.amazon-s3 }}/components/panels/brands/img/{{ brand.img }}.png" alt="{{ brand.name }}" title="{{ brand.name }}">
       </a>
