@@ -21,6 +21,7 @@ namespace :serve do
     begin
       puts "## Running: bundle exec jekyll serve --config _config-dev.yml --host 0.0.0.0"
       config_prod=YAML.load_file("_config.yml")
+      config_prod.merge!({ "baseurl" => nil })
       config_prod.each do |key, value|
         if key == "defaults"
           value[2].each do |key, value| # collections.radios.published = false
@@ -45,7 +46,12 @@ namespace :serve do
   task :prod do
     begin
       puts "## Running: bundle exec jekyll serve --host 0.0.0.0"
-      system "bundle exec jekyll serve --host 0.0.0.0"
+      config_prod=YAML.load_file("_config.yml")
+      config_prod.merge!({ "baseurl" => nil })
+      config_dev=File.new("_config-dev.yml","w")
+      config_dev.write(config_prod.to_h.to_yaml)
+      config_dev.close
+      system "bundle exec jekyll serve --config _config-dev.yml --host 0.0.0.0"
     rescue Exception => e
       puts e
       puts "\n## Shutting down server"
