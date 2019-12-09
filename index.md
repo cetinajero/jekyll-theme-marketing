@@ -11,17 +11,17 @@ featured-products:
   - img: "565396f"
     product: "Chuck Taylor All Star Exploding Star High Top"
     text: "When it comes to major star appeal, look no further than these vibrantly colored Chucks. An exploding star graphic brings standout style to classic and comfortable canvas."
-    href: "/jekyll-theme-marketing/shoes-woman/high/565396f/"
+    href: "/shoes-woman/high/565396f/"
 
   - img: "563512f"
     product: "Chuck Taylor All Star Madison Mid"
     text: "Amp up the comfort with cushioned and structured Chucks. With padding on the collar, heel and tongue, they've got everything you need to keep going."
-    href: "/jekyll-theme-marketing/shoes-woman/mid/563512f/"
+    href: "/shoes-woman/mid/563512f/"
 
   - img: "564995c"
     product: "Chuck Taylor All Star Rainbow Platform Low Top"
     text: "Paneled canvas and a colorblocked midsole bring a vibrant edge to your everyday Chucks, while a platform sole gives you a boost. Stand tall."
-    href: "/jekyll-theme-marketing/shoes-woman/platform/564995c/"
+    href: "/shoes-woman/platform/564995c/"
 
 info-cards:
   - title: "About CONVERSE"
@@ -34,7 +34,7 @@ info-cards:
   - title: "Community Impact"
     desc: "We strive to make a positive impact for the communities in which we live and work."
     button: "Ver más"
-    href: "/community-impact/"
+    href: "/"
     animation: "fadeInUp"
     img: community-impact
 
@@ -46,7 +46,7 @@ special-offers:
     img: "/radios/motorola/digital/portable/dep450/dep450.png"
     brand: "Motorola"
     commercial: "DEP 450"
-    href: "/jekyll-theme-marketing/shoes-woman/"
+    href: "/shoes-woman/"
 
   - collection: shoes-woman
     id: "VZ-30-G6-4"
@@ -77,7 +77,7 @@ special-offers:
   {%  include components/jumbotron/bootstrap.html
       desc="Find the store closest to your location"
       button='<i class="fas fa-search"></i> Search'
-      href="/shops/"
+      href="/"
       img="shops"
   %}
 </section>
@@ -109,7 +109,7 @@ special-offers:
       background="renew.mp4"
       title="CONVERSE RENEW CANVAS"
       button="Buy the collection"
-      href="/renew/"
+      href="/"
   %}
 </section>
 ---

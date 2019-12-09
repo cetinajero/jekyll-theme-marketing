@@ -21,7 +21,7 @@ resources:
             </a>
           </div>
           <div class="product-model">
-            <a href="{{ item.link | prepend: '/programming-software' }}">{{ item.i18n[site.lang] | default: item.title }}</a>
+            <a href="{{ item.link | prepend: '/gift-cards' }}">{{ item.i18n[site.lang] | default: item.title }}</a>
           </div>
         </div>
       {% endfor %}

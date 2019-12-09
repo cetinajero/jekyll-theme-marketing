@@ -26,7 +26,7 @@ permalink: /events/
         title="Curso técnico para Centros de Servicio"
         desc="Se presento con éxito en Monterrey, Guadalajara y la Ciudad de México"
         button='<i class="far fa-newspaper"></i> Ver evento'
-        href="/events/csapv-training/"
+        href="/"
         img="csapv-training"
     %}
   </article>

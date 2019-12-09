@@ -21,7 +21,6 @@ namespace :serve do
     begin
       puts "## Running: bundle exec jekyll serve --config _config-dev.yml --host 0.0.0.0"
       config_prod=YAML.load_file("_config.yml")
-      config_prod.merge!({ "baseurl" => nil })
       config_prod.each do |key, value|
         if key == "defaults"
           value[2].each do |key, value| # collections.radios.published = false
