@@ -1,7 +1,7 @@
 - collection: shoes-woman
   name: "Woman => #"
   sub-menus:
-    - name: Shoes => /jekyll-theme-marketing/shoes-woman/
+    - name: Shoes => /shoes-woman/
       sub-menus:
         - High => /shoes-woman/high/
         - Mid => /shoes-woman/mid/
