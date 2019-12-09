@@ -1,0 +1,278 @@
+---
+---
+body,
+input,
+button,
+select,
+textarea {
+  font-family:'Arimo   ', sans-serif;
+}
+.slider .slider-nav {
+  background-color: rgba(26,105,213,0.97);
+}
+.product .limit-offer,
+.product .not-rotation-actions {
+  background-color: rgba(26,105,213,0.9);
+}
+#catalog .category-img .description,
+.toolbar .sort-catalog .dropdown-toggle,
+.toolbar .grid-list .grid,
+.toolbar .grid-list .list,
+.toolbar .up-down,
+.toolbar .up-down.active,
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > span:hover,
+.sidebar .tags a,
+.btn-group.open .btn.dropdown-toggle {
+  background-color: rgba(26,105,213,0.7);
+}
+.sidebar .banners .banner-text {
+  background-color: rgba(26,105,213,0.65);
+}
+.slider.rs-slider .tparrows,
+.product-page .add-cart-form .number .regulator a:hover,
+.progressive-slider-two .pagination a {
+  background-color: rgba(26,105,213,0.5);
+}
+.pricing .bottom-box {
+  background-color: rgba(26,105,213,0.05);
+}
+.pricing:before {
+  background-color: rgba(26,105,213,0.06);
+}
+.pricing .options li,
+.pricing .bottom-box {
+  border-color: rgba(26,105,213,0.1);
+}
+.header .cart-header .dropdown-toggle,
+#footer .newsletter input:focus + .submit,
+.icon,
+.big-icon,
+.big-icon:visited,
+.service .icon,
+.close:hover,
+.close:focus,
+.img-thumbnail:hover .bg-images i:before,
+.box-404 h1,
+.gallery-images:hover .bg-images i:before,
+.features-block .header-box .icon-box,
+.features-block .header-box,
+.sidebar .newsletter input:focus + .submit,
+.sidebar .section .selected .close:hover,
+.package .title a,
+.package .price-box .price,
+.package .price-box .icon,
+.pricing .title a,
+.pricing .options li span,
+.pricing .options li.active,
+.banner-set .next:hover,
+.banner-set .prev:hover,
+.btn.btn-border,
+.btn.btn-border .caret,
+.product-remove:hover,
+.one-page .header .primary .navbar .nav .active {
+  color: #1a69d5;
+}
+.pricing .bottom-box .more {
+  color: rgba(26,105,213,0.7);
+}
+.pricing .options li {
+  color: rgba(26,105,213,0.4);
+}
+.phone-header a svg path,
+.search-header a svg path,
+.product .actions a svg path,
+.sidebar .wishlist .add-cart:hover path,
+.header .cart-header .dropdown-toggle .icon svg path,
+.search-active .search-submit svg path,
+.new-checkbox svg polygon,
+.product-bottom .related-products li .button-box .wishlist:hover svg path,
+.jslider .jslider-pointer svg path,
+.rating-box .rating svg polygon,
+.search-result .search-form .search-submit svg path {
+  fill: {{ site.css.menu.icons }};
+}
+@media (max-width: 979px) {
+  .header .primary .navbar .nav > .parent.active > a,
+  .header .primary .navbar .nav > .parent.active:hover > a,
+  .header .primary .navbar .nav .open-sub span,
+  .accordion-tab > li.active > a,
+  .accordion-tab > li.active > a:hover,
+  .accordion-tab > li.active > a:focus,
+  .accordion-tab > li.active:hover > a,
+  .products-tab .accordion-tab > li.active > a,
+  .products-tab .accordion-tab > li.active:hover > a {
+    background-color: #1a69d5;
+  }
+  .header .primary .navbar .nav > .parent.active > a,
+  .header .primary .navbar .nav > .parent.active:hover > a {
+    border-color: #1a69d5;
+  }
+}
+.employee .employee-hover {
+  font-size: 11.5px;
+  line-height: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.employee {
+  min-width: 185px;
+  width: 16%;
+}
+
+@media screen and (max-width:1180px){
+  table, thead, tr, th, tbody, td{
+    /* display:table-row; */
+    align-content:center;
+    text-align: center;
+  }
+}
+
+.header .logo img {   width: 100%;   vertical-align: unset; }
+.header .primary .sub li {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.phone-active { line-height: 30px; font-size: 19px;}
+.phone-active strong {    color: {{ site.css.menu.font-color }};   letter-spacing: 1px; }
+
+.header .primary .navbar .nav > li > a, .header .primary .navbar .nav > li > a:visited {
+  font-family: Helvetica;
+  font-size: 10.1pt;
+  font-weight: 700;
+  color: {{ site.css.menu.font-color }};
+}
+
+#main {
+  padding-bottom: 5px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 5px;
+}
+
+#top-box {
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-image: none;
+  background-origin: padding-box;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto auto;
+  min-height: 40px;
+  padding-bottom: 5px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 7px;
+  width: 100%;
+}
+
+.fixed-header.hidden-top #top-box {
+  color: #fff;
+  text-align: right;
+  top: 0;
+  z-index: 910;
+  font-size: 12px;
+}
+
+
+.sourcecoast.sclogin-modal-links.sclogin { display: none;}
+_________________________________________________
+.box-404 h1{
+  color: #000;
+}
+
+_______________________________________________________________
+img {
+  height: 100%;
+  max-width: 100%;
+}
+
+
+
+#footer .footer-top {
+  padding-top: 25px;
+  background-color: {{ site.css.footer.background-color }};
+  color: #fff ;
+}
+
+#footer header .title, #footer .title-block .title {
+  color: unset;
+  font-size: 15px;
+}
+
+/* h2 {    font-size: 28px;} */
+
+body {    line-height: 1.2;}
+
+/* h1 {    font-size: 2.4em;} */
+
+hr {margin-bottom: 20px; margin-top: 20px;}
+
+.header .primary .megamenu > .sub { width: 680px; }
+
+.slider.rs-slider {
+  padding-bottom: 25px;
+}
+
+
+.map-box .contact-info {
+  height: 220px;
+}
+--------------------------------------------------------------------------------------------------------------
+
+.header .primary .megamenu > .sub .sub-list {
+  display: table-cell;
+  padding-bottom: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 27px;
+  vertical-align: top;
+}
+
+
+.header .primary .megamenu .title {
+  font-size: 13.2px;
+  line-height: 13.2px;
+  margin-bottom: 3px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  text-rendering: geometricprecision;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  color: #555b66;
+  font-family: inherit;
+}
+
+
+.header .primary .sub a, .header .primary .sub a:visited {
+  color: #555b66;
+  display: block;
+  text-decoration-color: -moz-use-text-color;
+  text-decoration-line: none;
+  text-decoration-style: solid;
+  transition-delay: 0s;
+  transition-duration: 0.2s;
+  transition-property: opacity;
+  transition-timing-function: linear;
+}
+-------------------------------------------------------------------------------
+
+_________________________________________________
+
+#floater_right {
+  position: fixed;
+  right: 0;
+  top: 200px;
+  z-index: 10000;
+}
+  _________________________________________________
