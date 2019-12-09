@@ -1,14 +1,14 @@
 {% assign menu-name = menu.name | split: ' => ' | first %}
 {% if menu.sub-menus %}
   <li class="nav-item dropdown" data-component="nav-items/bootstrap">
-    <a class="nav-link dropdown-toggle" href="{{ menu.name | split: ' => ' | last }}" id="{{ menu-name }}-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-proofer-ignore>
+    <a class="nav-link dropdown-toggle" href="{{ menu.name | split: ' => ' | last | relative_url }}" id="{{ menu-name }}-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-proofer-ignore>
       {{ site.data.i18n.catalog[menu.collection][site.lang][menu-name].title | default: menu-name }}
     </a>
     <div class="dropdown-menu" aria-labelledby="{{ menu-name }}-dropdown">
       {% for sub-menu in menu.sub-menus %}
         {% assign sub-menu-name = sub-menu.name | split: ' => ' | first %}
         {% if site.links.dropdown[sub-menu-name].disabled == null %}
-          <a class="dropdown-item" href="{{ sub-menu.name | split: ' => ' | last }}">
+          <a class="dropdown-item" href="{{ sub-menu.name | split: ' => ' | last | relative_url }}">
             {{ site.data.i18n.catalog[menu.collection][site.lang][sub-menu-name].title | default: sub-menu-name }}
           </a>
         {% endif %}
@@ -16,7 +16,7 @@
     </div>
   </li>
 {% else %}
-  <a class="nav-item nav-link" href="{{ menu.name | split: ' => ' | last }}" data-component="nav-items/bootstrap">
+  <a class="nav-item nav-link" href="{{ menu.name | split: ' => ' | last | relative_url }}" data-component="nav-items/bootstrap">
     {{ site.data.i18n.catalog[menu.collection][site.lang][menu-name].title | default: menu-name }}
   </a>
 {% endif %}
