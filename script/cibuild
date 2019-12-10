@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -e # halt script on error
 
-bundle exec jekyll build
+# TODO: Run Ruby tests
+# rake test:test
+# rubocop
 
-# TODO: Activate htmlproofer tests
-# bundle exec htmlproofer ./_site
+# Run HTML tests
+rake test:html
