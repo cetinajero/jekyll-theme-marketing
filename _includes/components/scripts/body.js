@@ -1,6 +1,6 @@
 <div id="javascript">
   <!-- 3D Space product card -->
-  <script src="/assets/js/product-cards/3d-space.js"></script>
+  <script src="{{ '/assets/js/product-cards/3d-space.js' | relative_url }}"></script>
 
   <script src="{{ '/assets/node_modules/bootstrap/dist/js/bootstrap.min.js' | relative_url }}"></script>
   <!-- <script src="/vendors/themes/vg_progressive/js/price-regulator/jshashtable-2.1_src.js"></script> -->
