@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-set -e # halt script on error
-
-# TODO: Run Ruby tests
-# rake test:test
-# rubocop
-
-# Run HTML tests
-rake test:html
