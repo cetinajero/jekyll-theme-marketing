@@ -13,7 +13,6 @@
   <!-- <script src="/vendors/themes/vg_progressive/js/jquery.touchSwipe.min.js"></script> -->
   <!-- <script src="/vendors/themes/vg_progressive/js/jquery.elevateZoom-3.0.8.min.js"></script> -->
   <!-- <script src="/vendors/themes/vg_progressive/js/jquery.imagesloaded.min.js"></script> -->
-  <script src="/vendors/themes/vg_progressive/js/jquery.appear.js"></script>
   <!-- <script src="/vendors/themes/vg_progressive/js/jquery.sparkline.min.js"></script> -->
   <!-- <script src="/vendors/themes/vg_progressive/js/jquery.easypiechart.min.js"></script> -->
   <!-- <script src="/vendors/themes/vg_progressive/js/jquery.easing.1.3.js"></script> -->
@@ -37,5 +36,6 @@
   <!-- <script src="/vendors/themes/vg_progressive/js/bootstrap-datepicker.js"></script> -->
   <!-- <script src="/vendors/themes/vg_progressive/js/jplayer/jquery.jplayer.min.js"></script> -->
   <!-- <script src="/vendors/themes/vg_progressive/js/jplayer/jplayer.playlist.min.js"></script> -->
-  <script src="/vendors/themes/vg_progressive/js/main.js"></script>
+  <script src="{{ '/assets/vendors/themeforest/progressive/js/jquery.appear.js' | relative_url }}"></script>
+  <script src="{{ '/assets/vendors/themeforest/progressive/js/main.js' | relative_url }}"></script>
 </div>
