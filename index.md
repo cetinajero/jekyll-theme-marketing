@@ -92,7 +92,7 @@ special-offers:
           title="Special edition"
           desc="Choose the ones that go with you the most"
           button='<i class="fas fa-star"></i> See content'
-          href="https://www.converse.com/shop/galaxy-styles"
+          href="/"
           img="special-edition"
       %}
     </article>
