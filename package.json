@@ -1,7 +1,7 @@
 {
   "name": "jekyll-theme-marketing",
   "version": "0.5.0",
-  "description": "Right now just a test theme for Jekyll",
+  "description": "A Jekyll theme :gem: managed with Yarn",
   "main": "index.js",
   "repository": "git@github.com:cetinajero/jekyll-theme-marketing.git",
   "author": "<cetinajero@gmail.com>",

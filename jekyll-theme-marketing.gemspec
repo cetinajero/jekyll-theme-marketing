@@ -6,15 +6,17 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Edgar Tinajero']
   spec.email         = ['cetinajero@gmail.com']
 
-  spec.summary       = %q{Right now just a test theme for Jekyll.}
+  spec.summary       = 'A Jekyll theme :gem: managed with Yarn'
   spec.homepage      = 'https://github.com/cetinajero/jekyll-theme-marketing'
   spec.license       = 'MIT'
 
   spec.metadata['plugin_type'] = 'theme'
 
-  spec.files         = `git ls-files -z`.split("\x0").select { |f|
-    f.match(%r{^(assets|_layouts|_includes|_sass|LICENSE|README)}i)
-  }
+  all_files          = `git ls-files -z`.split("\x0")
+  spec.files         = all_files.select do |f|
+    gemfiles = /^(assets|_layouts|_includes|_sass|LICENSE|README)/i
+    f.match(gemfiles)
+  end
 
   spec.add_runtime_dependency 'jekyll', '~> 3.6'
 
