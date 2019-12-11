@@ -4,7 +4,7 @@ require 'rubygems'
 require 'yaml'
 require 'html-proofer'
 require 'rake/testtask'
-require_relative 'lib/jekyll-theme-marketing'
+require_relative 'lib/jekyll_theme_marketing'
 
 ARGV.each { |a| task(a.to_sym) {} }
 
@@ -23,92 +23,44 @@ desc 'Run local server'
 namespace :serve do
   desc 'Run local server with _config-dev.yml'
   task :dev do
-    begin
-      puts "## Running: bundle exec jekyll serve --config _config-dev.yml --host 0.0.0.0"
-      config_prod=YAML.load_file("_config.yml")
-      config_prod.merge!({ "baseurl" => nil })
-      config_prod.each do |key, value|
-        if key == "defaults"
-          value[2].each do |key, value| # collections.radios.published = false
-            key == "values" ? value.merge!({ "published" => false }) : nil
-          end
-          value[3].each do |key, value| # collections.cctv.published = false
-            key == "values" ? value.merge!({ "published" => false }) : nil
-          end
-        end
-      end
-      config_dev=File.new("_config-dev.yml","w")
-      config_dev.write(config_prod.to_h.to_yaml)
-      config_dev.close
-      system "bundle exec jekyll serve --config _config-dev.yml --host 0.0.0.0"
-    rescue Exception => e
-      puts e
-      puts "\n## Shutting down server"
-    end
+    collections = [
+      # 'radios',
+      # 'cctv',
+      # 'emergency-lights',
+      # 'auxiliary-equipment',
+      # 'satelital',
+      # 'gps',
+      # 'spares',
+      # 'networks',
+      'pages'
+    ]
+    Serve.dev(collections)
   end
 
   desc 'Run local server with _config.yml'
-  task :prod do
-    begin
-      puts "## Running: bundle exec jekyll serve --host 0.0.0.0"
-      config_prod=YAML.load_file("_config.yml")
-      config_prod.merge!({ "baseurl" => nil })
-      config_dev=File.new("_config-dev.yml","w")
-      config_dev.write(config_prod.to_h.to_yaml)
-      config_dev.close
-      system "bundle exec jekyll serve --config _config-dev.yml --host 0.0.0.0"
-    rescue Exception => e
-      puts e
-      puts "\n## Shutting down server"
-    end
-  end
+  task(:prod) { Serve.prod }
 
   # Run local server without a collection
   namespace :without do
     # Run local server without radios collection
     task :radios do
-      begin
-        puts "## Running: bundle exec jekyll serve --config _config-dev.yml --host 0.0.0.0"
-        config_prod=YAML.load_file("_config.yml")
-        config_prod.each do |key, value|
-          if key == "defaults"
-            value[2].each do |key, value| # collections.radios.published = false
-              key == "values" ? value.merge!({ "published" => false }) : nil
-            end
-          end
-        end
-        config_dev=File.new("_config-dev.yml","w")
-        config_dev.write(config_prod.to_h.to_yaml)
-        config_dev.close
-        system "bundle exec jekyll serve --config _config-dev.yml --host 0.0.0.0"
-      rescue Exception => e
-        puts e
-        puts "\n## Shutting down server"
-      end
+      collections = [
+        # 'radios',
+        'cctv', 'emergency-lights', 'auxiliary-equipment',
+        'satelital', 'gps', 'spares', 'networks'
+      ]
+      Serve.dev collections
     end
 
     # Run local server without cctv collection
     task :cctv do
-      begin
-        puts "## Running: bundle exec jekyll serve --config _config-dev.yml --host 0.0.0.0"
-        config_prod=YAML.load_file("_config.yml")
-        config_prod.each do |key, value|
-          if key == "defaults"
-            value[3].each do |key, value| # collections.cctv.published = false
-              key == "values" ? value.merge!({ "published" => false }) : nil
-            end
-          end
-        end
-        config_dev=File.new("_config-dev.yml","w")
-        config_dev.write(config_prod.to_h.to_yaml)
-        config_dev.close
-        system "bundle exec jekyll serve --config _config-dev.yml --host 0.0.0.0"
-      rescue Exception => e
-        puts e
-        puts "\n## Shutting down server"
-      end
+      collections = [
+        # 'cctv',
+        'radios', 'emergency-lights', 'auxiliary-equipment',
+        'satelital', 'gps', 'spares', 'networks'
+      ]
+      Serve.dev collections
     end
-
   end
 end
 
