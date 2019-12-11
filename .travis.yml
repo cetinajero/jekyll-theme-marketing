@@ -8,8 +8,8 @@ before_install:
 # Assume bundler is being used, therefore
 # the `install` step will run `bundle install` by default.
 script: 
-  # - rake test:test
-  # - rubocop
+  - bundle exec rake test:test
+  - bundle exec rubocop
   - bundle exec rake test:html
 
 env:
