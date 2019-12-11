@@ -1,23 +1,23 @@
-# coding: utf-8
+# frozen_string_literal: true
 
 Gem::Specification.new do |spec|
-  spec.name          = "jekyll-theme-marketing"
-  spec.version       = "0.5.0"
-  spec.authors       = ["Edgar Tinajero"]
-  spec.email         = ["cetinajero@gmail.com"]
+  spec.name          = 'jekyll-theme-marketing'
+  spec.version       = '0.5.0'
+  spec.authors       = ['Edgar Tinajero']
+  spec.email         = ['cetinajero@gmail.com']
 
   spec.summary       = %q{Right now just a test theme for Jekyll.}
-  spec.homepage      = "https://github.com/cetinajero/jekyll-theme-marketing"
-  spec.license       = "MIT"
+  spec.homepage      = 'https://github.com/cetinajero/jekyll-theme-marketing'
+  spec.license       = 'MIT'
 
-  spec.metadata["plugin_type"] = "theme"
+  spec.metadata['plugin_type'] = 'theme'
 
   spec.files         = `git ls-files -z`.split("\x0").select { |f|
     f.match(%r{^(assets|_layouts|_includes|_sass|LICENSE|README)}i)
   }
 
-  spec.add_runtime_dependency "jekyll", "~> 3.6"
+  spec.add_runtime_dependency 'jekyll', '~> 3.6'
 
-  spec.add_development_dependency "bundler", "~> 2.0"
-  spec.add_development_dependency "rake", "~> 13.0"
+  spec.add_development_dependency 'bundler', '~> 2.0'
+  spec.add_development_dependency 'rake', '~> 13.0'
 end

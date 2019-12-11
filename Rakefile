@@ -68,23 +68,7 @@ desc 'Deploy tasks'
 namespace :deploy do
   desc 'Deploy site to Github Pages'
   task :website do
-    puts "## Deploying to GitHub Pages"
-
-    puts "## Generating site"
-    system "bundle exec jekyll build"
-
-    cd "_site" do
-      system "git add -A"
-
-      message = "Site updated at #{Time.now.utc}"
-      puts "## Commiting: #{message}"
-      system "git commit -m \"#{message}\""
-
-      puts "## Pushing generated site"
-      system "git push"
-
-      puts "## Deploy Complete!"
-    end
+    Deploy.website
   end
 
   desc 'Deploy a new gem version to Rubygems'
@@ -107,7 +91,6 @@ namespace :deploy do
     puts "## Running: gem push #{File.basename(Dir.pwd)}-#{new_version}.gem"
     system "gem push #{File.basename(Dir.pwd)}-#{new_version}.gem"
   end
-
 end
 
 desc 'Git reset commands'
