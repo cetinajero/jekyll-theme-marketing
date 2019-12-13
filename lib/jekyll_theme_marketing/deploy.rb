@@ -35,6 +35,7 @@ module Deploy
   def create_release_commit(old, new, type)
     update_changelog old, new
     update_npm old, new
+    Git.add
     system "bump #{type} --tag"
   end
 

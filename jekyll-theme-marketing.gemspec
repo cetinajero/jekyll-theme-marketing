@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
 
   all_files          = `git ls-files -z`.split("\x0")
   spec.files         = all_files.select do |f|
-    gemfiles = /^(assets|_layouts|_includes|_sass|LICENSE|README)/i
+    gemfiles = /^(assets|_layouts|_includes|_sass|lib|LICENSE|README)/i
     f.match(gemfiles)
   end
 

@@ -4,6 +4,10 @@
 module Git
   module_function
 
+  def add(files = '.')
+    system "git add #{files}"
+  end
+
   def checkout_new_branch(name)
     system 'git checkout master'
     system 'git pull origin master'
@@ -11,11 +15,11 @@ module Git
     system "git checkout -b #{name}" # if the branch does exist, switch to it
   end
 
-  def push(remote = '', branch = '', options = '')
-    system "git push #{options} #{remote} #{branch}"
-  end
-
   def list_commits(old, new, options = '')
     `git log #{options} #{old}..#{new}`
+  end
+
+  def push(remote = '', branch = '', options = '')
+    system "git push #{options} #{remote} #{branch}"
   end
 end
