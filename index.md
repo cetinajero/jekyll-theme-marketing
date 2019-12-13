@@ -1,9 +1,4 @@
 ---
-#
-# You don't need to edit this file, it's empty on purpose.
-# Edit jekyll-theme-marketing's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-#
 layout: home
 title: Home
 
@@ -65,7 +60,6 @@ special-offers:
     brand: "Vertex"
     commercial: "6 Radios VLR150 + Multicargador"
     href: "/radios/motorola/analog/portable/vlr150/cu1464bke4aa/"
-
 ---
 {% include components/sliders/revolution-slider.html %}
 
@@ -112,4 +106,3 @@ special-offers:
       href="/"
   %}
 </section>
----

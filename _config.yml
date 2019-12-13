@@ -56,7 +56,7 @@ css:
   bootstrap:
     primary: "#1A69D5"
   navbar:
-    background-color: "#1A69D5"
+    background-color: "#FFF"
   header:
     background-color: "#1A69D5"
   menu:
@@ -64,9 +64,9 @@ css:
     icons: "#1A69D5"
   footer:
     top:
-      background-color: "#1D6BD6"
-    bottom:
       background-color: "#1A69D5"
+    bottom:
+      background-color: "#F7F7F7"
       font-color: "#FFF"
 
 awards:
