@@ -1,3 +1,39 @@
+## [1.0.0](https://www.github.com/cetinajero/jekyll-theme-marketing/releases/tag/v1.0.0)
+
+- [67612a7](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/67612a7) Merge pull request #231 from cetinajero/feature/gem-deploy-task
+- [2904a84](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/2904a84) Create Deploy Gem task to publish new releases at rubygems.org
+- [823f883](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/823f883) Add animate.css to enable transition animatios @ landing page
+- [15b13a1](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/15b13a1) Create Ruby customers & dates modules
+- [e7fd927](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/e7fd927) Little typo
+- [3fb43cf](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/3fb43cf) Add theme assets requested by CSS
+- [673c1e5](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/673c1e5) Add themeforest and revolution-slider CSS code
+- [3f48355](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/3f48355) Implement destination on config file to help htmlproofer to support sites with baseurl
+- [f896a0c](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/f896a0c) Fix broken links
+- [4551bbb](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/4551bbb) Add firebase-app v7.5.2 changes
+- [7ba03d2](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/7ba03d2) Make bootstrap-v card responsive and CSS class based
+- [ed6c380](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/ed6c380) Add firebase v7.5.1 code
+- [63e4a82](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/63e4a82) Create bootstrap-(h|v) cards & fontawesome bullets components
+- [1ec0a8b](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/1ec0a8b) Add sass and dist files
+- [c8c8d56](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/c8c8d56) Update brand panels img path & migrate custom-footer partials to liquid
+- [6e1b76c](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/6e1b76c) Merge branch 'master' into dependabot/npm_and_yarn/bootstrap-4.4.0
+- [682c3d0](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/682c3d0) Create brands component
+- [0720d16](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/0720d16) Add sass and dist files
+- [0a8d5f7](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/0a8d5f7) Modify bootstrap carousel to add indicators, captions & optable title
+- [bf18d2b](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/bf18d2b) Fix empty badge prices
+- [6c7d25f](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/6c7d25f) Add comments to liquid code
+- [b7869db](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/b7869db) Rename shoes-men collection to shoes-man
+- [319af13](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/319af13) Create Motorola logo component and add it to the footer
+- [b9bbe66](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/b9bbe66) Avoid generic CSS, prefer spacing utility classes
+- [432ba0c](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/432ba0c) Bump firebase from 6.1.1 to 6.2.0
+- [db2e315](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/db2e315) Create Formspree component
+- [c8dc878](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/c8dc878) Bump firebase from 6.0.4 to 6.1.0
+- [ae4bd70](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/ae4bd70) Add combination filters with functions
+- [02c266f](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/02c266f) Add isotope-layout dependency
+- [436d696](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/436d696) Move flag-icon-css SASS variable to main.min.scss
+- [85d4225](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/85d4225) Fix Yarn's bootstrap warning
+- [a76597f](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/a76597f) Bump firebaseui from 2.5.1 to 3.6.1
+- [9122b84](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/9122b84) Migrate background to AWS S3
+
 ## [0.5.0](https://github.com/cetinajero/jekyll-theme-marketing/releases/tag/v0.5.0)
 
 ### Enhancements
