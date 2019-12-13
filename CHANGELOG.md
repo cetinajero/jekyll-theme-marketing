@@ -1,5 +1,3 @@
-## Unreleased
-
 ## [0.5.0](https://github.com/cetinajero/jekyll-theme-marketing/releases/tag/v0.5.0)
 
 ### Enhancements

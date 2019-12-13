@@ -72,24 +72,8 @@ namespace :deploy do
   end
 
   desc 'Deploy a new gem version to Rubygems'
-  task :"new-version" do
-    ARGV.each { |a| task(a.to_sym) {} }
-
-    puts "## Running: bump #{ARGV[1]} --tag"
-    system "bump #{ARGV[1]} --tag"
-    new_version = `bump current | sed -e 's/^.*:.//g' | tr -d '\n'`
-
-    puts '## Running: git push origin master'
-    system 'git push origin master'
-
-    puts "## Running: git push origin v#{new_version}" # Push tagged version
-    system "git push origin v#{new_version}"
-
-    puts "## Running: gem build #{File.basename(Dir.pwd)}.gemspec"
-    system "gem build #{File.basename(Dir.pwd)}.gemspec"
-
-    puts "## Running: gem push #{File.basename(Dir.pwd)}-#{new_version}.gem"
-    system "gem push #{File.basename(Dir.pwd)}-#{new_version}.gem"
+  task :gem do
+    Deploy.gem
   end
 end
 
@@ -154,12 +138,12 @@ alias_task [
   [:swr, 'serve:without:radios'],
   [:swc, 'serve:without:cctv'],
   [:dw,  'deploy:website'],
-  [:dnv, 'deploy:new-version'],
+  [:dg, 'deploy:gem'],
   [:rs, 'reset:soft'],
   [:th, 'test:html'],
   [:td, 'test:deploy'],
 
-  [:deploy, 'deploy:new-version'],
+  [:deploy, 'deploy:gem'],
   [:full, 'serve:prod'],
   [:test, 'test:html']
 ]
