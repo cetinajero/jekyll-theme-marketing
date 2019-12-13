@@ -1,6 +1,6 @@
 {
   "name": "jekyll-theme-marketing",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Jekyll theme :gem: managed with Yarn",
   "main": "index.js",
   "repository": "git@github.com:cetinajero/jekyll-theme-marketing.git",
