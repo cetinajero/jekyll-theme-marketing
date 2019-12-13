@@ -1,3 +1,12 @@
+## [1.0.1](https://www.github.com/cetinajero/jekyll-theme-marketing/releases/tag/v1.0.1)
+
+- [57e3632](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/57e3632) Merge pull request #237 from cetinajero/hotfix/commit-all-release-files
+- [cc27517](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/cc27517) Commit all release files into a single commit
+- [ae9753d](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/ae9753d) Add firebase JS v7.6.0 code
+- [089f135](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/089f135) Merge branch 'master' into dependabot/bundler/html-proofer-3.15.0
+- [14d57c2](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/14d57c2) Merge pull request #232 from cetinajero/release/v1.0.0
+- [ee8825d](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/ee8825d) Bump html-proofer from 3.14.1 to 3.15.0
+
 ## [1.0.0](https://www.github.com/cetinajero/jekyll-theme-marketing/releases/tag/v1.0.0)
 
 - [67612a7](https://www.github.com/cetinajero/jekyll-theme-marketing/commit/67612a7) Merge pull request #231 from cetinajero/feature/gem-deploy-task
