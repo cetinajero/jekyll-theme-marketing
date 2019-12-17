@@ -1,21 +1,10 @@
 [data-component="videos/background"] {
-  #cm-video-bg .white.text-center {
-    padding: 112px 0px;
-  }
-  @include media-breakpoint-up(lg) {
+  #cm-video-bg {
+    padding: 191px 0px; // Defines the height of the component
     .fwb-video {
-      height: 900px;
-    }
-  }
-  @include media-breakpoint-between(sm, md) {
-    .fwb-video {
-      height: 620px;
-    }
-  }
-  @include media-breakpoint-only(xs) {
-    .fwb-video {
-      video {
-        width: 100%!important;
+      video, img {
+        max-width: inherit; // Makes the video use all the posible heigth
+        min-width: 100%; // Makes the video use all the posible width
       }
     }
   }

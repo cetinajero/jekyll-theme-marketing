@@ -8605,27 +8605,6 @@ div.post p + div.post p {
   vertical-align: top;
   width: 100%;
 }
-.full-width-box .fwb-video {
-  background-repeat: no-repeat;
-  background-position: center center;
-  -webkit-background-size: cover;
-  background-size: cover;
-}
-.full-width-box .fwb-video video,
-.full-width-box .fwb-video iframe,
-.full-width-box .fwb-video img {
-  background-attachment: fixed;
-  vertical-align: top;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  max-width: inherit;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: 0;
-}
 
 /******************************************************************************
   Word Rotate

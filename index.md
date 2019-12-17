@@ -76,33 +76,26 @@ special-offers:
   %}
 </section>
 
-<section class="container-fluid pt-3">
+<section class="container-fluid pt-4">
+  {% include components/info-cards/card-deck.html %}
+</section>
+
+<section class="container-fluid pt-5">
   <div class="row">
     <article class="col-12 col-md-auto">
       {% include components/social-media/facebook.html %}
     </article>
     <article class="col-12 col-md pt-5 pt-md-0">
-      {%  include components/jumbotron/bootstrap.html
-          title="Special edition"
-          desc="Choose the ones that go with you the most"
-          button='<i class="fas fa-star"></i> See content'
+      {%  include components/videos/background.html
+          video="unv"
+          title="CONVERSE RENEW CANVAS"
+          button="Buy the collection"
           href="/"
-          img="special-edition"
       %}
     </article>
   </div>
 </section>
 
-<section class="container-fluid pt-5">
-  {% include components/info-cards/card-deck.html %}
-</section>
-
-<section class="pt-5 pb-5" data-appear-animation="fadeInUp">
-  {%  include components/videos/background.html
-      video="renew.gif"
-      background="renew.mp4"
-      title="CONVERSE RENEW CANVAS"
-      button="Buy the collection"
-      href="/"
-  %}
+<section class="container pt-3 pb-5">
+  {% include components/panels/brands.html %}
 </section>
