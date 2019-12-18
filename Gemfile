@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+ruby '2.5.3'
+
 source 'https://rubygems.org'
 gemspec
 
@@ -23,3 +25,7 @@ if Gem.win_platform?
   gem 'tzinfo-data'
   gem 'wdm'
 end
+
+# TODO: To be removed when octokit has released a version addressing
+# https://github.com/octokit/octokit.rb/issues/1170
+gem 'faraday', '<=0.17.0'
