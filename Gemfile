@@ -28,4 +28,4 @@ end
 
 # TODO: To be removed when octokit has released a version addressing
 # https://github.com/octokit/octokit.rb/issues/1170
-gem 'faraday', '<=0.17.0'
+gem 'faraday', '<=0.18.0'
