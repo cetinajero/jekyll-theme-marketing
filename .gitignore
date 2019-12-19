@@ -163,6 +163,7 @@ yarn-error.log
 /assets/node_modules/node-pre-gyp/
 /assets/node_modules/nopt/
 /assets/node_modules/npm-bundled/
+/assets/node_modules/npm-normalize-package-bin/
 /assets/node_modules/npm-packlist/
 /assets/node_modules/npmlog/
 /assets/node_modules/number-is-nan/
@@ -194,6 +195,7 @@ yarn-error.log
 /assets/node_modules/whatwg-fetch/
 /assets/node_modules/wide-align/
 /assets/node_modules/window-size/
+/assets/node_modules/word-wrap/
 /assets/node_modules/wrap-ansi/
 /assets/node_modules/wrappy/
 /assets/node_modules/y18n/
@@ -215,6 +217,7 @@ yarn-error.log
 /assets/node_modules/firebase/firebase.js*
 
 # flag-icon-css
+/assets/node_modules/opencollective-postinstall/
 /assets/node_modules/flag-icon-css/*.html
 /assets/node_modules/flag-icon-css/*.json
 /assets/node_modules/flag-icon-css/*.prettierignore
