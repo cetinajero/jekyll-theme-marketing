@@ -70,7 +70,7 @@ brand-panel:
     - { name: "Danya", href: '/', img: 'danya' }
     - { name: "Nadia", href: '/', img: 'nadia' }
     - { name: "Efren", href: '/', img: 'efren' }
-    - { name: "Buenos dias", href: '/', img: 'buenos dias' }
+    - { name: "Buenos días", href: '/', img: 'buenos-dias' }
     - { name: "064", href: '/', img: '064' }
     - { name: "068", href: '/', img: '068' }
 ---
