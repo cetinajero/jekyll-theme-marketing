@@ -60,6 +60,19 @@ special-offers:
     brand: "Vertex"
     commercial: "6 Radios VLR150 + Multicargador"
     href: "/radios/motorola/analog/portable/vlr150/cu1464bke4aa/"
+
+brand-panel:
+  title: Conoce nuestras marcas
+  text: Da clic sobre la marca para mayor información
+  brands:
+    - { name: "Michel", href: '/', img: 'michel' }
+    - { name: "Edgar", href: '/', img: 'edgar' }
+    - { name: "Danya", href: '/', img: 'danya' }
+    - { name: "Nadia", href: '/', img: 'nadia' }
+    - { name: "Efren", href: '/', img: 'efren' }
+    - { name: "Buenos días", href: '/', img: 'buenos-dias' }
+    - { name: "064", href: '/', img: '064' }
+    - { name: "068", href: '/', img: '068' }
 ---
 {% include components/sliders/revolution-slider.html %}
 
