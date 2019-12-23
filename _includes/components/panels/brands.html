@@ -4,7 +4,7 @@
 <div class="row justify-content-center">
   {% for brand in page.brand-panel.brands %}
     <article class="col-4 col-md-3 col-lg-2 py-3">
-      <a href="{{ brand.href }}">
+      <a href="{{ brand.href | relative_url }}">
         <img src="{{ site.amazon-s3 }}/components/panels/brands/img/{{ brand.img }}.png" alt="{{ brand.name }}" title="{{ brand.name }}">
       </a>
     </article>
