@@ -5,11 +5,6 @@
       <div class="container">
         <div class="row sidebar">
           {% include components/footers/progressive/top.html %}
-          {% if site.title == 'Denac' %}
-            <aside class="col-md-3">
-              {% include components/social-media/progressive.html %}
-            </aside>
-          {% endif %}
         </div>
       </div>
     </div>
@@ -20,8 +15,8 @@
       <div class="row">
         {% include components/copyrights/progressive.html %}
 
-        {% if site.title == 'Grupo PV' %}
-          <aside class="col-md-3">
+        {% if site.social-media %}
+          <aside class="col-md-3 ml-auto">
             {% include components/social-media/progressive.html %}
           </aside>
         {% elsif site.original == false %}
