@@ -1,0 +1,19 @@
+- name: jekyll
+  collection: pages
+  link: /
+  layers:
+    - src: img-01
+      start: 800
+      start-animation: lfl
+    - src: img-02
+      start: 1000
+      start-animation: lfr
+    - src: img-03
+      start: 1200
+      start-animation: lfb
+    - src: img-04
+      start: 1400
+      start-animation: lfb
+    - src: text
+      start: 1600
+      start-animation: lfb

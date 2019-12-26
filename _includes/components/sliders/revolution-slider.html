@@ -21,7 +21,7 @@
 
                       <!-- {{ slider.name }} background -->
                       <img
-                        src="/vendors/sliders/revolution-slider/assets/images/dummy.png"
+                        src="{{ '/assets/vendors/revolution-slider/assets/dummy.png' | relative_url }}"
                         alt="{{ slider.name }}"
                         data-lazyload="{{ site.amazon-s3 }}/assets/img/common/sliders/{{ slider.name }}/{{ slider.name }}-background.png"
                         data-bgposition="center center"
@@ -44,7 +44,7 @@
                           data-endelementdelay="0.1"
                           style="z-index: {{ forloop.index }};">
                           <img
-                            src="/vendors/sliders/revolution-slider/assets/images/dummy.png"
+                            src="{{ '/assets/vendors/revolution-slider/assets/dummy.png' | relative_url }}"
                             alt="{{ slider.name }}"
                             data-lazyload="{{ site.amazon-s3 }}/assets/img/common/sliders/{{ slider.name }}/{{ slider.name }}-{{ layer.src }}.png">
                         </div>

@@ -8,7 +8,7 @@ description: > # this means to ignore newlines until "keywords:"
 keywords: Jekyll, GitHub Pages, theme, website, blog
 baseurl: /jekyll-theme-marketing
 destination: ./_site/jekyll-theme-marketing
-domain: converse.mx
+domain: jekyll.mx
 original: true
 lang: en_US
 timezone: America/Chihuahua
@@ -18,13 +18,14 @@ exchange-rates:
 
 social-media:
   - name: facebook
-    link: https://www.facebook.com/converse/
+    link: https://www.facebook.com/
+    plugin: https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fgrupopvmx%2F&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=true&appId
   - name: youtube
-    link: /youtube/
+    link: https://www.youtube.com/
   - name: twitter
-    link: https://twitter.com/converse
+    link: https://twitter.com/
   - name: linkedin
-    link: https://mx.linkedin.com
+    link: https://mx.linkedin.com/
   - name: email
     link: /contact/
 
