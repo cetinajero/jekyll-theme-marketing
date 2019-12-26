@@ -18,14 +18,14 @@ exchange-rates:
 
 social-media:
   - name: facebook
-    link: https://www.facebook.com/grupopvmx
+    link: https://www.facebook.com/
     plugin: https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fgrupopvmx%2F&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=true&appId
   - name: youtube
-    link: /youtube/
+    link: https://www.youtube.com/
   - name: twitter
-    link: https://twitter.com/grupopvmx
+    link: https://twitter.com/
   - name: linkedin
-    link: https://mx.linkedin.com/company/grupo-pv-mexico
+    link: https://mx.linkedin.com/
   - name: email
     link: /contact/
 
