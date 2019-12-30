@@ -82,7 +82,8 @@ brand-panel:
 
 <section class="pt-5">
   {%  include components/jumbotron/bootstrap.html
-      desc="Find the store closest to your location"
+      title="Where to buy?"
+      desc="Find the store closest to your location with our partner finder map."
       button='<i class="fas fa-search"></i> Search'
       href="/"
       img="shops"
