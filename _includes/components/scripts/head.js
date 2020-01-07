@@ -9,6 +9,4 @@
 
 <script src="{{ 'assets/node_modules/lightslider/dist/js/lightslider.min.js' | relative_url }}"></script>
 
-{% if site.zendesk %}
-  {% include components/zendesk/script.js %}
-{% endif %}
+{% include components/chats/zendesk.liquid %}
