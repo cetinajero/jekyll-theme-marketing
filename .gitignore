@@ -25,6 +25,7 @@ yarn-error.log
 /assets/node_modules/**/CNAME
 /assets/node_modules/**/component.json
 /assets/node_modules/**/composer.json
+/assets/node_modules/**/FUNDING.yml
 /assets/node_modules/**/Gruntfile.coffee
 /assets/node_modules/**/Gruntfile.js
 /assets/node_modules/**/index.html
@@ -34,6 +35,7 @@ yarn-error.log
 /assets/node_modules/**/Makefile
 /assets/node_modules/**/MIT-LICENSE.txt
 /assets/node_modules/**/notes
+/assets/node_modules/**/opencollective-postinstall
 /assets/node_modules/**/package.json
 /assets/node_modules/**/package-lock.json
 /assets/node_modules/**/svgo.yaml
