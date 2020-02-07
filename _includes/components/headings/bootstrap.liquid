@@ -1,0 +1,10 @@
+{% assign page-title = i18n-title | default: page.title %}
+{% assign page-subtitle = i18n-subtitle | default: page.subtitle %}
+
+{% if page.title-image %}
+    <img class="d-flex mx-auto mb-3 {{ class }}" src="{{ site.amazon-s3 }}/components/headings/bootstrap/img/{{ i18n-id }}.png" alt="{{ page-title }}" />
+{% else %}
+    <h2 id="{{ i18n-id }}" class="post text-muted {{ class }}">{{ page-title }}</h2>
+{% endif %}
+
+<h3 id="{{ i18n-id }}" class="post text-muted {{ class }}">{{ page-subtitle }}</h3>
