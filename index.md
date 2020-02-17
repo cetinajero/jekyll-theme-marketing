@@ -111,5 +111,5 @@ brand-panel:
 </section>
 
 <section class="container pt-3 pb-5">
-  {% include components/panels/brands.html %}
+  {% include components/panels/brands.liquid %}
 </section>
