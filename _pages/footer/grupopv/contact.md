@@ -50,5 +50,5 @@ i18n:
         header: Por favor, preencha todos os campos para fornecer um melhor atendimento, nossa equipe entrará em contato com você o mais breve possível. Obrigado.
 ---
 <div class="container">
-  {% include components/forms/formspree.html %}
+  {% include components/forms/formspree.liquid %}
 </div>
