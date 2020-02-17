@@ -5,7 +5,7 @@
       {% for collection-type in site.defaults %}
         {% if collection-type.scope.type == menu.collection %}
           {% if collection-type.values.published == true -%}
-            {% include {{ include.component | prepend: 'components/' | append: '.html' }} %}
+            {% include {{ include.component | prepend: 'components/' | append: '.liquid' }} %}
           {% endif -%}
         {% endif %}
       {% endfor %}
