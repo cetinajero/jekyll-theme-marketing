@@ -48,4 +48,4 @@ timeline:
   document.getElementsByClassName("post")[2].classList.remove("post");
 </script>
 
-{% include components/timelines/9.html %}
+{% include components/timelines/9.liquid %}
