@@ -91,7 +91,7 @@ brand-panel:
 </section>
 
 <section class="container-fluid pt-4">
-  {% include components/info-cards/card-deck.html %}
+  {% include components/info-cards/card-deck.liquid %}
 </section>
 
 <section class="container-fluid pt-5">
