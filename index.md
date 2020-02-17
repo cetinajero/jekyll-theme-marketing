@@ -100,7 +100,7 @@ brand-panel:
       {% include components/social-media/facebook.liquid %}
     </article>
     <article class="col-12 col-md pt-5 pt-md-0">
-      {%  include components/videos/background.html
+      {%  include components/videos/background.liquid
           video="unv"
           title="CONVERSE RENEW CANVAS"
           button="Buy the collection"
