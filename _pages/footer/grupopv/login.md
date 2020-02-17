@@ -3,7 +3,7 @@ published: true
 title: Login
 permalink: /login/
 ---
-{% include components/firebase/ui.html %}
+{% include components/firebase/ui.liquid %}
 
 <div id="loader">
   {% include components/spinners/bootstrap.html %}
