@@ -23,7 +23,7 @@
       <div class="row">
         {% for resource in page.resources.spec-sheets.specs %}
           {% assign i18n-resource-text = page.i18n[site.lang].resources.spec-sheets.specs.[forloop.index0] %}
-          {% include components/bullets/fontawesome.html %}
+          {% include components/bullets/fontawesome.liquid %}
         {% endfor %}
       </div>
     </section>

@@ -97,7 +97,7 @@ brand-panel:
 <section class="container-fluid pt-5">
   <div class="row">
     <article class="col-12 col-md-auto">
-      {% include components/social-media/facebook.html %}
+      {% include components/social-media/facebook.liquid %}
     </article>
     <article class="col-12 col-md pt-5 pt-md-0">
       {%  include components/videos/background.html
