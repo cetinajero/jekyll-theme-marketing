@@ -77,7 +77,7 @@ brand-panel:
 {% include components/sliders/revolution-slider.html %}
 
 <section class="pt-3">
-  {% include components/product-cards/featured-product.html %}
+  {% include components/product-cards/featured-product.liquid %}
 </section>
 
 <section class="pt-5">
