@@ -74,7 +74,7 @@ brand-panel:
     - { name: "064", href: '/', img: '064' }
     - { name: "068", href: '/', img: '068' }
 ---
-{% include components/sliders/revolution-slider.html %}
+{% include components/sliders/revolution-slider.liquid %}
 
 <section class="pt-3">
   {% include components/product-cards/featured-product.liquid %}
