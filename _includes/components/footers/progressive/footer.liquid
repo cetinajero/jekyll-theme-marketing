@@ -4,7 +4,7 @@
     <div id="vg-footer">
       <div class="container">
         <div class="row sidebar">
-          {% include components/footers/progressive/top.html %}
+          {% include components/footers/progressive/top.liquid %}
         </div>
       </div>
     </div>
@@ -13,16 +13,16 @@
   <div class="footer-bottom"> <!-- start footer-bottom -->
     <div class="container">
       <div class="row">
-        {% include components/copyrights/progressive.html %}
+        {% include components/copyrights/progressive.liquid %}
 
         {% if site.social-media %}
           <aside class="col-md-3 ml-auto">
-            {% include components/social-media/progressive.html %}
+            {% include components/social-media/progressive.liquid %}
           </aside>
         {% elsif site.original == false %}
           <div class="col-md-5 text-center">
             {% include components/contact-cards/phone-card.html %}
-            {% include components/logos/motorola.html %}
+            {% include components/logos/motorola.liquid %}
           </div>
         {% endif %}
 

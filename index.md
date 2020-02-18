@@ -77,7 +77,7 @@ brand-panel:
 {% include components/sliders/revolution-slider.html %}
 
 <section class="pt-3">
-  {% include components/product-cards/featured-product.html %}
+  {% include components/product-cards/featured-product.liquid %}
 </section>
 
 <section class="pt-5">
@@ -91,16 +91,16 @@ brand-panel:
 </section>
 
 <section class="container-fluid pt-4">
-  {% include components/info-cards/card-deck.html %}
+  {% include components/info-cards/card-deck.liquid %}
 </section>
 
 <section class="container-fluid pt-5">
   <div class="row">
     <article class="col-12 col-md-auto">
-      {% include components/social-media/facebook.html %}
+      {% include components/social-media/facebook.liquid %}
     </article>
     <article class="col-12 col-md pt-5 pt-md-0">
-      {%  include components/videos/background.html
+      {%  include components/videos/background.liquid
           video="unv"
           title="CONVERSE RENEW CANVAS"
           button="Buy the collection"
@@ -111,5 +111,5 @@ brand-panel:
 </section>
 
 <section class="container pt-3 pb-5">
-  {% include components/panels/brands.html %}
+  {% include components/panels/brands.liquid %}
 </section>

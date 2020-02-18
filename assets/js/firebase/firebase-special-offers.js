@@ -14,7 +14,7 @@ specialOffersApp = function() {
       // var providerData = user.providerData;
       user.getIdToken().then(function(accessToken) {
         const hash = btoa(btoa(btoa(btoa(btoa('{{ 'now' | date: "%B %Y" }}')))));
-        const specialOffersHTML = '{% capture html %}{% include components/firebase/special-offers.html %}{% endcapture %}{{ html | strip_newlines }}'.replace(/current-month-year-base64-hash/g, hash)
+        const specialOffersHTML = '{% capture html %}{% include components/firebase/special-offers.liquid %}{% endcapture %}{{ html | strip_newlines }}'.replace(/current-month-year-base64-hash/g, hash)
         document.getElementById('sign-in-content').innerHTML = specialOffersHTML;
         // document.getElementById('account-details').textContent = JSON.stringify({
         //   displayName: displayName,
