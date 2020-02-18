@@ -81,7 +81,7 @@ brand-panel:
 </section>
 
 <section class="pt-5">
-  {%  include components/jumbotron/bootstrap.html
+  {%  include components/jumbotron/bootstrap.liquid
       title="Where to buy?"
       desc="Find the store closest to your location with our partner finder map."
       button='<i class="fas fa-search"></i> Search'

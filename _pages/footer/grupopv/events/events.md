@@ -4,7 +4,7 @@ permalink: /events/
 ---
 <section class="row">
   <article class="col-12 col-md-6 pb-4">
-    {%  include components/jumbotron/bootstrap.html
+    {%  include components/jumbotron/bootstrap.liquid
         title="Fix to ride"
         desc="Así se vivió Fix to Rider 2016"
         button='<i class="fas fa-video"></i> Ver contenido'
@@ -13,7 +13,7 @@ permalink: /events/
     %}
   </article>
   <article class="col-12 col-md-6 pb-4">
-    {%  include components/jumbotron/bootstrap.html
+    {%  include components/jumbotron/bootstrap.liquid
         title="Centros de Servicio"
         desc="Inician Centros de Servicio Autorizado GRUPO PV"
         button='<i class="far fa-newspaper"></i> Ver revista'
@@ -22,7 +22,7 @@ permalink: /events/
     %}
   </article>
   <article class="col-12 col-md-6 pb-4">
-    {%  include components/jumbotron/bootstrap.html
+    {%  include components/jumbotron/bootstrap.liquid
         title="Curso técnico para Centros de Servicio"
         desc="Se presento con éxito en Monterrey, Guadalajara y la Ciudad de México"
         button='<i class="far fa-newspaper"></i> Ver evento'
