@@ -80,7 +80,7 @@
 
 ### Enhancements
 * Added layout [product](https://github.com/cetinajero/jekyll-theme-marketing/blob/1e72b8f0691ee4231ab72845813d8a251633553b/_layouts/product.html) to display basic information about products on headers. [#7aa2dc2](https://github.com/cetinajero/jekyll-theme-marketing/commit/7aa2dc27ffd09ab9ba3355371f1a3298176d86a9)
-* Updated layout [page](https://github.com/cetinajero/jekyll-theme-marketing/blob/50cf0a5a9aa6a9d6e83b4855bd050e72c9e17dd6/_layouts/page.html) to manage `i18n` and product `collections`. [#50cf0a5](https://github.com/cetinajero/jekyll-theme-marketing/commit/50cf0a5a9aa6a9d6e83b4855bd050e72c9e17dd6)
+* Updated layout [page](https://github.com/cetinajero/jekyll-theme-marketing/blob/50cf0a5a9aa6a9d6e83b4855bd050e72c9e17dd6/_layouts/page.liquid) to manage `i18n` and product `collections`. [#50cf0a5](https://github.com/cetinajero/jekyll-theme-marketing/commit/50cf0a5a9aa6a9d6e83b4855bd050e72c9e17dd6)
 * Added layout [grid](https://github.com/cetinajero/jekyll-theme-marketing/blob/2ecf7929406960910b71fe8bbdbfbb13ab44feb9/_layouts/grid.html). [#2ecf792](https://github.com/cetinajero/jekyll-theme-marketing/commit/2ecf7929406960910b71fe8bbdbfbb13ab44feb9)
 * Implemented [CHANGELOG.md](CHANGELOG.md)
 
