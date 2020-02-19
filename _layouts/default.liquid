@@ -15,7 +15,7 @@
     {% include components/scripts/head.js %}
     {% include components/firebase/sdk.liquid %}
     {% include components/fonts/google.html %}
-    {% include components/stylesheets/progressive.html %}
+    {% include components/stylesheets/progressive.liquid %}
     {% include components/analytics/google.js %}
 
   </head>
@@ -30,8 +30,8 @@
         <header class="header header-two">
           <div class="header-wrapper">
 
-            {% include components/navbars/progressive.html %} <!-- end progressive-navbar -->
-            {% include components/navbars/bootstrap.html %} <!-- end bootstrap-navbar -->
+            {% include components/navbars/progressive.liquid %} <!-- end progressive-navbar -->
+            {% include components/navbars/bootstrap.liquid %} <!-- end bootstrap-navbar -->
 
           </div>
         </header> <!-- end header -->
