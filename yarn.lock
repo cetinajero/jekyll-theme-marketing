@@ -217,10 +217,17 @@
     "@firebase/util" "0.2.40"
     tslib "1.10.0"
 
-"@firebase/util@0.2.40", "@firebase/util@latest":
+"@firebase/util@0.2.40":
   version "0.2.40"
   resolved "https://registry.yarnpkg.com/@firebase/util/-/util-0.2.40.tgz#b8c33437c63e08749c4c872025d70721d690aa69"
   integrity sha512-ViuceN8F6eeN/8QaA7FbOX7KlypQAFrXHBnTEicxwED4n1SdgGFapaS/ggScq1MMwq0RjGinNbigtc1Rqy8yVA==
+  dependencies:
+    tslib "1.10.0"
+
+"@firebase/util@latest":
+  version "0.2.41"
+  resolved "https://registry.yarnpkg.com/@firebase/util/-/util-0.2.41.tgz#36a0e0deb05a67b8ca79ec559d7a9859a46da519"
+  integrity sha512-QRu3wjU5I0ZBWrf4wgrEBYu5K5tkHjETMDPMY8WYCeekKB13k2MuJzHBjQVuStEOU7j6ygTAA0B8vXI/6B5D0g==
   dependencies:
     tslib "1.10.0"
 
