@@ -225,9 +225,9 @@
     tslib "1.10.0"
 
 "@firebase/util@latest":
-  version "0.2.45"
-  resolved "https://registry.yarnpkg.com/@firebase/util/-/util-0.2.45.tgz#d52f28da8a4d7a4fa97d36202a86d5f654fbed6d"
-  integrity sha512-k3IqXaIgwlPg7m5lXmMUtkqA/p+LMFkFQIqBuDtdT0iyWB6kQDokyjw2Sgd3GoTybs6tWqUKFZupZpV6r73UHw==
+  version "0.2.46"
+  resolved "https://registry.yarnpkg.com/@firebase/util/-/util-0.2.46.tgz#e14e5fda81df8ed22f028d4b4a0e7d646b384331"
+  integrity sha512-rKzQRc7YAbve+MECliis5ac6lRB1AZgOyZdoAbXaEtmGWUwnlM99uNhCekA963CaBkzlHwQG2inLf3WGW7nLFA==
   dependencies:
     tslib "1.11.1"
 
