@@ -1,12 +1,17 @@
 # frozen_string_literal: true
 
-ruby '2.5.3'
+# Specific version (comment) will be used by RVM
+#ruby=2.5.8
+ruby '2.5.8'
 
 source 'https://rubygems.org'
 gemspec
 
 # Install GitHub Pages dependencies needed by bundle exec jekyll serve
 gem 'github-pages', group: :jekyll_plugins
+
+# Install rake to automate ruby tasks
+gem 'rake'
 
 # Install test-unit to test and validate the Ruby source code
 gem 'test-unit'

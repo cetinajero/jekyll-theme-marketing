@@ -286,12 +286,12 @@ DEPENDENCIES
   github-pages
   html-proofer
   jekyll-theme-marketing!
-  rake (~> 13.0)
+  rake
   rubocop
   test-unit
 
 RUBY VERSION
-   ruby 2.5.3p105
+   ruby 2.5.8p224
 
 BUNDLED WITH
    2.1.4
