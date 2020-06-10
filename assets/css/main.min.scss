@@ -44,8 +44,8 @@ $theme-colors: (
 
 // Import flag-icon partials
 $include: 'br', 'mx', 'us';
-$flag-icon-css-path: '../node_modules/flag-icon-css/flags';
-@import "../assets/node_modules/flag-icon-css/sass/flag-icon";
+$flag-icon-css-path: '../node_modules/flag-icon-csss/flags';
+@import "../assets/node_modules/flag-icon-css-npm-3.5.0-4bc7f95c33/node_modules/flag-icon-css/sass/flag-icon";
 
 // Import layout partials
 @import "grupopv/navbar";
