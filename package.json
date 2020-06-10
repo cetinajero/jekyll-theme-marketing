@@ -25,5 +25,10 @@
     "lunr": "latest",
     "popper.js": "latest",
     "vue": "latest"
+  },
+  "dependenciesMeta": {
+    "flag-icon-css": {
+      "unplugged": true
+    }
   }
 }

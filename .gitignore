@@ -225,19 +225,18 @@ yarn-error.log
 /assets/node_modules/firebase/firebase.js*
 
 # flag-icon-css
-/assets/node_modules/opencollective-postinstall/
-/assets/node_modules/flag-icon-css/*.html
-/assets/node_modules/flag-icon-css/*.json
-/assets/node_modules/flag-icon-css/*.prettierignore
-/assets/node_modules/flag-icon-css/*.sh
-/assets/node_modules/flag-icon-css/assets/
-/assets/node_modules/flag-icon-css/css/
-/assets/node_modules/flag-icon-css/less/
-/assets/node_modules/flag-icon-css/flags/4x3/
-/assets/node_modules/flag-icon-css/flags/1x1/*.svg
-!/assets/node_modules/flag-icon-css/flags/1x1/mx.svg
-!/assets/node_modules/flag-icon-css/flags/1x1/us.svg
-!/assets/node_modules/flag-icon-css/flags/1x1/br.svg
+/assets/node_modules/flag-icon-css-*/*/flag-icon-css/*.html
+/assets/node_modules/flag-icon-css-*/*/flag-icon-css/*.json
+/assets/node_modules/flag-icon-css-*/*/flag-icon-css/*.prettierignore
+/assets/node_modules/flag-icon-css-*/*/flag-icon-css/*.sh
+/assets/node_modules/flag-icon-css-*/*/flag-icon-css/assets/
+/assets/node_modules/flag-icon-css-*/*/flag-icon-css/css/
+/assets/node_modules/flag-icon-css-*/*/flag-icon-css/less/
+/assets/node_modules/flag-icon-css-*/*/flag-icon-css/flags/4x3/
+/assets/node_modules/flag-icon-css-*/*/flag-icon-css/flags/1x1/*.svg
+!/assets/node_modules/flag-icon-css-*/*/flag-icon-css/flags/1x1/mx.svg
+!/assets/node_modules/flag-icon-css-*/*/flag-icon-css/flags/1x1/us.svg
+!/assets/node_modules/flag-icon-css-*/*/flag-icon-css/flags/1x1/br.svg
 
 # isotope-layout
 /assets/node_modules/desandro-matches-selector/

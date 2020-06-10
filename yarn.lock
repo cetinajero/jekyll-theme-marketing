@@ -1366,6 +1366,9 @@ isotope-layout@latest:
     lunr: latest
     popper.js: latest
     vue: latest
+  dependenciesMeta:
+    flag-icon-css:
+      unplugged: true
   languageName: unknown
   linkType: soft
 
