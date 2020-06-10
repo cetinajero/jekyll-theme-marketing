@@ -30,6 +30,9 @@
     "bootstrap": {
       "unplugged": true
     },
+    "firebase": {
+      "unplugged": true
+    },
     "flag-icon-css": {
       "unplugged": true
     }
