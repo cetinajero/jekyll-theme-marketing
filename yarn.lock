@@ -1046,10 +1046,10 @@ firebase@latest:
   languageName: node
   linkType: hard
 
-flag-icon-css@latest:
-  version: 3.4.6
-  resolution: "flag-icon-css@npm:3.4.6"
-  checksum: f3ba28d6ea0c3c7e8064be4cbb7e4dc4b656266e54ca74c0a496f9774aa62a5b8d7734d35b0283f7969e7796521a251e8a23e282f0e4bfcf2d629b43e4c09f81
+"flag-icon-css@npm:latest":
+  version: 3.5.0
+  resolution: "flag-icon-css@npm:3.5.0"
+  checksum: 6f650360dedc3668adc2012e345904e8ae9aa7fd9ead459a325fa82fb8645beab25fd04f7051b7139e77192a0e81eec67c17882fda38292fb23492a600516fd5
   languageName: node
   linkType: hard
 

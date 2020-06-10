@@ -13,6 +13,12 @@ yarn-error.log
 .yarn/build-state.yml
 .yarn/install-state.gz
 .yarn/cache
+assets/node_modules/core-js-npm-*/
+assets/node_modules/grpc-npm-*/
+assets/node_modules/nan-npm-*/
+assets/node_modules/node-gyp-npm-*/
+assets/node_modules/node-pre-gyp-npm-*/
+assets/node_modules/protobufjs-npm-*/
 
 # Node.JS modules
 /assets/node_modules/.bin/
