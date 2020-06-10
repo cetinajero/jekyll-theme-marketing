@@ -8,6 +8,12 @@ _config-dev.yml
 .yarn-integrity
 yarn-error.log
 
+# Yarn 2.0.0
+.pnp.js
+.yarn/build-state.yml
+.yarn/install-state.gz
+.yarn/cache
+
 # Node.JS modules
 /assets/node_modules/.bin/
 /assets/node_modules/**/.bowerrc
