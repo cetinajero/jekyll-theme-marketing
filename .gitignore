@@ -55,24 +55,23 @@ assets/node_modules/protobufjs-npm-*/
 /assets/node_modules/**/yarn.lock
 
 # @fortawesome/fontawesome
-/assets/node_modules/@fortawesome/fontawesome/*.d.ts
-/assets/node_modules/@fortawesome/fontawesome/*.es.js
-/assets/node_modules/@fortawesome/fontawesome-common-types/
+/assets/node_modules/@fortawesome-fontawesome-*/*/@fortawesome/fontawesome/*.d.ts
+/assets/node_modules/@fortawesome-fontawesome-*/*/@fortawesome/fontawesome/*.es.js
 
 # @fortawesome/fontawesome-free-brands
-/assets/node_modules/@fortawesome/fontawesome-free-brands/*.d.ts
-/assets/node_modules/@fortawesome/fontawesome-free-brands/*.js
-!/assets/node_modules/@fortawesome/fontawesome-free-brands/index.js
+/assets/node_modules/@fortawesome-fontawesome-free-brands-*/*/@fortawesome/fontawesome-free-brands/*.d.ts
+/assets/node_modules/@fortawesome-fontawesome-free-brands-*/*/@fortawesome/fontawesome-free-brands/*.js
+!/assets/node_modules/@fortawesome-fontawesome-free-brands-*/*/@fortawesome/fontawesome-free-brands/index.js
 
 # @fortawesome/fontawesome-free-regular
-/assets/node_modules/@fortawesome/fontawesome-free-regular/*.d.ts
-/assets/node_modules/@fortawesome/fontawesome-free-regular/*.js
-!/assets/node_modules/@fortawesome/fontawesome-free-regular/index.js
+/assets/node_modules/@fortawesome-fontawesome-free-regular-*/*/@fortawesome/fontawesome-free-regular/*.d.ts
+/assets/node_modules/@fortawesome-fontawesome-free-regular-*/*/@fortawesome/fontawesome-free-regular/*.js
+!/assets/node_modules/@fortawesome-fontawesome-free-regular-*/*/@fortawesome/fontawesome-free-regular/index.js
 
 # @fortawesome/fontawesome-free-solid
-/assets/node_modules/@fortawesome/fontawesome-free-solid/*.d.ts
-/assets/node_modules/@fortawesome/fontawesome-free-solid/*.js
-!/assets/node_modules/@fortawesome/fontawesome-free-solid/index.js
+/assets/node_modules/@fortawesome-fontawesome-free-solid-*/*/@fortawesome/fontawesome-free-solid/*.d.ts
+/assets/node_modules/@fortawesome-fontawesome-free-solid-*/*/@fortawesome/fontawesome-free-solid/*.js
+!/assets/node_modules/@fortawesome-fontawesome-free-solid-*/*/@fortawesome/fontawesome-free-solid/index.js
 
 # bootstrap
 /assets/node_modules/bootstrap-*/*/bootstrap/docs/

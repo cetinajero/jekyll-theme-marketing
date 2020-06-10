@@ -1367,6 +1367,14 @@ isotope-layout@latest:
     popper.js: latest
     vue: latest
   dependenciesMeta:
+    "@fortawesome/fontawesome":
+      unplugged: true
+    "@fortawesome/fontawesome-free-brands":
+      unplugged: true
+    "@fortawesome/fontawesome-free-regular":
+      unplugged: true
+    "@fortawesome/fontawesome-free-solid":
+      unplugged: true
     bootstrap:
       unplugged: true
     firebase:
