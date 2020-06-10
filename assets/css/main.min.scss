@@ -19,28 +19,28 @@ $theme-colors: (
 );
 
 // Import bootstrap partials
-@import "../assets/node_modules/bootstrap/scss/functions";
-@import "../assets/node_modules/bootstrap/scss/variables";
-@import "../assets/node_modules/bootstrap/scss/vendor/rfs";
-@import "../assets/node_modules/bootstrap/scss/mixins/deprecate";
-@import "../assets/node_modules/bootstrap/scss/mixins/breakpoints";
-@import "../assets/node_modules/bootstrap/scss/mixins/hover";
-@import "../assets/node_modules/bootstrap/scss/mixins/badge";
-@import "../assets/node_modules/bootstrap/scss/mixins/text-emphasis";
-@import "../assets/node_modules/bootstrap/scss/mixins/text-hide";
-@import "../assets/node_modules/bootstrap/scss/mixins/text-truncate";
-@import "../assets/node_modules/bootstrap/scss/mixins/buttons";
-@import "../assets/node_modules/bootstrap/scss/mixins/background-variant";
-@import "../assets/node_modules/bootstrap/scss/mixins/border-radius";
-@import "../assets/node_modules/bootstrap/scss/mixins/box-shadow";
-@import "../assets/node_modules/bootstrap/scss/mixins/gradients";
-@import "../assets/node_modules/bootstrap/scss/mixins/transition";
-@import "../assets/node_modules/bootstrap/scss/reboot";
-@import "../assets/node_modules/bootstrap/scss/buttons";
-@import "../assets/node_modules/bootstrap/scss/nav";
-@import "../assets/node_modules/bootstrap/scss/badge";
-@import "../assets/node_modules/bootstrap/scss/utilities/background";
-@import "../assets/node_modules/bootstrap/scss/utilities/text";
+@import "../assets/node_modules/bootstrap-virtual-3b3e187da6/node_modules/bootstrap/scss/functions";
+@import "../assets/node_modules/bootstrap-virtual-3b3e187da6/node_modules/bootstrap/scss/variables";
+@import "../assets/node_modules/bootstrap-virtual-3b3e187da6/node_modules/bootstrap/scss/vendor/rfs";
+@import "../assets/node_modules/bootstrap-virtual-3b3e187da6/node_modules/bootstrap/scss/mixins/deprecate";
+@import "../assets/node_modules/bootstrap-virtual-3b3e187da6/node_modules/bootstrap/scss/mixins/breakpoints";
+@import "../assets/node_modules/bootstrap-virtual-3b3e187da6/node_modules/bootstrap/scss/mixins/hover";
+@import "../assets/node_modules/bootstrap-virtual-3b3e187da6/node_modules/bootstrap/scss/mixins/badge";
+@import "../assets/node_modules/bootstrap-virtual-3b3e187da6/node_modules/bootstrap/scss/mixins/text-emphasis";
+@import "../assets/node_modules/bootstrap-virtual-3b3e187da6/node_modules/bootstrap/scss/mixins/text-hide";
+@import "../assets/node_modules/bootstrap-virtual-3b3e187da6/node_modules/bootstrap/scss/mixins/text-truncate";
+@import "../assets/node_modules/bootstrap-virtual-3b3e187da6/node_modules/bootstrap/scss/mixins/buttons";
+@import "../assets/node_modules/bootstrap-virtual-3b3e187da6/node_modules/bootstrap/scss/mixins/background-variant";
+@import "../assets/node_modules/bootstrap-virtual-3b3e187da6/node_modules/bootstrap/scss/mixins/border-radius";
+@import "../assets/node_modules/bootstrap-virtual-3b3e187da6/node_modules/bootstrap/scss/mixins/box-shadow";
+@import "../assets/node_modules/bootstrap-virtual-3b3e187da6/node_modules/bootstrap/scss/mixins/gradients";
+@import "../assets/node_modules/bootstrap-virtual-3b3e187da6/node_modules/bootstrap/scss/mixins/transition";
+@import "../assets/node_modules/bootstrap-virtual-3b3e187da6/node_modules/bootstrap/scss/reboot";
+@import "../assets/node_modules/bootstrap-virtual-3b3e187da6/node_modules/bootstrap/scss/buttons";
+@import "../assets/node_modules/bootstrap-virtual-3b3e187da6/node_modules/bootstrap/scss/nav";
+@import "../assets/node_modules/bootstrap-virtual-3b3e187da6/node_modules/bootstrap/scss/badge";
+@import "../assets/node_modules/bootstrap-virtual-3b3e187da6/node_modules/bootstrap/scss/utilities/background";
+@import "../assets/node_modules/bootstrap-virtual-3b3e187da6/node_modules/bootstrap/scss/utilities/text";
 
 // Import flag-icon partials
 $include: 'br', 'mx', 'us';
