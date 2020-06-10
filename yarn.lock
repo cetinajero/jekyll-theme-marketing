@@ -1367,6 +1367,8 @@ isotope-layout@latest:
     popper.js: latest
     vue: latest
   dependenciesMeta:
+    bootstrap:
+      unplugged: true
     flag-icon-css:
       unplugged: true
   languageName: unknown

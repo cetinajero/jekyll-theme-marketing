@@ -27,6 +27,9 @@
     "vue": "latest"
   },
   "dependenciesMeta": {
+    "bootstrap": {
+      "unplugged": true
+    },
     "flag-icon-css": {
       "unplugged": true
     }
