@@ -28,13 +28,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@firebase/app-types@latest":
-  version: 0.6.1
-  resolution: "@firebase/app-types@npm:0.6.1"
-  checksum: 464c9073b19a110fd7d07d3d6773934ea9a2c0e714f7ab33f98f85032419e7de0386ebf339c93301ed3074e62cfb84bc3b65a2e75513d4fcb2bd8ad60a4e0464
-  languageName: node
-  linkType: hard
-
 "@firebase/app-types@npm:0.5.2":
   version: 0.5.2
   resolution: "@firebase/app-types@npm:0.5.2"
@@ -312,15 +305,6 @@ __metadata:
     "@firebase/app": 0.x
     "@firebase/app-types": 0.x
   checksum: 7a6f26146ec8430fd7ccc0fbc35c43b07379f73db077f53f52a516674de619f2522808b837cc49bdd990e3923dcc2e2cf23d5bc38205f4418b5978b126765a71
-  languageName: node
-  linkType: hard
-
-"@firebase/util@latest":
-  version: 0.2.48
-  resolution: "@firebase/util@npm:0.2.48"
-  dependencies:
-    tslib: 1.11.1
-  checksum: 2b7f47a742b4f5508cd564ad0a3f705eb3804e6ce827eae4a9fb6f455b54cea83a7c7de17ea3c38454748cf0ad8a24abd36a872f88f8492fe8ff933fefadc68b
   languageName: node
   linkType: hard
 
@@ -1348,8 +1332,6 @@ isotope-layout@latest:
   version: 0.0.0-use.local
   resolution: "jekyll-theme-marketing@workspace:."
   dependencies:
-    "@firebase/app-types": latest
-    "@firebase/util": latest
     "@fortawesome/fontawesome": latest
     "@fortawesome/fontawesome-free-brands": latest
     "@fortawesome/fontawesome-free-regular": latest
@@ -2328,13 +2310,6 @@ popper.js@latest:
   version: 1.10.0
   resolution: "tslib@npm:1.10.0"
   checksum: d03db5b8d205cd908421bd16c53c7912b857e4cbe4a54ea2b5f7c7a22cd86317462ea1783b093a36d78a1611fa10baf51696a94bb5c1e13c818145b8954a02c9
-  languageName: node
-  linkType: hard
-
-"tslib@npm:1.11.1":
-  version: 1.11.1
-  resolution: "tslib@npm:1.11.1"
-  checksum: d40eba08de267b2d3c458ddbf51f9010a45b8e752d3bf8c0fed63e266afc9277c6a26e65e51223335b8753f9f106aeb600e704f2a6eae05729160671a97c52e7
   languageName: node
   linkType: hard
 
