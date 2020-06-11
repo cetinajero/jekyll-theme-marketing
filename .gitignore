@@ -143,14 +143,8 @@ assets/node_modules/protobufjs-npm-*/
 !/assets/node_modules/flag-icon-css-*/*/flag-icon-css/flags/1x1/br.svg
 
 # isotope-layout
-/assets/node_modules/desandro-matches-selector/
-/assets/node_modules/ev-emitter/
-/assets/node_modules/fizzy-ui-utils/
-/assets/node_modules/get-size/
-/assets/node_modules/masonry-layout/
-/assets/node_modules/outlayer/
-/assets/node_modules/isotope-layout/js/
-/assets/node_modules/isotope-layout/dist/*.pkgd.js
+/assets/node_modules/isotope-layout-*/*/*/js/
+/assets/node_modules/isotope-layout-*/*/*/dist/*.pkgd.js
 
 # jquery
 /assets/node_modules/jquery-*/*/*/external/

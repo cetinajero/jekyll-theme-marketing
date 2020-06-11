@@ -1381,6 +1381,8 @@ isotope-layout@latest:
       unplugged: true
     flag-icon-css:
       unplugged: true
+    isotope-layout:
+      unplugged: true
     jquery:
       unplugged: true
     lightslider:
