@@ -47,6 +47,9 @@
     },
     "flag-icon-css": {
       "unplugged": true
+    },
+    "lightslider": {
+      "unplugged": true
     }
   }
 }

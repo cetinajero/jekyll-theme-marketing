@@ -262,16 +262,16 @@ assets/node_modules/protobufjs-npm-*/
 /assets/node_modules/jspdf/**/*node.min.js
 
 # lightslider
-/assets/node_modules/lightslider/.*rc
-/assets/node_modules/lightslider/*.jquery.*
-/assets/node_modules/lightslider/demo/
-/assets/node_modules/lightslider/dist/**/*.css
-/assets/node_modules/lightslider/dist/**/*.js
-!/assets/node_modules/lightslider/dist/**/*.min.css
-!/assets/node_modules/lightslider/dist/**/*.min.js
-/assets/node_modules/lightslider/node_modules/
-/assets/node_modules/lightslider/src/
-/assets/node_modules/lightslider/test/
+/assets/node_modules/lightslider-*/*/*/.*rc
+/assets/node_modules/lightslider-*/*/*/*.jquery.*
+/assets/node_modules/lightslider-*/*/*/demo/
+/assets/node_modules/lightslider-*/*/*/dist/**/*.css
+/assets/node_modules/lightslider-*/*/*/dist/**/*.js
+!/assets/node_modules/lightslider-*/*/*/dist/**/*.min.css
+!/assets/node_modules/lightslider-*/*/*/dist/**/*.min.js
+/assets/node_modules/lightslider-*/*/*/node_modules/
+/assets/node_modules/lightslider-*/*/*/src/
+/assets/node_modules/lightslider-*/*/*/test/
 
 # lunr
 /assets/node_modules/lunr/*/
