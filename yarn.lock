@@ -1390,6 +1390,8 @@ isotope-layout@latest:
       unplugged: true
     js-md5:
       unplugged: true
+    jspdf:
+      unplugged: true
     lightslider:
       unplugged: true
   languageName: unknown
