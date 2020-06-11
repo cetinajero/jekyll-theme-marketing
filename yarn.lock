@@ -1394,6 +1394,8 @@ isotope-layout@latest:
       unplugged: true
     lightslider:
       unplugged: true
+    lunr:
+      unplugged: true
   languageName: unknown
   linkType: soft
 

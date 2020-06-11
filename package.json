@@ -66,6 +66,9 @@
     },
     "lightslider": {
       "unplugged": true
+    },
+    "lunr": {
+      "unplugged": true
     }
   }
 }

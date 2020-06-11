@@ -180,9 +180,9 @@ assets/node_modules/protobufjs-npm-*/
 /assets/node_modules/lightslider-*/*/*/test/
 
 # lunr
-/assets/node_modules/lunr/*/
-/assets/node_modules/lunr/lunr.js
-/assets/node_modules/lunr/styles.css
+/assets/node_modules/lunr-*/*/*/*/
+/assets/node_modules/lunr-*/*/*/lunr.js
+/assets/node_modules/lunr-*/*/*/styles.css
 
 # vue
 /assets/node_modules/vue/src/
