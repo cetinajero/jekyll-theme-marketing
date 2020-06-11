@@ -1364,6 +1364,7 @@ isotope-layout@latest:
     jspdf: latest
     lightslider: latest
     lunr: latest
+    node-gyp: latest
     popper.js: latest
     vue: latest
   dependenciesMeta:
