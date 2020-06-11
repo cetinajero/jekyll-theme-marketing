@@ -1396,6 +1396,8 @@ isotope-layout@latest:
       unplugged: true
     lunr:
       unplugged: true
+    vue:
+      unplugged: true
   languageName: unknown
   linkType: soft
 

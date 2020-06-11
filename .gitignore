@@ -185,7 +185,7 @@ assets/node_modules/protobufjs-npm-*/
 /assets/node_modules/lunr-*/*/*/styles.css
 
 # vue
-/assets/node_modules/vue/src/
-/assets/node_modules/vue/types/
-/assets/node_modules/vue/dist/*.js
-!/assets/node_modules/vue/dist/vue.min.js
+/assets/node_modules/vue-*/*/*/src/
+/assets/node_modules/vue-*/*/*/types/
+/assets/node_modules/vue-*/*/*/dist/*.js
+!/assets/node_modules/vue-*/*/*/dist/vue.min.js
