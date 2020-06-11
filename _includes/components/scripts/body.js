@@ -2,7 +2,7 @@
   <!-- 3D Space product card -->
   <script src="{{ '/assets/js/product-cards/3d-space.js' | relative_url }}"></script>
 
-  <script src="{{ '/assets/node_modules/bootstrap/dist/js/bootstrap.min.js' | relative_url }}"></script>
+  <script src="{{ '/assets/node_modules/bootstrap-virtual-3b3e187da6/node_modules/bootstrap/dist/js/bootstrap.min.js' | relative_url }}"></script>
   <!-- <script src="/vendors/themes/vg_progressive/js/price-regulator/jshashtable-2.1_src.js"></script> -->
   <!-- <script src="/vendors/themes/vg_progressive/js/price-regulator/jquery.numberformatter-1.2.3.js"></script> -->
   <!-- <script src="/vendors/themes/vg_progressive/js/price-regulator/tmpl.js"></script> -->
@@ -19,7 +19,7 @@
   <!-- <script src="/vendors/themes/vg_progressive/js/jquery.fancybox.pack.js"></script> -->
   <!-- <script src="/vendors/themes/vg_progressive/js/isotope.pkgd.min.js"></script> -->
   <!-- <script src="/vendors/themes/vg_progressive/js/jquery.knob.js"></script> -->
-  <!-- <script src="{{ '/assets/node_modules/jquery.stellar/jquery.stellar.min.js' | relative_url }}"></script> -->
+  <!-- <script src="{{ '/assets/node_modules/jquery.stellar-https-33303e54f9/node_modules/jquery.stellar/jquery.stellar.min.js' | relative_url }}"></script> -->
   <!-- <script src="/vendors/themes/vg_progressive/js/jquery.selectBox.min.js"></script> -->
   <!-- <script src="/vendors/themes/vg_progressive/js/jquery.tubular.1.0.js"></script> -->
   <!-- <script src="/vendors/themes/vg_progressive/js/SmoothScroll.js"></script> -->

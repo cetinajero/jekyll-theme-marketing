@@ -7,8 +7,6 @@
   "author": "<cetinajero@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@firebase/app-types": "latest",
-    "@firebase/util": "latest",
     "@fortawesome/fontawesome": "latest",
     "@fortawesome/fontawesome-free-brands": "latest",
     "@fortawesome/fontawesome-free-regular": "latest",
@@ -23,7 +21,55 @@
     "jspdf": "latest",
     "lightslider": "latest",
     "lunr": "latest",
+    "node-gyp": "latest",
     "popper.js": "latest",
     "vue": "latest"
+  },
+  "dependenciesMeta": {
+    "@fortawesome/fontawesome": {
+      "unplugged": true
+    },
+    "@fortawesome/fontawesome-free-brands": {
+      "unplugged": true
+    },
+    "@fortawesome/fontawesome-free-regular": {
+      "unplugged": true
+    },
+    "@fortawesome/fontawesome-free-solid": {
+      "unplugged": true
+    },
+    "bootstrap": {
+      "unplugged": true
+    },
+    "firebase": {
+      "unplugged": true
+    },
+    "flag-icon-css": {
+      "unplugged": true
+    },
+    "isotope-layout": {
+      "unplugged": true
+    },
+    "jquery": {
+      "unplugged": true
+    },
+    "jquery.stellar": {
+      "unplugged": true
+    },
+    "js-md5": {
+      "unplugged": true
+    },
+    "jspdf": {
+      "unplugged": true
+    },
+    "lightslider": {
+      "unplugged": true
+    },
+    "lunr": {
+      "unplugged": true
+    },
+    "vue": {
+      "unplugged": true
+    }
   }
 }
