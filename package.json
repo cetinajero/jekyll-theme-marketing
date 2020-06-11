@@ -54,6 +54,9 @@
     "jquery": {
       "unplugged": true
     },
+    "jquery.stellar": {
+      "unplugged": true
+    },
     "lightslider": {
       "unplugged": true
     }
