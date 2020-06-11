@@ -161,7 +161,7 @@ assets/node_modules/protobufjs-npm-*/
 /assets/node_modules/jquery.stellar-*/*/*/stellar.jquery.json
 
 # js-md5
-/assets/node_modules/js-md5/src/
+/assets/node_modules/js-md5-*/*/*/src/
 
 # jspdf
 /assets/node_modules/abab/

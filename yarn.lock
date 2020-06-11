@@ -1388,6 +1388,8 @@ isotope-layout@latest:
       unplugged: true
     jquery.stellar:
       unplugged: true
+    js-md5:
+      unplugged: true
     lightslider:
       unplugged: true
   languageName: unknown
