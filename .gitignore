@@ -153,11 +153,11 @@ assets/node_modules/protobufjs-npm-*/
 /assets/node_modules/isotope-layout/dist/*.pkgd.js
 
 # jquery
-/assets/node_modules/jquery/external/
-/assets/node_modules/jquery/src/
-/assets/node_modules/jquery/dist/core.js
-/assets/node_modules/jquery/dist/jquery.js
-/assets/node_modules/jquery/dist/*.slim.*
+/assets/node_modules/jquery-*/*/*/external/
+/assets/node_modules/jquery-*/*/*/src/
+/assets/node_modules/jquery-*/*/*/dist/core.js
+/assets/node_modules/jquery-*/*/*/dist/jquery.js
+/assets/node_modules/jquery-*/*/*/dist/*.slim.*
 
 # jquery.stellar
 /assets/node_modules/jquery.stellar/libs/

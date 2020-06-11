@@ -48,6 +48,9 @@
     "flag-icon-css": {
       "unplugged": true
     },
+    "jquery": {
+      "unplugged": true
+    },
     "lightslider": {
       "unplugged": true
     }
