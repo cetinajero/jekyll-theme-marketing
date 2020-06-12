@@ -34,7 +34,7 @@
   <div class="row">
     <p id="product-details-footer" class="mx-auto">
       {% for resource in page.resources.spec-sheets.catalog %}
-        <img src="{{ site.amazon-s3 }}{{ resource }}" alt="{{ page.title }}" class="img-center">
+        <img src="{{ site.amazon-s3 }}{{ resource }}" alt="{{ page.title }}" class="img-center" oncontextmenu="return false;">
       {% endfor %}
     </p>
   </div>
