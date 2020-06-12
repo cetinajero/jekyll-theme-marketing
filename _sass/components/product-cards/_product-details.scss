@@ -3,4 +3,27 @@
     border-color: #e1e1e1;
     border-bottom-style: solid;
   }
+
+  #product-details-footer {
+    div {
+      background-repeat: no-repeat;
+      background-position: center top;
+
+      img {
+        width: 800px;
+      }
+
+      @include media-breakpoint-only(md) {
+        background-size: 690px;
+      }
+
+      @include media-breakpoint-only(sm) {
+        background-size: 530px;
+      }
+
+      @include media-breakpoint-only(xs) {
+        background-size: 350px;
+      }
+    }
+  }
 }
