@@ -13,7 +13,6 @@ async function updateHeight(image) {
         await new Promise(r => setTimeout(r, 1000));
         height = img.naturalHeight * dummy.clientWidth / 800
         dummy.style.height = `${height}px`
-        console.log(`${dummy.clientWidth}px x ${height}px`)
     } while (img.naturalHeight < 1)
 }
 
