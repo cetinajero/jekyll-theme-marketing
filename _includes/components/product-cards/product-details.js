@@ -1,7 +1,7 @@
 const images = Array.from(
     document
-            .getElementById("product-details-footer")
-            .getElementsByTagName('div')
+        .getElementById("product-details-footer")
+        .getElementsByTagName('div')
 )
 
 async function updateHeight(image) {
