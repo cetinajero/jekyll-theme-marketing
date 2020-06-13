@@ -36,6 +36,9 @@
       <div class="mx-auto" style="background-image: url({{ site.amazon-s3 }}{{ resource }});">
         <img src="{{ site.amazon-s3 }}/components/product-cards/product-details/img/dummy.png" title="{{ page.title }}" alt="{{ page.title }}" />
       </div>
+      <script type="text/javascript">
+        {% include components/product-cards/product-details.js %}
+      </script>
     {% endfor %}
   </section>
 
