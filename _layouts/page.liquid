@@ -4,8 +4,7 @@ layout: default
 {% if page.layout == "product" %}
   {% assign class = 'd-none' %}
 {% else %}
-  {% assign url-size = page.url | size | minus: 2 %}
-  {% assign i18n-id = page.url | slice: 1,url-size | replace: '/', '-' | remove_first: page.collection | remove_first: '-' %}
+  {% assign i18n-id = page.url | slugify | remove_first: page.collection | remove_first: '-' %}
   {% if i18n-id == "" %}{% assign i18n-id = page.collection %}{% endif %}
   {% if page.collection == 'pages' %}
     {% assign i18n-title = site.data.i18n.common[page.collection][site.lang][i18n-id].title %}

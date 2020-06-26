@@ -8,8 +8,7 @@ function generateData(){
   return [
     {% for collection in site.collections %}
       {% for page in collection.docs %}
-        {% assign url-size = page.url | size | minus: 2 %}
-        {% assign i18n-id = page.url | slice: 1,url-size | replace: '/', '-' | remove_first: collection.label | remove_first: '-' %}
+        {% assign i18n-id = page.url | slugify | remove_first: collection.label | remove_first: '-' %}
         {% if site.links.product[i18n-id].disabled == null %}
           {% assign logo = site.domain | replace:'.',' ' | truncatewords: 1,"" | prepend: '/components/logos/progressive/img/' | prepend: site.amazon-s3 | append: '.png' %}
           {% assign page-image = page.image | slice: -12,8 %}
