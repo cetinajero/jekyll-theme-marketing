@@ -1,40 +1,46 @@
 ---
 layout: page
 ---
-<script src="{{ '/assets/node_modules/isotope-layout-npm-3.0.6-ae267b8579/node_modules/isotope-layout/dist/isotope.pkgd.min.js' | relative_url }}"></script>
+{% assign url-size = page.url | size | minus: 2 %}
+{% assign i18n-id = page.url | slice: 1,url-size | replace: '/', '-' | remove_first: page.collection | remove_first: '-' %}
+{% if site.links.product[i18n-id].disabled == null %}
+  <script src="{{ '/assets/node_modules/isotope-layout-npm-3.0.6-ae267b8579/node_modules/isotope-layout/dist/isotope.pkgd.min.js' | relative_url }}"></script>
 
-<div class="container-fluid" data-layout="grid">
-  <div class="row">
+  <div class="container-fluid" data-layout="grid">
+    <div class="row">
 
-    <div class="col-4 col-md-3 col-xl-2">
-      {% include components/filters/isotope.liquid %}
-    </div>
-
-    <div class="col-8 col-md-9 col-xl-10">
-      <div class="row grid">
-        {% assign collections = site.collections | where: "label", page.collection %}
-        {% for collection in collections %}
-          {% assign docs = collection.docs | where: "menu-father", page.menu-name %}
-          {% for doc in docs %}
-            {% assign url-size = doc.url | size | minus: 2 %}
-            {% assign i18n-id = doc.url | slice: 1,url-size | replace: '/', '-' | remove_first: collection.label | remove_first: '-' %}
-            {% assign i18n-title = site.data.i18n.catalog[collection.label][site.lang][i18n-id].title %}
-            {% if site.links.product[i18n-id].disabled == null %}
-              {% if doc.i18n[site.lang].description %}
-                {% assign i18n-description = doc.i18n[site.lang].description %}
-              {% else %}
-                {% assign i18n-description = site.data.i18n.catalog[collection.label][site.lang][i18n-id].desc %}
-              {% endif %}
-              {% include components/product-cards/progressive.liquid %}
-            {% endif %}
-          {% endfor %}
-        {% endfor %}
+      <div class="col-4 col-md-3 col-xl-2">
+        {% include components/filters/isotope.liquid %}
       </div>
+
+      <div class="col-8 col-md-9 col-xl-10">
+        <div class="row grid">
+          {% assign collections = site.collections | where: "label", page.collection %}
+          {% for collection in collections %}
+            {% assign docs = collection.docs | where: "menu-father", page.menu-name %}
+            {% for doc in docs %}
+              {% assign url-size = doc.url | size | minus: 2 %}
+              {% assign i18n-id = doc.url | slice: 1,url-size | replace: '/', '-' | remove_first: collection.label | remove_first: '-' %}
+              {% assign i18n-title = site.data.i18n.catalog[collection.label][site.lang][i18n-id].title %}
+              {% if site.links.product[i18n-id].disabled == null %}
+                {% if doc.i18n[site.lang].description %}
+                  {% assign i18n-description = doc.i18n[site.lang].description %}
+                {% else %}
+                  {% assign i18n-description = site.data.i18n.catalog[collection.label][site.lang][i18n-id].desc %}
+                {% endif %}
+                {% include components/product-cards/progressive.liquid %}
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        </div>
+      </div>
+
     </div>
+  </div> <!-- /container -->
 
-  </div>
-</div> <!-- /container -->
-
-<script type="text/javascript">
-  {% include components/filters/isotope.js %}
-</script>
+  <script type="text/javascript">
+    {% include components/filters/isotope.js %}
+  </script>
+{% else %}
+  <script type="text/javascript">window.location.href = "/"</script>
+{% endif %}
