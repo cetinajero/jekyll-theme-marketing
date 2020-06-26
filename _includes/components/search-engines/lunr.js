@@ -8,26 +8,30 @@ function generateData(){
   return [
     {% for collection in site.collections %}
       {% for page in collection.docs %}
-        {% assign logo = site.domain | replace:'.',' ' | truncatewords: 1,"" | prepend: '/components/logos/progressive/img/' | prepend: site.amazon-s3 | append: '.png' %}
-        {% assign page-image = page.image | slice: -12,8 %}
-        {% if page-image == 'dummy-og' %}
-          {% assign page-image = logo %}
-        {% else %}
-          {% assign page-image = page.image %}
+        {% assign url-size = page.url | size | minus: 2 %}
+        {% assign i18n-id = page.url | slice: 1,url-size | replace: '/', '-' | remove_first: collection.label | remove_first: '-' %}
+        {% if site.links.product[i18n-id].disabled == null %}
+          {% assign logo = site.domain | replace:'.',' ' | truncatewords: 1,"" | prepend: '/components/logos/progressive/img/' | prepend: site.amazon-s3 | append: '.png' %}
+          {% assign page-image = page.image | slice: -12,8 %}
+          {% if page-image == 'dummy-og' %}
+            {% assign page-image = logo %}
+          {% else %}
+            {% assign page-image = page.image %}
+          {% endif %}
+          {
+            "id": "{{ page.url | slugify }}",
+            "title": "{{ page.title | xml_escape }}",
+            "brand": "{{ page.brand | xml_escape }}",
+            "description": "{{ page.description | xml_escape }}",
+            "commercial": "{{ page.commercial | xml_escape }}",
+            "categories": "{{ page.categories | join: ' ' | replace: '-', ' ' }}",
+            "content": {{ page.content | strip_html | strip_newlines | jsonify }},
+            "url": "{{ page.url | xml_escape }}",
+            "image": "{{ page-image | default: logo | xml_escape }}",
+            "spec-sheets-text": "{{ page.resources.spec-sheets.text | join: ' ' | replace: '"', '' }}",
+            "spec-sheets-specs": "{{ page.resources.spec-sheets.specs | join: ' ' | replace: '{"name"=>"', '' | replace: '"', ' ' }}",
+          },
         {% endif %}
-        {
-          "id": "{{ page.url | slugify }}",
-          "title": "{{ page.title | xml_escape }}",
-          "brand": "{{ page.brand | xml_escape }}",
-          "description": "{{ page.description | xml_escape }}",
-          "commercial": "{{ page.commercial | xml_escape }}",
-          "categories": "{{ page.categories | join: ' ' | replace: '-', ' ' }}",
-          "content": {{ page.content | strip_html | strip_newlines | jsonify }},
-          "url": "{{ page.url | xml_escape }}",
-          "image": "{{ page-image | default: logo | xml_escape }}",
-          "spec-sheets-text": "{{ page.resources.spec-sheets.text | join: ' ' | replace: '"', '' }}",
-          "spec-sheets-specs": "{{ page.resources.spec-sheets.specs | join: ' ' | replace: '{"name"=>"', '' | replace: '"', ' ' }}",
-        },
       {% endfor %}
     {% endfor %}
   ];
@@ -116,4 +120,4 @@ function startApp() {
   }
 }
 
-//   startApp();
+startApp();
