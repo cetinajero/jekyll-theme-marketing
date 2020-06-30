@@ -3,6 +3,12 @@
 # Test jekyll module
 module Test
   extend self
+  
+  IGNORED_URLS = [
+    'https://www.facebook.com/grupopvmx',
+    'https://mx.linkedin.com/company/grupo-pv-mexico',
+    'https://twitter.com/grupopvmx'
+  ].freeze
 
   TASKS_OPTIONS = {
     internal: { disable_external: true },
@@ -48,7 +54,7 @@ module Test
     default_options = {
       assume_extension: true,
       error_sort: :desc,
-      url_ignore: ['https://mx.linkedin.com/company/grupo-pv-mexico']
+      url_ignore: IGNORED_URLS
     }
 
     TASKS_OPTIONS.each do |key, value|
