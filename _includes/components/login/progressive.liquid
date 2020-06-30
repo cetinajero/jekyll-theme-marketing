@@ -69,6 +69,14 @@
               <span class="download-resource">{{ file.name }}</span>
             </div>
           {% endfor %}
+          {% for link in page.links %}
+            <div class="pb-2">
+              <a class="btn btn-primary btn-sm" href="{{ link.url }}" target="_blank">
+                <strong><i class="fas fa-external-link-alt fa-lg" data-fa-transform="left-4"></i> {{ site.data.i18n.components.login[site.lang].visit.title | default: 'Visit'}}</strong>
+              </a>
+              <span class="download-resource">{{ link.name }}</span>
+            </div>
+          {% endfor %}
         </div>
       </div>
     </div>
