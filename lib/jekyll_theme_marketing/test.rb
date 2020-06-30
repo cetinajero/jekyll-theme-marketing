@@ -3,7 +3,7 @@
 # Test jekyll module
 module Test
   extend self
-  
+
   IGNORED_URLS = [
     'https://www.facebook.com/grupopvmx',
     'https://mx.linkedin.com/company/grupo-pv-mexico',
