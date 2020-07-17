@@ -2,7 +2,10 @@
 
   <div class="p-2 m-0" style="border: 1px solid #eee; border-radius: 15px; -moz-border-radius: 15px;">
     {% if doc.ribbon%}
-      {% include components/ribbons/font-awesome.liquid label=doc.ribbon %}
+      {% include components/ribbons/font-awesome.liquid
+         label=doc.ribbon
+         color-class=doc.ribbon-color
+      %}
     {% else %}
       <span class="fa-layers-text text-white" data-fa-transform="down-19 shrink-20">.</span>
     {% endif %}

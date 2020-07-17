@@ -1,9 +1,9 @@
 <span class="fa-layers fa-fw fa-3x h-100 fa-pull-right">
-  <i class="fas fa-bookmark" data-fa-transform="grow--9 right-8.5 down-21.5 rotate--45" style="color:Blue;"></i>
-  <i class="fas fa-bookmark" data-fa-transform="grow--9 right--12.8 down--.5 rotate-135" style="color:Blue;"></i>
-  <i class="fas fa-caret-up" data-fa-transform="grow--7 right-7 down-19.5" style="color:DarkBlue;"></i>
-  <i class="fas fa-caret-right" data-fa-transform="grow--7 right--11 down-1.1" style="color:DarkBlue;"></i>
-  <i class="fas fa-minus" data-fa-transform="grow-21 down-8.5 rotate-45" style="color:blue;"></i>
+  <i class="fas fa-bookmark {{ include.color-class | default: 'text-primary' }}" data-fa-transform="grow--9 right-8.5 down-21.5 rotate--45"></i>
+  <i class="fas fa-bookmark {{ include.color-class | default: 'text-primary' }}" data-fa-transform="grow--9 right--12.8 down--.5 rotate-135"></i>
+  <i class="fas fa-caret-up text-dark" data-fa-transform="grow--7 right-7 down-19.5"></i>
+  <i class="fas fa-caret-right text-dark" data-fa-transform="grow--7 right--11 down-1.1"></i>
+  <i class="fas fa-minus {{ include.color-class | default: 'text-primary' }}" data-fa-transform="grow-21 down-8.5 rotate-45"></i>
   <span class="fa-layers-text fa-inverse font-weight-bold" data-fa-transform="shrink-11.7 down-8.5 rotate-45">
     {{ include.label }}
   </span>
