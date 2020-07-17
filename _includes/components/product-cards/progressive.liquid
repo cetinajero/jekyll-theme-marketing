@@ -1,7 +1,11 @@
 <div class="col-12 col-md-6 col-lg-4 col-xl-3 pb-4 {{ doc.brand | downcase }} {{ doc.commercial | downcase }}" data-component="product-cards/progressive">
 
   <div class="p-2 m-0" style="border: 1px solid #eee; border-radius: 15px; -moz-border-radius: 15px;">
-    {% include components/ribbons/font-awesome.liquid %}
+    {% if doc.ribbon%}
+      {% include components/ribbons/font-awesome.liquid label=doc.ribbon %}
+    {% else %}
+      <span class="fa-layers-text text-white" data-fa-transform="down-19 shrink-20">.</span>
+    {% endif %}
 
     <a {% if doc.menu-name or collection.products.detail or doc.menu-name %}{{ doc.url | relative_url | prepend: 'href="' | append: '"' }}{% endif %}>
       <img id="{{ i18n-id }}" class="d-block mx-auto cover-image opacity-80" src="{{ doc.image }}" alt="{% if i18n-title %}{{ i18n-title }}{% else %}{{ doc.title | default: i18n-id }}{% endif %}" />
