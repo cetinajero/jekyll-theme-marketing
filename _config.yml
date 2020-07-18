@@ -15,7 +15,7 @@ timezone: America/Chihuahua
 google-analytics: UA-69457978-1
 exchange-rates:
   usd: true
-product:
+components:
   ribbon:
     high-565396f3: disabled
 social-media:
