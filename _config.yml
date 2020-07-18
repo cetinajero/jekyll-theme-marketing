@@ -16,10 +16,8 @@ google-analytics: UA-69457978-1
 exchange-rates:
   usd: true
 product:
- ribbon:
-   disabled: true
-   high-565396f:
-     disabled: true
+  ribbon:
+    high-565396f3: disabled
 social-media:
   - name: facebook
     link: https://www.facebook.com/
