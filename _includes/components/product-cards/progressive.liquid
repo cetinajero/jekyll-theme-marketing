@@ -2,10 +2,6 @@
 
   <div class="p-2 m-0" style="border: 1px solid #eee; border-radius: 15px; -moz-border-radius: 15px;">
 
-    {% assign collections = site.collections | where: "label", page.collection %}
-    {% for collection in collections %}
-      {% unless collection.ribbon == false %}
-
         {% unless site.product.ribbon.disabled %}
           {% if doc.ribbon%}
             {% include components/ribbons/font-awesome.liquid
@@ -16,9 +12,6 @@
             <span class="fa-layers-text text-white" data-fa-transform="down-19 shrink-20">.</span>
           {% endif %}
         {% endunless %}
-        
-      {% endunless %}
-    {% endfor %}
 
     <a {% if doc.menu-name or collection.products.detail or doc.menu-name %}{{ doc.url | relative_url | prepend: 'href="' | append: '"' }}{% endif %}>
       <img id="{{ i18n-id }}" class="d-block mx-auto cover-image opacity-80" src="{{ doc.image }}" alt="{% if i18n-title %}{{ i18n-title }}{% else %}{{ doc.title | default: i18n-id }}{% endif %}" />
