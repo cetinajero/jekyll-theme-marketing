@@ -15,7 +15,10 @@ timezone: America/Chihuahua
 google-analytics: UA-69457978-1
 exchange-rates:
   usd: true
-
+components:
+  ribbon: # disabled # Disable the whole component
+    shoes-man: disabled # Disable a whole collection
+    high-565396f3: disabled # Disable only on a product
 social-media:
   - name: facebook
     link: https://www.facebook.com/
