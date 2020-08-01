@@ -21,7 +21,7 @@ address:
       - { number: 55 (21) 2255 96 96}
     email: "contacto@carnival-bar.com"
     custom-html:
-    google-maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d648.2360795458937!2d2.3401207998875124!3d48.84607607478321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e671dcd3de4061%3A0xd37ddbdbbf841e6a!2sLe%20Petit%20Journal%20Saint-Michel!5e0!3m2!1ses!2smx!4v1596239303929!5m2!1ses!2smx"
+    google-maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7346.7179616015355!2d-43.18798462673617!3d-22.97382327370968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bd546bbd93d4b%3A0xe53230a51263652e!2sBoteco%20Belmonte!5e0!3m2!1ses!2smx!4v1596294060116!5m2!1ses!2smx"
 css:
   header:
     background-color: "#1A69D5"
