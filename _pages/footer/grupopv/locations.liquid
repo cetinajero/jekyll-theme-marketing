@@ -2,6 +2,15 @@
 title: Locations
 subtitle: Locate our nearest distributor
 permalink: /locations/
+
+customers-sections:
+  - name: Americas
+    customers:
+      - carnival-bar.com
+  - name: Eurasia
+    customers:
+      - colifror-bri.com.jp
+      - fleur.com
 ---
 {% capture markers_data %}
   {% for customer in site.data.customers %}
@@ -39,4 +48,9 @@ permalink: /locations/
     zoom=3
     markers=markers_data
     info_window=info_window
+%}
+
+{%  include components/collapse/accordion.liquid
+    title="Continents"
+    sections=page.customers-sections
 %}

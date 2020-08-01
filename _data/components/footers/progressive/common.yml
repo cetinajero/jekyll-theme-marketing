@@ -10,7 +10,7 @@
     - { title: 'Awards', i18n: { es_MX: 'Reconocimientos', pt_BR: '' }, link: '/awards/', pre-icon: 'fas fa-trophy' }
     - { title: 'Events', i18n: { es_MX: 'Eventos', pt_BR: '' }, link: '/events/', pre-icon: 'fas fa-calendar-alt' }
     - { title: 'Our offices', i18n: { es_MX: 'Nuestras oficinas', pt_BR: 'Our offices' }, link: '/our-offices/', pre-icon: 'fas fa-building' }
-    - { title: 'Our partners', i18n: { es_MX: 'Nuestros socios', pt_BR: 'Our partners' }, link: '/locations/', pre-icon: 'fas fa-users' }
+    - { title: 'Locations', i18n: { es_MX: 'Ubicaciones', pt_BR: 'Localizações' }, link: '/locations/', pre-icon: 'fas fa-map-pin' }
     - { title: 'Sitemap', i18n: { es_MX: 'Mapa del sitio', pt_BR: '' }, link: '/sitemap/', pre-icon: 'fas fa-sitemap' }
     - { title: 'Privacy notice', i18n: { es_MX: 'Aviso de privacidad', pt_BR: 'Aviso de privacidade' }, link: 'https://grupopv-public.s3.amazonaws.com/assets/pdf/documents/privacy-notice.pdf', pre-icon: 'fas fa-user-secret', post-icon: 'fas fa-download' }
     - { title: 'Terms and conditions', i18n: { es_MX: 'Términos y condiciones', pt_BR: 'Termos e Condições' }, link: 'https://grupopv-public.s3.amazonaws.com/assets/pdf/documents/terms-and-conditions.pdf', post-icon: 'fas fa-download', pre-icon: 'fas fa-gavel' }
