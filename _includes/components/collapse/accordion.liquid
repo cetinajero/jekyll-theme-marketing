@@ -1,89 +1,35 @@
 
 <h4 class="pt-4 title-box">Centros de Servicio Autorizado Grupo PV</h4>
-<div class="accordion" id="accordionExample">
-  <div class="card">
-    <div class="card-header" id="headingOne">
-      <h2 class="mb-0">
-        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Aguascalientes
-        </button>
-      </h2>
-    </div>
-    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-      <div class="card m-2" style="max-width: 500px;">
-        <div class="row no-gutters">
-          <div class="col-md-4 my-auto">
-            <img src="https://s3-us-west-2.amazonaws.com/grupopv-public/components/logos/progressive/img/grupo-protel.png" class="card-img" alt="{{ card.title }}">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-                <h5 class="card-customer">Protel del Centro</h5>
-              <p class="card-adress">Ave. Aguascalientes Sur No. 1332,, Fracc. Casa Blanca, Aguascalientes, Ags., México</p>
-              <p class="card-phone">01 (449) 145 57 70</p>
-              <div class="card-body">
-                <a href=class="card-website">https://www.grupo-protel.com.mx</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="card">
-    <div class="card-header" id="headingTwo">
-      <h2 class="mb-0">
-        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          Baja California
-        </button>
-      </h2>
-    </div>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-      <div class="card m-2" style="max-width: 500px;">
-        <div class="row no-gutters">
-          <div class="col-md-4 my-auto">
-            <img src="https://grupopv-public.s3.amazonaws.com/components/logos/progressive/img/corporativomexcom.png" class="card-img" alt="{{ card.title }}">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-                <h5 class="card-customer">Corporativo Mex-Com</h5>
-              <p class="card-adress">Ave. Gral Jesus Carranza 1242, Col. Benito Juárez, Mexicali, B.C, México</p>
-              <p class="card-phone">01 (686) 566 63 61</p>
+<div class="accordion" id="bootstrapAccordion">
+  {% for section in page.customers-sections %}
+    <div class="card">
+      <div class="card-header" id="heading{{ section.name }}">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse{{ section.name }}" aria-expanded="true" aria-controls="collapse{{ section.name }}">
+            {{ section.name }}
+          </button>
+        </h2>
+      </div>
+      <div id="collapse{{ section.name }}" class="collapse" aria-labelledby="heading{{ section.name }}" data-parent="#bootstrapAccordion">
+        <div class="card m-2" style="max-width: 500px;">
+          <div class="row no-gutters">
+            <div class="col-md-4 my-auto">
+              <img src="https://s3-us-west-2.amazonaws.com/grupopv-public/components/logos/progressive/img/grupo-protel.png" class="card-img" alt="{{ card.title }}">
+            </div>
+            <div class="col-md-8">
               <div class="card-body">
-                <a href=class="card-website">https://www.corporativomexcom.mx/</a>
+                <h5 class="card-customer">Protel del Centro</h5>
+                <p class="card-address">Ave. Aguascalientes Sur No. 1332,, Fracc. Casa Blanca, Aguascalientes, Ags., México</p>
+                <p class="card-phone">01 (449) 145 57 70</p>
+                <div class="card-body">
+                  <a href=class="card-website">https://www.grupo-protel.com.mx</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="card">
-    <div class="card-header" id="headingThree">
-      <h2 class="mb-0">
-        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-          Chihuahua
-        </button>
-      </h2>
-    </div>
-    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-      <div class="card m-2" style="max-width: 500px;">
-        <div class="row no-gutters">
-          <div class="col-md-4 my-auto">
-            <img src="https://grupopv-public.s3.amazonaws.com/components/logos/progressive/img/comunicacioneshg.png" class="card-img" alt="{{ card.title }}">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-                <h5 class="card-customer">HG Comunicaciones</h5>
-              <p class="card-adress">Venustiano Carranza No. 3606, Col. Santa Rosa, Chihuahua, Chih., México</p>
-              <p class="card-phone">01 (614) 415 59 91</p>
-              <div class="card-body">
-                <a href=class="card-website">https://www.comunicacioneshg.com/</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  {% endfor %}
 </div>
