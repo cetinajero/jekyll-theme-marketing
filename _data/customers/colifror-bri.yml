@@ -1,0 +1,129 @@
+title: Colifror-Bri
+description: >
+  Distribuidora de equipos de productos
+url: https://www.colifror-bri.com
+domain: colifror-bri.com
+original: true
+lang: es_MX
+remote_theme: cetinajero/jekyll-theme-marketing
+timezone: Asia/Tokyo
+google-analytics: UA-145195556-3
+exchange-rates:
+  usd: true
+address:
+  -
+    name: "Oficina en Tokyo"
+    street: "3 Chome Nihonbashi"
+    block: "Chūō"
+    city: "Tokio, Japón"
+    zip: "103-0027"
+    phone:
+      - { number: 81 (33) 275 22 50 }
+    email: "contacto@colifror-bri.com"
+    custom-html:
+    google-maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.8913180349214!2d139.7708143144871!3d35.679677980194754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188957ffa3ecbd%3A0x180b6f5970b0eb25!2zMyBDaG9tZSBOaWhvbmJhc2hpLCBDaMWrxY0sIFRva2lvIDEwMy0wMDI3LCBKYXDDs24!5e0!3m2!1ses!2smx!4v1596237215695!5m2!1ses!2smx"
+
+css:
+  header:
+    background-color: "#1A69D5"
+  menu:
+    font-color: "#1A69D5"
+    icons: "#1A69D5"
+  footer:
+    background-color: "#1D6BD6"
+formspree:
+  contact-form:
+    email:
+      user: |
+        "contacto"
+      company: |
+        "colifror-bri"
+      global_domain: |
+        "com"
+
+awards:
+  -
+    label: Kenny Davis Award 2014
+    awards: ["award-2014"]
+    type: Kenny Davis Award
+  -
+    label: Store Manager of the year 2015
+    awards: ["award-2015"]
+    type: Store manager
+
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+    products:
+      detail: true
+  shoes-woman:
+    output: true
+    permalink: /:collection/:categories/:name/
+    products:
+      detail: true
+  shoes-man:
+    output: true
+    permalink: /:collection/:categories/:name/
+    products:
+      detail: true
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts" # previously `post` in Jekyll 2.2.
+    values:
+      layout: page
+      published: true
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: page
+      image: https://s3-us-west-2.amazonaws.com/grupopv-public/components/logos/progressive/img/grupopv-og.png
+      published: true
+  -
+    scope:
+      path: ""
+      type: "shoes-woman"
+    values:
+      layout: product
+      published: true
+  -
+    scope:
+      path: ""
+      type: "shoes-man"
+    values:
+      layout: product
+      published: true
+
+amazon-s3: https://grupopv-public.s3.amazonaws.com
+permalink: /:categories/:title/
+markdown: kramdown
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jemoji
+
+# Build settings
+markdown: kramdown
+remote_theme: cetinajero/jekyll-theme-marketing
+plugins:
+  - jekyll-remote-theme
+exclude:
+  - lib
+  - tests
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - Rakefile
+  - jekyll-theme-marketing.gemspec
+  - package.json
+  - yarn.lock
+  - LICENSE
+  - README.md
+  - CHANGELOG.md
+  - CODEOWNERS
+  - vendor
