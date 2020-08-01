@@ -1,8 +1,8 @@
 
-<h4 class="pt-4 title-box">{{ page.customers-sections.title }}</h4>
+<h4 class="pt-4 title-box">{{ include.title }}</h4>
 
 <div class="accordion" id="bootstrapAccordion">
-  {% for section in page.customers-sections.sections %}
+  {% for section in include.sections %}
     <div class="card">
       <div class="card-header" id="heading{{ section.name }}">
         <h2 class="mb-0">
