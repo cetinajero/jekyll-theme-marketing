@@ -12,23 +12,33 @@
         </h2>
       </div>
       <div id="collapse{{ section.name }}" class="collapse" aria-labelledby="heading{{ section.name }}" data-parent="#bootstrapAccordion">
-        <div class="card m-2" style="max-width: 500px;">
-          <div class="row no-gutters">
-            <div class="col-md-4 my-auto">
-              <img src="https://s3-us-west-2.amazonaws.com/grupopv-public/components/logos/progressive/img/grupo-protel.png" class="card-img" alt="{{ card.title }}">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-customer">Protel del Centro</h5>
-                <p class="card-address">Ave. Aguascalientes Sur No. 1332,, Fracc. Casa Blanca, Aguascalientes, Ags., México</p>
-                <p class="card-phone">01 (449) 145 57 70</p>
+        {% for customer in section.customers %}
+          {% assign customer-domain = customer | remove: "." %}
+          {% capture customer-address %}
+            {{ site.data.customers[customer-domain].address[0].street }},
+            {{ site.data.customers[customer-domain].address[0].block }},
+            {{ site.data.customers[customer-domain].address[0].city }}
+          {% endcapture %}
+          <div class="card m-2" style="max-width: 500px;">
+            <div class="row no-gutters">
+              <div class="col-md-4 my-auto">
+                <img src="{{ site.amazon-s3 }}/components/logos/progressive/img/{{ customer | replace:'.',' ' | truncatewords: 1,"" }}.png" class="card-img" alt="{{ customer }}">
+              </div>
+              <div class="col-md-8">
                 <div class="card-body">
-                  <a href=class="card-website">https://www.grupo-protel.com.mx</a>
+                  <h5 class="card-customer">{{ site.data.customers[customer-domain].title }}</h5>
+                  <p class="card-address">{{ customer-address }}</p>
+                  <p class="card-phone">{{ site.data.customers[customer-domain].address[0].phone[0].number }}</p>
+                  <div class="card-body">
+                    <a href="{{ site.data.customers[customer-domain].url }}" class="card-website">
+                      {{ site.data.customers[customer-domain].url }}
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
   {% endfor %}

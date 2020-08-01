@@ -1,8 +1,8 @@
 title: Colifror-Bri
 description: >
   Distribuidora de equipos de productos
-url: https://www.colifror-bri.com
-domain: colifror-bri.com
+url: https://www.colifror-bri.com.jp
+domain: colifror-bri.com.jp
 original: true
 lang: es_MX
 remote_theme: cetinajero/jekyll-theme-marketing
@@ -19,7 +19,7 @@ address:
     zip: "103-0027"
     phone:
       - { number: 81 (33) 275 22 50 }
-    email: "contacto@colifror-bri.com"
+    email: "contacto@colifror-bri.com.jp"
     custom-html:
     google-maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.8913180349214!2d139.7708143144871!3d35.679677980194754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188957ffa3ecbd%3A0x180b6f5970b0eb25!2zMyBDaG9tZSBOaWhvbmJhc2hpLCBDaMWrxY0sIFRva2lvIDEwMy0wMDI3LCBKYXDDs24!5e0!3m2!1ses!2smx!4v1596237215695!5m2!1ses!2smx"
 
@@ -39,7 +39,7 @@ formspree:
       company: |
         "colifror-bri"
       global_domain: |
-        "com"
+        "com.jp"
 
 awards:
   -
