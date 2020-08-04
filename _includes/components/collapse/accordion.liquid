@@ -11,25 +11,29 @@
         </h2>
       </div>
       <div id="collapse{{ section.name }}" class="collapse" aria-labelledby="heading{{ section.name }}" data-parent="#bootstrapAccordion">
-        {% for customer in section.customers %}
-          {% assign customer-domain = customer | remove: "." %}
-          {% assign customer-title = site.data.customers[customer-domain].title %}
-          {% assign customer-logo = 'components/logos/progressive/img/' | append: customer | replace:'.',' ' | truncatewords: 1,"" %}
-          {% assign customer-url = site.data.customers[customer-domain].url %}
-          {% capture customer-text %}
-            {{ site.data.customers[customer-domain].address[0].street }},
-            {{ site.data.customers[customer-domain].address[0].block }},
-            {{ site.data.customers[customer-domain].address[0].city }}
-            <p class="card-phone">{{ site.data.customers[customer-domain].address[0].phone[0].number }}</p>
-          {% endcapture %}
-          {% include components/cards/bootstrap-h.liquid
-              title=customer-title
-              img=customer-logo
-              text=customer-text
-              button=customer-url
-              href=customer-url
-          %}
-        {% endfor %}
+        <div class="row">
+          {% for customer in section.customers %}
+            {% assign customer-domain = customer | remove: "." %}
+            {% assign customer-title = site.data.customers[customer-domain].title %}
+            {% assign customer-logo = 'components/logos/progressive/img/' | append: customer | replace:'.',' ' | truncatewords: 1,"" %}
+            {% assign customer-url = site.data.customers[customer-domain].url %}
+            {% capture customer-text %}
+              {{ site.data.customers[customer-domain].address[0].street }},
+              {{ site.data.customers[customer-domain].address[0].block }},
+              {{ site.data.customers[customer-domain].address[0].city }}
+              <p class="card-phone">{{ site.data.customers[customer-domain].address[0].phone[0].number }}</p>
+            {% endcapture %}
+            <div class="col-lg-4 col-sm-6 col-12">
+              {% include components/cards/bootstrap-h.liquid
+                  title=customer-title
+                  img=customer-logo
+                  text=customer-text
+                  button=customer-url
+                  href=customer-url
+              %}
+            </div>
+          {% endfor %}
+        </div>
       </div>
     </div>
   {% endfor %}
