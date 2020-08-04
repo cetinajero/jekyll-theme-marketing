@@ -1,12 +1,12 @@
-<div class="card m-2" style="max-width: 500px;">
-  <div class="row no-gutters">
+<div class="card m-2" style="max-width: 500px; height: 350px;">
+  <div class="row no-gutters h-100">
     <div class="col-md-4 my-auto">
       <a href="{{ card.href | default: include.href }}" class="card-link">
         <img src="{{ site.amazon-s3 }}/{{ card.img | default: include.img }}.png" class="card-img" alt="{{ card.title | default: include.title }}">
       </a>
     </div>
-    <div class="col-md-8">
-      <div class="card-body">
+    <div class="col-md-8 my-auto">
+      <div class="card-body h-100">
         <a href="{{ card.href | default: include.href }}" class="card-link">
           <h5 class="card-title">{{ card.title | default: include.title }}</h5>
         </a>
