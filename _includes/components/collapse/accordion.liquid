@@ -2,15 +2,16 @@
 
 <div class="accordion" id="bootstrapAccordion">
   {% for section in include.sections %}
+    {% assign section_id = section.name | slugify %}
     <div class="card">
-      <div class="card-header" id="heading{{ section.name }}">
+      <div class="card-header" id="heading{{ section_id }}">
         <h2 class="mb-0">
-          <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse{{ section.name }}" aria-expanded="true" aria-controls="collapse{{ section.name }}">
+          <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse{{ section_id }}" aria-expanded="true" aria-controls="collapse{{ section_id }}">
             {{ section.name }}
           </button>
         </h2>
       </div>
-      <div id="collapse{{ section.name }}" class="collapse" aria-labelledby="heading{{ section.name }}" data-parent="#bootstrapAccordion">
+      <div id="collapse{{ section_id }}" class="collapse" aria-labelledby="heading{{ section_id }}" data-parent="#bootstrapAccordion">
         {% for customer in section.customers %}
           {% assign customer-domain = customer | remove: "." %}
           {% assign customer-title = site.data.customers[customer-domain].title %}
