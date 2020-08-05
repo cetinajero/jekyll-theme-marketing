@@ -1,7 +1,7 @@
-title: Fleur
+title: Fleuriste Fleur | Un fleuriste toujours proche de vous
 description: >
   Floreria
-url: https://www.google.com/?q=fleur
+url: https://www.youtube.com/watch?v=gGYGGUF9oH8
 domain: fleur.com
 original: true
 lang: es_MX
@@ -13,11 +13,12 @@ exchange-rates:
 address:
   -
     name: "Oficina en Paris"
-    street: "71 Boulevard Saint-Michel"
-    block: "Luxenburg"
-    city: "Paris,Francia"
+    street: "7123, bâtiment C, Boulevard Saint-Michel"
+    block: "Prairie Gardens"
+    city: "Paris, France"
     zip: "75005"
     phone:
+      - { number: 33 (14) 326 28 58 }
       - { number: 33 (14) 326 28 59 }
     email: "contacto@fleur.com"
     custom-html:

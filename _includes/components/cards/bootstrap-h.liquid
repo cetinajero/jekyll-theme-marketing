@@ -1,4 +1,4 @@
-<div class="card m-2" style="max-width: 500px;">
+<div class="card m-2">
   <div class="row no-gutters">
     <div class="col-md-4 my-auto">
       <a href="{{ card.href | default: include.href }}" class="card-link">
@@ -8,14 +8,14 @@
     <div class="col-md-8">
       <div class="card-body">
         <a href="{{ card.href | default: include.href }}" class="card-link">
-          <h5 class="card-title">{{ card.title | default: include.title }}</h5>
+          <h5 class="card-title line-clamp-2" style="height: 50px">{{ card.title | default: include.title }}</h5>
         </a>
-        <p class="card-text">{{ card.text | default: include.text }}</p>
-        <div class="card-body">
+        <p class="card-text line-clamp-2" style="height: 40px">{{ card.text | default: include.text }}</p>
+        <p class="card-text line-clamp-2" style="height: 40px">
           <a href="{{ card.href | default: include.href }}" class="card-link">
             {{ card.button | default: include.button }}
           </a>
-        </div>
+        </p>
       </div>
     </div>
   </div>
