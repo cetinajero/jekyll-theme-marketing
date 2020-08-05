@@ -11,7 +11,7 @@
           <h5 class="card-title line-clamp-2" style="height: 50px">{{ card.title | default: include.title }}</h5>
         </a>
         <p class="card-text line-clamp-2" style="height: 40px">{{ card.text | default: include.text }}</p>
-        <p class="card-text">
+        <p class="card-text line-clamp-2" style="height: 40px">
           <a href="{{ card.href | default: include.href }}" class="card-link">
             {{ card.button | default: include.button }}
           </a>
