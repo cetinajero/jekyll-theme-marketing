@@ -17,7 +17,7 @@ module Test
 
   def html
     puts '## Skipping rel="canonical" from jekyll-seo-tag gem'
-    htmlproofer_ignore_canonical(%r{\/>}, "data-proofer-ignore \/>")
+    htmlproofer_ignore_canonical(%r{/>}, "data-proofer-ignore \/>")
 
     puts '## Running: bundle exec jekyll build --trace'
     system 'bundle exec jekyll build --trace'
@@ -44,7 +44,7 @@ module Test
   end
 
   def htmlproofer_ignore_canonical(old_string, new_string)
-    gem_path = `bundle show jekyll-seo-tag`.strip
+    gem_path = `bundle info jekyll-seo-tag --path`.strip
     template_path = "#{gem_path}/lib/template.html"
     template_line = 'rel="canonical"'
     edit_contents_file(template_path, template_line, old_string, new_string)

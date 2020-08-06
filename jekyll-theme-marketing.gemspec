@@ -18,6 +18,8 @@ Gem::Specification.new do |spec|
     f.match(gemfiles)
   end
 
+  spec.required_ruby_version = '2.5.8'
+
   spec.add_runtime_dependency 'jekyll', '~> 3.6'
 
   spec.add_development_dependency 'bundler', '~> 2.0'

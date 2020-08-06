@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require './lib/jekyll_theme_marketing.rb'
+require './lib/jekyll_theme_marketing'
 require 'test/unit'
 
 # Test cases
