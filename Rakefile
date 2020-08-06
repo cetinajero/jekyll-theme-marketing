@@ -81,12 +81,12 @@ desc 'Git reset commands'
 namespace :reset do
   desc 'Git reset soft'
   task :soft do
-    puts '## Current last commit: ' + `git log --oneline | head -n 1`
+    puts "## Current last commit: #{`git log --oneline | head -n 1`}"
 
     puts '## Rolling back last commit (git reset --soft HEAD~1)'
     system 'git reset --soft HEAD~1'
 
-    puts '## Current last commit: ' + `git log --oneline | head -n 1`
+    puts "## Current last commit: #{`git log --oneline | head -n 1`}"
   end
 end
 
@@ -127,7 +127,7 @@ end
 
 def alias_task(tasks)
   tasks.each do |new_name, old_name|
-    task new_name, [*Rake.application[old_name].arg_names] => [old_name]
+    task new_name, Array(Rake.application[old_name].arg_names) => [old_name]
   end
 end
 
