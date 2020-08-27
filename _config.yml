@@ -15,6 +15,9 @@ timezone: America/Chihuahua
 google-analytics: UA-69457978-1
 exchange-rates:
   usd: true
+product:
+  price:
+    disabled: # true # Disable the prices for the whole site
 components:
   ribbon: # disabled # Disable the whole component
     shoes-man: disabled # Disable a whole collection
