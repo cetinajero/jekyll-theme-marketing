@@ -100,7 +100,7 @@ collections:
   shoes-man:
     output: true
     permalink: /:collection/:categories/:name/
-    prices: false
+    prices: false # Disable the prices for the whole collection
     products:
       detail: true
 
