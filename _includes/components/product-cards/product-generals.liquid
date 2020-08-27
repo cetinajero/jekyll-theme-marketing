@@ -12,7 +12,7 @@
         {% if collection.prices == false or page.price == 'disabled' %}
 
           <span class="badge badge-primary text-white">
-            <a href="/our-offices/" title="Our offices" class="white">
+            <a href="{{ '/our-offices/' | relative_url }}" title="Our offices" class="white">
               Contáctanos para un precio especial
             </a>
           </span>
@@ -39,7 +39,7 @@
                   {{ page.promotion-currency | prepend: ' ' }}
                 {% endif %}
               {% else %}
-                <a href="/our-offices/" title="Our offices" class="white">
+                <a href="{{ '/our-offices/' | relative_url }}" title="Our offices" class="white">
                   Contáctanos para un precio especial
                 </a>
               {% endif %}
