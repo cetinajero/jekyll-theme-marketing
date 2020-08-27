@@ -24,14 +24,8 @@ namespace :serve do
   desc 'Run local server with _config-dev.yml'
   task :dev do
     collections = [
-      # 'radios',
-      # 'cctv',
-      # 'emergency-lights',
-      # 'auxiliary-equipment',
-      # 'satelital',
-      # 'gps',
-      # 'spares',
-      # 'networks',
+      # 'shoes-woman',
+      # 'shoes-man',
       'pages'
     ]
     Serve.dev(collections)

@@ -9,15 +9,15 @@
       {% assign collections = site.collections | where: "label", page.collection %}
       {% for collection in collections %}
 
-        {% if collection.prices == false %}
+        {% if collection.prices == false or page.price == 'disabled' %}
+
           <span class="badge badge-primary text-white">
-            <a href="/our-offices/" title="Our offices" class="white">
+            <a href="{{ '/our-offices/' | relative_url }}" title="Our offices" class="white">
               Contáctanos para un precio especial
             </a>
           </span>
-        {% endif %}
 
-        {% unless collection.prices == false %}
+        {% else %}
 
           {% capture price %}
             {% unless site.product.price.disabled %}
@@ -39,7 +39,7 @@
                   {{ page.promotion-currency | prepend: ' ' }}
                 {% endif %}
               {% else %}
-                <a href="/our-offices/" title="Our offices" class="white">
+                <a href="{{ '/our-offices/' | relative_url }}" title="Our offices" class="white">
                   Contáctanos para un precio especial
                 </a>
               {% endif %}
@@ -47,7 +47,7 @@
           {% endcapture %}
           <span class="badge badge-primary text-white">{{ promotion-price | strip }}</span>
 
-        {% endunless %}
+        {% endif %}
       {% endfor %}
 
     </div>

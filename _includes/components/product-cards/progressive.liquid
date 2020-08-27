@@ -31,35 +31,33 @@
 
     {% assign collections = site.collections | where: "label", page.collection %}
     {% for collection in collections %}
-      {% unless collection.prices == false %}
+      {% unless collection.prices == false or site.product.price.disabled or doc.price == 'disabled' %}
 
-        {% unless site.product.price.disabled %}
-          <div class="text-right mb-1 mt-2">
+        <div class="text-right mb-1 mt-2">
 
-            {% capture price %}
-              {% assign doc-price-size = doc.price | downcase | split: '.' | last | size %}
-              {% if doc.price %}{{ doc.price | prepend: '$ ' }}{% endif %}{% if doc-price-size == 1 %}{{ "0" }}{% endif %}
-              {% if doc.currency %}
-                {{ doc.currency | prepend: ' ' }}
-              {% endif %}
-            {% endcapture %}
-            <span class="product-price badge badge-primary text-white text-sm {% if doc.promotion-price and site.original == false %}{{ 'disabled-price' }}{% endif %}">{{ price | strip }}</span>
+          {% capture price %}
+            {% assign doc-price-size = doc.price | downcase | split: '.' | last | size %}
+            {% if doc.price %}{{ doc.price | prepend: '$ ' }}{% endif %}{% if doc-price-size == 1 %}{{ "0" }}{% endif %}
+            {% if doc.currency %}
+              {{ doc.currency | prepend: ' ' }}
+            {% endif %}
+          {% endcapture %}
+          <span class="product-price badge badge-primary text-white text-sm {% if doc.promotion-price and site.original == false %}{{ 'disabled-price' }}{% endif %}">{{ price | strip }}</span>
 
-            {% capture promotion-price %}
-              {% unless site.original %}
-                {% if site.special-offers.customers %}
-                  {% assign promotion-price-size = doc.promotion-price | downcase | split: '.' | last | size %}
-                  {% if doc.promotion-price %}{{ doc.promotion-price | prepend: '$ ' }}{% endif %}{% if promotion-price-size == 1 %}{{ "0" }}{% endif %}
-                  {% if doc.promotion-currency %}
-                    {{ doc.promotion-currency | prepend: ' ' }}
-                  {% endif %}
+          {% capture promotion-price %}
+            {% unless site.original %}
+              {% if site.special-offers.customers %}
+                {% assign promotion-price-size = doc.promotion-price | downcase | split: '.' | last | size %}
+                {% if doc.promotion-price %}{{ doc.promotion-price | prepend: '$ ' }}{% endif %}{% if promotion-price-size == 1 %}{{ "0" }}{% endif %}
+                {% if doc.promotion-currency %}
+                  {{ doc.promotion-currency | prepend: ' ' }}
                 {% endif %}
-              {% endunless %}
-            {% endcapture %}
-            <span class="badge badge-primary text-white text-sm">{{ promotion-price | strip }}</span>
+              {% endif %}
+            {% endunless %}
+          {% endcapture %}
+          <span class="badge badge-primary text-white text-sm">{{ promotion-price | strip }}</span>
 
-          </div>
-        {% endunless %}
+        </div>
 
       {% endunless %}
     {% endfor %}
