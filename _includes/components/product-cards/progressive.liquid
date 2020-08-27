@@ -31,9 +31,8 @@
 
     {% assign collections = site.collections | where: "label", page.collection %}
     {% for collection in collections %}
-      {% unless collection.prices == false %}
+      {% unless collection.prices == false or site.product.price.disabled or doc.price == 'disabled' %}
 
-        {% unless site.product.price.disabled %}
           <div class="text-right mb-1 mt-2">
 
             {% capture price %}
@@ -59,7 +58,6 @@
             <span class="badge badge-primary text-white text-sm">{{ promotion-price | strip }}</span>
 
           </div>
-        {% endunless %}
 
       {% endunless %}
     {% endfor %}
