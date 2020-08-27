@@ -97,6 +97,7 @@ collections:
   shoes-man:
     output: true
     permalink: /:collection/:categories/:name/
+    prices: false
     products:
       detail: true
 
