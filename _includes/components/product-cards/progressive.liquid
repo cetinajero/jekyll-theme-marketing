@@ -25,9 +25,8 @@
       {{ doc.brand }} <span class="commercial">{{ doc.commercial }}</span>
     </div>
 
-    <div id="{{ i18n-id }}" class="description text-secondary text-center small line-clamp-2 mx-1 mt-2">
-      {% if i18n-description %}{{ i18n-description }}{% else %}{{ doc.description }}{% endif %}
-    </div>
+    <div class="description text-secondary text-center small line-clamp-2 mx-1 mt-2"
+         id="{{ i18n-id }}">{{ i18n-description | default: doc.description }}</div>
 
     {% assign collections = site.collections | where: "label", page.collection %}
     {% for collection in collections %}
