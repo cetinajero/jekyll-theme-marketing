@@ -34,27 +34,39 @@
 
         <div class="text-right mb-1 mt-2">
 
+          <!-- start price -->
           {% capture price %}
             {% assign doc-price-size = doc.price | downcase | split: '.' | last | size %}
-            {% if doc.price %}{{ doc.price | prepend: '$ ' }}{% endif %}{% if doc-price-size == 1 %}{{ "0" }}{% endif %}
-            {% if doc.currency %}
-              {{ doc.currency | prepend: ' ' }}
-            {% endif %}
+            {{ doc.price | prepend: '$ ' }}{% if doc-price-size == 1 %}{{ "0" }}{% endif %}
+            {{ doc.currency | prepend: ' ' }}
           {% endcapture %}
-          <span class="product-price badge badge-primary text-white text-sm {% if doc.promotion-price and site.original == false %}{{ 'disabled-price' }}{% endif %}">{{ price | strip }}</span>
 
+          {% if doc.promotion-price and site.original == false %}
+            {% assign price-class = 'disabled-price' %}
+          {% else %}
+            {% assign price-class = '' %}
+          {% endif %}
+
+          <span class="product-price badge badge-primary text-white text-sm {{ price-class }}">
+            {{ price | strip }}
+          </span>
+          <!-- end price -->
+
+          <!-- start promotional-price -->
           {% capture promotion-price %}
-            {% unless site.original %}
-              {% if site.special-offers.customers %}
-                {% assign promotion-price-size = doc.promotion-price | downcase | split: '.' | last | size %}
-                {% if doc.promotion-price %}{{ doc.promotion-price | prepend: '$ ' }}{% endif %}{% if promotion-price-size == 1 %}{{ "0" }}{% endif %}
-                {% if doc.promotion-currency %}
-                  {{ doc.promotion-currency | prepend: ' ' }}
-                {% endif %}
-              {% endif %}
-            {% endunless %}
+            {% assign promotion-price-size = doc.promotion-price | downcase | split: '.' | last | size %}
+            {{ doc.promotion-price | prepend: '$ ' }}{% if promotion-price-size == 1 %}{{ "0" }}{% endif %}
+            {{ doc.promotion-currency | prepend: ' ' }}
           {% endcapture %}
-          <span class="badge badge-primary text-white text-sm">{{ promotion-price | strip }}</span>
+
+          {% if doc.promotion-price
+            and site.special-offers.customers 
+            and site.original == false %}
+              <span class="badge badge-primary text-white text-sm">
+                {{ promotion-price | strip }}
+              </span>
+          {% endif %}
+          <!-- end promotional-price -->
 
         </div>
 
