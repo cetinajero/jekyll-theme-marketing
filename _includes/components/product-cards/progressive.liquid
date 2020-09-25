@@ -35,9 +35,9 @@
     <div class="description text-secondary text-center small line-clamp-2 mx-1 mt-2"
          id="{{ i18n-id }}">{{ i18n-description | default: doc.description }}</div>
 
-    {% assign collections = site.collections | where: "label", page.collection %}
-    {% for collection in collections %}
-      {% unless collection.prices == false or site.product.price.disabled or doc.price == 'disabled' %}
+    {% unless collection.prices == false 
+           or site.product.price.disabled
+           or doc.price == 'disabled' %}
 
         <div class="text-right mb-1 mt-2">
 
@@ -77,8 +77,7 @@
 
         </div>
 
-      {% endunless %}
-    {% endfor %}
+    {% endunless %}
 
   </div>
 
