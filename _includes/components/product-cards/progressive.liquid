@@ -54,9 +54,11 @@
             {% assign price-class = '' %}
           {% endif %}
 
-          <span class="product-price badge badge-primary text-white text-sm {{ price-class }}">
-            {{ price | strip }}
-          </span>
+          {% if doc.price %}
+            <span class="product-price badge badge-primary text-white text-sm {{ price-class }}">
+              {{ price | strip }}
+            </span>
+          {% endif %}
           <!-- end price -->
 
           <!-- start promotional-price -->
