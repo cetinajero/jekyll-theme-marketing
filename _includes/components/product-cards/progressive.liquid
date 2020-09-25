@@ -48,7 +48,9 @@
             {{ doc.currency | prepend: ' ' }}
           {% endcapture %}
 
-          {% if doc.promotion-price and site.original == false %}
+          {% if doc.promotion-price
+            and page.collection == 'pages'
+            or site.original == false %}
             {% assign price-class = 'disabled-price' %}
           {% else %}
             {% assign price-class = '' %}
@@ -69,7 +71,8 @@
           {% endcapture %}
 
           {% if doc.promotion-price
-            and site.special-offers.customers
+            and page.collection == 'pages'
+            or  site.special-offers.customers
             and site.original == false %}
               <span class="badge badge-primary text-white text-sm">
                 {{ promotion-price | strip }}
