@@ -13,12 +13,19 @@
       <span class="fa-layers-text text-white" data-fa-transform="down-19 shrink-20">.</span>
     {% endif %}
 
-    <a {% if doc.menu-name or collection.products.detail or page.collection == 'pages' %}{{ doc.url | relative_url | prepend: 'href="' | append: '"' }}{% endif %}>
-      <img id="{{ i18n-id }}" class="d-block mx-auto cover-image opacity-80" src="{{ doc.image }}" alt="{% if i18n-title %}{{ i18n-title }}{% else %}{{ doc.title | default: i18n-id }}{% endif %}" />
+    <!-- Disable collection.products.detail option -->
+    <!-- <a {# if doc.menu-name or collection.products.detail or page.collection == 'pages' #}{# doc.url | relative_url | prepend: 'href="' | append: '"' #}{# endif #}> -->
+    <a href="{{ doc.url | relative_url }}">
+      <img id="{{ i18n-id }}" src="{{ doc.image }}"
+           class="d-block mx-auto cover-image opacity-80"
+           alt="{{ i18n-title | default: doc.title | default: i18n-id }}" />
     </a>
 
-    <a class="text-primary d-block text-center font-weight-bold text-decoration-none mt-1" id="{{ i18n-id }}" {% if doc.menu-name or collection.products.detail or page.collection == 'pages' %}{{ doc.url | relative_url | prepend: 'href="' | append: '"' }}{% endif %}>
-      {% if i18n-title %}{{ i18n-title }}{% else %}{{ doc.title }}{% endif %}
+    <!-- Disable collection.products.detail option -->
+    <!-- id="{{ i18n-id }}" {# if doc.menu-name or collection.products.detail or page.collection == 'pages' #}{# doc.url | relative_url | prepend: 'href="' | append: '"' #}{# endif #}> -->
+    <a class="text-primary d-block text-center font-weight-bold text-decoration-none mt-1"
+       id="{{ i18n-id }}" href="{{ doc.url | relative_url }}">
+      {{ i18n-title | default: doc.title }}
     </a>
 
     <div class="text-center font-weight-bold small mt-2">
@@ -28,38 +35,54 @@
     <div class="description text-secondary text-center small line-clamp-2 mx-1 mt-2"
          id="{{ i18n-id }}">{{ i18n-description | default: doc.description }}</div>
 
-    {% assign collections = site.collections | where: "label", page.collection %}
-    {% for collection in collections %}
-      {% unless collection.prices == false or site.product.price.disabled or doc.price == 'disabled' %}
+    {% unless collection.prices == false 
+           or site.product.price.disabled
+           or doc.price == 'disabled' %}
 
         <div class="text-right mb-1 mt-2">
 
+          <!-- start price -->
           {% capture price %}
             {% assign doc-price-size = doc.price | downcase | split: '.' | last | size %}
-            {% if doc.price %}{{ doc.price | prepend: '$ ' }}{% endif %}{% if doc-price-size == 1 %}{{ "0" }}{% endif %}
-            {% if doc.currency %}
-              {{ doc.currency | prepend: ' ' }}
-            {% endif %}
+            {{ doc.price | prepend: '$ ' }}{% if doc-price-size == 1 %}{{ "0" }}{% endif %}
+            {{ doc.currency | prepend: ' ' }}
           {% endcapture %}
-          <span class="product-price badge badge-primary text-white text-sm {% if doc.promotion-price and site.original == false %}{{ 'disabled-price' }}{% endif %}">{{ price | strip }}</span>
 
+          {% if doc.promotion-price
+            and page.collection == 'pages'
+            or site.original == false %}
+            {% assign price-class = 'disabled-price' %}
+          {% else %}
+            {% assign price-class = '' %}
+          {% endif %}
+
+          {% if doc.price %}
+            <span class="product-price badge badge-primary text-white text-sm {{ price-class }}">
+              {{ price | strip }}
+            </span>
+          {% endif %}
+          <!-- end price -->
+
+          <!-- start promotional-price -->
           {% capture promotion-price %}
-            {% unless site.original %}
-              {% if site.special-offers.customers %}
-                {% assign promotion-price-size = doc.promotion-price | downcase | split: '.' | last | size %}
-                {% if doc.promotion-price %}{{ doc.promotion-price | prepend: '$ ' }}{% endif %}{% if promotion-price-size == 1 %}{{ "0" }}{% endif %}
-                {% if doc.promotion-currency %}
-                  {{ doc.promotion-currency | prepend: ' ' }}
-                {% endif %}
-              {% endif %}
-            {% endunless %}
+            {% assign promotion-price-size = doc.promotion-price | downcase | split: '.' | last | size %}
+            {{ doc.promotion-price | prepend: '$ ' }}{% if promotion-price-size == 1 %}{{ "0" }}{% endif %}
+            {{ doc.promotion-currency | prepend: ' ' }}
           {% endcapture %}
-          <span class="badge badge-primary text-white text-sm">{{ promotion-price | strip }}</span>
+
+          {% if doc.promotion-price
+            and page.collection == 'pages'
+            or  site.special-offers.customers
+            and site.original == false %}
+              <span class="badge badge-primary text-white text-sm">
+                {{ promotion-price | strip }}
+              </span>
+          {% endif %}
+          <!-- end promotional-price -->
 
         </div>
 
-      {% endunless %}
-    {% endfor %}
+    {% endunless %}
 
   </div>
 
