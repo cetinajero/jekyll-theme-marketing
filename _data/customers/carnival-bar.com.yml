@@ -31,14 +31,7 @@ css:
   footer:
     background-color: "#1D6BD6"
 formspree:
-  contact-form:
-    email:
-      user: |
-        "contacto"
-      company: |
-        "carnival-bar"
-      global_domain: |
-        "com"
+  id: xeqpkezb
 
 awards:
   -

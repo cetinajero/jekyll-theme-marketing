@@ -75,7 +75,9 @@ css:
     bottom:
       background-color: "#F7F7F7"
       font-color: "#FFF"
-
+formspree:
+  id: xeqpkezb
+  cc: "email1@jekyll.com,email2@jekyll.com"
 awards:
   -
     label: Kenny Davis Award 2014

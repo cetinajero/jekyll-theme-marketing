@@ -2,10 +2,9 @@
 
   <!-- Start Formspree configuration -->
   <input type="hidden" name="_subject" value="{{ page.form.request.subject | default: page.title }} | {{ site.title }}" /> <!-- email's subject -->
-  <input type="hidden" name="_next" value="{{ page.form.response.url | default: page.url | append: '?response' }}" /> <!-- thank-you page -->
   <input type="hidden" name="_language" value="{{ page.form.lang | default: 'en' }}" /> <!-- reCAPTCHA language -->
   <input type="hidden" name="_format" value="{{ page.form.body-style | default: 'plain' }}" /> <!-- email's style -->
-  <input type="hidden" name="_cc" value="{{ page.form.cc | default: site.formspree.contact-form.cc }}" /> <!-- email's cc -->
+  <input type="hidden" name="_cc" value="{{ page.form.cc | default: site.formspree.cc }}" /> <!-- email's cc -->
   <input type="text" name="_gotcha" class="candy-gotcha" /> <!-- avoid SPAM -->
   <!-- End Formspree configuration -->
 
