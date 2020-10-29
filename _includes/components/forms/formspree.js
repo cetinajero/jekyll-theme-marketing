@@ -1,19 +1,12 @@
-// Configure constants
-
-//// Response URL
+// Response URL
 const response = new URL(window.location.href).searchParams.has("response");
-
-//// Email
-const user = {{ site.formspree.contact-form.email.user }};
-const company = {{ site.formspree.contact-form.email.company }};
-const global_domain = {{ site.formspree.contact-form.email.global_domain }};
 
 // Hide elements as needed
 document.getElementById(response ? 'contact-form' : 'form-response').classList.add("d-none");
 document.getElementById(response ? '{{ page.form.id }}' : 'form-response').classList.add("d-none")
 
 // Define form action
-document.querySelector('#contact-form').setAttribute('action', 'https://formspree.io/' + user + '@' + company + '.' + global_domain);
+document.querySelector('#contact-form').setAttribute('action', 'https://formspree.io/f/{{ page.form.forsmpree.id | default: site.formspree.id }}');
 
 // Disable form submission if there are invalid fields
 (function() {
