@@ -63,12 +63,12 @@ css:
   bootstrap:
     primary: "#1A69D5"
   navbar:
-    background-color: "#FFF"
+    background-color: "#1A69D5"
   header:
     background-color: "#1A69D5"
   menu:
-    font-color: "#1A69D5"
-    icons: "#1A69D5"
+    font-color: "#FFF"
+    icons: "#FFF"
   footer:
     top:
       background-color: "#1A69D5"
