@@ -19,6 +19,7 @@ product:
   price:
     disabled: # true # Disable the prices for the whole site
 components:
+  header: three-rows # Defines the header component
   ribbon: # disabled # Disable the whole component
     shoes-man: disabled # Disable a whole collection
     high-565396f3: disabled # Disable only on a product
