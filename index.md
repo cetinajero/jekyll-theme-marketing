@@ -2,13 +2,6 @@
 layout: home
 title: Home
 
-carousels:
-  - id: "landing-page"
-    indicators: true
-    photos: 1
-    captions:
-      - {title: "Jekyll", text: "Portafolio" }
-
 featured-products:
   - img: "565396f"
     product: "Chuck Taylor All Star Exploding Star High Top"
@@ -81,11 +74,7 @@ brand-panel:
     - { name: "064", href: '/', img: '064' }
     - { name: "068", href: '/', img: '068' }
 ---
-<section>
-  {% for carousel in page.carousels %}
-    {% include components/sliders/bootstrap.liquid %}
-  {% endfor %}
-</section>
+{% include components/sliders/revolution-slider.liquid %}
 
 <section class="pt-3">
   {% include components/product-cards/featured-product.liquid %}
