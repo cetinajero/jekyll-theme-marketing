@@ -1,0 +1,9 @@
+{% if site.components.header == 'three-rows' %}
+  <div class="header-wrapper p-0">
+    {% include components/headers/three-rows.liquid %} <!-- end three-rows-header -->
+  </div>
+{% else %}
+  <div class="header-wrapper">
+    {% include components/headers/progressive.liquid %} <!-- end progressive-header -->
+  </div>
+{% endif %}
