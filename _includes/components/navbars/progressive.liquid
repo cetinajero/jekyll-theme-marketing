@@ -1,7 +1,7 @@
 <div class="primary">
   <nav class="navbar navbar-expand-md" role="navigation">
     <ul class="nav">
-      {% include components/navbars/common.liquid component="megamenu/progressive" %}
+      {% include {{ include.data | prepend: 'components/' | append: '.liquid' }} component="megamenu/progressive" %}
     </ul>
   </nav>
 </div>
