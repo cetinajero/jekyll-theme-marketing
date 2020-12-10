@@ -4,24 +4,25 @@ updates:
   - package-ecosystem: bundler
     directory: "/"
     schedule:
-      interval: daily
+      interval: weekly
+      day: thursday
       time: "09:00"
       timezone: America/Chihuahua
     open-pull-requests-limit: 10
-    reviewers:
-      - mlopez-grupopv
+    reviewers: ["mlopez-grupopv"]
     labels:
       - dependencies
       - ruby
+
   - package-ecosystem: npm
     directory: "/"
     schedule:
-      interval: daily
+      interval: weekly
+      day: thursday
       time: "09:00"
       timezone: America/Chihuahua
     open-pull-requests-limit: 10
-    reviewers:
-      - cetinajero
+    reviewers: ["cetinajero"]
     labels:
       - dependencies
       - javascript
