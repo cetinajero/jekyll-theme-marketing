@@ -1,0 +1,31 @@
+version: 2
+updates:
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "09:00"
+    timezone: America/Chihuahua
+  open-pull-requests-limit: 10
+  reviewers:
+  - mlopez-grupopv
+  labels:
+  - dependencies
+  - ruby
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "09:00"
+    timezone: America/Chihuahua
+  open-pull-requests-limit: 10
+  reviewers:
+  - cetinajero
+  labels:
+  - dependencies
+  - javascript
+  ignore:
+  - dependency-name: firebase
+    versions:
+    - ">= 7.9.a"
+    - "< 7.10"
