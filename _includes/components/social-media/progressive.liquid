@@ -7,7 +7,7 @@
 <div class="custom">
   <div class="social">
     {% for social-media in site.social-media %}
-      <a class="sbtnf sbtnf-rounded color color-hover icon-{{ social-media.name }}" href="{{ social-media.link | relative_url }}"></a>
+      <a class="sbtnf sbtnf-rounded color color-hover icon-{{ social-media.name }}" href="{{ social-media.link | relative_url }}" data-proofer-ignore></a>
     {% endfor %}
   </div>
   <div class="clearfix"></div>
