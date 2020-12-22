@@ -1,0 +1,11 @@
+@mixin topbar-margin() {
+  @if $header-component == three-rows {
+    margin-bottom: 157px;
+  } @else {
+    margin-bottom: 104px;
+  }
+}
+
+.boxed.fixed-header.hidden-top #top-box {
+  @include topbar-margin();
+}

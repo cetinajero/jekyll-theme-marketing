@@ -9392,7 +9392,6 @@ div.post p + div.post p {
 .boxed.fixed-header.hidden-top #top-box {
   left: 0;
   margin-top: 0;
-  margin-bottom: 104px;
   position: static;
   -webkit-transition: none;
   transition: none;

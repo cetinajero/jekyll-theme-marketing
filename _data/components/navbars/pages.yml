@@ -3,5 +3,4 @@
 - name: Events => /events/
 - name: Videos => /videos/
 - name: Timeline => /timeline/
-- name: Sitemap => /sitemap/
 - name: YouTube => /youtube/
