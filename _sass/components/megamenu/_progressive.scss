@@ -1,0 +1,21 @@
+[data-component="megamenu/progressive"] {
+
+  @mixin megamenu-position() {
+    @if $header-component == three-rows {
+      left: -15px;
+    } @else {
+      right: -15px;
+    }
+  }
+  
+  a.disabled-ds {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .sub {
+    @include megamenu-position();
+  }
+
+}

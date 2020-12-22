@@ -2510,7 +2510,6 @@ blockquote small {
 }
 /* Primary Menu */
 .header .primary {
-  float: left;
   margin-bottom: 10px;
   z-index: 900;
 }
@@ -2706,7 +2705,6 @@ blockquote small {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  left: -15px;
   padding: 0;
   width: 886px;
   z-index: 900;
