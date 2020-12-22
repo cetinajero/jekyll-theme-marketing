@@ -1,5 +1,5 @@
-<div class="primary" data-component="navbars/progressive">
-  <nav class="navbar navbar-expand-md" role="navigation">
+<div class="primary {{ include.class }}" data-component="navbars/progressive">
+  <nav class="navbar navbar-expand-md justify-content-center" role="navigation">
     <ul class="nav">
       {% include {{ include.data | prepend: 'components/' | append: '.liquid' }} component="megamenu/progressive" %}
     </ul>
