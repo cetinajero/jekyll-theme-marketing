@@ -1,6 +1,6 @@
 @mixin topbar-margin() {
   @if $header-component == three-rows {
-    margin-bottom: 157px;
+    margin-bottom: 134px;
   } @else {
     margin-bottom: 104px;
   }

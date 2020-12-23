@@ -7,7 +7,12 @@
       right: -15px;
     }
   }
-  
+
+  a,
+  a:visited {
+    padding: 6px 11px;
+  }
+
   a.disabled-ds {
     &:hover {
       text-decoration: none;
