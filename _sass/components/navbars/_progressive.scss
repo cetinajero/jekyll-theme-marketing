@@ -1,0 +1,13 @@
+[data-component="navbars/progressive"] {
+
+  float: right;
+
+  .navbar .nav > li {
+    padding: 12px 3px 0;
+  }
+
+  &.expanded .navbar .nav > li {
+    padding: 7px 16px 0;
+  }
+
+}

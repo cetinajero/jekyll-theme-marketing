@@ -6,6 +6,7 @@
 
 // Define variables
 $amazon-s3: '{{ site.amazon-s3 }}';
+$header-component: '{{ site.components.header }}';
 $font-color-menu: {{ site.css.menu.font-color }};
 $icon-color-menu: {{ site.css.menu.icons }};
 $navbar-background-color: {{ site.css.navbar.background-color | default: '#fff' }};
@@ -75,6 +76,7 @@ $flag-icon-css-path: '../node_modules/flag-icon-csss/flags';
 @import "components/megamenu/progressive";
 @import "components/nav-items/bootstrap";
 @import "components/navbars/bootstrap";
+@import "components/navbars/progressive";
 @import "components/product-cards/3d-space";
 @import "components/product-cards/featured-product";
 @import "components/product-cards/product-details";
@@ -85,4 +87,5 @@ $flag-icon-css-path: '../node_modules/flag-icon-csss/flags';
 @import "components/sliders/lightslider";
 @import "components/social-media/progressive";
 @import "components/timelines/9";
+@import "components/topbars/progressive";
 @import "components/videos/background";

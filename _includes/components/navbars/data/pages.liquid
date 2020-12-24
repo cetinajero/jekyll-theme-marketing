@@ -1,0 +1,3 @@
+{% for menu in site.data.components.navbars.pages %}
+  {% include {{ include.component | prepend: 'components/' | append: '.liquid' }} %}
+{% endfor %}

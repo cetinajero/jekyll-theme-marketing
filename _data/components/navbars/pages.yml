@@ -1,0 +1,6 @@
+- name: Home => /
+- name: Welcome => /welcome/
+- name: Events => /events/
+- name: Videos => /videos/
+- name: Timeline => /timeline/
+- name: YouTube => /youtube/

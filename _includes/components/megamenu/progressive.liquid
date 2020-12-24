@@ -1,35 +1,37 @@
 <li class="item-3381{% if menu.sub-menus %}{{ ' deeper parent megamenu promo' }}{% endif %}" data-component="megamenu/progressive">
   {% assign menu-name = menu.name | split: ' => ' | first %}
-  <a class="{% if menu.sub-menus %}dropdown-toggle{% endif %} disabled-ds" href="{{ menu.name | split: ' => ' | last }}" data-proofer-ignore>{{ site.data.i18n.catalog[menu.collection][site.lang][menu-name].title | default: menu-name }}</a>
-  <ul class="sub">
-    <li class="item-3471 divider-item fhmm-content">
-      <span class="">
-        <div class="custom">
-          <div class="sub-list"> <!-- START SECTIONS -->
-            {% for sub-menu in menu.sub-menus %}
-              {% assign sub-menu-name = sub-menu.name | split: ' => ' | first %}
-              {% if site.links.dropdown[sub-menu-name].disabled == null %}
-                <div class="box closed">
-                  <h6 class="title">
-                    <a href="{{ sub-menu.name | split: ' => ' | last | relative_url }}">
-                      {{ site.data.i18n.catalog[menu.collection][site.lang][sub-menu-name].title | default: sub-menu-name }}
-                    </a>
-                  </h6>
-                  <ul>
-                    {% for sub-sub-menu in sub-menu.sub-menus %}
-                      {% assign sub-sub-menu-name = sub-sub-menu | split: ' => ' | first %}
-                      <li><a href="{{ sub-sub-menu | split: ' => ' | last | relative_url }}">{{ site.data.i18n.catalog[menu.collection][site.lang][sub-sub-menu-name].title | default: sub-sub-menu-name }}</a></li>
-                    {% endfor %}
-                  </ul>
-                </div>
-              {% endif %}
-            {% endfor %}
-          </div> <!-- END SECTIONS -->
-          <div class="promo-block">
-            <a href="{{ menu.link }}"><img src="{{ site.amazon-s3 }}/assets/img/common/navbars/{{ menu.collection }}.png" alt="menu-{{ menu-collection }}"/></a>
+  <a class="disabled-ds" href="{{ menu.name | split: ' => ' | last }}" data-proofer-ignore>{{ site.data.i18n.catalog[menu.collection][site.lang][menu-name].title | default: menu-name }}</a>
+  {% if menu.sub-menus %}
+    <ul class="sub">
+      <li class="item-3471 divider-item fhmm-content">
+        <span class="">
+          <div class="custom">
+            <div class="sub-list"> <!-- START SECTIONS -->
+              {% for sub-menu in menu.sub-menus %}
+                {% assign sub-menu-name = sub-menu.name | split: ' => ' | first %}
+                {% if site.links.dropdown[sub-menu-name].disabled == null %}
+                  <div class="box closed">
+                    <h6 class="title">
+                      <a href="{{ sub-menu.name | split: ' => ' | last | relative_url }}">
+                        {{ site.data.i18n.catalog[menu.collection][site.lang][sub-menu-name].title | default: sub-menu-name }}
+                      </a>
+                    </h6>
+                    <ul>
+                      {% for sub-sub-menu in sub-menu.sub-menus %}
+                        {% assign sub-sub-menu-name = sub-sub-menu | split: ' => ' | first %}
+                        <li><a href="{{ sub-sub-menu | split: ' => ' | last | relative_url }}">{{ site.data.i18n.catalog[menu.collection][site.lang][sub-sub-menu-name].title | default: sub-sub-menu-name }}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div> <!-- END SECTIONS -->
+            <div class="promo-block">
+              <a href="{{ menu.link }}"><img src="{{ site.amazon-s3 }}/assets/img/common/navbars/{{ menu.collection }}.png" alt="menu-{{ menu-collection }}"/></a>
+            </div>
           </div>
-        </div>
-      </span>
-    </li>
-  </ul>
+        </span>
+      </li>
+    </ul>
+  {% endif %}
 </li>

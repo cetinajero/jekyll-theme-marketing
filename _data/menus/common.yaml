@@ -14,3 +14,35 @@
         - High => /shoes-man/high/
         - Mid => /shoes-man/mid/
         - Low => /shoes-man/low/
+- collection: shoes-woman
+  name: "2nd woman => #"
+  sub-menus:
+    - name: Shoes => /shoes-woman/
+      sub-menus:
+        - High => /shoes-woman/high/
+        - Mid => /shoes-woman/mid/
+        - Platform => /shoes-woman/platform/
+- collection: shoes-man
+  name: "2nd man => #"
+  sub-menus:
+    - name: Shoes => /shoes-man/
+      sub-menus:
+        - High => /shoes-man/high/
+        - Mid => /shoes-man/mid/
+        - Low => /shoes-man/low/
+- collection: shoes-woman
+  name: "3rd woman => #"
+  sub-menus:
+    - name: Shoes => /shoes-woman/
+      sub-menus:
+        - High => /shoes-woman/high/
+        - Mid => /shoes-woman/mid/
+        - Platform => /shoes-woman/platform/
+- collection: shoes-man
+  name: "3rd man => #"
+  sub-menus:
+    - name: Shoes => /shoes-man/
+      sub-menus:
+        - High => /shoes-man/high/
+        - Mid => /shoes-man/mid/
+        - Low => /shoes-man/low/

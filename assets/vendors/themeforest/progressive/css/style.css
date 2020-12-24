@@ -2510,15 +2510,12 @@ blockquote small {
 }
 /* Primary Menu */
 .header .primary {
-  float: left;
-  margin-bottom: 10px;
   z-index: 900;
 }
 .header .primary .navbar {
   background: none;
   border: 0 none;
   margin: 0;
-  min-height: 44px;
 }
 .header .primary .navbar .navbar-collapse {
   padding: 0;
@@ -2529,7 +2526,6 @@ blockquote small {
   position: relative;
 }
 .header .primary .navbar .nav > li {
-  padding: 12px 3px 0;
   position: relative;
 }
 .header .primary .navbar .nav > li > a,
@@ -2541,7 +2537,6 @@ blockquote small {
   -moz-border-radius: 3px;
   border-radius: 3px;
   color: #1e1e1e;
-  padding: 11px 11px;
   position: static;
   text-shadow: none;
   -webkit-transition: all 0.2s linear;
@@ -2706,7 +2701,6 @@ blockquote small {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  left: -15px;
   padding: 0;
   width: 886px;
   z-index: 900;
@@ -9392,7 +9386,6 @@ div.post p + div.post p {
 .boxed.fixed-header.hidden-top #top-box {
   left: 0;
   margin-top: 0;
-  margin-bottom: 104px;
   position: static;
   -webkit-transition: none;
   transition: none;
