@@ -15,20 +15,6 @@
   box-shadow: 0 0 5px rgba(0,0,0,.15);
 }
 
-.header .primary .navbar .nav > li:hover > a {
-  background: #fff;
-  color: map-get($theme-colors, "primary")!important;
-  border-color: #ccc;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-box-shadow: 0 0 5px rgba(0,0,0,.15);
-  -moz-box-shadow: 0 0 5px rgba(0,0,0,.15);
-  box-shadow: 0 0 5px rgba(0,0,0,.15);
-  -webkit-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-}
-
 .header-wrapper{
   .right-box-wrapper {
 
