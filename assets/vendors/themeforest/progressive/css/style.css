@@ -3652,7 +3652,7 @@ blockquote small {
 .slider.rs-slider {
   background: none;
   border: 0 none;
-  max-height: 500px;
+  max-height: 850px;
   overflow: hidden;
   padding: 0;
   position: relative;
