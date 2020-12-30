@@ -10,15 +10,10 @@
   }
 
   .dropdown-menu {
-    background-color: $icon-color-menu;
     .dropdown-item {
-      color: #ddd;
-      &:hover {
-        color: #777;
-      }
       &:active {
-        color: $icon-color-menu;
-        background-color: #fff;
+        background-color: map-get($theme-colors, "primary");
+        color: #fff!important;
       }
     }
   }

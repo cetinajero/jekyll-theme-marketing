@@ -6,6 +6,16 @@
         - High => /shoes-woman/high/
         - Mid => /shoes-woman/mid/
         - Platform => /shoes-woman/platform/
+    - name: Shoes 2 => /shoes-woman/
+      sub-menus:
+        - High => /shoes-woman/high/
+        - Mid => /shoes-woman/mid/
+        - Platform => /shoes-woman/platform/
+    - name: Shoes 3 => /shoes-woman/
+      sub-menus:
+        - High => /shoes-woman/high/
+        - Mid => /shoes-woman/mid/
+        - Platform => /shoes-woman/platform/
 - collection: shoes-man
   name: "Man => #"
   sub-menus:
