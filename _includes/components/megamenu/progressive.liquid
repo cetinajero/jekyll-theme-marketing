@@ -1,6 +1,6 @@
 <li class="{% if menu.sub-menus %}{{ 'deeper parent megamenu promo' }}{% endif %}" data-component="megamenu/progressive">
   {% assign menu-name = menu.name | split: ' => ' | first %}
-  <a class="disabled-ds" href="{{ menu.name | split: ' => ' | last }}" data-proofer-ignore>{{ site.data.i18n.catalog[menu.collection][site.lang][menu-name].title | default: menu-name }}</a>
+  <a class="disabled-ds" href="{{ menu.name | split: ' => ' | last | relative_url }}" data-proofer-ignore>{{ site.data.i18n.catalog[menu.collection][site.lang][menu-name].title | default: menu-name }}</a>
   {% if menu.sub-menus %}
     <ul class="sub">
       <li class="divider-item fhmm-content">

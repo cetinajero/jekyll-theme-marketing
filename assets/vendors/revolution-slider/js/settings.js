@@ -5,8 +5,8 @@
 
     var setREVStartSize = function() {
       var	tpopt = new Object();
-        tpopt.startwidth = 1300;
-        tpopt.startheight = 350;
+        tpopt.startwidth = 1800;
+        tpopt.startheight = 600;
         tpopt.container = jQuery('#rev_slider_2_1');
         tpopt.fullScreen = "off";
         tpopt.forceFullWidth="on";
@@ -36,8 +36,8 @@ if(tpj('#rev_slider_2_1').revolution == undefined){
 
     dottedOverlay:"none",
     delay:9000,
-    startwidth:1300,
-    startheight:350,
+    startwidth:1800,
+    startheight:600,
     hideThumbs:200,
 
     thumbWidth:100,
