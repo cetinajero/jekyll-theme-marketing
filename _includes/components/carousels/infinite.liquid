@@ -1,0 +1,16 @@
+<h5 class="post pt-4">{{ page.brand-panel.title }}</h5>
+<p class="footer-font text-right">{{ page.brand-panel.text }}</p>
+<hr>
+<div class="infinite-slider" data-component="carousels/infinite">
+	<div class="slide-track"> <!-- the infinite carousel requires duplicated slides -->
+    {% for i in (1..2) %}
+      {% for slide in page.brand-panel.brands %}
+        <div class="slide">
+          <a href="{{ slide.href | relative_url }}">
+            <img src="{{ site.amazon-s3 }}/components/panels/brands/img/{{ slide.img }}.png" height="100" width="250" alt="{{ slide.name }}" title="{{ slide.name }}" />
+          </a>
+        </div>
+      {% endfor %}
+    {% endfor %}
+	</div>
+</div>
