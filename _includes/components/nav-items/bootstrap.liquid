@@ -8,7 +8,7 @@
       {% for sub-menu in menu.sub-menus %}
         {% assign sub-menu-name = sub-menu.name | split: ' => ' | first %}
         {% if site.links.dropdown[sub-menu-name].disabled == null %}
-          <a class="dropdown-item" href="{{ sub-menu.name | split: ' => ' | last | relative_url }}">
+          <a class="dropdown-item text-primary" href="{{ sub-menu.name | split: ' => ' | last | relative_url }}">
             {{ site.data.i18n.catalog[menu.collection][site.lang][sub-menu-name].title | default: sub-menu-name }}
           </a>
         {% endif %}
