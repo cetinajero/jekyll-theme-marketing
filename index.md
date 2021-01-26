@@ -64,6 +64,8 @@ special-offers:
 brand-panel:
   title: Conoce nuestras marcas
   text: Da clic sobre la marca para mayor información
+  animation:
+    speed: 40
   brands:
     - { name: "Michel", href: '/', img: 'michel' }
     - { name: "Edgar", href: '/', img: 'edgar' }
