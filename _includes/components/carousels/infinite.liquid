@@ -2,9 +2,11 @@
 <p class="footer-font text-right">{{ page.brand-panel.text }}</p>
 <hr>
 <div class="infinite-slider" data-component="carousels/infinite">
-	<div class="slide-track"> <!-- the infinite carousel requires duplicated slides -->
+  <div class="slide-track"> <!-- the infinite carousel requires duplicated slides -->
     {% for i in (1..2) %}
+      {% assign count = 0 %}
       {% for slide in page.brand-panel.brands %}
+        {% assign count = count | plus: 1 %}
         <div class="slide">
           <a href="{{ slide.href | relative_url }}">
             <img src="{{ site.amazon-s3 }}/components/panels/brands/img/{{ slide.img }}.png" height="100" width="250" alt="{{ slide.name }}" title="{{ slide.name }}" />
@@ -12,5 +14,19 @@
         </div>
       {% endfor %}
     {% endfor %}
-	</div>
+  </div>
 </div>
+
+<style>
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-250px * {{ count }}))}
+  }
+
+  .slide-track {
+    {% assign animation = 5 | times: count %}
+    animation: scroll {{ page.brand-panel.animation.speed | default: animation }}s linear infinite;
+    display: flex;
+    width: calc(250px * {{ count | times: 2 }});
+  }
+</style>
