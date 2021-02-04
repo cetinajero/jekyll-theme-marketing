@@ -34,8 +34,6 @@ function formStylization() {
 
   $(radio).wrap('<div class="new-radio"></div>');
   $('.new-radio').append('<span></span>');
-  $(checkbox).wrap('<div class="new-checkbox"></div>');
-  $('.new-checkbox').append('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="15px" height="15px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve"><polygon fill="#1e1e1e" points="9.298,13.391 4.18,9.237 3,10.079 9.297,17 17.999,4.678 16.324,3 "/></svg>');
   $(checkbox + ':checked').parent('.new-checkbox').addClass('checked');
   $(radio + ':checked').parent('.new-radio').addClass('checked');
   $(checkbox + ':disabled').parent().addClass('disabled');
