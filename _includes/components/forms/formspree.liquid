@@ -40,6 +40,8 @@
     </div>
   {% endfor %}
 
+  {% include components/checks/bootstrap.html %}
+
   <hr class="my-4" data-appear-animation="fadeInUp">
   <button type="submit" class="btn btn-primary" data-appear-animation="bounceIn">{{ page.form.request.send-button }}</button>
 
