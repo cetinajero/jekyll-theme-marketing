@@ -107,6 +107,7 @@ brand-panel:
           title="CONVERSE RENEW CANVAS"
           button="Buy the collection"
           href="/"
+          padding-y="189px"
       %}
     </article>
   </div>
