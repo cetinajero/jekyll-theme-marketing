@@ -79,7 +79,7 @@ css:
       background-color: "#1A69D5"
     bottom:
       background-color: "#F7F7F7"
-      font-color: "#FFF"
+      font-color: "#7F7F7F"
 formspree:
   id: xeqpkezb
   cc: "email1@jekyll.com,email2@jekyll.com"

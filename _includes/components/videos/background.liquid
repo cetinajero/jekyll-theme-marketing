@@ -1,5 +1,5 @@
 <div data-component="videos/background">
-  <div id="cm-video-bg" class="full-width-box background-image-available">
+  <div id="cm-video-bg" class="full-width-box background-image-available" style="padding: {{ include.padding-y }} 0px;">
     <div class="fwb-bg fwb-video my-4 my-sm-0" style="background-image: url('https://s3-us-west-2.amazonaws.com/grupopv-public/assets/components/videos/background/{{ include.video }}.png');">
       <video autoplay muted loop class="d-none d-sm-block position-absolute-centered">
         <source src="https://s3-us-west-2.amazonaws.com/grupopv-public/assets/components/videos/background/{{ include.video }}.mp4" type="video/mp4">
