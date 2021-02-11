@@ -5,3 +5,15 @@ price_changes:
 # Price list message
 price_list_message:
   title: All prices shown are list prices, expressed in US dollars, they do not include taxes or freights.
+
+privacy:
+  title: |
+    <a class="d-inline pr-3" style="font-size: 14px">
+      PRIVACY
+    </a>
+    <a class="d-inline pr-3" style="font-size: 14px">
+      LEGAL TERMS
+    </a>
+    <a class="d-inline pr-3" style="font-size: 14px">
+      POLICY
+    </a>

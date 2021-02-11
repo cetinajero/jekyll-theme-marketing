@@ -1,6 +1,8 @@
 {% if site.original -%}
   {% if site.title == 'Grupo PV' %}
     {% assign classes = "col-md-8" %}
+  {% elsif site.title == 'Your awesome title' %}
+    {% assign classes = "col-md-8" %}
   {% else -%}
     {% assign classes = "col-md-11" %}
   {% endif -%}
@@ -12,7 +14,9 @@
   <div>
     <p>{{ site.data.i18n.common.footer[site.lang].price_list_message.title }}</p>
     <p>{{ site.data.i18n.common.footer[site.lang].price_changes.title }}</p>
-    {% if site.original == false %}
+    {% if site.original %}
+      <p>{{ site.data.i18n.common.footer[site.lang].privacy.title }}</p>
+    {% else %}
       <p>{{ site.data.i18n.common.footer[site.lang].motorola_legend.title }}</p>
     {% endif %}
   </div>
