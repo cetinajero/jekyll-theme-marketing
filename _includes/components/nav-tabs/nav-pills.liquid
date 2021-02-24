@@ -1,14 +1,50 @@
 <hr>
-
 <nav>
   <div class="nav nav-pills nav-justified flex-column flex-sm-row" role="tablist">
-    <a class="nav-item nav-link active" data-toggle="tab" href="#catalogs" role="tab" aria-controls="catalogs" aria-selected="true">
-      Catálogos
-    </a>
-    <a class="nav-item nav-link " data-toggle="tab" href="#brochures" role="tab" aria-controls="brochures" aria-selected="false">
-      Folletería
-    </a>
+    {% for tab in include.tabs %}
+
+      {% if forloop.first == true %}
+        {% assign tab_class = 'active' %}
+      {% elsif tab.name == 'special-offers' and site.original or site.special-offers.customers == false %}
+        {% assign tab_class = 'd-none' %}
+      {% else %}
+        {% assign tab_class = '' %}
+      {% endif %}
+
+      {% if site.links.videos[tab.name].disabled == null %}
+        {% capture tab_id %}
+          {{ tab.name | downcase | replace: ' ', '-' }}
+        {% endcapture %}
+
+        <a class="nav-item nav-link {{ tab_class }}" data-toggle="tab" href="#{{ tab_id | strip }}" role="tab" aria-controls="{{ tab_id | strip }}" aria-selected="{{ forloop.first }}">
+          {{ site.data.i18n.common.product-layout[site.lang][tab.name] | default: tab.name }}
+        </a>
+      {% endif %}
+    {% endfor %}
   </div>
 </nav>
-
 <hr>
+
+<div class="tab-content">
+  {% for tab in include.tabs %}
+
+    {% if forloop.first == true %}
+      {% assign tab_class = 'show active' %}
+    {% else %}
+      {% assign tab_class = '' %}
+    {% endif %}
+
+    {% capture tab_id %}
+      {{ tab.name | downcase | replace: ' ', '-' }}
+    {% endcapture %}
+
+    <div class="tab-pane fade {{ tab_class }}" id="{{ tab_id | strip }}" role="tabpanel" aria-labelledby="{{ tab_id | strip | append: '-tab' }}">
+      <div class="container">
+        {% include {{ tab.component | prepend: 'components/' | append: '.liquid' }} params=tab.params %}
+      </div>
+    </div>
+
+  {% endfor %}
+</div>
+
+{% include components/nav-tabs/nav-pills.js %}
