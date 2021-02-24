@@ -1,0 +1,17 @@
+<div class="row">
+  {% for catalog in include.params.catalogs %}
+    <div class="col-12 col-md-6">
+      <a class="d-block text-center" href="{{ catalog.link }}" target="_blank">
+        <img class="product-image" src="{{ catalog.link }}files/shot.jpg" data-rel="fh5-light-box-demo" data-href="{{ catalog.link }}" data-width="700" data-height="400" data-title="{{ catalog.id }}-catalog" alt="{{ catalog.id }}">
+      </a>
+      
+      <a class="d-block text-primary text-decoration-none text-center font-weight-bold pt-2" href="{{ catalog.link }}">
+        {% if site.lang == 'es_MX' %}Ver catálogo{% else %}View catalog{% endif %}
+      </a>
+      
+      <a class="d-block text-primary text-decoration-none text-center font-weight-bold pb-4" href="{{ site.amazon-s3 }}/assets/pdf/catalogs/{{ catalog.pdf_folder }}/{{ catalog.id }}.pdf">
+        {% if site.lang == 'es_MX' %}Descargar catálogo{% else %}Download catalog{% endif %}
+      </a>
+    </div>
+  {% endfor %}
+</div>

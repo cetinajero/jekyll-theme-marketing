@@ -1,12 +1,39 @@
 ---
 published: true
-title: Catálogos y folletería
+title: Catalogs & brochures
 permalink: /catalogs-and-brochures/
 excerpt: none
-assets:
+tabs:
+  - name: Catalogs
+    component: nav-tabs/vertical-pills
+    params:
+      vertical-tabs: 
+        - name: 2021
+          component: panels/catalogs
+          params:
+            catalogs:
+              - id: 2020
+                link: https://online.fliphtml5.com/ggpn/bkmz/
+                pdf_folder: radios
+              - id: 2021
+                link: https://online.fliphtml5.com/ggpn/kwmc/
+                pdf_folder: radios
+        - name: 2022
+          component: panels/catalogs
+          params:
+            catalogs:
+              - id: 2022
+                link: https://online.fliphtml5.com/ggpn/kwmc/
+                pdf_folder: radios
+              - id: 2023
+                link: https://online.fliphtml5.com/ggpn/bkmz/
+                pdf_folder: radios
+  - name: Brochures
+    component: panels/brochures
+brochures:
   -
     name: radios
-    label: Folletería
+    label: Brochures
     brochures:
       -
         brand: vertex-standard
@@ -29,5 +56,6 @@ assets:
         categories: portable/ep350mx
         model: ep350mx-keyboard
 ---
-{% include components/nav-tabs/nav-pills.liquid %}
-{% include components/nav-tabs/vertical-pills.liquid %}
+<div class="container">
+  {% include components/nav-tabs/nav-pills.liquid tabs=page.tabs %}
+</div>

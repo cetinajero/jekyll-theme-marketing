@@ -1,41 +1,42 @@
-<body>
-  <div class="d-flex align-items-start">
-    <div class="nav flex-column nav-pills me-3" role="tablist" aria-orientation="vertical">
-      <a href="#airbus" class="nav-link active" data-toggle="pill" aria-controls="v-pill-airbus" aria-selected="true">
-        Airbus
+<div class="d-flex align-items-start">
+  <div class="nav flex-column nav-pills me-3" role="tablist" aria-orientation="vertical">
+    {% for tab in include.vertical-tabs %}
+
+      {% if forloop.first == true %}
+        {% assign tab_class = 'active' %}
+      {% else %}
+        {% assign tab_class = '' %}
+      {% endif %}
+
+      {% capture tab_id %}
+        tab-{{ tab.name | downcase | replace: ' ', '-' }}
+      {% endcapture %}
+
+      <a class="nav-link text-capitalize {{ tab_class }}" data-toggle="pill" href="#{{ tab_id | strip }}" aria-controls="{{ tab_id | strip }}" aria-selected="{{ forloop.first }}">
+        {{ tab.name }}
       </a>
-      <a href="#motorola" class="nav-link" data-toggle="pill" aria-controls="v-pill-motorola" aria-selected="false">
-        Motorola
-      </a>
-    </div>
-    <div class="tab-content" id="v-pills-tabContent">
-      <div id="airbus" class="tab-pane fade show active">
+    {% endfor %}
+  </div>
+
+  <div class="tab-content" id="v-pills-tabContent">
+    {% for tab in include.vertical-tabs %}
+
+      {% if forloop.first == true %}
+        {% assign tab_class = 'show active' %}
+      {% else %}
+        {% assign tab_class = '' %}
+      {% endif %}
+
+      {% capture tab_id %}
+        tab-{{ tab.name | downcase | replace: ' ', '-' }}
+      {% endcapture %}
+
+      <div class="tab-pane fade {{ tab_class }}" id="{{ tab_id | strip }}" role="tabpanel" aria-labelledby="{{ tab_id | strip | append: '-tab' }}">
         <div class="container">
-          <a class="d-block" href="https://online.fliphtml5.com/ggpn/nkbr/" target="_blank">
-            <img class="product-image" src="https://online.fliphtml5.com/ggpn/nkbr/files/shot.jpg" data-rel="fh5-light-box-demo" data-href="https://online.fliphtml5.com/ggpn/nkbr/" data-width="700" data-height="400" data-title="catalogo_Airbus" alt="shot">
-          </a>
-          <a class="d-block text-primary text-decoration-none text-center font-weight-bold" href="https://fliphtml5.com/ggpn/nkbr">
-            Ver catálogo
-          </a>
-          <a class="d-block text-primary text-decoration-none text-center font-weight-bold" href="https://grupopv-public.s3-us-west-2.amazonaws.com/assets/pdf/catalogs/radios/catalogo_Airbus.pdf">
-            Descargar catálogo
-          </a>
+          {% include {{ tab.component | prepend: 'components/' | append: '.liquid' }} params=tab.params %}
         </div>
       </div>
 
-      <div id="motorola" class="tab-pane fade">
-        <div class="container">
-          <a class="d-block" href="https://online.fliphtml5.com/ggpn/nkbr/" target="_blank">
-            <img class="product-image" src="https://online.fliphtml5.com/ggpn/nkbr/files/shot.jpg" data-rel="fh5-light-box-demo" data-href="https://online.fliphtml5.com/ggpn/nkbr/" data-width="700" data-height="400" data-title="catalogo_Airbus" alt="shot">
-          </a>
-          <a class="d-block text-primary text-decoration-none text-center font-weight-bold" href="https://fliphtml5.com/ggpn/nkbr">
-            Ver catálogo
-          </a>
-          <a class="d-block text-primary text-decoration-none text-center font-weight-bold" href="https://grupopv-public.s3-us-west-2.amazonaws.com/assets/pdf/catalogs/radios/catalogo_Airbus.pdf">
-            Descargar catálogo
-          </a>
-        </div>
-      </div>
-    </div>
+    {% endfor %}
   </div>
-</body>
+</div>
