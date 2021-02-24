@@ -35,10 +35,9 @@ special-offers:
       {% include components/product-cards/product-generals.liquid %}
     </div>
     <div>
-      {% include components/nav-tabs/product-nav-tab.liquid tabs=layout.tabs %}
+      {% include components/nav-tabs/nav-pills.liquid tabs=layout.tabs %}
     </div>
   </div> <!-- /container -->
-  {% include components/nav-tabs/product-nav-tab.js %}
 {% else %}
   <script type="text/javascript">window.location.href = "/"</script>
 {% endif %}

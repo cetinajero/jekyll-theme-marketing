@@ -1401,10 +1401,6 @@ blockquote small {
 .nav-tabs > .active.dropdown > a {
   z-index: 911;
 }
-.tab-content > .tab-pane,
-.pill-content > .pill-pane {
-  padding: 36px 0 0;
-}
 .tabs-left > .nav-tabs > li,
 .tabs-right > .nav-tabs > li {
   float: none;
