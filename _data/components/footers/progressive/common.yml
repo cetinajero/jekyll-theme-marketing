@@ -31,11 +31,12 @@
     - { title: 'Engineering', i18n: { es_MX: 'Ingeniería', pt_BR: '' }, link: 'https://www.netguard.video/tools/downloads', pre-icon: 'fas fa-user-cog', post-icon: 'fas fa-external-link-alt fa-sm' }
     - { title: 'TeamViewer', link: 'https://get.teamviewer.com/grupopv', post-icon: 'fas fa-external-link-alt fa-sm', pre-icon: 'fas fa-desktop' }
 
-- name: { title: 'Distributors', i18n: { es_MX: 'Distribuidores', pt_BR: '' } }
+- name: { title: 'Integrators', i18n: { es_MX: 'Integradores', pt_BR: '' } }
   icon: fas fa-user-tie
   grid-class: 4
   items:
     - { title: 'Login', i18n: { es_MX: 'Inicio de sesión', pt_BR: 'Login' }, link: '/login/', pre-icon: 'fas fa-sign-in-alt' }
+    - { title: 'Catalogs and brochures', i18n: { es_MX: 'Catálogos y folletería', pt_BR: 'Catálogos e folhetos' }, link: '/catalogs-and-brochures/', pre-icon: 'fas fa-book' }
     - { title: 'Contact form', i18n: { es_MX: 'Formulario de contacto', pt_BR: 'Formulário de contato' }, link: '/contact/', pre-icon: 'fas fa-envelope' }
     - { title: 'Complaints and suggestions', i18n: { es_MX: 'Quejas y sugerencias', pt_BR: '' }, link: 'https://docs.google.com/forms/d/e/1FAIpQLSdrGUMRbymOKIVdk3-unh2PAIFzbPhTyb_9dFWxas1RbsbnCA/viewform', pre-icon: 'fas fa-inbox', post-icon: 'fas fa-external-link-alt fa-sm' }
     - { title: 'Distribution request', i18n: { es_MX: 'Solicitud para distribución', pt_BR: '' }, link: 'https://grupopv-public.s3.amazonaws.com/assets/pdf/formats/distribution-request.pdf', pre-icon: 'fas fa-id-card', post-icon: 'fas fa-download fa-sm' }
