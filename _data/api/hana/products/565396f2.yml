@@ -1,0 +1,68 @@
+title: 565396F2
+brand: AOC
+description: LED AOC Monitor, 18.5 "Res. 1366 x 768, VGA
+price: 163.000000
+currency: USD
+sat-code: 46171612
+menu-father: high
+categories: high
+ribbon: HOT
+ribbon-color: text-success
+image: https://grupopv-public.s3-us-west-2.amazonaws.com/assets/img/catalog/thumbnails/shoes-woman/high/565396f.png
+
+resources:
+  product-images:
+    model: 565396f
+    quantity: 4
+  spec-sheets:
+    header:
+      - /assets/img/logos-provider/aoc.png
+    text:
+      - Sistema de retroiluminación LED
+      - Extra bisel estrecho y diseño delgado
+      - Funcionalidad de soporte VESA
+      - Entrada análoga tradicional (VGA)
+      - Alto radio de contraste dinámico (DCR)
+      - Exclusivo menú OSD
+    specs:
+      - { name: Tipo de pantalla, value: 'TN'}
+      - { name: Tamaño de panel, value: '19 "'}
+      - { name: Tamaño de imagen visible, value: '18.5 "'}
+      - { name: Resolución máxima, value: '1366x768 @ 60Hz'}
+      - { name: Alimentación, value: 'Universal 110-240 VAC, 50/60 Hz'}
+      - { name: Consumo de energía, value: 'Encendido 15 V'}
+      - { name: Montaje de pared, value: 'sí- 100 x 100 mm'}
+      - { name: Dimensiones, value: '437.4 x 342 x 156 mm'}
+      - { name: Peso, value: '2.15 kg'}
+      - { name: Garantía, value: '1 año'}
+  downloads:
+  -
+    text: Hoja técnica
+    link: /assets/pdf/documents/cctv/accesorios/e970swn.pdf
+
+i18n:
+  en_US:
+    description: LED AOC Monitor, 18.5 "Res. 1366 x 768, VGA
+    resources:
+      spec-sheets:
+        text:
+          - LED backlight system.
+          - Extra narrow bezel and slim design.
+          - VESA support functionality
+          - Traditional analog input (VGA)
+          - High dynamic contrast radius (DCR)
+          - Exclusive OSD menu
+        specs:
+          - {name: screen type, value: 'TN'}
+          - {name: Panel size, value: '19 "'}
+          - {name: Visible image size, value: '18.5 "'}
+          - {name: Maximum resolution, value: '1366x768 @ 60Hz'}
+          - {name: Power source, value: 'Universal 110 - 240 VAC, 50/60 Hz'}
+          - {name: Energy consumption, value: 'Switched on 15 V'}
+          - {name: Wall mounting, value: 'yes- 100x100 mm'}
+          - {name: Dimensions, value: '437.4 x 342 x 156 mm'}
+          - {name: Weight, value: '2.15 kg'}
+          - {name: Warranty, value: '1 year'}
+      downloads:
+        -
+          text: Data Sheet
