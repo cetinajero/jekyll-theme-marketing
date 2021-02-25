@@ -28,7 +28,7 @@
       {{ i18n-title | default: doc.title }}
     </a>
 
-    <div class="text-center font-weight-bold small mt-2">
+    <div class="text-center font-weight-bold small mt-2 {{ include.brand-class }}">
       {{ doc.brand }} <span class="commercial">{{ doc.commercial }}</span>
     </div>
 
@@ -57,7 +57,7 @@
           {% endif %}
 
           {% if doc.price %}
-            <span class="product-price badge badge-primary text-white text-sm {{ price-class }}">
+            <span class="product-price badge badge-primary text-white text-sm {{ include.price-class | default: price-class }}">
               {{ price | strip }}
             </span>
           {% endif %}
