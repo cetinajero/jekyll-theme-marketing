@@ -38,4 +38,7 @@
   <!-- <script src="/vendors/themes/vg_progressive/js/jplayer/jplayer.playlist.min.js"></script> -->
   <script src="{{ '/assets/vendors/themeforest/progressive/js/jquery.appear.js' | relative_url }}"></script>
   <script src="{{ '/assets/vendors/themeforest/progressive/js/main.js' | relative_url }}"></script>
+
+  <!-- Slick carousel JS -->
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </div>

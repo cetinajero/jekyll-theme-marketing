@@ -1,0 +1,9 @@
+[data-component="carousels/slick"] {
+  .title-box {
+    border-color: #e1e1e1;
+    border-bottom-style: solid;
+  }
+  .slick-arrow:before {
+    color: map-get($theme-colors, "primary");
+  }
+}

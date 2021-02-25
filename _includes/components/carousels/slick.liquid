@@ -1,0 +1,25 @@
+{% assign related = site.data.api.yaml.related.products[page.title] %}
+{% if related.size > 0 %}
+  <div data-component="carousels/slick">
+    <div class="title-box">
+      <h3>
+        {% if site.lang == 'es_MX' %}
+          Productos relacionados con este artículo
+        {% else %}
+          Products related to this item
+        {% endif %}
+      </h3>
+    </div>
+
+    <div class="slick-carousel mx-5" data-slick='{"slidesToShow": {{ related.size | at_most: 4 }}}'>
+      {% for product in related %}
+        {% assign doc = site.data.api.hana.products[product] %}
+        {% include components/product-cards/progressive.liquid %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    {% include components/carousels/slick.js %}
+  </script>
+{% endif %}
