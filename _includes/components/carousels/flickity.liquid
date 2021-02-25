@@ -1,3 +1,7 @@
+{% for item in site.data.api.yaml.related.products[page.title] %}
+  {{ item }}
+{% endfor %}
+
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css"/>

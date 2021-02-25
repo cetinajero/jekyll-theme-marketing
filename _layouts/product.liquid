@@ -35,10 +35,10 @@ special-offers:
       {% include components/product-cards/product-generals.liquid %}
     </div>
     <div>
-      {% include components/carousels/carousels.html %}
+      {% include components/nav-tabs/nav-pills.liquid tabs=layout.tabs %}
     </div>
     <div>
-      {% include components/nav-tabs/nav-pills.liquid tabs=layout.tabs %}
+      {% include components/carousels/flickity.liquid %}
     </div>
   </div> <!-- /container -->
 {% else %}
