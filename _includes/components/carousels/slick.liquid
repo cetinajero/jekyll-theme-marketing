@@ -1,5 +1,5 @@
 {% assign related = site.data.api.yaml.related.products[page.title] %}
-{% if related.size > 0 %}
+{% if related.size >= 2 %}
   <div data-component="carousels/slick">
     <div class="title-box">
       <h3>
