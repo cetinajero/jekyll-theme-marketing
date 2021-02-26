@@ -40,6 +40,13 @@ special-offers:
     <div>
       {% include components/carousels/slick.liquid %}
     </div>
+    <section id="product-details-pricelists-notice" class="marketing-theme clean-view pt-3">
+      <article>
+        <p class="text-muted text-center">
+          {{ site.data.i18n.components.product-cards[site.lang].product-details.pricelists-notice.title | default: 'The prices are "List Prices" and are expressed in US dollars, they can vary without notice, be sure to verify them with your sales agent.'}}
+        </p>
+      </article>
+    </section>
   </div> <!-- /container -->
 {% else %}
   <script type="text/javascript">window.location.href = "/"</script>

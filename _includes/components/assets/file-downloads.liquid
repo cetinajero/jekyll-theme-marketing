@@ -10,6 +10,10 @@
       </span>
     </p>
   {% endfor %}
+  <hr class="pb-5">
 {% else %}
-  <p>{{ site.data.i18n.common.product-layout[site.lang].downloads-empty }}</p>
+  <p class="text-muted">
+    {{ site.data.i18n.common.product-layout[site.lang].downloads-empty | default: "There aren't any downloads available to this product." }}
+  </p>
+  <hr class="pb-5">
 {% endif %}
