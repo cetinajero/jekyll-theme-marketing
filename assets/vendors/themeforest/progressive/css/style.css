@@ -2599,9 +2599,6 @@ blockquote small {
 .header .primary .navbar .nav > li.parent:hover > a {
   background: #fff;
   border-bottom-color: transparent;
-  -webkit-border-radius: 3px 3px 0 0;
-  -moz-border-radius: 3px 3px 0 0;
-  border-radius: 3px 3px 0 0;
 }
 .header .primary .navbar .nav > li.parent > a:after {
   background: transparent;
@@ -2618,7 +2615,6 @@ blockquote small {
   z-index: 906;
 }
 .header .primary .navbar .nav > li.parent:hover > a:after {
-  background: #fff;
   display: block;
   -webkit-transition: background 0.1s linear;
   transition: background 0.1s linear;
@@ -2639,7 +2635,6 @@ blockquote small {
   display: none;
   font-size: 13px;
   line-height: 24px;
-  margin: -1px 0 0;
   padding: 15px 20px;
   position: absolute;
   z-index: 905;
@@ -2687,7 +2682,6 @@ blockquote small {
 }
 
 .header .primary .navbar .nav .parent.megamenu {
-  overflow: hidden;
   position: static;
 }
 .header .primary .navbar .nav .parent.megamenu > a {
@@ -2698,7 +2692,6 @@ blockquote small {
   -moz-border-radius: 3px;
   border-radius: 3px;
   padding: 0;
-  width: 886px;
   z-index: 900;
 }
 .header .primary .megamenu > .sub .sub-wrapper {
@@ -2723,10 +2716,6 @@ blockquote small {
   display: table-cell;
   padding: 27px 5px;
   vertical-align: top;
-  width: 100%;
-}
-.header .primary .megamenu.promo > .sub .sub-list {
-  width: 66%;
 }
 .header .primary .megamenu > .sub .box {
   float: left;

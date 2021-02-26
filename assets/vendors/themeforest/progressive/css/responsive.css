@@ -185,10 +185,6 @@
   Max Width "1199px" - Min Width "992px"
 *******************************************************************************/
 @media (min-width: 992px) and (max-width: 1199px) {
-  .header .primary .megamenu > .sub {
-    margin: -1px 0 0 -37px;
-    width: 832px;
-  }
   .slider .slid-content,
   .slider .slider-nav {
     width: 400px;

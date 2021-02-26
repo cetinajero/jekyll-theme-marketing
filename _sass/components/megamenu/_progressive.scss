@@ -8,9 +8,18 @@
     }
   }
 
+  > .sub {
+    margin: 8px 0 0 -28px;
+    width: 832px;
+
+    .sub-list {
+      width: 70%;
+    }
+  }
+
   > a,
   > a:visited {
-    padding: 6px 11px;
+    padding: 4px 11px;
   }
 
   a.disabled-ds {
