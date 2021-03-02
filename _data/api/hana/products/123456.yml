@@ -1,10 +1,10 @@
----
-title: 565396F2
+title: 123456
 brand: AOC
-description: LED AOC Monitor, 18.5 "Res. 1366 x 768, VGA
+description: 123456 description (Es) LED AOC Monitor, 18.5 "Res. 1366 x 768, VGA
 price: 163.000000
 currency: USD
-sat-code: 46171612
+collection: shoes-woman
+url: /shoes-woman/high/123456/
 menu-father: high
 categories: high
 ribbon: HOT
@@ -43,7 +43,7 @@ resources:
 
 i18n:
   en_US:
-    description: LED AOC Monitor, 18.5 "Res. 1366 x 768, VGA
+    description: 123456 description (En) LED AOC Monitor, 18.5 "Res. 1366 x 768, VGA
     resources:
       spec-sheets:
         text:
@@ -67,4 +67,3 @@ i18n:
       downloads:
         -
           text: Data Sheet
----
