@@ -33,7 +33,7 @@
     </div>
 
     <div class="description text-secondary text-center small line-clamp-2 mx-1 mt-2"
-         id="{{ i18n-id }}">{{ i18n-description | default: doc.description }}</div>
+         id="{{ i18n-id }}">{{ doc.i18n[site.lang].description | default: i18n-description | default: doc.description }}</div>
 
     {% unless collection.prices == false 
            or site.product.price.disabled
