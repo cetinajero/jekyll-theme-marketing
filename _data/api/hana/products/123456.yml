@@ -13,8 +13,8 @@ image: https://grupopv-public.s3-us-west-2.amazonaws.com/assets/img/catalog/thum
 
 resources:
   product-images:
-    model: 565396f
-    quantity: 4
+    model: 123456
+    quantity: 6
   spec-sheets:
     header:
       - /assets/img/logos-provider/aoc.png

@@ -11,7 +11,7 @@
   <!-- <script src="/vendors/themes/vg_progressive/js/price-regulator/jquery.slider.js"></script> -->
   <!-- <script src="/vendors/themes/vg_progressive/js/jquery.carouFredSel-6.2.1-packed.js"></script> -->
   <!-- <script src="/vendors/themes/vg_progressive/js/jquery.touchSwipe.min.js"></script> -->
-  <!-- <script src="/vendors/themes/vg_progressive/js/jquery.elevateZoom-3.0.8.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/elevatezoom/3.0.8/jquery.elevatezoom.min.js"></script>
   <!-- <script src="/vendors/themes/vg_progressive/js/jquery.imagesloaded.min.js"></script> -->
   <!-- <script src="/vendors/themes/vg_progressive/js/jquery.sparkline.min.js"></script> -->
   <!-- <script src="/vendors/themes/vg_progressive/js/jquery.easypiechart.min.js"></script> -->

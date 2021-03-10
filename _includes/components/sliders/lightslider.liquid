@@ -25,7 +25,10 @@
           {{ site.amazon-s3 }}/assets/img/catalog/thumbnails/{{ page.collection }}/{{ page-categories }}{% if page.resources[product-image-group].model %}{{ page.resources[product-image-group].model | downcase }}{% else %}{{ page.title | downcase  }}{% endif %}{{ image-num | append: ".png" }}
         {% endcapture %}
         <li data-thumb="{{ product-image-url }}">
-          <img src="{{ product-image-url }}" class="img-center" alt="{% if i18n-title %}{{ i18n-title }}{% else %}{{ page.title }}{% endif %}" />
+          <img src="{{ product-image-url }}"
+           data-zoom-image="{{ product-image-url | strip_newlines }}"
+           class="img-center"
+           alt="{{ page.title }}" />
         </li>
       {% endfor %}
     {% endfor %}
