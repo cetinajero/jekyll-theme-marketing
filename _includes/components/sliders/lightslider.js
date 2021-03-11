@@ -9,9 +9,20 @@ jQuery('#lightSlider').lightSlider({
   thumbMargin: 5,
 
   onSliderLoad: function (el) {
-    el.find('img').elevateZoom({
+    initElevateZoom(
+      el.find('img'),
+      700
+    )
+  }
+});
+
+function initElevateZoom(img, minNatWidth) {
+  const natWidth = (img[0].naturalWidth)
+
+  if (natWidth >= minNatWidth) {
+    img.elevateZoom({
       zoomWindowFadeIn: 500,
       zoomWindowFadeOut: 500
     })
   }
-});
+}
