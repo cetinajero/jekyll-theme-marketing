@@ -9,14 +9,16 @@ jQuery('#lightSlider').lightSlider({
   thumbMargin: 5,
 
   onSliderLoad: function (el) {
-    initElevateZoom(
-      el.find('img'),
-      700
-    )
+    initElevateZoom()
   }
 });
 
-function initElevateZoom(img, minNatWidth) {
+window.addEventListener('resize',initElevateZoom)
+
+function initElevateZoom() {
+  img = jQuery('#lightSlider').find('img')
+
+  const minNatWidth = 700
   const natWidth = (img[0].naturalWidth)
 
   if (natWidth >= minNatWidth) {
