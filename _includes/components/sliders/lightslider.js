@@ -33,9 +33,29 @@ function initElevateZoom() {
   }
 
   if (imgNatWidth >= minImgNatWidth) {
-    if (windowWidth < 768) 
-      images.elevateZoom(mobileOptions)
+    if (windowWidth < 768)
+      responsiveElevateZoom(images, mobileOptions)
     else
       images.elevateZoom(desktopOptions)
+  }
+}
+
+function responsiveElevateZoom(images, mobileOptions) {
+  var zoomContainerWidth
+
+  try {
+    zoomContainerWidth = document.querySelector('.zoomContainer').style.width
+  } catch {}
+  
+  switch (zoomContainerWidth) {
+    case '210px':
+    case '289.984375px':
+    case '350px':
+      setTimeout(function(){
+        images.elevateZoom(mobileOptions)
+      }, 500)
+      break;
+    default:
+      images.elevateZoom(mobileOptions)
   }
 }
