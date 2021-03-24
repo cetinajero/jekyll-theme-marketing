@@ -6,13 +6,10 @@ jQuery('#lightSlider').lightSlider({
   thumbItem: 4,
 
   galleryMargin: 5,
-  thumbMargin: 5,
-
-  onSliderLoad: function (el) {
-    initElevateZoom()
-  }
+  thumbMargin: 5
 });
 
+window.addEventListener('load',initElevateZoom)
 window.addEventListener('resize',initElevateZoom)
 
 function initElevateZoom() {
