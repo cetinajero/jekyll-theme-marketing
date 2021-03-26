@@ -28,6 +28,8 @@
                         data-bgfit="contain"
                         data-bgrepeat="no-repeat">
 
+                      <a href="{{ slider.link | relative_url }}" alt="{{ slider.name }}-link"></a>
+
                       {% for layer in slider.layers %}
                         {% assign data-speed = 450 | times: forloop.index | plus: 0 %}
                         <!-- layer {{ forloop.index }} -->
