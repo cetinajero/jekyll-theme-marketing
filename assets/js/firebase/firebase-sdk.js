@@ -2,7 +2,7 @@
 layout: null
 ---
 // Configure constants
-let welcome = "{{ site.data.i18n.common.firebase[site.lang].welcome.title }}";
+let welcome = "{{ site.data.i18n.common.firebase[site.lang].welcome.title | default: 'Welcome' }}";
 
 // Initialize Firebase
 var config = {
