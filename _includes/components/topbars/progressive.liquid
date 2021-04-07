@@ -16,14 +16,14 @@
         <span id="sign-in-welcome" class="d-none d-md-inline"></span>
         <strong id="sign-in-name" class="text-white"></strong>
         <a id="login-button" class="btn btn-sm btn-primary text-white border-0 d-none" href="{{ '/' | relative_url }}">
-          <i class="fas fa-sign-in-alt fa-lg" data-fa-transform="left-3"></i>
-          <span style="font-size:12px">{{ site.data.i18n.common.firebase[site.lang].login.title | default: 'Login' }}</span>
+          <i class="fas fa-sign-in-alt fa-lg" data-fa-transform="left-1 down-1"></i>
+          <span class="d-none d-sm-inline" style="font-size:12px">{{ site.data.i18n.common.firebase[site.lang].login.title | default: 'Login' }}</span>
         </a>
         <button id="logout-button" class="btn btn-sm btn-primary text-white border-0 d-none">
-          <i class="fas fa-sign-out-alt fa-lg" data-fa-transform="left-3"></i>
-          <span style="font-size:12px">{{ site.data.i18n.common.firebase[site.lang].logout.title | default: 'Logout' }}</span>
+          <i class="fas fa-sign-out-alt fa-lg" data-fa-transform="left-1 down-1"></i>
+          <span class="d-none d-sm-inline" style="font-size:12px">{{ site.data.i18n.common.firebase[site.lang].logout.title | default: 'Logout' }}</span>
         </button>
-      </span>
+      </span> <!-- end login button -->
 
     </div>
     {% include components/topbars/progressive.js %}
