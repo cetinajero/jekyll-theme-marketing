@@ -9,4 +9,10 @@
     }
   }
 
+  @include media-breakpoint-only(xs) {
+    .logo-img {
+      max-width: 200px;
+    }
+  }
+
 }
