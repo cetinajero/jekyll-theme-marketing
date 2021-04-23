@@ -3049,29 +3049,9 @@ blockquote small {
 }
 
 /* Phone & Search Header */
-.phone-header,
-.search-header {
-  border-right: 1px solid #ccc;
-  border-right: 1px solid rgba(204,204,204,.8);
-  color: #1e1e1e;
-  display: inline-block;
-  height: 30px;
-  margin: 8px -4px 8px 0;
-  position: relative;
-  text-align: center;
-  vertical-align: top;
-  width: 41px;
-}
 .phone-header:last-child,
 .search-header:last-child {
   border-right: 0 none;
-}
-.phone-header a,
-.search-header a {
-  display: block;
-  height: 23px;
-  padding-top: 7px;
-  width: 100%;
 }
 .phone-header a svg,
 .search-header a svg {
