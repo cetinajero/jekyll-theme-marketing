@@ -9,6 +9,27 @@
         {% endif %}
       </span> <!-- end exchange-rates info -->
 
+      <a class="btn btn-sm btn-primary text-white border-0 mr-3" href="{{ '/our-offices/' | relative_url }}"> <!-- start location button -->
+        <i class="fas fa-map-marker-alt fa-lg" data-fa-transform="shrink-1 down-1"></i>
+        <span class="d-none d-lg-inline" style="font-size:12px">
+          {% if site.lang == 'es_MX' %}Ubícanos{% else %}Locate us{% endif %}
+        </span>
+      </a> <!-- end location button -->
+
+      <a class="btn btn-sm btn-primary text-white border-0 mr-3" href="{{ '/contact/' | relative_url }}"> <!-- start contact button -->
+        <i class="fas fa-envelope fa-lg" data-fa-transform="grow-1 down-1"></i>
+        <span class="d-none d-lg-inline" style="font-size:12px">
+          {% if site.lang == 'es_MX' %}Contáctanos{% else %}Contact us{% endif %}
+        </span>
+      </a> <!-- end contact button -->
+
+      <a class="btn btn-sm btn-primary text-white border-0 mr-3" href="tel:{{ site.address[0].phone[0].number }}" data-proofer-ignore> <!-- start phone button -->
+        <i class="fas fa-phone fa-lg" data-fa-transform="shrink-1 down-1"></i>
+        <span class="d-none d-lg-inline" style="font-size:12px">
+          {{ site.address[0].phone[0].number }}
+        </span>
+      </a> <!-- end phone button -->
+
       <span id="sign-in">
         <span id="sign-in-welcome" class="d-none d-md-inline"></span>
         <strong id="sign-in-name" class="text-white"></strong>
