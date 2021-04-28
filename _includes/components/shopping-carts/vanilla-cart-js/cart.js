@@ -6,6 +6,7 @@ const cartDOM = document.querySelector('.cart')
 function removeItem(product, cartItemDOM) {
   setTimeout(() => cartItemDOM.remove(), 250)
   cart = cart.filter(cartItem => cartItem.model !== product.model)
+  localStorage.setItem('cart', JSON.stringify(cart))
 }
 
 if (cart.length > 0) {
@@ -19,7 +20,7 @@ if (cart.length > 0) {
         <h3 class="cart-item-brand">${product.brand}</h3>
         <h3 class="cart-item-description">${product.description}</h3>
         <h3 class="cart-item-price">${product.price}</h3>
-        <button class="btn btn-primary btn-small btn-danger" data-action="decreaseItem">&minus;</button>
+        <button class="btn btn-primary btn-small${(product.quantity === 1 ? ' btn-danger' : '')}" data-action="decreaseItem">&minus;</button>
         <h3 class="cart-item-quantity">${product.quantity}</h3>
         <button class="btn btn-primary btn-small" data-action="increaseItem">&plus;</button>
         <button class="btn btn-danger btn-small" data-action="removeItem">&times;</button>
@@ -43,6 +44,7 @@ if (cart.length > 0) {
         if (cartItem.model === product.model) {
           if (cartItem.quantity > 1) {
             cartItemDOM.querySelector('.cart-item-quantity').innerText = --cartItem.quantity
+            localStorage.setItem('cart', JSON.stringify(cart))
           } else {
             removeItem(product, cartItemDOM)
           }

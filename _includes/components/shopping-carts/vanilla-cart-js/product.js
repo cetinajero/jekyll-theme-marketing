@@ -3,6 +3,15 @@
 let cart = (JSON.parse(localStorage.getItem('cart')) || [])
 const addToCartButton = document.querySelector('[data-action="addToCart"]')
 
+if (cart.length > 0) {
+  cart.forEach(cartItem => {
+    if (cartItem.model === document.querySelector('.product-model strong').innerText) {
+      addToCartButton.innerText = 'In Cart'
+      addToCartButton.classList.add('disabled')
+    }
+  })
+}
+
 addToCartButton.addEventListener('click', () => {
   const product = {
     model: document.querySelector('.product-model strong').innerText,
