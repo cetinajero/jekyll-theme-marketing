@@ -3,11 +3,15 @@
 let cart = (JSON.parse(localStorage.getItem('cart')) || [])
 const addToCartButton = document.querySelector('[data-action="addToCart"]')
 
+function disableCartButton(button) {
+  button.innerText = 'In Cart'
+  button.classList.add('disabled')
+}
+
 if (cart.length > 0) {
   cart.forEach(cartItem => {
     if (cartItem.model === document.querySelector('.product-model strong').innerText) {
-      addToCartButton.innerText = 'In Cart'
-      addToCartButton.classList.add('disabled')
+      disableCartButton(addToCartButton)
     }
   })
 }
@@ -27,7 +31,6 @@ addToCartButton.addEventListener('click', () => {
   if (!isInCart) {
     cart.push(product)
     localStorage.setItem('cart', JSON.stringify(cart))
-    addToCartButton.innerText = 'In Cart'
-    addToCartButton.classList.add('disabled')
+    disableCartButton(addToCartButton)
   }
 })
