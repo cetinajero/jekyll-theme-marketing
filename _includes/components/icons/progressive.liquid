@@ -1,19 +1,11 @@
 <div class="header-icons">
-
   <span id="navbarSearchButton" class="search-header"> <!-- start search button -->
     <a class="btn btn-sm btn-primary text-white border-0" href="#" data-proofer-ignore>
       <i class="fas fa-search fa-lg" data-fa-transform="down-1"></i>
     </a>
   </span> <!-- end search button -->
 
-  <a class="btn btn-sm btn-primary text-white border-0" href="{{ '/my-cart/' | relative_url }}"> <!-- start shopping cart button -->
-    <span class="fa-layers fa-fw">
-      <i class="fapv fa-shopping-cart fa-lg text-white" data-fa-transform="left-3 up-3"></i>
-      <i class="fas fa-circle fa-lg text-warning" data-fa-transform="right-13 up-13"></i>
-      <span class="fa-layers-text fa-inverse text-dark font-weight-bold" data-fa-transform="right-19 up-17 shrink-2">23</span>
-    </span>
-  </a> <!-- end shopping cart button -->
-
+  {% include components/icons/shopping-cart.liquid %}
 </div>
 
 <script>
