@@ -1,6 +1,5 @@
 'use strict'
 
-let cart = (JSON.parse(localStorage.getItem('cart')) || [])
 const cartDOM = document.querySelector('.cart')
 
 function increaseItem(product, cartItemDOM) {
@@ -34,6 +33,7 @@ function removeItem(product, cartItemDOM) {
   setTimeout(() => cartItemDOM.remove(), 250)
   cart = cart.filter(cartItem => cartItem.model !== product.model)
   localStorage.setItem('cart', JSON.stringify(cart))
+  updateCounter(cart.length)
 }
 
 function handleActionButtons(cartItemDOM, product) {

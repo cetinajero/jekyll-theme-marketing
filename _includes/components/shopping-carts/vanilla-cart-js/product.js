@@ -1,6 +1,5 @@
 'use strict'
 
-let cart = (JSON.parse(localStorage.getItem('cart')) || [])
 const addToCartButton = document.querySelector('[data-action="addToCart"]')
 
 function disableCartButton(button) {
@@ -31,6 +30,7 @@ addToCartButton.addEventListener('click', () => {
   if (!isInCart) {
     cart.push(product)
     localStorage.setItem('cart', JSON.stringify(cart))
+    updateCounter(cart.length)
     disableCartButton(addToCartButton)
   }
 })
