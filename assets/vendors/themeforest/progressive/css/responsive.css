@@ -90,12 +90,6 @@
   Max Width "1199px"
 *******************************************************************************/
 @media (max-width: 1199px) {
-  .phone-active,
-  .search-active {
-    left: 0;
-    width: auto;
-  }
-  
   .banner-set .banner {
     padding: 19px 9px;
     width: 235px;
