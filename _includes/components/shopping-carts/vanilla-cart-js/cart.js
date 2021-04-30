@@ -6,7 +6,11 @@ function increaseItem(product, cartItemDOM) {
   cart.forEach(cartItem => {
     if (cartItem.model === product.model) {
       cartItemDOM.querySelector('.cart-item-quantity').innerText = ++cartItem.quantity
-      cartItemDOM.querySelector('[data-action="decreaseItem"]').classList.remove('text-danger')
+      const decreaseButton = cartItemDOM.querySelector('[data-action="decreaseItem"]')
+      const decreaseIcon = decreaseButton.querySelector('svg')
+      decreaseButton.classList.remove('text-danger')
+      decreaseIcon.classList.remove('fa-trash-alt')
+      decreaseIcon.classList.add('fa-minus')
       localStorage.setItem('cart', JSON.stringify(cart))
     }
   })
@@ -23,7 +27,11 @@ function decreaseItem(product, cartItemDOM) {
       }
   
       if (cartItem.quantity === 1) {
-        cartItemDOM.querySelector('[data-action="decreaseItem"]').classList.add('text-danger')
+        const decreaseButton = cartItemDOM.querySelector('[data-action="decreaseItem"]')
+        const decreaseIcon = decreaseButton.querySelector('svg')
+        decreaseButton.classList.add('text-danger')
+        decreaseIcon.classList.remove('fa-minus')
+        decreaseIcon.classList.add('fa-trash-alt')
       }
     }
   })
