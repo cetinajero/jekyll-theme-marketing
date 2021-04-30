@@ -90,12 +90,6 @@
   Max Width "1199px"
 *******************************************************************************/
 @media (max-width: 1199px) {
-  .phone-active,
-  .search-active {
-    left: 0;
-    width: auto;
-  }
-  
   .banner-set .banner {
     padding: 19px 9px;
     width: 235px;
@@ -1904,9 +1898,6 @@
     display: block;
     float: none !important;
     margin: 0 auto 20px;
-  }
-  .hidden-600 {
-    display: none !important;
   }
   
   .header .cart-header .dropdown-toggle .count {

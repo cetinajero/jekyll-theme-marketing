@@ -80,19 +80,6 @@ textarea {
 .pricing .options li {
   color: rgba(26,105,213,0.4);
 }
-.phone-header a svg path,
-.search-header a svg path,
-.product .actions a svg path,
-.sidebar .wishlist .add-cart:hover path,
-.header .cart-header .dropdown-toggle .icon svg path,
-.search-active .search-submit svg path,
-.new-checkbox svg polygon,
-.product-bottom .related-products li .button-box .wishlist:hover svg path,
-.jslider .jslider-pointer svg path,
-.rating-box .rating svg polygon,
-.search-result .search-form .search-submit svg path {
-  fill: {{ site.css.menu.icons }};
-}
 @media (max-width: 979px) {
   .header .primary .navbar .nav > .parent.active > a,
   .header .primary .navbar .nav > .parent.active:hover > a,
