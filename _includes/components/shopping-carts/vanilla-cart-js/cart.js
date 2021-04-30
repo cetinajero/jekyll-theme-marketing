@@ -38,6 +38,7 @@ function decreaseItem(product, cartItemDOM) {
 }
 
 function removeItem(product, cartItemDOM) {
+  cartItemDOM.classList.add('remove-cart-item-animation')
   setTimeout(() => cartItemDOM.remove(), 250)
   cart = cart.filter(cartItem => cartItem.model !== product.model)
   localStorage.setItem('cart', JSON.stringify(cart))
