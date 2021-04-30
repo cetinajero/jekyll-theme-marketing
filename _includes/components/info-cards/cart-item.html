@@ -1,11 +1,46 @@
-<div class="cart-item-${product.model}">
-  <img class="cart-item-image" src="${product.image}" alt="${product.model}">
-  <h3 class="cart-item-model">${product.model}</h3>
-  <h3 class="cart-item-brand">${product.brand}</h3>
-  <h3 class="cart-item-description">${product.description}</h3>
-  <h3 class="cart-item-price">${product.price}</h3>
-  <button class="btn btn-primary btn-small${(product.quantity === 1 ? ' btn-danger' : '')}" data-action="decreaseItem">&minus;</button>
-  <h3 class="cart-item-quantity">${product.quantity}</h3>
-  <button class="btn btn-primary btn-small" data-action="increaseItem">&plus;</button>
-  <button class="btn btn-danger btn-small" data-action="removeItem">&times;</button>
+<div id="cart-item-${product.model}">
+  <div class="d-flex align-items-center">
+
+    <a href="${product.url}" class="col-4 col-md-3 col-xl-2">
+      <img src="${product.image}" alt="${product.model}">
+    </a>
+  
+    <div class="flex-fill">
+      <a href="${product.url}" class="text-decoration-none">
+        <i class="fas fa-angle-right fa-xs text-muted"></i>
+        ${product.model}
+      </a>
+      <div class="text-muted py-1 px-0 line-clamp-2" style="height: 42px">
+        ${product.description}
+      </div>
+      <div class="text-muted py-2 px-0">
+        <span class="d-none d-md-inline">Brand:</span>
+        <b>${product.brand}</b>
+      </div>
+      <b class="text-primary px-0 d-lg-none">
+        $ ${product.price.toFixed(2)} USD
+      </b>
+    </div>
+  
+    <div class="d-flex flex-column align-items-center">
+      <span class="text-muted mb-2">Quantity</span>
+      <div class="d-flex flex-nowrap align-items-center">
+        <button class="btn btn-light btn-small${(product.quantity === 1 ? ' text-danger' : '')}" data-action="decreaseItem">
+          <i class="fas fa-minus fa-xs"></i>
+        </button>
+        <span class="cart-item-quantity px-3">${product.quantity}</span>
+        <button class="btn btn-light btn-small" data-action="increaseItem">
+          <i class="fas fa-plus fa-xs"></i>
+        </button>
+      </div>
+      <button class="btn btn-link btn-small text-muted text-decoration-none mt-4" data-action="removeItem">
+        <i class="fas fa-trash-alt"></i>
+        Delete
+      </button>
+    </div>
+
+    <b class="text-primary mx-5 d-none d-lg-inline">$ ${product.price.toFixed(2)} USD</b>
+
+  </div>
+  <hr>
 </div>

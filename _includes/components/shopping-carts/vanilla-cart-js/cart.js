@@ -6,7 +6,7 @@ function increaseItem(product, cartItemDOM) {
   cart.forEach(cartItem => {
     if (cartItem.model === product.model) {
       cartItemDOM.querySelector('.cart-item-quantity').innerText = ++cartItem.quantity
-      cartItemDOM.querySelector('[data-action="decreaseItem"]').classList.remove('btn-danger')
+      cartItemDOM.querySelector('[data-action="decreaseItem"]').classList.remove('text-danger')
       localStorage.setItem('cart', JSON.stringify(cart))
     }
   })
@@ -23,7 +23,7 @@ function decreaseItem(product, cartItemDOM) {
       }
   
       if (cartItem.quantity === 1) {
-        cartItemDOM.querySelector('[data-action="decreaseItem"]').classList.add('btn-danger')
+        cartItemDOM.querySelector('[data-action="decreaseItem"]').classList.add('text-danger')
       }
     }
   })
@@ -61,7 +61,7 @@ if (cart.length > 0) {
       {% include components/info-cards/cart-item.html %}
     `)
 
-    const cartItemDOM = cartDOM.querySelector(`.cart-item-${product.model}`)
+    const cartItemDOM = cartDOM.querySelector(`#cart-item-${product.model}`)
     handleActionButtons(cartItemDOM, product)
   })
 }

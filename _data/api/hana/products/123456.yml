@@ -1,7 +1,7 @@
 title: 123456
 brand: AOC
-description: 123456 description (Es) LED AOC Monitor, 18.5 "Res. 1366 x 768, VGA
-price: 163.000000
+description: (Es) Tennis clásicos Converse 123456 para mujer con plataforma
+price: 163.550000
 currency: USD
 collection: shoes-woman
 url: /shoes-woman/high/123456/
@@ -43,7 +43,7 @@ resources:
 
 i18n:
   en_US:
-    description: 123456 description (En) LED AOC Monitor, 18.5 "Res. 1366 x 768, VGA
+    description: (En) Classic Converse shoes 123456 for women with platform
     resources:
       spec-sheets:
         text:

@@ -22,6 +22,7 @@ addToCartButton.addEventListener('click', () => {
     image: document.querySelectorAll('.product-images img')[1].getAttribute('src'),
     price: parseFloat(document.querySelector('.product-price').innerText.substring(1)),
     description: document.querySelector('.product-description').innerText,
+    url: window.location.href,
     quantity: 1
   }
 
