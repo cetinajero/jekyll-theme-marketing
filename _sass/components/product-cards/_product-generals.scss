@@ -2,11 +2,7 @@ div#product-generals{
   div.product-price{
     span{
       &.disabled-price{
-        text-decoration: line-through;
-        background-color: #343a40;
-      }
-      a.white{
-        color: #fff;
+        text-decoration: line-through; // TODO: Migrate to Bootstrap 5
       }
     }
   }
