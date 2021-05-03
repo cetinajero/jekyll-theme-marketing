@@ -13,7 +13,7 @@ addToCartButton.addEventListener('click', () => {
     quantity: 1
   }
 
-  const isInCart = (cart.filter(cartItem => (cartItem.model === product.model)).length > 0);
+  const isInCart = (cart.filter(cartItem => (cartItem.model === product.model)).length > 0)
 
   if (!isInCart) {
     cart.push(product)
