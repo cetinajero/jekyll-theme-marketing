@@ -12,11 +12,9 @@
 
           {% if collection.prices == false or page.price == 'disabled' %}
 
-            <span class="badge badge-primary text-white">
-              <a href="{{ '/our-offices/' | relative_url }}" title="Our offices" class="white">
-                Contáctanos para un precio especial
-              </a>
-            </span>
+            <a href="{{ '/our-offices/' | relative_url }}" class="btn btn-primary font-weight-bold" title="Our offices">
+              Contáctanos para un precio especial
+            </a>
 
           {% else %}
 
@@ -29,7 +27,7 @@
                 {% endif %}
               {% endunless %}
             {% endcapture %}
-            <span class="h3 text-primary font-weight-bold {% if page.promotion-price and site.original == false %}{{ 'disabled-price' }}{% endif %}">{{ price | strip }}</span>
+            <span class="h3 text-primary font-weight-bold {% if page.promotion-price and site.original == false %}{{ 'disabled-price small text-muted' }}{% endif %}">{{ price | strip }}</span>
 
             {% capture promotion-price %}
               {% unless site.original %}
@@ -46,7 +44,7 @@
                 {% endif %}
               {% endunless %}
             {% endcapture %}
-            <span class="badge badge-primary text-white">{{ promotion-price | strip }}</span>
+            <span class="h3 text-primary font-weight-bold">{{ promotion-price | strip }}</span>
 
           {% endif %}
         {% endfor %}

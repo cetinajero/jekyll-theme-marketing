@@ -1,0 +1,11 @@
+.remove-cart-item-animation {
+  animation: .3s remove-cart-item-animation;
+}
+
+@keyframes remove-cart-item-animation {
+  to {
+    margin-left: 200px;
+    margin-right: -200px;
+    opacity: 0;
+  }
+}

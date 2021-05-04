@@ -10,3 +10,7 @@
 <script src="{{ 'assets/node_modules/lightslider-npm-1.1.6-a0ad57d81b/node_modules/lightslider/dist/js/lightslider.min.js' | relative_url }}"></script>
 
 {% include components/chats/zendesk.liquid %}
+
+<script type="text/javascript">
+  {% include components/shopping-carts/vanilla-cart-js/counter.js %}
+</script>
