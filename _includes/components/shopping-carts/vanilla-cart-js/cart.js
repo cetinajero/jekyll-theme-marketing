@@ -1,5 +1,6 @@
 'use strict'
 
+const isCartEnabled = document.querySelector('.shopping-cart-icon') ? true : false
 const cartDOM = document.querySelector('.cart')
 
 function increaseItem(product, cartItemDOM) {
@@ -63,14 +64,26 @@ function handleActionButtons(cartItemDOM, product) {
   })
 }
 
-if (cart.length > 0) {
-  cart.forEach(cartItem => {
-    const product = cartItem
-    cartDOM.insertAdjacentHTML('beforeend', `
-      {% include components/info-cards/cart-item.html %}
-    `)
+function insertCartItems() {
+  if (cart.length > 0) {
+    cart.forEach(cartItem => {
+      const product = cartItem
+      cartDOM.insertAdjacentHTML('beforeend', `
+        {% include components/info-cards/cart-item.html %}
+      `)
+  
+      const cartItemDOM = cartDOM.querySelector(`#cart-item-${product.model}`)
+      handleActionButtons(cartItemDOM, product)
+    })
+  }
+}
 
-    const cartItemDOM = cartDOM.querySelector(`#cart-item-${product.model}`)
-    handleActionButtons(cartItemDOM, product)
-  })
+function redirectToHome() {
+  window.location.href = '/'
+}
+
+if (isCartEnabled) {
+  insertCartItems()
+} else {
+  redirectToHome()
 }

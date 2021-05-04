@@ -38,7 +38,7 @@
                     {{ page.promotion-currency | prepend: ' ' }}
                   {% endif %}
                 {% else %}
-                  <a href="{{ '/our-offices/' | relative_url }}" title="Our offices" class="white">
+                  <a href="{{ '/our-offices/' | relative_url }}" class="btn btn-primary font-weight-bold" title="Our offices">
                     Contáctanos para un precio especial
                   </a>
                 {% endif %}
@@ -50,7 +50,7 @@
         {% endfor %}
 
       </div>
-      <div class="btn btn-warning font-weight-bold w-100 mt-2" data-action="addToCart">
+      <div class="btn btn-warning font-weight-bold w-100 mt-2 d-none" data-action="addToCart">
         <i class="fapv fa-cart-plus" data-fa-transform="grow-2 left-5 up-4"></i>
         {% if site.lang == 'es_MX' %}Agregar al carrito{% else %}Add to cart{% endif %}
       </div>

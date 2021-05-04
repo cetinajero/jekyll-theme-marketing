@@ -27,6 +27,7 @@ components:
   ribbon: # disabled # Disable the whole component
     shoes-man: disabled # Disable a whole collection
     high-565396f3: disabled # Disable only on a product
+  shopping-cart: enabled
 special-offers:
   customers: true
 social-media:
