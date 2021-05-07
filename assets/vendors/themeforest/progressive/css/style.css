@@ -2392,31 +2392,6 @@ blockquote small {
 .header .container {
   position: relative;
 }
-.header .logo-box {
-  display: table;
-  table-layout: fixed;
-}
-.header .logo {
-  display: table-cell;
-  height: 100px;
-  max-width: 100%;
-  vertical-align: middle;
-  width: 100%;
-}
-.header .logo a {
-  display: inline-block;
-  max-width: 100%;
-}
-.header .logo-box.auto-height {
-  display: block;
-  height: 100px;
-}
-.header .logo-box.auto-height .logo {
-  display: block;
-}
-.header .logo-box.auto-height img {
-  max-height: inherit;
-}
 .header .site-description {
   color: #bbb;
   font-size: 9px;
@@ -3149,9 +3124,6 @@ blockquote small {
 .header.header-three .container {
   min-height: inherit;
 }
-.header.header-three .logo-box {
-  text-align: center;
-}
 
 /******************************************************************************
   Vertical Header
@@ -3181,7 +3153,6 @@ blockquote small {
 .vertical-header .header .container {
   width: auto;
 }
-.vertical-header .header .logo-box,
 .vertical-header .header .right-box {
   width: 100%;
 }
