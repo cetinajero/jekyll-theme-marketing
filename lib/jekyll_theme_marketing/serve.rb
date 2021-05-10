@@ -50,7 +50,7 @@ module Serve
         collection = properties['scope']['type']
         config_key(
           value,
-          publish.include?(collection) && key == 'values' ? true : false
+          publish.include?(collection) && key == 'values'
         )
       end
     end
