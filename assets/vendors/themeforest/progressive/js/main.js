@@ -148,7 +148,7 @@ function headerCustomizer() {
 	if (body.hasClass('padding-top')) {
 	  scroll = topHeight + 420;
 	} else if (body.hasClass('boxed')) {
-	  scroll = topHeight + 20;
+	  scroll = topHeight;
 	}
 
 	$(window).scroll(function(){
@@ -157,15 +157,11 @@ function headerCustomizer() {
 	  if (body.hasClass('fixed-header')) {
 		if ($this.scrollTop() >= scroll) {
 		  body.addClass('fixed');
+		  fixedH.addClass('background-opacity');
 		} else {
 		  body.removeClass('fixed');
+		  fixedH.removeClass('background-opacity');
 		}
-	  }
-
-	  if ($this.scrollTop() >= headerHeight) {
-		fixedH.addClass('background-opacity');
-	  } else {
-		fixedH.removeClass('background-opacity');
 	  }
 	});
 

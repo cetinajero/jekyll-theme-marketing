@@ -630,9 +630,6 @@
   .header.header-two .search-active {
     z-index: 1003;
   }
-  .header.header-three .logo-box {
-    width: 724px;
-  }
   .top-fixed-box {
     display: none;
   }
@@ -1191,9 +1188,6 @@
   }
   .header .cart-header .dropdown-menu {
     width: 325px;
-  }
-  .header.header-three .logo-box {
-    width: 100%;
   }
   .breadcrumb {
     padding-left: 10px;

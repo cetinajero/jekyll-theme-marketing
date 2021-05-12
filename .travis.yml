@@ -1,3 +1,4 @@
+os: linux
 language: ruby
 rvm:
   - 2.5.8
@@ -20,8 +21,6 @@ addons:
   apt:
     packages:
     - libcurl4-openssl-dev
-
-sudo: false # route your build to the container-based infrastructure for a faster build
 
 cache: bundler # caching bundler gem packages will speed up build
 

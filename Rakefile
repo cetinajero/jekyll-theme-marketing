@@ -6,7 +6,7 @@ require 'html-proofer'
 require 'rake/testtask'
 require_relative 'lib/jekyll_theme_marketing'
 
-ARGV.each { |a| task(a.to_sym) {} }
+ARGV.each { |a| task(a.to_sym) }
 
 desc 'Build website'
 task :build do

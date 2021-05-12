@@ -1,6 +1,7 @@
 [data-component="logos/progressive"] {
   .logo-img {
     max-width: 270px;
+    max-height: 100px;
   }
 
   @include media-breakpoint-only(sm) {

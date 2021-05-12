@@ -67,7 +67,7 @@ module Deploy
     git_log_options = '--oneline --simplify-by-decoration'
     git_log = Git.list_commits "v#{old}", new, git_log_options
 
-    git_log.gsub(/(?<uid>(^[0-9a-f]+))/) do
+    git_log.gsub(/(?<uid>^[0-9a-f]+)/) do
       commit = $LAST_MATCH_INFO[:uid]
       path = "cetinajero/jekyll-theme-marketing/commit/#{commit}"
       "- [#{commit}](https://www.github.com/#{path})"

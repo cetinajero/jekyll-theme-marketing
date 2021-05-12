@@ -1,3 +1,5 @@
+'use strict'
+
 jQuery(document).ready(function(){
   // Get elements
   const btnLogin = document.getElementById('login-button');
@@ -9,7 +11,7 @@ jQuery(document).ready(function(){
   });
 
   // Initialize onAuthStateChange
-  initApp = function() {
+  const initApp = function() {
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         // User is signed in.
@@ -33,8 +35,5 @@ jQuery(document).ready(function(){
     });
   };
 
-  window.addEventListener('load', function() {
-    initApp()
-  });
-
-});
+  initApp()
+})
