@@ -9289,7 +9289,6 @@ div.post p + div.post p {
 .boxed {
   background: #fff;
   margin: 0 auto;
-  padding-top: 20px;
 }
 .boxed .page-box {
   background: #fff;
@@ -9344,7 +9343,6 @@ div.post p + div.post p {
 }
 .boxed #footer {
   min-width: 100%;
-  padding-bottom: 20px;
   position: relative;
 }
 .boxed #footer.footer-two {

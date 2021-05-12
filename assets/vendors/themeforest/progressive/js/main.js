@@ -148,7 +148,7 @@ function headerCustomizer() {
 	if (body.hasClass('padding-top')) {
 	  scroll = topHeight + 420;
 	} else if (body.hasClass('boxed')) {
-	  scroll = topHeight + 20;
+	  scroll = topHeight;
 	}
 
 	$(window).scroll(function(){
