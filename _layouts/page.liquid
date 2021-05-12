@@ -7,10 +7,18 @@ layout: default
   {% assign i18n-id = page.url | slugify | remove_first: page.collection | remove_first: '-' %}
   {% if i18n-id == "" %}{% assign i18n-id = page.collection %}{% endif %}
   {% if page.collection == 'pages' %}
-    {% assign i18n-title = site.data.i18n.common[page.collection][site.lang][i18n-id].title %}
+    {% if page.i18n[site.lang].title %}
+      {% assign i18n-title = page.i18n[site.lang].title %}
+    {% else %}
+      {% assign i18n-title = site.data.i18n.common[page.collection][site.lang][i18n-id].title %}
+    {% endif %}
     {% assign i18n-subtitle = site.data.i18n.common[page.collection][site.lang][i18n-id].subtitle %}
   {% else %}
-    {% assign i18n-title = site.data.i18n.catalog[page.collection][site.lang][i18n-id].title %}
+    {% if page.i18n[site.lang].title %}
+      {% assign i18n-title = page.i18n[site.lang].title %}
+    {% else %}
+      {% assign i18n-title = site.data.i18n.catalog[page.collection][site.lang][i18n-id].title %}
+    {% endif %}
     {% assign i18n-subtitle = site.data.i18n.catalog[page.collection][site.lang][i18n-id].subtitle %}
   {% endif %}
 {% endif %}

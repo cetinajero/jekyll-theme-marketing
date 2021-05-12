@@ -25,7 +25,7 @@
     <!-- id="{{ i18n-id }}" {# if doc.menu-name or collection.products.detail or page.collection == 'pages' #}{# doc.url | relative_url | prepend: 'href="' | append: '"' #}{# endif #}> -->
     <a class="text-primary d-block text-center font-weight-bold text-decoration-none mt-1"
        id="{{ i18n-id }}" href="{{ doc.url | relative_url }}">
-      {{ i18n-title | default: doc.title }}
+      {{ i18n-title | default: doc.i18n[site.lang].title | default: doc.title }}
     </a>
 
     <div class="text-center font-weight-bold small mt-2 {{ include.brand-class }}">
