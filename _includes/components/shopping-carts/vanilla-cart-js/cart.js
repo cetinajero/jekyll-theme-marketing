@@ -47,21 +47,17 @@ function removeItem(product, cartItemDOM) {
 }
 
 function handleActionButtons(cartItemDOM, product) {
-  cartItemDOM.querySelector('[data-action="increaseItem"]').addEventListener('click', () => {
+  cartItemDOM.querySelector('[data-action="increaseItem"]').addEventListener('click', () =>
     increaseItem(product, cartItemDOM)
-  })
+  )
 
-  cartItemDOM.querySelector('[data-action="decreaseItem"]').addEventListener('click', () => {
+  cartItemDOM.querySelector('[data-action="decreaseItem"]').addEventListener('click', () =>
     decreaseItem(product, cartItemDOM)
-  })
+  )
 
-  cartItemDOM.querySelector('[data-action="removeItem"]').addEventListener('click', () => {
-    cart.forEach(cartItem => {
-      if (cartItem.model === product.model) {
-        removeItem(product, cartItemDOM)
-      }
-    })
-  })
+  cartItemDOM.querySelector('[data-action="removeItem"]').addEventListener('click', () =>
+    removeItem(product, cartItemDOM)
+  )
 }
 
 function insertCartItems() {
