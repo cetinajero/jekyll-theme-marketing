@@ -44,6 +44,10 @@ function removeItem(product, cartItemDOM) {
   cart = cart.filter(cartItem => cartItem.model !== product.model)
   localStorage.setItem('cart', JSON.stringify(cart))
   updateCounter(cart.length)
+
+  if (cart.length < 1) {
+    document.querySelector('.cart-summary').remove()
+  }
 }
 
 function handleActionButtons(cartItemDOM, product) {
@@ -60,6 +64,18 @@ function handleActionButtons(cartItemDOM, product) {
   )
 }
 
+function checkout() {}
+
+function updateCartSummary() {
+  cartDOM.insertAdjacentHTML('afterend', `
+    {% include components/info-cards/cart-summary.html %}
+  `)
+
+  document.querySelector('[data-action="checkoutCart"]').addEventListener('click', () => 
+    checkout()
+  )
+}
+
 function insertCartItems() {
   if (cart.length > 0) {
     cart.forEach(cartItem => {
@@ -71,6 +87,8 @@ function insertCartItems() {
       const cartItemDOM = cartDOM.querySelector(`#cart-item-${product.model}`)
       handleActionButtons(cartItemDOM, product)
     })
+
+    updateCartSummary()
   }
 }
 
