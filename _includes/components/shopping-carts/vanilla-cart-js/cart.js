@@ -12,7 +12,7 @@ function increaseItem(product, cartItemDOM) {
       decreaseButton.classList.remove('text-danger')
       decreaseIcon.classList.remove('fa-trash-alt')
       decreaseIcon.classList.add('fa-minus')
-      localStorage.setItem('cart', JSON.stringify(cart))
+      saveCart()
     }
   })
 }
@@ -22,7 +22,7 @@ function decreaseItem(product, cartItemDOM) {
     if (cartItem.model === product.model) {
       if (cartItem.quantity > 1) {
         cartItemDOM.querySelector('.cart-item-quantity').innerText = --cartItem.quantity
-        localStorage.setItem('cart', JSON.stringify(cart))
+        saveCart()
       } else {
         removeItem(product, cartItemDOM)
       }
@@ -42,7 +42,7 @@ function removeItem(product, cartItemDOM) {
   cartItemDOM.classList.add('remove-cart-item-animation')
   setTimeout(() => cartItemDOM.remove(), 250)
   cart = cart.filter(cartItem => cartItem.model !== product.model)
-  localStorage.setItem('cart', JSON.stringify(cart))
+  saveCart()
   updateCounter(cart.length)
 
   if (cart.length < 1) {
@@ -64,17 +64,30 @@ function handleActionButtons(cartItemDOM, product) {
   )
 }
 
-function checkout() {}
+function saveCart() {
+  localStorage.setItem('cart', JSON.stringify(cart))
+  updateCartTotal()
+}
+
+function updateCartTotal() {
+  let cartTotal = 0;
+  cart.forEach(cartItem => cartTotal += cartItem.quantity * cartItem.price);
+  document.querySelector('#cart-total').innerText = `$${cartTotal}`;
+}
 
 function updateCartSummary() {
   cartDOM.insertAdjacentHTML('afterend', `
     {% include components/info-cards/cart-summary.html %}
   `)
 
+  updateCartTotal()
+
   document.querySelector('[data-action="checkoutCart"]').addEventListener('click', () => 
     checkout()
   )
 }
+
+function checkout() {}
 
 function insertCartItems() {
   if (cart.length > 0) {
