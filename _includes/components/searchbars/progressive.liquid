@@ -3,7 +3,7 @@
     <i class="fas fa-times fa-xs" data-fa-transform="shrink-4 up-17 right-47"></i>
   </a>
   <div class="search">
-    <form action="/search/" method="get" class="form-inline">
+    <form action="{{ '/search/' | relative_url }}" method="get" class="form-inline">
       <input class="search-string form-control" id="mod-search-searchword" type="text" placeholder="{{ site.data.i18n.common.menu[site.lang].search.title }}" name="q" autocomplete="off" />
       <button type="submit" class="btn btn-outline-primary btn-sm">
         <i class="fas fa-search"></i>

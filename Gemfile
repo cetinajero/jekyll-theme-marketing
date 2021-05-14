@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 # Specific version (comment) will be used by RVM
-#ruby=2.5.8
-ruby '2.5.8'
+#ruby=2.7.3
+ruby '2.7.3'
 
 source 'https://rubygems.org'
 gemspec
