@@ -14,6 +14,8 @@ special-offers:
   margin: 0.25
   dpi: 300
 ---
+{% include components/collections/active.liquid %}
+
 {% assign i18n-id = page.url | slugify | remove_first: page.collection | remove_first: '-' %}
 {% if site.links.product[i18n-id].disabled == null %}
   <script src="{{ '/assets/node_modules/jspdf-npm-1.5.3-a947af654e/node_modules/jspdf/dist/jspdf.min.js' | relative_url }}"></script>

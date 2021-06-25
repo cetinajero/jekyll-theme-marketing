@@ -1,0 +1,7 @@
+{% assign active_collections = '' | split: '' %}
+
+{% for collection in site.defaults %}
+  {% if collection.values.published == true %}
+    {% assign active_collections = active_collections | push: collection.scope.type %}
+  {% endif %}
+{% endfor %}
