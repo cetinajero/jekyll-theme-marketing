@@ -1,0 +1,34 @@
+[data-component="parallax/sections"] {
+
+  font: 400 15px/1.8 "Lato", sans-serif;
+
+  .bg-img {
+    position: relative;
+    min-height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .caption {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+
+      .letter-spacing {
+        letter-spacing: 5px;
+      }
+    }
+  }
+
+  .heading-spacing {
+    letter-spacing: 5px;
+    font: 20px "Lato", sans-serif;
+  }
+
+  @include media-breakpoint-down(md) {
+    .bg-img {
+      background-attachment: scroll;
+    }
+  }
+}
