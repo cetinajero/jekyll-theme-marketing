@@ -18,6 +18,26 @@ featured-products:
     text: "Paneled canvas and a colorblocked midsole bring a vibrant edge to your everyday Chucks, while a platform sole gives you a boost. Stand tall."
     href: "/shoes-woman/platform/564995c/"
 
+parallax:
+  - collection: "shoes-woman"
+    img: "motorola"
+    button: "Motorola"
+    url: "/shoes-woman/"
+    style: "text-justify"
+    title: "Parallax Demo"
+    desc: "Parallax scrolling is a web site trend where the background content is moved at a different speed than the foreground content while scrolling. Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, sed posuere mollis ullamcorper libero ante lectus, blandit pellentesque a, magna turpis est sapien duis blandit dignissim. Viverra interdum mi magna mi, morbi sociis. Condimentum dui ipsum consequat morbi, curabitur aliquam pede, nullam vitae eu placerat eget et vehicula. Varius quisque non molestie dolor, nunc nisl dapibus vestibulum at, sodales tincidunt mauris ullamcorper, dapibus pulvinar, in in neque risus odio. Accumsan fringilla vulputate at quibusdam sociis eleifend, aenean maecenas vulputate, non id vehicula lorem mattis, ratione interdum sociis ornare. Suscipit proin magna cras vel, non sit platea sit, maecenas ante augue etiam maecenas, porta porttitor placerat leo."
+
+  - collection: "shoes-man"
+    img: "airbus"
+    button: "Airbus"
+    url: "/shoes-man/"
+    desc: "Scroll up and down to really get the feeling of how Parallax Scrolling works."
+
+  - collection: "pages"
+    img: "hytera"
+    button: "Hytera"
+    url: "/values/"
+
 info-cards:
   - title: "About CONVERSE"
     desc: "Our clothes and sneakers get worn by rebels, rockers, rappers, artists, dreamers, thinkers and originals. We celebrate individuality. If you’re one-of-a-kind, you should try us on."
@@ -76,6 +96,7 @@ brand-panel:
     - { name: "064", href: '/', img: '064' }
     - { name: "068", href: '/', img: '068' }
 ---
+{% include components/collections/active.liquid %}
 {% include components/sliders/revolution-slider.liquid %}
 
 <section class="pt-3">
@@ -92,7 +113,11 @@ brand-panel:
   %}
 </section>
 
-<section class="container-fluid pt-4">
+<section class="pt-3">
+  {% include components/parallax/sections.liquid %}
+</section>
+
+<section class="container-fluid pt-5">
   {% include components/info-cards/card-deck.liquid %}
 </section>
 

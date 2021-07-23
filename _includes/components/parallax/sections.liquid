@@ -1,0 +1,28 @@
+<div data-component="parallax/sections">
+  {% for section in page.parallax %}
+    {% if active_collections contains section.collection %}
+      <div class="bg-img" style="background-image: url('{{ site.amazon-s3 }}/components/parallax/sections/img/{{ section.img }}.png')">
+        <div class="caption text-center">
+          <a href="{{ section.url | relative_url }}" class="text-decoration-none">
+            <span class="bg-dark text-white text-uppercase px-4 py-3 h4 letter-spacing">
+              {{ section.button }}
+            </span>
+          </a>
+        </div>
+      </div>
+
+      {% if section.title or section.desc %}
+        <div class="p-5">
+          {% if section.title %}
+            <h3 class="text-dark text-center text-uppercase heading-spacing">
+              {{ section.title }}
+            </h3>
+          {% endif %}
+          <p class="text-muted {{ section.style | default: 'text-center' }}">
+            {{ section.desc }}
+          </p>
+        </div>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</div>
