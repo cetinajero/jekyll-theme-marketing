@@ -155,7 +155,6 @@ plugins:
 
 # Build settings
 markdown: kramdown
-remote_theme: cetinajero/jekyll-theme-marketing
 plugins:
   - jekyll-remote-theme
 exclude:
