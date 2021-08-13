@@ -25,7 +25,7 @@
         {% assign level-i18n-title = site.data.i18n.catalog[page.collection][site.lang][level-i18n-id].title %}
         {% assign page-commercial-downcase = page.commercial | downcase | replace: ' ', '-' %}
         {% unless page.categories[level] == page-commercial-downcase %}
-          <li class="breadcrumb-item {{ level-i18n-id }} pl-1"><a href="{{ level-url }}">{{ level-i18n-title | default: page.categories[level] | replace: '-', ' ' | capitalize }}</a></li>
+          {% assign category-capitalized = page.categories[level] | replace: '-', ' ' | capitalize %}<li class="breadcrumb-item {{ level-i18n-id }} pl-1"><a href="{{ level-url }}">{{ level-i18n-title | default: category-capitalized }}</a></li>
         {% endunless %}
       {% endif %}
     {% endfor %}
