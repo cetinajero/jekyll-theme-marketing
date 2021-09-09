@@ -255,7 +255,7 @@ GEM
       ast (~> 2.4.1)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
-    power_assert (2.0.0)
+    power_assert (2.0.1)
     public_suffix (4.0.6)
     racc (1.5.2)
     rainbow (3.0.0)
@@ -295,7 +295,7 @@ GEM
       unf (~> 0.1.4)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
-    test-unit (3.4.4)
+    test-unit (3.4.5)
       power_assert
     thread_safe (0.3.6)
     typhoeus (1.4.0)
