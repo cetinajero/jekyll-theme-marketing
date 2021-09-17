@@ -21,6 +21,9 @@ links:
   featured-product:
     563512f:
       disabled: true
+  videos:
+    Converse attitude: # Disables a tab from the videos section
+      disabled: true
 product:
   price:
     disabled: # true # Disable the prices for the whole site
