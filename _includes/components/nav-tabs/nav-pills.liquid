@@ -38,11 +38,13 @@
       {{ tab.name | downcase | replace: ' ', '-' }}
     {% endcapture %}
 
-    <div class="tab-pane fade {{ tab_class }}" id="{{ tab_id | strip }}" role="tabpanel" aria-labelledby="{{ tab_id | strip | append: '-tab' }}">
-      <div class="container">
-        {% include {{ tab.component | prepend: 'components/' | append: '.liquid' }} params=tab.params vertical-tabs=tab.params.vertical-tabs %}
+    {% if site.links.videos[tab.name].disabled == null %}
+      <div class="tab-pane fade {{ tab_class }}" id="{{ tab_id | strip }}" role="tabpanel" aria-labelledby="{{ tab_id | strip | append: '-tab' }}">
+        <div class="container">
+          {% include {{ tab.component | prepend: 'components/' | append: '.liquid' }} params=tab.params vertical-tabs=tab.params.vertical-tabs %}
+        </div>
       </div>
-    </div>
+    {% endif %}
 
   {% endfor %}
 </div>
