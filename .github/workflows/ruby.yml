@@ -1,0 +1,25 @@
+name: Ruby build
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout source code
+      uses: actions/checkout@v2
+
+    - name: Set up Ruby environment
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.7
+        bundler-cache: true
+
+    - name: Run Ruby tests
+      run: |
+        bundle exec rake test:test
+        bundle exec rubocop
+
+    - name: Run HTML tests
+      run: bundle exec rake test:html
