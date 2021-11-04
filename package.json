@@ -11,7 +11,7 @@
     "@fortawesome/fontawesome-free-brands": "latest",
     "@fortawesome/fontawesome-free-regular": "latest",
     "@fortawesome/fontawesome-free-solid": "latest",
-    "bootstrap": "^4.5.0",
+    "bootstrap": "^4.6.1",
     "firebase": "latest",
     "flag-icon-css": "latest",
     "isotope-layout": "latest",
