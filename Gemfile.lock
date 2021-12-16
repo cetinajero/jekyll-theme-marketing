@@ -295,7 +295,7 @@ GEM
       unf (~> 0.1.4)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
-    test-unit (3.5.1)
+    test-unit (3.5.2)
       power_assert
     thread_safe (0.3.6)
     typhoeus (1.4.0)
@@ -323,7 +323,7 @@ DEPENDENCIES
   test-unit
 
 RUBY VERSION
-   ruby 2.7.4p191
+   ruby 2.7.5p203
 
 BUNDLED WITH
    2.1.4
