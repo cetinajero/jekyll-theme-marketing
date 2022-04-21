@@ -18,7 +18,7 @@ module Content
       new_content = +data << old_content
     end
 
-    File.open(file, 'w') { |f| f.write new_content }
+    File.write(file, new_content)
   end
 
   def replace(file, old, new)
