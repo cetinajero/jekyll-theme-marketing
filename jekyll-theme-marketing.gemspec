@@ -10,7 +10,8 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/cetinajero/jekyll-theme-marketing'
   spec.license       = 'MIT'
 
-  spec.metadata['plugin_type'] = 'theme'
+  spec.metadata['plugin_type']           = 'theme'
+  spec.metadata['rubygems_mfa_required'] = 'true'
 
   all_files          = `git ls-files -z`.split("\x0")
   spec.files         = all_files.select do |f|

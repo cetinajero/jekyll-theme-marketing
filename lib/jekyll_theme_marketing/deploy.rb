@@ -22,11 +22,11 @@ module Deploy
 
       Git.checkout_new_branch "release/v#{new_version}"
       create_release_commit old_version, new_version, ARGV[1]
-      Git.push 'origin', "release/v#{new_version}", '--set-upstream'
-      Git.push 'origin', "v#{new_version}" # Push tagged version
 
+      publish_to_github   new_version
       publish_to_rubygems new_version
-    else puts 'Usage: rake deploy:gem [ major | minor | patch ]'
+    else
+      puts 'Usage: rake deploy:gem [ major | minor | patch ]'
     end
   end
 
@@ -37,6 +37,11 @@ module Deploy
     update_npm old, new
     Git.add
     system "bump #{type} --tag"
+  end
+
+  def publish_to_github(new_version)
+    Git.push 'origin', "release/v#{new_version}", '--set-upstream'
+    Git.push 'origin', "v#{new_version}" # Push tagged version
   end
 
   def publish_to_rubygems(new_version)
