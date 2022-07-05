@@ -16,7 +16,8 @@ $footer-bottom-font-color: {{ site.css.footer.bottom.font-color | default: "#7f7
 
 // Define bootstrap variables
 $theme-colors: (
-  "primary": {{ site.css.bootstrap.primary | default: site.css.menu.font-color }}
+  "primary": {{ site.css.bootstrap.primary | default: site.css.menu.font-color }},
+  "whatsapp": #25D366
 );
 
 // Import bootstrap partials
@@ -61,6 +62,7 @@ $flag-icon-css-path: '../node_modules/flag-icon-csss/flags';
 @import "components/breadcrumbs/bootstrap";
 @import "components/carousels/infinite";
 @import "components/carousels/slick";
+@import "components/chats/whatsapp";
 @import "components/contact-cards/location";
 @import "components/contact-cards/phone-card";
 @import "components/footers/vg_progressive";

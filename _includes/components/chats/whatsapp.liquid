@@ -1,0 +1,10 @@
+{% if site.whatsapp.phone %}
+  <div class="fixed-bottom" data-component="chats/whatsapp">
+    <a class="text-whatsapp" href="//wa.me/{{ site.whatsapp.phone }}" target="_blank">
+      <span class="fa-layers fa-fw fa-3x">
+        <i class="fas fa-circle fa-lg"></i>
+        <i class="fab fa-whatsapp fa-sm text-white" data-fa-transform="right-0.7"></i>
+      </span>
+    </a>
+  </div>
+{% endif %}
