@@ -52,7 +52,7 @@ module Customers
   end
 
   def delete_default_config
-    File.delete(JEKYLL_CONFIG) if File.exist?(JEKYLL_CONFIG)
+    FileUtils.rm_rf(JEKYLL_CONFIG)
   end
 
   def activate_customers_config(path)
