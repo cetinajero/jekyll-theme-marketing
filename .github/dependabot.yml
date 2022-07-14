@@ -4,12 +4,12 @@ updates:
   - package-ecosystem: bundler
     directory: "/"
     schedule:
-      interval: weekly
-      day: thursday
+      interval: monthly
+      day: thursday # Used only on weekly interval
       time: "09:00"
       timezone: America/Chihuahua
     open-pull-requests-limit: 10
-    reviewers: ["mlopez-grupopv"]
+    reviewers: ["cetinajero"]
     labels:
       - dependencies
       - ruby
@@ -17,8 +17,8 @@ updates:
   - package-ecosystem: npm
     directory: "/"
     schedule:
-      interval: weekly
-      day: thursday
+      interval: monthly
+      day: thursday # Used only on weekly interval
       time: "09:00"
       timezone: America/Chihuahua
     open-pull-requests-limit: 10
