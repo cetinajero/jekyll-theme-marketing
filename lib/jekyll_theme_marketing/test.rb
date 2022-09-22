@@ -54,7 +54,8 @@ module Test
     default_options = {
       assume_extension: true,
       error_sort: :desc,
-      url_ignore: IGNORED_URLS
+      url_ignore: IGNORED_URLS,
+      typhoeus: { headers: { 'Referer' => 'http://localhost:4000/' } }
     }
 
     TASKS_OPTIONS.each do |key, value|
