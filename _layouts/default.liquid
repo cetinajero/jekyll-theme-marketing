@@ -4,13 +4,7 @@
 
   <head>
 
-    {% if site.title == 'Grupo PV' %}
-      {% seo %}
-    {% else %}
-      <title>{{ page.title }}</title>
-      {% seo title=false %}
-    {% endif %}
-
+    {% seo %}
     {% include components/meta/progressive.liquid %}
     {% include components/scripts/head.js %}
     {% include components/firebase/sdk.liquid %}
