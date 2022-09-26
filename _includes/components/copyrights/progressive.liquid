@@ -16,6 +16,17 @@
     <p>{{ site.data.i18n.common.footer[site.lang].price_changes.title }}</p>
     {% if site.original %}
       <p>{{ site.data.i18n.common.footer[site.lang].privacy.title }}</p>
+    {% else %}
+      <span class="lead">
+        © Copyright
+        <span id="copyright-year"></span>
+        <a class="text-decoration-none" href="{{ site.url }}">
+          {{ site.title }}
+        </a>
+      </span>
+      <script>
+        document.getElementById("copyright-year").innerHTML = new Date().getFullYear();
+      </script>
     {% endif %}
   </div>
 </div>
