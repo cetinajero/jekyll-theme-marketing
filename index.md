@@ -100,6 +100,10 @@ brand-panel:
 {% include components/sliders/revolution-slider.liquid %}
 
 <section class="pt-3">
+  {% include components/info-cards/customers-intro.liquid %}
+</section>
+
+<section class="pt-3">
   {% include components/product-cards/featured-product.liquid %}
 </section>
 
