@@ -1,0 +1,24 @@
+{%- if site.description -%}
+  <div class="container">
+
+    <hr>
+
+    <div class="row">
+      <div class="col-md-7">
+        <h3>
+          {{ site.title }}
+        </h3>
+        <p class="lead text-justify">
+          {{ site.description }}
+        </p>
+      </div>
+
+      <div class="col d-flex justify-content-center align-items-center m-4">
+        {% include components/logos/progressive.liquid %}
+      </div>
+    </div>
+
+    <hr>
+
+  </div>
+{%- endif -%}
