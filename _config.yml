@@ -20,6 +20,16 @@ whatsapp:
   phone: +526141802929
 exchange-rates:
   usd: true
+components:
+  header: three-rows # Defines the header component
+  info-cards:
+    customers-intro: enabled # Enables the customers description @ the landing page
+  meta:
+    favicon: enabled # Enables custom favicon
+  ribbon: # disabled # Disable the whole component
+    shoes-man: disabled # Disable a whole collection
+    high-565396f3: disabled # Disable only on a product
+  shopping-cart: enabled
 links:
   featured-product:
     563512f:
@@ -30,14 +40,6 @@ links:
 product:
   price:
     disabled: # true # Disable the prices for the whole site
-components:
-  header: three-rows # Defines the header component
-  meta:
-    favicon: enabled # Enables custom favicon
-  ribbon: # disabled # Disable the whole component
-    shoes-man: disabled # Disable a whole collection
-    high-565396f3: disabled # Disable only on a product
-  shopping-cart: enabled
 special-offers:
   customers: true
 social-media:
