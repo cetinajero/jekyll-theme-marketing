@@ -80,10 +80,17 @@ function searchResults(query) {
     fuzzyMatchQuery(query, 1),
     fuzzyMatchQuery(query, 2),
   ];
+  console.log(`Indexed ${documents.length} pages with ${Object.keys(idx.fieldVectors).length} fields`)
 
   for (var i = 0; i < querys.length; i++) {
     var results = idx.search(querys[i]); // Get lunr to perform a search
-    if (results.length) { console.log(`${querys[i]}`); break; }
+    if (results.length) {
+      console.log(`'${querys[i]}' found ${results.length} result(s)`)
+      console.log(results)
+      break;
+    } else {
+      console.log(`'${querys[i]}' didn't found results`)
+    }
   }
 
   setTimeout(function(){
