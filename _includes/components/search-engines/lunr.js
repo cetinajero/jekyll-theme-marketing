@@ -1,7 +1,7 @@
 function getQueryParamsVariable(variable) {
-  const urlParams = new URLSearchParams(window.location.search);
-  const query = urlParams.get(variable) ? urlParams.get(variable) : '';
-  return decodeURIComponent(query.replace(/\+/g, ' '));
+  const urlParams = new URLSearchParams(window.location.search)
+  const query = urlParams.get(variable) ? urlParams.get(variable) : ''
+  return decodeURIComponent(query.replace(/\+/g, ' '))
 }
 
 function generateData(){
@@ -33,14 +33,14 @@ function generateData(){
         {% endif %}
       {% endfor %}
     {% endfor %}
-  ];
+  ]
 }
 
 function excludedDocs(id) {
   var excludedIds = [
     "sitemap",
   ]
-  return excludedIds.includes(id);
+  return excludedIds.includes(id)
 }
 
 function indexData(documents) {
@@ -64,59 +64,67 @@ function indexData(documents) {
 }
 
 function wildcardsQuery(query) {
-  return `*${query.replace(' ', '* *')}*`;
+  return `*${query.replace(' ', '* *')}*`
 }
 
 function fuzzyMatchQuery(query, distance) {
-  return query.replace(' ', `~${distance} `) + `~${distance}`;
+  return query.replace(' ', `~${distance} `) + `~${distance}`
 }
 
 function searchResults(query) {
-  var documents = generateData();
-  var idx = indexData(documents);
+  var documents = generateData()
+  var idx = indexData(documents)
   var querys = [
     query,
     wildcardsQuery(query),
     fuzzyMatchQuery(query, 1),
     fuzzyMatchQuery(query, 2),
-  ];
+  ]
+  console.log(`Indexed ${documents.length} pages with ${Object.keys(idx.fieldVectors).length} fields`)
 
   for (var i = 0; i < querys.length; i++) {
-    var results = idx.search(querys[i]); // Get lunr to perform a search
-    if (results.length) { console.log(`${querys[i]}`); break; }
+    var results = idx.search(querys[i]) // Get lunr to perform a search
+    if (results.length) {
+      console.log(`'${querys[i]}' found ${results.length} result(s)`)
+      console.log(results)
+      break
+    } else {
+      console.log(`'${querys[i]}' didn't found results`)
+    }
   }
 
   setTimeout(function(){
-    displayResults(documents, results); // We'll write this in the next section
-    document.querySelector(".spinner-border").classList.add('d-none');
-  }, 500);
+    displayResults(documents, results) // We'll write this in the next section
+    document.querySelector(".spinner-border").classList.add('d-none')
+  }, 500)
 }
 
 function displayResults(documents, results) {
-  const searchResults = document.getElementById('search-results');
+  const searchResults = document.getElementById('search-results')
   if (results.length) { // Are there any results?
-    var appendString = '';
+    var appendString = ''
     for (var i = 0; i < results.length; i++) {  // Iterate over the results
-      if ( i >= 50 ) { break; }
-      var item = documents.find(x => x.id === results[i].ref);
-      appendString += `{% include components/info-cards/search-results.html %}`;
+      if ( i >= 50 ) { break }
+      var item = documents.find(x => x.id === results[i].ref)
+      appendString += `{% include components/info-cards/search-results.html %}`
     }
-    searchResults.innerHTML = appendString;
+    searchResults.innerHTML = appendString
   } else {
-    searchResults.innerHTML = '<li>No se encontraron resultados</li>';
+    searchResults.innerHTML = '<li>No se encontraron resultados</li>'
   }
 }
 
 function startApp() {
-  document.getElementById("search").classList.add("d-none");
-  const query = getQueryParamsVariable('q');
+  document.getElementById("search").classList.add("d-none")
+  const query = getQueryParamsVariable('q')
   if (query) {
-    document.getElementById('search-box').setAttribute("value", query);
-    document.getElementById('mod-search-searchword').setAttribute("value", query);
-    searchResults(query);
+    document.getElementById('search-box').setAttribute("value", query)
+    document.getElementById('mod-search-searchword').setAttribute("value", query)
+    indexData([]) // initialize index
+    searchResults(query)
   } else {
-    document.querySelector(".spinner-border").classList.add('d-none');
+    document.querySelector(".spinner-border").classList.add('d-none')
   }
 }
 
-startApp();
+startApp()
