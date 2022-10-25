@@ -120,6 +120,7 @@ function startApp() {
   if (query) {
     document.getElementById('search-box').setAttribute("value", query)
     document.getElementById('mod-search-searchword').setAttribute("value", query)
+    indexData([]) // initialize index
     searchResults(query)
   } else {
     document.querySelector(".spinner-border").classList.add('d-none')
