@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang |  slice: 0,2 | default: site.lang |  slice: 0,2 | default: "en" }}" dir="ltr">
+  <!-- Jekyll theme: https://github.com/cetinajero/jekyll-theme-marketing -->
+
+  <head>
+    {% seo %}
+    {% include components/meta/progressive.liquid %}
+    {% include components/scripts/head.liquid %}
+    {% include components/firebase/sdk.liquid %}
+    {% include components/fonts/google.html %}
+    {% include components/stylesheets/progressive.liquid %}
+    {% include components/analytics/google.js %}
+  </head>
+
+  <body>
+    {{ content }}
+    {% include components/scripts/body.liquid %}
+  </body>
+
+</html>
