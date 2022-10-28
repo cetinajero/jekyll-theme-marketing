@@ -20,6 +20,8 @@ $theme-colors: (
   "whatsapp": #25D366
 );
 
+$enable-gradients: true;
+
 // Import bootstrap partials
 @import "../assets/node_modules/bootstrap-virtual-0e210ad96c/node_modules/bootstrap/scss/functions";
 @import "../assets/node_modules/bootstrap-virtual-0e210ad96c/node_modules/bootstrap/scss/variables";

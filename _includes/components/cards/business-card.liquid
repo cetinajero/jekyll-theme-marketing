@@ -1,0 +1,38 @@
+<div class="row h-100" data-component="cards/business-card">
+
+  <div class="col-sm">
+    <div class="d-flex justify-content-center align-items-center bg-gradient-primary text-center text-white shadow-lg h-100 w-100">
+      <div>
+        <div class="row mb-4">
+          <div class="col-2"></div>
+          <div class="col">
+            <img class="rounded-circle border border-2 border-secondary" src="{{ site.amazon-s3 }}/components/cards/business-card/img/{{ page.employee.id }}.png" alt="{{ page.title }}">
+          </div>
+          <div class="col-2"></div>
+        </div>
+        <div class="h3 text-white">{{ page.title }}</div>
+        <div class="text-uppercase">{{ page.employee.position }}</div>
+        <div>{{ site.title }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm d-flex justify-content-center align-items-center py-5">
+    <ul class="list-unstyled">
+      {% for field in page.employee.contact-fields %}
+        <li class="media my-2">
+          <div class="media-body">
+            <i class="fas fa-{{ field.icon }} text-muted" data-fa-transform="down-23 left-{{ field.position }}"></i>
+            <h5 class="mt-0 mb-1">{{ field.name }}</h5>
+            <p class="text-muted">
+              <a href="{% case field.type %}{% when "phone" %}tel:{% when "email" %}mailto:{% when "link" %}https://{% endcase %}{{ field.value }}">
+                {{ field.value }}
+              </a>
+            </p>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+</div>
