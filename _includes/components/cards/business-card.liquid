@@ -18,22 +18,25 @@
   </div>
 
   <div class="col-sm d-flex justify-content-center align-items-center py-5">
-    <ul class="list-unstyled">
-      {% for field in page.employee.contact-fields %}
-        <li class="media my-2">
-          <div class="media-body">
-            <i class="fas fa-{{ field.icon }} text-muted" data-fa-transform="down-23 left-{{ field.position }}"></i>
-            <h5 class="mt-0 mb-1">{{ field.name }}</h5>
-            <p class="text-muted">
-              <a href="{% case field.type %}{% when "phone" %}tel:{% when "email" %}mailto:{% when "link" %}https://{% endcase %}{{ field.value }}">
-                {{ field.value }}
-              </a>
-            </p>
-          </div>
-        </li>
-      {% endfor %}
-    </ul>
-    <img id="qr-code" alt="{{ page.title }}">
+    <div>
+      <ul class="list-unstyled">
+        {% for field in page.employee.contact-fields %}
+          <li class="media my-2">
+            <div class="media-body">
+              <i class="fas fa-{{ field.icon }} text-muted" data-fa-transform="down-23 left-{{ field.position }}"></i>
+              <h5 class="mt-0 mb-1">{{ field.name }}</h5>
+              <p class="text-muted">
+                <a href="{% case field.type %}{% when "phone" %}tel:{% when "email" %}mailto:{% when "link" %}https://{% endcase %}{{ field.value }}">
+                  {{ field.value }}
+                </a>
+              </p>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+      <hr class="my-5">
+      <img id="qr-code" class="border border-2 rounded-lg" alt="Código QR">
+    </div>
     <script>
       {% include components/generators/qr/qrious.js url=page.url %}
     </script>
