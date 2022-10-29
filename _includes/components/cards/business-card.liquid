@@ -33,6 +33,10 @@
         </li>
       {% endfor %}
     </ul>
+    <img id="qr-code" alt="{{ page.title }}">
+    <script>
+      {% include components/generators/qr/qrious.js url=page.url %}
+    </script>
   </div>
 
 </div>
