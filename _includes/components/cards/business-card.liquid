@@ -1,0 +1,61 @@
+<div class="row h-100 mx-0" data-component="cards/business-card">
+
+  <div class="col-sm px-0">
+    <div class="d-flex justify-content-center align-items-center background text-center text-white shadow-lg h-100 w-100">
+      <div class="py-4">
+        <div class="row mx-0 mb-4">
+          <div class="col-2"></div>
+          <div class="col">
+            <img class="rounded-circle border border-2 border-secondary" src="{{ site.amazon-s3 }}/components/cards/business-card/img/{{ page.employee.id }}.png" alt="{{ page.title }}">
+          </div>
+          <div class="col-2"></div>
+        </div>
+        <div class="h3 text-white">{{ page.title }}</div>
+        <div class="text-uppercase">{{ page.employee.position }}</div>
+        <div>{{ site.title }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm d-flex justify-content-center align-items-center px-0 py-5">
+    <div>
+      <ul class="list-unstyled">
+        {% for field in page.employee.contact-fields %}
+          <li class="media my-2">
+            <div class="media-body">
+              <i class="fas fa-{{ field.icon }} text-muted" data-fa-transform="down-23 left-{{ field.position }}"></i>
+              <h5 class="mt-0 mb-1">{{ field.label }}</h5>
+              <p class="text-muted">
+                <a href="{% case field.type %}{% when "phone" %}tel:{% when "email" %}mailto:{% when "link" %}https://{% endcase %}{{ page.employee[field.id] }}">
+                  {{ page.employee[field.id] }}
+                </a>
+              </p>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+      <hr class="my-5">
+      <img id="qr-code" class="border border-2 rounded-lg" alt="Código QR" data-proofer-ignore>
+    </div>
+    <script>
+      {% include components/generators/qr/qrious.js url=page.url %}
+    </script>
+  </div>
+
+</div>
+
+{% include components/buttons/fixed-bottom.liquid
+ icon = "fas fa-user-plus fa-xs"
+ icon-transform = "right-1.5 shrink-5"
+ %}
+
+<script type="text/javascript">
+  {% include components/generators/vcard/vcard.js
+     anchor = '[data-component="buttons/fixed-bottom"] a'
+     name = page.title
+     position = page.employee.position
+     mobile = page.employee.mobile
+     work = page.employee.work
+     email = page.employee.email
+  %}
+</script>
