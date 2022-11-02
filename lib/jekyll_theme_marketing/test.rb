@@ -17,7 +17,7 @@ module Test
 
   def html
     puts '## Skipping rel="canonical" from jekyll-seo-tag gem'
-    htmlproofer_ignore_canonical(%r{/>}, "data-proofer-ignore \/>")
+    htmlproofer_ignore_canonical(%r{/>}, 'data-proofer-ignore />')
 
     puts '## Running: bundle exec jekyll build --trace'
     system 'bundle exec jekyll build --trace'
