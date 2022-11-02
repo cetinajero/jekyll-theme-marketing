@@ -89,9 +89,8 @@
             return str
         },
         export: function(card, name, force) {
-            var a = document.createElement('a')
+            var a = document.querySelector('{{ include.anchor }}')
             a.download = name + ".vcf"
-            a.textContent = name
 
             if(Blob) {
                 var blob = new Blob([this.dump(card)], {"type": "text/vcard"})
@@ -187,4 +186,3 @@ businessvCard.add(vCard.Entry.ORGANIZATION, "{{ site.title }}")
 businessvCard.add(vCard.Entry.URL, "{{ site.url }}")
 
 var link = vCard.export(businessvCard, "{{ include.name }}", false) // use parameter true to force download
-document.body.appendChild(link)
