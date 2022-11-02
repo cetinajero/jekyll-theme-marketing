@@ -1,0 +1,6 @@
+[data-component="cards/business-card"] {
+  .background {
+    background-image: url($amazon-s3 + '/components/cards/business-card/img/background.png');
+    background-size: cover;
+  }
+}
