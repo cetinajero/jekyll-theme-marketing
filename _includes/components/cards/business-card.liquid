@@ -24,10 +24,10 @@
           <li class="media my-2">
             <div class="media-body">
               <i class="fas fa-{{ field.icon }} text-muted" data-fa-transform="down-23 left-{{ field.position }}"></i>
-              <h5 class="mt-0 mb-1">{{ field.name }}</h5>
+              <h5 class="mt-0 mb-1">{{ field.label }}</h5>
               <p class="text-muted">
-                <a href="{% case field.type %}{% when "phone" %}tel:{% when "email" %}mailto:{% when "link" %}https://{% endcase %}{{ field.value }}">
-                  {{ field.value }}
+                <a href="{% case field.type %}{% when "phone" %}tel:{% when "email" %}mailto:{% when "link" %}https://{% endcase %}{{ page.employee[field.id] }}">
+                  {{ page.employee[field.id] }}
                 </a>
               </p>
             </div>
@@ -43,3 +43,13 @@
   </div>
 
 </div>
+
+<script type="text/javascript">
+  {% include components/generators/vcard/vcard.js
+     name = page.title
+     position = page.employee.position
+     mobile = page.employee.mobile
+     work = page.employee.work
+     email = page.employee.email
+  %}
+</script>
