@@ -1,4 +1,6 @@
 (function(context) {
+    const charset = 'utf-8'
+
     var version = {
         "TWO": "2.1",
         "THREE": "3.0",
@@ -57,6 +59,15 @@
             "JPEG": "JPEG;ENCODING=BASE64",
             "OTHER":"OTHER"
         },
+        encoding: function(e) {
+            keys = [
+                'N',
+                'FN',
+                'TITLE',
+                'ORG'
+            ]
+            return keys.includes(e) ? `;CHARSET=${charset}:` : ':'
+        },
         create: function(version) {
             for(var key in this.Version) {
                 if(this.Version[key] === version)
@@ -76,7 +87,7 @@
                 if(Object.prototype.toString.call(entry) === "[object Array]") {
                     for(var i = 0, l = entry.length; i < l; i++) {
                         var e = entry[i]
-                        str += key.toUpperCase() + (e.type ? ";TYPE=" + e.type.toUpperCase() + ":" : ":") + e.value + "\n"
+                        str += key.toUpperCase() + (e.type ? ";TYPE=" + e.type.toUpperCase() + ":" : this.encoding(key)) + e.value + "\n"
                     }
                 } else if(typeof entry === "object") {
                     str += key.toUpperCase() + (entry.type ? ";TYPE=" + entry.type.toUpperCase() + ":" : ":") + entry.value + "\n"
@@ -176,37 +187,20 @@
     context.vCard = vCard
 })(this)
 
-function toDataURL(url, callback) {
-  var xhr = new XMLHttpRequest();
-  xhr.onload = function() {
-    var reader = new FileReader();
-    reader.onloadend = function() {
-      callback(reader.result);
-    }
-    reader.readAsDataURL(xhr.response);
-  };
-  xhr.open('GET', url);
-  xhr.responseType = 'blob';
-  xhr.send();
-}
+const contactFullName = "{{ include.name }}"
+const contactLastName = contactFullName.split(" ").slice(-1)
+const contactGivenName = contactFullName.split(" ").slice(0, -1).join(" ")
+const logoBlop = "{% include components/generators/vcard/logo.js %}"
 
-toDataURL('{{ include.photo | strip }}', function(dataUrl) {
-  photoBlob = dataUrl.split(',').slice(-1).toString()
-  const contactFullName = "{{ include.name }}"
-  const contactLastName = contactFullName.split(" ").slice(-1)
-  const contactGivenName = contactFullName.split(" ").slice(0, -1).join(" ")
-  
-  var businessvCard = vCard.create(vCard.Version.FOUR)
-  businessvCard.addName(contactGivenName, contactLastName, '')
-  businessvCard.add(vCard.Entry.FORMATTEDNAME, contactFullName)
-  businessvCard.add(vCard.Entry.TITLE, "{{ include.position }}")
-  businessvCard.add(vCard.Entry.PHONE, "{{ include.mobile }}", vCard.Type.CELL)
-  businessvCard.add(vCard.Entry.PHONE, "{{ include.work }}", vCard.Type.WORK)
-  businessvCard.add(vCard.Entry.EMAIL, "{{ include.email }}", vCard.Type.WORK)
-  businessvCard.add(vCard.Entry.ORGANIZATION, "{{ site.title }}")
-  businessvCard.add(vCard.Entry.URL, "{{ site.url }}")
-  businessvCard.add(vCard.Entry.PHOTO, photoBlob, vCard.Type.JPEG)
-  
-  vCard.export(businessvCard, contactFullName, false)
-})
+var businessvCard = vCard.create(vCard.Version.FOUR)
+businessvCard.addName(contactGivenName, contactLastName, '')
+businessvCard.add(vCard.Entry.FORMATTEDNAME, contactFullName)
+businessvCard.add(vCard.Entry.TITLE, "{{ include.position }}")
+businessvCard.add(vCard.Entry.PHONE, "{{ include.mobile }}", vCard.Type.CELL)
+businessvCard.add(vCard.Entry.PHONE, "{{ include.work }}", vCard.Type.WORK)
+businessvCard.add(vCard.Entry.EMAIL, "{{ include.email }}", vCard.Type.WORK)
+businessvCard.add(vCard.Entry.ORGANIZATION, "{{ site.title }}")
+businessvCard.add(vCard.Entry.URL, "{{ site.url }}")
+businessvCard.add(vCard.Entry.PHOTO, logoBlop, vCard.Type.JPEG)
 
+vCard.export(businessvCard, contactFullName, false)

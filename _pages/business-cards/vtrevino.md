@@ -1,10 +1,10 @@
 ---
 layout: business-card
-permalink: /tarjetas-de-presentacion/jperez/
-title: Juan Luis Pérez
+permalink: /tarjetas-de-presentacion/vtrevino/
+title: Víctor Alejandro Treviño
 employee:
   id: "099"
-  position: Desarrollo web
+  position: Ingeniería
   mobile: +52 614 123 4567
   whatsapp: wa.me/+526141234567
   work: +52 55 5000 5500
