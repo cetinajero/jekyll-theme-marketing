@@ -1,7 +1,7 @@
 ---
 layout: business-card
 permalink: /tarjetas-de-presentacion/jperez/
-title: Juan Perez
+title: Juan Luis Pérez
 employee:
   id: "099"
   position: Desarrollo web

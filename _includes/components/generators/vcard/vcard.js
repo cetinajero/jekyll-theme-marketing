@@ -175,9 +175,13 @@
     context.vCard = vCard
 })(this)
 
+const contactFullName = "{{ include.name }}"
+const contactLastName = contactFullName.split(" ").slice(-1)
+const contactGivenName = contactFullName.split(" ").slice(0, -1).join(" ")
+
 var businessvCard = vCard.create(vCard.Version.FOUR)
-businessvCard.add(vCard.Entry.NAME, "{{ include.name }}")
-businessvCard.add(vCard.Entry.FORMATTEDNAME, "{{ include.name }}")
+businessvCard.addName(contactGivenName, contactLastName, '')
+businessvCard.add(vCard.Entry.FORMATTEDNAME, contactFullName)
 businessvCard.add(vCard.Entry.TITLE, "{{ include.position }}")
 businessvCard.add(vCard.Entry.PHONE, "{{ include.mobile }}", vCard.Type.CELL)
 businessvCard.add(vCard.Entry.PHONE, "{{ include.work }}", vCard.Type.WORK)
@@ -185,4 +189,4 @@ businessvCard.add(vCard.Entry.EMAIL, "{{ include.email }}", vCard.Type.WORK)
 businessvCard.add(vCard.Entry.ORGANIZATION, "{{ site.title }}")
 businessvCard.add(vCard.Entry.URL, "{{ site.url }}")
 
-var link = vCard.export(businessvCard, "{{ include.name }}", false) // use parameter true to force download
+var link = vCard.export(businessvCard, contactFullName, false) // use parameter true to force download
