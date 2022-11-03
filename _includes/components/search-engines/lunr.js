@@ -38,7 +38,9 @@ function generateData(){
 
 function excludedDocs(id) {
   var excludedIds = [
-    "sitemap",
+    {% for exclusion in page.exclude %}
+      "{{ exclusion }}",
+    {% endfor %}
   ]
   return excludedIds.includes(id)
 }
