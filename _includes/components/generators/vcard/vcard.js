@@ -33,7 +33,7 @@
             "NICKNAME": {"version": [version.THREE, version.FOUR], "key": "NICKNAME"},
             "NOTE": {"version": [version.TWO, version.THREE, version.FOUR], "key": "NOTE"},
             "ORGANIZATION": {"version": [version.TWO, version.THREE, version.FOUR], "key": "ORG"},
-            // TODO: PHOTO
+            "PHOTO": {"version": [version.TWO, version.THREE, version.FOUR], "key": "PHOTO"},
             "PRODID": {"version": [version.THREE, version.FOUR], "key": "PRODID"},
             "PROFILE": {"version": [version.TWO, version.THREE], "key": "PROFILE"},
             "RELATED": {"version": [version.FOUR], "key": "RELATED"},
@@ -54,6 +54,7 @@
             "WORK": "WORK",
             "CELL": "CELL",
             "MAIN": "MAIN",
+            "JPEG": "JPEG;ENCODING=BASE64",
             "OTHER":"OTHER"
         },
         create: function(version) {
@@ -175,18 +176,37 @@
     context.vCard = vCard
 })(this)
 
-const contactFullName = "{{ include.name }}"
-const contactLastName = contactFullName.split(" ").slice(-1)
-const contactGivenName = contactFullName.split(" ").slice(0, -1).join(" ")
+function toDataURL(url, callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.onload = function() {
+    var reader = new FileReader();
+    reader.onloadend = function() {
+      callback(reader.result);
+    }
+    reader.readAsDataURL(xhr.response);
+  };
+  xhr.open('GET', url);
+  xhr.responseType = 'blob';
+  xhr.send();
+}
 
-var businessvCard = vCard.create(vCard.Version.FOUR)
-businessvCard.addName(contactGivenName, contactLastName, '')
-businessvCard.add(vCard.Entry.FORMATTEDNAME, contactFullName)
-businessvCard.add(vCard.Entry.TITLE, "{{ include.position }}")
-businessvCard.add(vCard.Entry.PHONE, "{{ include.mobile }}", vCard.Type.CELL)
-businessvCard.add(vCard.Entry.PHONE, "{{ include.work }}", vCard.Type.WORK)
-businessvCard.add(vCard.Entry.EMAIL, "{{ include.email }}", vCard.Type.WORK)
-businessvCard.add(vCard.Entry.ORGANIZATION, "{{ site.title }}")
-businessvCard.add(vCard.Entry.URL, "{{ site.url }}")
+toDataURL('{{ include.photo | strip }}', function(dataUrl) {
+  photoBlob = dataUrl.split(',').slice(-1).toString()
+  const contactFullName = "{{ include.name }}"
+  const contactLastName = contactFullName.split(" ").slice(-1)
+  const contactGivenName = contactFullName.split(" ").slice(0, -1).join(" ")
+  
+  var businessvCard = vCard.create(vCard.Version.FOUR)
+  businessvCard.addName(contactGivenName, contactLastName, '')
+  businessvCard.add(vCard.Entry.FORMATTEDNAME, contactFullName)
+  businessvCard.add(vCard.Entry.TITLE, "{{ include.position }}")
+  businessvCard.add(vCard.Entry.PHONE, "{{ include.mobile }}", vCard.Type.CELL)
+  businessvCard.add(vCard.Entry.PHONE, "{{ include.work }}", vCard.Type.WORK)
+  businessvCard.add(vCard.Entry.EMAIL, "{{ include.email }}", vCard.Type.WORK)
+  businessvCard.add(vCard.Entry.ORGANIZATION, "{{ site.title }}")
+  businessvCard.add(vCard.Entry.URL, "{{ site.url }}")
+  businessvCard.add(vCard.Entry.PHOTO, photoBlob, vCard.Type.JPEG)
+  
+  vCard.export(businessvCard, contactFullName, false)
+})
 
-var link = vCard.export(businessvCard, contactFullName, false) // use parameter true to force download
