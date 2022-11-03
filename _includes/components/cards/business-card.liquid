@@ -6,7 +6,10 @@
         <div class="row mx-0 mb-4">
           <div class="col-2"></div>
           <div class="col">
-            <img class="rounded-circle border border-2 border-secondary" src="{{ site.amazon-s3 }}/components/cards/business-card/img/{{ page.employee.id }}.png" alt="{{ page.title }}">
+            {% capture photo-url %}
+              {{ site.amazon-s3 }}/components/cards/business-card/img/{{ page.employee.id }}.png
+            {% endcapture %}
+            <img class="rounded-circle border border-2 border-secondary" src="{{ photo-url }}" alt="{{ page.title }}">
           </div>
           <div class="col-2"></div>
         </div>
@@ -23,7 +26,7 @@
         {% for field in page.employee.contact-fields %}
           <li class="media my-2">
             <div class="media-body">
-              <i class="fas fa-{{ field.icon }} text-muted" data-fa-transform="down-23 left-{{ field.position }}"></i>
+              <i class="{{ field.icon }} text-muted" data-fa-transform="down-23 left-{{ field.position }}"></i>
               <h5 class="mt-0 mb-1">{{ field.label }}</h5>
               <p class="text-muted">
                 <a href="{% case field.type %}{% when "phone" %}tel:{% when "email" %}mailto:{% when "link" %}https://{% endcase %}{{ page.employee[field.id] }}">
@@ -52,6 +55,7 @@
 <script type="text/javascript">
   {% include components/generators/vcard/vcard.js
      anchor = '[data-component="buttons/fixed-bottom"] a'
+     photo = photo-url
      name = page.title
      position = page.employee.position
      mobile = page.employee.mobile
