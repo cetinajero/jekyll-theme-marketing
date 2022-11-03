@@ -1,4 +1,6 @@
 (function(context) {
+    const charset = 'utf-8'
+
     var version = {
         "TWO": "2.1",
         "THREE": "3.0",
@@ -57,6 +59,15 @@
             "JPEG": "JPEG;ENCODING=BASE64",
             "OTHER":"OTHER"
         },
+        encoding: function(e) {
+            keys = [
+                'N',
+                'FN',
+                'TITLE',
+                'ORG'
+            ]
+            return keys.includes(e) ? `;CHARSET=${charset}:` : ':'
+        },
         create: function(version) {
             for(var key in this.Version) {
                 if(this.Version[key] === version)
@@ -76,7 +87,7 @@
                 if(Object.prototype.toString.call(entry) === "[object Array]") {
                     for(var i = 0, l = entry.length; i < l; i++) {
                         var e = entry[i]
-                        str += key.toUpperCase() + (e.type ? ";TYPE=" + e.type.toUpperCase() + ":" : ":") + e.value + "\n"
+                        str += key.toUpperCase() + (e.type ? ";TYPE=" + e.type.toUpperCase() + ":" : this.encoding(key)) + e.value + "\n"
                     }
                 } else if(typeof entry === "object") {
                     str += key.toUpperCase() + (entry.type ? ";TYPE=" + entry.type.toUpperCase() + ":" : ":") + entry.value + "\n"
