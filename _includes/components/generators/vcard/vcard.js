@@ -102,7 +102,7 @@
         },
         export: function(card, name, force) {
             var a = document.querySelector('{{ include.anchor }}')
-            a.download = name + ".vcf"
+            a.download = name + ".vcard"
 
             if(Blob) {
                 var blob = new Blob([this.dump(card)], {"type": "text/vcard"})
@@ -192,7 +192,7 @@ const contactLastName = contactFullName.split(" ").slice(-1)
 const contactGivenName = contactFullName.split(" ").slice(0, -1).join(" ")
 const logoBlop = "{% include components/generators/vcard/logo.js %}"
 
-var businessvCard = vCard.create(vCard.Version.FOUR)
+var businessvCard = vCard.create(vCard.Version.THREE)
 businessvCard.addName(contactGivenName, contactLastName, '')
 businessvCard.add(vCard.Entry.FORMATTEDNAME, contactFullName)
 businessvCard.add(vCard.Entry.TITLE, "{{ include.position }}")
@@ -200,7 +200,7 @@ businessvCard.add(vCard.Entry.PHONE, "{{ include.mobile }}", vCard.Type.CELL)
 businessvCard.add(vCard.Entry.PHONE, "{{ include.work }}", vCard.Type.WORK)
 businessvCard.add(vCard.Entry.EMAIL, "{{ include.email }}", vCard.Type.WORK)
 businessvCard.add(vCard.Entry.ORGANIZATION, "{{ site.title }}")
-businessvCard.add(vCard.Entry.URL, "{{ site.url }}")
+businessvCard.add(vCard.Entry.URL, "{{ site.url | absolute_url }}")
 businessvCard.add(vCard.Entry.PHOTO, logoBlop, vCard.Type.JPEG)
 
 vCard.export(businessvCard, contactFullName, false)
