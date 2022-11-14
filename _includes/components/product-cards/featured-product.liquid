@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container-fluid">
   <div class="card-group">
     {% for featured-product in page.featured-products %}
       {% unless site.links.featured-product[featured-product.img].disabled %}
-        <div class="card">
+        <div class="card col-md-6">
           <a href="{{ featured-product.href | relative_url }}">
             <img src="{{ site.amazon-s3 }}/components/product-cards/featured-product/img/{{ featured-product.img }}.png" class="card-img-top" alt="{{ featured-product.img }}" data-appear-animation="fadeInDown">
           </a>
