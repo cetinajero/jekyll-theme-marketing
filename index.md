@@ -5,32 +5,34 @@ title: Home
 featured-products:
   - img: "565396f"
     product: "1st card Chuck Taylor All Star Exploding Star High Top"
-    text: "When it comes to major star appeal, look no further than these vibrantly colored Chucks. An exploding star graphic brings standout style to classic and comfortable canvas."
     href: "/shoes-woman/high/565396f/"
 
   - img: "563512f"
     product: "2nd card Chuck Taylor All Star Madison Mid"
-    text: "Amp up the comfort with cushioned and structured Chucks. With padding on the collar, heel and tongue, they've got everything you need to keep going."
     href: "/shoes-woman/mid/563512f/"
 
   - img: "564995c"
     product: "3rd card Chuck Taylor All Star Rainbow Platform Low Top"
-    text: "Paneled canvas and a colorblocked midsole bring a vibrant edge to your everyday Chucks, while a platform sole gives you a boost. Stand tall."
     href: "/shoes-woman/platform/564995c/"
 
   - img: "565396f"
-    product: "1st card Chuck Taylor All Star Exploding Star High Top"
-    text: "When it comes to major star appeal, look no further than these vibrantly colored Chucks. An exploding star graphic brings standout style to classic and comfortable canvas."
+    product: "4st card Chuck Taylor All Star Exploding Star High Top"
     href: "/shoes-woman/high/565396f/"
 
   - img: "564995c"
-    product: "3rd card Chuck Taylor All Star Rainbow Platform Low Top"
-    text: "Paneled canvas and a colorblocked midsole bring a vibrant edge to your everyday Chucks, while a platform sole gives you a boost. Stand tall."
+    product: "5rd card Chuck Taylor All Star Rainbow Platform Low Top"
     href: "/shoes-woman/platform/564995c/"
     
   - img: "565396f"
-    product: "1st card Chuck Taylor All Star Exploding Star High Top"
-    text: "When it comes to major star appeal, look no further than these vibrantly colored Chucks. An exploding star graphic brings standout style to classic and comfortable canvas."
+    product: "6st card Chuck Taylor All Star Exploding Star High Top"
+    href: "/shoes-woman/high/565396f/"
+    
+  - img: "565396f"
+    product: "7st card Chuck Taylor All Star Exploding Star High Top"
+    href: "/shoes-woman/high/565396f/"
+    
+  - img: "565396f"
+    product: "8st card Chuck Taylor All Star Exploding Star High Top"
     href: "/shoes-woman/high/565396f/"
 
 parallax:
