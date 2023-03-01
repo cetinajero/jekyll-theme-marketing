@@ -5,8 +5,14 @@
 
 .card-group {
   .card {
-    @include media-breakpoint-between(sm, md) {
+    @include media-breakpoint-down(sm) {
       @include card-group-column-count(1);
+    }
+    @include media-breakpoint-only(md) {
+      @include card-group-column-count(2);
+    }
+    @include media-breakpoint-up(lg) {
+      @include card-group-column-count(4);
     }
   }
 }
