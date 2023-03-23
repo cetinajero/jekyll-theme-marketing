@@ -34,7 +34,15 @@
   <section id="product-details-footer" class="row">
     {% for resource in page.resources.spec-sheets.catalog %}
       <div class="mx-auto" style="background-image: url({{ site.amazon-s3 }}{{ resource }});">
-        <img src="{{ site.amazon-s3 }}/components/product-cards/product-details/img/dummy.png" title="{{ page.title }}" alt="{{ page.title }}" />
+        <img
+          src="{{ site.amazon-s3 }}/components/product-cards/product-details/img/dummy.png"
+          title="{{ page.title }}"
+          alt="{{ page.title }}" />
+        <img
+          src="{{ site.amazon-s3 }}{{ resource }}"
+          class="d-none"
+          title="{{ page.title }}"
+          alt="{{ page.title }}" />
       </div>
     {% endfor %}
   </section>
