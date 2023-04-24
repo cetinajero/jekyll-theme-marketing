@@ -4,35 +4,41 @@ title: Home
 
 featured-products:
   - img: "565396f"
-    product: "1st card Chuck Taylor All Star Exploding Star High Top"
+    product: "Chuck Taylor"
+    text: "1st card Chuck Taylor All Star Exploding Star High Top"
     href: "/shoes-woman/high/565396f/"
+    links:
+      - { name: "Chuck Taylor", href: '/shoes-woman/mid/563512f/' }
+      - { name: "All Star", href: '/shoes-woman/mid/563512f/' }
+      - { name: "All Star", href: '/shoes-woman/mid/563512f/' }
+      - { name: "All Star", href: '/shoes-woman/mid/563512f/' }
 
   - img: "563512f"
-    product: "2nd card Chuck Taylor All Star Madison Mid"
+    product: "All Star"
     href: "/shoes-woman/mid/563512f/"
 
   - img: "564995c"
-    product: "3rd card Chuck Taylor All Star Rainbow Platform Low Top"
+    product: "Rainbow"
     href: "/shoes-woman/platform/564995c/"
 
   - img: "565396f"
-    product: "4st card Chuck Taylor All Star Exploding Star High Top"
+    product: "Exploding"
     href: "/shoes-woman/high/565396f/"
 
   - img: "564995c"
-    product: "5rd card Chuck Taylor All Star Rainbow Platform Low Top"
+    product: "Rainbow Platform"
     href: "/shoes-woman/platform/564995c/"
     
   - img: "565396f"
-    product: "6st card Chuck Taylor All Star Exploding Star High Top"
+    product: "Exploding Star"
     href: "/shoes-woman/high/565396f/"
     
   - img: "565396f"
-    product: "7st card Chuck Taylor All Star Exploding Star High Top"
+    product: "Chuck Taylor"
     href: "/shoes-woman/high/565396f/"
     
   - img: "565396f"
-    product: "8st card Chuck Taylor All Star Exploding Star High Top"
+    product: "Exploding Star"
     href: "/shoes-woman/high/565396f/"
 
 parallax:
@@ -114,14 +120,15 @@ brand-panel:
     - { name: "068", href: '/', img: '068' }
 ---
 {% include components/collections/active.liquid %}
+
+<section class="pt-3 d-none d-lg-block">
+  {% include components/product-cards/featured-product.liquid %}
+</section>
+
 {% include components/sliders/revolution-slider.liquid %}
 
 <section class="pt-3">
   {% include components/info-cards/customers-intro.liquid %}
-</section>
-
-<section class="pt-3">
-  {% include components/product-cards/featured-product.liquid %}
 </section>
 
 <section class="pt-5">

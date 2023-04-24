@@ -11,8 +11,17 @@
               data-appear-animation="fadeInDown">
           </a>
           <div class="card-body" data-appear-animation="fadeInDown">
-            <h5 class="card-title">{{ featured-product.product }}</h5>
+            <h6 class="card-title">{{ featured-product.product }}</h6>
             <p class="card-text">{{ featured-product.text }}</p>
+            <div class="card-group d-flex flex-column">
+              {% for link in featured-product.links %}
+                <div class="d-none d-xl-block">
+                  <a class="card-link d-flex aling-item-start" href="{{ link.href | relative_url }}">
+                    {{ link.name }}
+                  </a>
+                </div>
+              {% endfor %}
+            </div>
           </div>
         </div>
       {% endunless %}
