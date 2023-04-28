@@ -1,5 +1,5 @@
 {% if page.resources.special-offers.quantity > 0 %}
-  {% unless site.original or site.special-offers.customers == false %}
+  {% if site.components.special-offers == 'enabled' %}
     <p>
       {% for resource in (1..page.resources.special-offers.quantity) %}
         {% assign page-categories-size = page.categories | size %}
@@ -45,7 +45,7 @@
       {% endfor %}
     </p>
 
-  {% endunless %}
+  {% endif %}
 {% else %}
   <p>{{ site.data.i18n.common.product-layout[site.lang].special-offers-empty }}</p>
 {% endif %}

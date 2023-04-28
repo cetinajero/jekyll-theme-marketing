@@ -84,7 +84,7 @@ special-offers:
     img: "/radios/motorola/digital/portable/dep450/dep450.png"
     brand: "Motorola"
     commercial: "DEP 450"
-    href: "/shoes-woman/"
+    href: "/shoes-man/high/565396f/#special-offers"
 
   - collection: shoes-woman
     id: "VZ-30-G6-4"
@@ -93,7 +93,7 @@ special-offers:
     img: "/radios/vertex-standard/portable/vz-30/vz-30.png"
     brand: "Vertex"
     commercial: "VZ-30 + auricular y funda"
-    href: "/radios/vertex-standard/portable/vz-30/vz-30-g6-4/"
+    href: "/shoes-man/high/565396f/#special-offers"
 
   - collection: shoes-woman
     id: "vlr"
@@ -102,7 +102,7 @@ special-offers:
     img: "/radios/motorola/analog/portable/vlr150/vlr150_cargador.png"
     brand: "Vertex"
     commercial: "6 Radios VLR150 + Multicargador"
-    href: "/radios/motorola/analog/portable/vlr150/cu1464bke4aa/"
+    href: "/shoes-man/high/565396f/#special-offers"
 
 brand-panel:
   title: Conoce nuestras marcas
@@ -145,7 +145,33 @@ brand-panel:
   {% include components/parallax/sections.liquid %}
 </section>
 
-<section class="container-fluid pt-5">
+<h3 class="post pt-4">Promociones</h3>
+<div class="container marketing-theme clean-view">
+  <div class="row">
+    {% for special-offer in page.special-offers %}
+      {% for collection-type in site.defaults %}
+        {% if collection-type.scope.type == special-offer.collection %}
+          {% if collection-type.values.published == true and site.links.special-offers[special-offer.id].disabled == null -%}
+            <div class="marketing-theme content-centered col-md-4 col-lg-3 {{ special-offer.model }}">
+              {% assign special-offer-img = special-offer.img | prepend: 'https://grupopv-public.s3.amazonaws.com/assets/img/catalog/thumbnails' %}
+              {%  include components/product-cards/3d-space.liquid
+                  id=special-offer.id
+                  model=special-offer.model
+                  desc=special-offer.desc
+                  img=special-offer-img
+                  brand=special-offer.brand
+                  commercial=special-offer.commercial
+                  href=special-offer.href
+              %}
+            </div>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </div>
+</div> <!-- /container -->
+
+<section class="container-fluid pt-2">
   {% include components/info-cards/card-deck.liquid %}
 </section>
 
