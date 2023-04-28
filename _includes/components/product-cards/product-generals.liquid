@@ -31,7 +31,7 @@
 
             {% capture promotion-price %}
               {% unless site.original %}
-                {% if site.special-offers.customers %}
+                {% if site.components.special-offers == 'enabled' %}
                   {% assign promotion-price-size = page.promotion-price | downcase | split: '.' | last | size %}
                   {% if page.promotion-price %}{{ page.promotion-price | prepend: '$ ' }}{% endif %}{% if promotion-price-size == 1 %}{{ "0" }}{% endif %}
                   {% if page.promotion-currency %}
