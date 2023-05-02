@@ -5,7 +5,7 @@
 
       {% if forloop.first == true %}
         {% assign tab_class = 'active' %}
-      {% elsif tab.name == 'special-offers' and site.original or site.special-offers.customers == false %}
+      {% elsif tab.name == 'special-offers' and site.components.special-offers != 'enabled' %}
         {% assign tab_class = 'd-none' %}
       {% else %}
         {% assign tab_class = '' %}

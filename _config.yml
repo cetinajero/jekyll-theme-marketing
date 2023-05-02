@@ -30,6 +30,7 @@ components:
     shoes-man: disabled # Disable a whole collection
     high-565396f3: disabled # Disable only on a product
   shopping-cart: enabled
+  special-offers: enabled # Enable special offers functionality
 links:
   featured-product:
     563512f:
@@ -40,8 +41,6 @@ links:
 product:
   price:
     disabled: # true # Disable the prices for the whole site
-special-offers:
-  customers: true
 social-media:
   - name: facebook
     link: https://www.facebook.com/
