@@ -277,7 +277,7 @@ GEM
     simpleidn (0.2.1)
       unf (~> 0.1.4)
     terminal-table (1.6.0)
-    test-unit (3.5.7)
+    test-unit (3.5.9)
       power_assert
     typhoeus (1.4.0)
       ethon (>= 0.9.0)
