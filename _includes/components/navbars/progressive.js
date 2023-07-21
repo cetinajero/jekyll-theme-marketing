@@ -1,8 +1,8 @@
 <script type="text/javascript">
   function goToSparesUrl(){
-    esMxUrl = '{{ site.data.menus.common[0].spares.esMxUrl }}'
-    enUsUrl = '{{ site.data.menus.common[0].spares.enUsUrl }}'
-    ptBrUrl = '{{ site.data.menus.common[0].spares.ptBrUrl }}'
+    esMxUrl = '{{ site.data.menus.common[1].spares.esMxUrl }}'
+    enUsUrl = '{{ site.data.menus.common[1].spares.enUsUrl }}'
+    ptBrUrl = '{{ site.data.menus.common[1].spares.ptBrUrl }}'
 
     currentLang = document.getElementsByTagName("html")[0].getAttribute("lang");
 
