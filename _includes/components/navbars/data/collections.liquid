@@ -12,3 +12,7 @@
     {% endif %}
   {% endfor %}
 {% endfor %}
+
+{% for menu in site.components.navbars.pages %}
+  {% include {{ include.component | prepend: 'components/' | append: '.liquid' }} %}
+{% endfor %}

@@ -26,6 +26,9 @@ components:
     customers-intro: enabled # Enables the customers description @ the landing page
   meta:
     favicon: enabled # Enables custom favicon
+  navbars:
+    pages: # Defines custom navbar links
+      - name: 'Google => https://www.google.com/'
   ribbon: # disabled # Disable the whole component
     shoes-man: disabled # Disable a whole collection
     high-565396f3: disabled # Disable only on a product
