@@ -10,6 +10,9 @@ gemspec
 # Install GitHub Pages dependencies needed by bundle exec jekyll serve
 gem 'github-pages', group: :jekyll_plugins
 
+# Manage application's dependencies
+gem 'bundler', '~> 2.0'
+
 # Install rake to automate ruby tasks
 gem 'rake'
 
