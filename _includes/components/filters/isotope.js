@@ -2,8 +2,8 @@
 var filters = {};
 
 // init Isotope
-var $grid = $('[data-layout="grid"] .grid').isotope({
-  itemSelector: '[data-component="product-cards/progressive"]',
+var $grid = $('{{ include.container }}').isotope({
+  itemSelector: '{{ include.items }}',
   filter: function() {
 
     var isMatched = true;
@@ -34,7 +34,7 @@ $('#filters').on( 'click', '.btn', function() {
   // set filter for group
   filters[ filterGroup ] = $this.attr('data-filter');
   // arrange, and use filter fn
-  $grid.isotope();
+  $grid.isotope({{ include.options }});
 });
 
 // change is-checked class on buttons

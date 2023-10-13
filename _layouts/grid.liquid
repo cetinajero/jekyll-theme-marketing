@@ -37,7 +37,10 @@ layout: page
   </div> <!-- /container -->
 
   <script type="text/javascript">
-    {% include components/filters/isotope.js %}
+    {% include components/filters/isotope.js
+        container='[data-layout="grid"] .grid'
+        items='[data-component="product-cards/progressive"]'
+    %}
   </script>
 {% else %}
   <script type="text/javascript">window.location.href = "/"</script>
