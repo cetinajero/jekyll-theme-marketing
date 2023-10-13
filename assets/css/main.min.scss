@@ -61,6 +61,7 @@ $flag-icon-css-path: '../node_modules/flag-icon-csss/flags';
 @import "common/custom";
 
 // Import component partials
+@import "components/apps/downloads";
 @import "components/breadcrumbs/bootstrap";
 @import "components/buttons/fixed-bottom";
 @import "components/cards/business-card";

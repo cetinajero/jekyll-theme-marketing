@@ -3,21 +3,25 @@ firebase.auth().onAuthStateChanged((user) => {
 
     function createList() {
       document.querySelector("#sign-in-content").innerHTML = `
-        <h3>Mis descargas</h3>
+        <div class="row">
+          <div class="filters col-4 col-md-3 col-xl-2"></div>
 
-        <div class="table-responsive px-xl-5">
-          <table class="table table-striped table-hover">
-            <thead class="thead-light">
-              <tr>
-                <th scope="col"><i class="fas fa-hashtag"></i></th>
-                <th scope="col">Archivo <i class="fas fa-cloud-download-alt"></i></th>
-                <th scope="col">Marca <i class="far fa-copyright"></i></th>
-                <th scope="col">Tecnología <i class="fas fa-wifi fa-rotate-90"></i></th>
-                <th scope="col">Categoría <i class="fas fa-th"></i></th>
-              </tr>
-            </thead>
-            <tbody id="firebaseItemRows"></tbody>
-          </table>
+          <div class="col-8 col-md-9 col-xl-10">
+            <div class="table-responsive px-xl-5">
+              <table class="table table-striped table-hover">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col"><i class="fas fa-hashtag"></i></th>
+                    <th scope="col">Archivo <i class="fas fa-cloud-download-alt"></i></th>
+                    <th scope="col" class="d-none d-lg-table-cell">Marca <i class="far fa-copyright"></i></th>
+                    <th scope="col" class="d-none d-lg-table-cell">Tecnología <i class="fas fa-wifi fa-rotate-90"></i></th>
+                    <th scope="col" class="d-none d-lg-table-cell">Categoría <i class="fas fa-th"></i></th>
+                  </tr>
+                </thead>
+                <tbody id="firebaseItemRows"></tbody>
+              </table>
+            </div>
+          </div>
         </div>
       `;
 
@@ -34,6 +38,11 @@ firebase.auth().onAuthStateChanged((user) => {
             querySnapshot.forEach((doc) => {
               appendRow(doc);
             });
+            {% include components/filters/isotope.js
+                container="#firebaseItemRows"
+                items=".firebaseItem"
+                options="{ transitionDuration: 0 }"
+            %}
           }
         })
         .catch(error => {
@@ -51,12 +60,12 @@ firebase.auth().onAuthStateChanged((user) => {
       var newcontent = document.createElement('tbody');
       counter = document.querySelector("#firebaseItemRows").rows.length + 1
       newcontent.innerHTML = `
-        <tr id="row-${counter}">
+        <tr class="firebaseItem" id="row-${counter}">
           <td>${counter}</td>
           <td><a href="${row.data().url}" title="Clic para descargar">${row.id}</a></td>
-          <td>${normalizeFireBaseData(row.data().brand)}</td>
-          <td>${normalizeFireBaseData(row.data().technology)}</td>
-          <td>${normalizeFireBaseData(row.data().category)}</td>
+          <td class="brand d-none d-lg-table-cell">${normalizeFireBaseData(row.data().brand)}</td>
+          <td class="technology d-none d-lg-table-cell">${normalizeFireBaseData(row.data().technology)}</td>
+          <td class="category d-none d-lg-table-cell">${normalizeFireBaseData(row.data().category)}</td>
         </tr>
       `;
 
@@ -91,6 +100,17 @@ firebase.auth().onAuthStateChanged((user) => {
     }
 
     createList()
+
+    function createFilters() {
+      isotope = document.querySelector("#isotope")
+      filters = document.querySelector(".filters")
+      
+      while (isotope.firstChild) {
+        filters.appendChild(isotope.firstChild);
+      }
+    }
+
+    createFilters()
 
   } else {
     // User is signed out.
