@@ -1,3 +1,8 @@
-.firebaseItem{
-  position: relative !important;
+#firebaseItemRows {
+  height: 0px!important;
+
+  .firebaseItem {
+    position: relative!important;
+    top: 0px!important;
+  }
 }
