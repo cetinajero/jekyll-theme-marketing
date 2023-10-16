@@ -49,5 +49,5 @@
 
 <script type="text/javascript">
   const path = location.pathname.substring(1);
-  document.getElementById('login-button').href = '/login/?mode=select&signInSuccessUrl=/' + path;
+  document.getElementById('login-button').href = '{{ '/login/' | relative_url }}?mode=select&signInSuccessUrl=/' + path;
 </script>

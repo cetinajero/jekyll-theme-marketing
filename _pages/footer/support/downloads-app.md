@@ -1,7 +1,7 @@
 ---
 published: true
-title: Centro de descargas
-permalink: /descargas/
+title: Downloads section
+permalink: /downloads/
 
 filters:
   - title: Marca

@@ -115,7 +115,7 @@ firebase.auth().onAuthStateChanged((user) => {
   } else {
     // User is signed out.
     const path = location.pathname.substring(1);
-    window.location.href = '/login/?mode=select&signInSuccessUrl=/' + path;
+    window.location.href = '{{ '/login/' | relative_url }}?mode=select&signInSuccessUrl=/' + path;
   }
 }, function(error) {
   console.log(error);

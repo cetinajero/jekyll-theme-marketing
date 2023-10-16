@@ -4,42 +4,30 @@ title: Home
 
 featured-products:
   - img: "565396f"
-    product: "Chuck Taylor"
-    text: "1st card Chuck Taylor All Star Exploding Star High Top"
+    # product: "Chuck Taylor"
+    # text: "1st card Chuck Taylor All Star Exploding Star High Top"
     href: "/shoes-woman/high/565396f/"
-    links:
-      - { name: "Chuck Taylor", href: '/shoes-woman/mid/563512f/' }
-      - { name: "All Star", href: '/shoes-woman/mid/563512f/' }
-      - { name: "All Star", href: '/shoes-woman/mid/563512f/' }
-      - { name: "All Star", href: '/shoes-woman/mid/563512f/' }
+    # links:
+    #   - { name: "Chuck Taylor", href: '/shoes-woman/mid/563512f/' }
+    #   - { name: "All Star", href: '/shoes-woman/mid/563512f/' }
+    #   - { name: "All Star", href: '/shoes-woman/mid/563512f/' }
+    #   - { name: "All Star", href: '/shoes-woman/mid/563512f/' }
 
   - img: "563512f"
-    product: "All Star"
+    # product: "All Star"
     href: "/shoes-woman/mid/563512f/"
 
   - img: "564995c"
-    product: "Rainbow"
+    # product: "Rainbow"
     href: "/shoes-woman/platform/564995c/"
 
   - img: "565396f"
-    product: "Exploding"
+    # product: "Exploding"
     href: "/shoes-woman/high/565396f/"
 
   - img: "564995c"
-    product: "Rainbow Platform"
+    # product: "Rainbow Platform"
     href: "/shoes-woman/platform/564995c/"
-    
-  - img: "565396f"
-    product: "Exploding Star"
-    href: "/shoes-woman/high/565396f/"
-    
-  - img: "565396f"
-    product: "Chuck Taylor"
-    href: "/shoes-woman/high/565396f/"
-    
-  - img: "565396f"
-    product: "Exploding Star"
-    href: "/shoes-woman/high/565396f/"
 
 parallax:
   - collection: "shoes-woman"

@@ -22,6 +22,7 @@
     - { title: 'Search', i18n: { es_MX: 'Buscar', pt_BR: '' }, link: '/search/', pre-icon: 'fas fa-search' }
     - { title: 'Sizes lists', i18n: { es_MX: 'Lista de tallas', pt_BR: '' }, link: '/sizes-lists/', pre-icon: 'fas fa-list-alt' }
     - { title: 'Shop gift cards', i18n: { es_MX: 'Compra tarjeta de regalo', pt_BR: '' }, link: '/gift-cards/', pre-icon: 'fas fa-gift' }
+    - { title: 'Downloads section', i18n: { es_MX: 'Sección de descargas', pt_BR: '' }, link: '/downloads/', pre-icon: 'fas fa-download' }
     - { title: 'Video section', i18n: { es_MX: 'Sección de videos', pt_BR: '' }, link: '/videos/', pre-icon: 'fas fa-video' }
     - { title: 'YouTube', link: '/youtube/', pre-icon: 'fab fa-youtube' }
     - { title: 'Marketing support', i18n: { es_MX: 'Apoyo de mercadotecnia', pt_BR: '' }, link: '/marketing/', pre-icon: 'fas fa-edit' }

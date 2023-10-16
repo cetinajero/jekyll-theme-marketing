@@ -14,7 +14,7 @@ firebaseAuthAccountApp = function() {
       });
     } else {
       // User is signed out.
-      window.location.href = "/login/?mode=select&signInSuccessUrl=/account/";
+      window.location.href = "{{ '/login/' | relative_url }}?mode=select&signInSuccessUrl={{ '/account/' | relative_url }}";
     }
   }, function(error) {
     console.log(error);

@@ -29,7 +29,7 @@ specialOffersApp = function() {
       });
     } else {
       // User is signed out.
-      window.location.href = "/login/?mode=select&signInSuccessUrl=/special-offers/";
+      window.location.href = "{{ '/login/' | relative_url }}?mode=select&signInSuccessUrl={{ '/special-offers/' | relative_url }}";
     }
   }, function(error) {
     console.log(error);
