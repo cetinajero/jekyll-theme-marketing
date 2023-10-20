@@ -26,6 +26,8 @@ firebase.auth().onAuthStateChanged((user) => {
       `;
 
       getFirebaseItems();
+      getPersonalFirebaseItems();
+      document.querySelector(".spinner-border").classList.add('d-none');
     }
 
     function getFirebaseItems() {
@@ -33,7 +35,7 @@ firebase.auth().onAuthStateChanged((user) => {
         .collection("downloads").get()
         .then((querySnapshot) => {
           if (querySnapshot.empty) {
-            appendAlert('No se han encontrado archivos');
+            console.log('No se han encontrado archivos en la sección de descargas');
           } else {
             querySnapshot.forEach((doc) => {
               appendRow(doc);
@@ -47,11 +49,29 @@ firebase.auth().onAuthStateChanged((user) => {
         })
         .catch(error => {
           switch (error.code) {
-            case 'permission-denied': appendAlert('Tu usuario no cuenta con permisos para acceder a esta sección'); break;
+            case 'permission-denied': console.log('Tu usuario no cuenta con permisos para acceder a la sección de descargas'); break;
             default:                  appendAlert(error);
           }
         });
-      document.querySelector(".spinner-border").classList.add('d-none');
+    }
+
+    function getPersonalFirebaseItems() {
+      firestoredb
+        .doc("users/" + user.uid).collection("downloads").get()
+        .then((querySnapshot) => {
+          if (querySnapshot.empty) {
+            console.log('No se han encontrado archivos personales para este usuario');
+          } else {
+            querySnapshot.forEach((doc) => {
+              appendRow(doc);
+            });
+          }
+        })
+        .catch(error => {
+          switch (error.code) {
+            default: appendAlert(error);
+          }
+        });
     }
 
     function appendRow(row) {
