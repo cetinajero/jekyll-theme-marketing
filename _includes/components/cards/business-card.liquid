@@ -12,7 +12,7 @@
         </div>
         <div class="h3 text-white">{{ page.title }}</div>
         <div class="text-uppercase">{{ page.employee.position }}</div>
-        <div>{{ site.title }}</div>
+        <div>{{ page.employee.company | default: site.title }}</div>
       </div>
     </div>
   </div>
