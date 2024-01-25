@@ -8,29 +8,13 @@ tabs:
     component: nav-tabs/vertical-pills
     params:
       vertical-tabs: 
-        - name: 2021
-          component: panels/catalogs
-          params:
-            catalogs:
-              - id: 2020
-                collection: shoes-woman
-                link: https://online.fliphtml5.com/ggpn/bkmz/
-                pdf_folder: radios
-              - id: 2021
-                collection: shoes-man
-                link: https://online.fliphtml5.com/ggpn/kwmc/
-                pdf_folder: radios
         - name: 2022
           component: panels/catalogs
           params:
             catalogs:
               - id: 2022
                 collection: shoes-woman
-                link: https://online.fliphtml5.com/ggpn/kwmc/
-                pdf_folder: radios
-              - id: 2023
-                collection: disabled
-                link: https://online.fliphtml5.com/ggpn/bkmz/
+                link: https://online.fliphtml5.com/grocq/juhe/
                 pdf_folder: radios
   - name: Brochures
     component: panels/brochures
