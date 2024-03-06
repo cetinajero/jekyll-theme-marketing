@@ -1,4 +1,15 @@
 <article class="col-sm-6 col-lg-4">
   <span class="text-muted"><i class="text-primary fas fa-check-circle"></i> {% if i18n-resource-text %}{{ i18n-resource-text.name }}{% else %}{{ resource.name }}{% endif %}</span>
-  <div class="lead">{% if i18n-resource-text %}{{ i18n-resource-text.value }}{% else %}{{ resource.value }}{% endif %}</div>
+  <div class="lead">
+    {% if i18n-resource-text %}
+      {{ i18n-resource-text.value }}
+    {% else %}
+      {{ resource.value }}
+    {% endif %}
+    <ul class="pl-4 ml-3">
+      {% for value in resource.values %}
+        <li>{{ value }}</li>
+      {% endfor %}
+    </ul>
+  </div>
 </article>
