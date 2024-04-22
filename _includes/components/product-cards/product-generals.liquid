@@ -12,7 +12,7 @@
 
           {% if collection.prices == false or page.price == 'disabled' %}
 
-            <a href="{{ '/our-offices/' | relative_url }}" class="btn btn-primary font-weight-bold" title="Our offices">
+            <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary font-weight-bold" title="Contact">
               Contáctanos para un precio especial
             </a>
 
@@ -27,7 +27,7 @@
                 {% endif %}
               {% endunless %}
             {% endcapture %}
-            <span class="h3 text-primary font-weight-bold {% if page.promotion-price and site.original == false %}{{ 'disabled-price small text-muted' }}{% endif %}">{{ price | strip }}</span>
+            <span class="h3 text-primary font-weight-bold d-flex justify-content-end {% if page.promotion-price and site.original == false %}{{ 'disabled-price small text-muted' }}{% endif %}">{{ price | strip }}</span>
 
             {% capture promotion-price %}
               {% unless site.original %}
@@ -38,7 +38,7 @@
                     {{ page.promotion-currency | prepend: ' ' }}
                   {% endif %}
                 {% else %}
-                  <a href="{{ '/our-offices/' | relative_url }}" class="btn btn-primary font-weight-bold" title="Our offices">
+                  <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary font-weight-bold" title="Contact">
                     Contáctanos para un precio especial
                   </a>
                 {% endif %}
