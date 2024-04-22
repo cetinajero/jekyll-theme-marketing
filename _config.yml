@@ -15,7 +15,9 @@ domain: jekyll.mx
 original: true
 lang: en_US
 timezone: America/Chihuahua
-google-analytics: UA-69457978-1
+google-tag:
+  - { name: Analytics, id: UA-69457978-1 }
+  - { name: Ads, id: UA-69457978-2 }
 whatsapp:
   phone: +526141802929
 exchange-rates:
