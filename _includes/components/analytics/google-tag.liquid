@@ -1,0 +1,12 @@
+{% for tag in site.google-tag %}
+  <!-- Google tag (gtag.js) for Google {{ tag.name }} -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ tag.id }}"></script>
+  <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '{{ tag.id }}');
+  </script>
+  <!-- End Google tag (gtag.js) for Google {{ tag.name }} -->
+{% endfor %}
