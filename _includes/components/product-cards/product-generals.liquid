@@ -46,6 +46,12 @@
             {% endcapture %}
             <span class="h3 text-primary font-weight-bold">{{ promotion-price | strip }}</span>
 
+            <div>
+              <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary font-weight-bold" title="Contact">
+                Contáctanos para un precio especial
+              </a>
+            </div>
+
           {% endif %}
         {% endfor %}
 
