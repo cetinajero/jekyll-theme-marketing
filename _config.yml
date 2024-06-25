@@ -15,6 +15,7 @@ domain: jekyll.mx
 original: true
 lang: en_US
 timezone: America/Chihuahua
+google-tag-manager: GTM-M4JDLSND
 google-tag:
   - { name: Analytics, id: UA-69457978-1 }
   - { name: Ads, id: UA-69457978-2 }
