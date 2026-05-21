@@ -14,7 +14,7 @@
           {% assign image-num = forloop.index | prepend: "_" %}
         {% endif %}
         <div class="mb-2 marketing-theme content-right">
-          <a class="btn btn-primary btn-sm text-white" onclick="specialOffersPDF{{ forloop.index }}();">
+          <a class="btn btn-primary btn-sm text-white" onclick="specialOffersPDF{{ forloop.index }}();" data-proofer-ignore>
             <strong><i class="fas fa-download fa-lg"></i> {{ site.data.i18n.common.product-layout[site.lang].download }}</strong>
           </a>
         </div>

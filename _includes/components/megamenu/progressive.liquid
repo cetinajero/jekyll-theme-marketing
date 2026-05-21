@@ -27,7 +27,7 @@
               {% endfor %}
             </div> <!-- END SECTIONS -->
             <div class="promo-block">
-              <a href="{{ menu.link }}"><img src="{{ site.amazon-s3 }}/components/megamenu/progressive/img/{{ menu-name }}.png" alt="menu-{{ menu-name }}"/></a>
+              <a href="{{ menu.link | default: '/' | relative_url }}"><img src="{{ site.amazon-s3 }}/components/megamenu/progressive/img/{{ menu-name }}.png" alt="menu-{{ menu-name }}"/></a>
             </div>
           </div>
         </span>
