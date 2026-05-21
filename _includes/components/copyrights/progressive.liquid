@@ -15,7 +15,17 @@
     <p>{{ site.data.i18n.common.footer[site.lang].price_list_message.title }}</p>
     <p>{{ site.data.i18n.common.footer[site.lang].price_changes.title }}</p>
     {% if site.original %}
-      <p>{{ site.data.i18n.common.footer[site.lang].privacy.title }}</p>
+      <p>
+        <a href="{{ '/' | relative_url }}" class="d-inline pr-3" style="font-size: 14px">
+          PRIVACY
+        </a>
+        <a href="{{ '/' | relative_url }}" class="d-inline pr-3" style="font-size: 14px">
+          LEGAL TERMS
+        </a>
+        <a href="{{ '/' | relative_url }}" class="d-inline pr-3" style="font-size: 14px">
+          POLICY
+        </a>
+      </p>
     {% else %}
       <span class="lead">
         © Copyright
