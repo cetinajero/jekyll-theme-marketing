@@ -303,6 +303,7 @@ GEM
       unf_ext
     unf_ext (0.0.9.1)
     unicode-display_width (2.5.0)
+    webrick (1.9.2)
     yell (2.2.2)
 
 PLATFORMS
@@ -317,6 +318,7 @@ DEPENDENCIES
   rake
   rubocop
   test-unit
+  webrick
 
 RUBY VERSION
    ruby 3.3.11p205

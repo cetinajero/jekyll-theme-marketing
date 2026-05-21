@@ -9,6 +9,7 @@ gemspec
 
 # Install GitHub Pages dependencies needed by bundle exec jekyll serve
 gem 'github-pages', group: :jekyll_plugins
+gem 'webrick' # Add webrick because it is not part of the default gems starting from Ruby 3.0.0
 
 # Manage application's dependencies
 gem 'bundler', '~> 2.0'
