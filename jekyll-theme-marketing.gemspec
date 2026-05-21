@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
     f.match(gemfiles)
   end
 
-  spec.required_ruby_version = '~> 2.7'
+  spec.required_ruby_version = '~> 3.3'
 
   spec.add_dependency 'jekyll', '~> 3.6'
 end
