@@ -319,7 +319,7 @@ DEPENDENCIES
   test-unit
 
 RUBY VERSION
-   ruby 2.7.8p225
+   ruby 3.3.11p205
 
 BUNDLED WITH
    2.1.4
