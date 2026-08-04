@@ -170,7 +170,7 @@ brand-panel:
     </article>
     <article class="col-12 col-md pt-5 pt-md-0">
       {%  include components/videos/background.liquid
-          video="tph900"
+          video="ccsi"
           title="CONVERSE RENEW CANVAS"
           button="Buy the collection"
           href="/"
