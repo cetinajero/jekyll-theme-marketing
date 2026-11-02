@@ -2,7 +2,7 @@
 
 # Specific version (comment) will be used by RVM
 #ruby=3.3.12
-ruby '3.3.12'
+ruby '~> 3.3'
 
 source 'https://rubygems.org'
 gemspec
