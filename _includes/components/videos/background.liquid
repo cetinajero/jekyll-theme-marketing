@@ -1,10 +1,22 @@
 <div data-component="videos/background">
   <div id="cm-video-bg" class="full-width-box background-image-available" style="padding: {{ include.padding-y }} 0px;">
-    <div class="fwb-bg fwb-video my-4 my-sm-0" style="background-image: url('https://s3-us-west-2.amazonaws.com/grupopv-public/assets/components/videos/background/{{ include.video }}.png');">
-      <video autoplay muted loop class="d-none d-sm-block position-absolute-centered">
+    <div class="fwb-bg fwb-video my-4 my-sm-0" position-relative style="background-image: url('https://s3-us-west-2.amazonaws.com/grupopv-public/assets/components/videos/background/{{ include.video }}.png');">
+      {%- assign start_muted = include.start_muted | default: true -%}
+      <video id="background-video" class="d-none d-sm-block position-absolute-centered" autoplay {% if start_muted %}muted{% endif %} loop playsinline>
         <source src="https://s3-us-west-2.amazonaws.com/grupopv-public/assets/components/videos/background/{{ include.video }}.mp4" type="video/mp4">
       </video>
       <img class="d-none" src="https://s3-us-west-2.amazonaws.com/grupopv-public/assets/components/videos/background/{{ include.video }}.png" alt="{{ include.title }}-image-link">
+      {%- assign show_audio_toggle = include.show_audio_toggle | default: true -%}
+      {% if show_audio_toggle %}
+        <button id="audio-toggle"
+                type="button"
+                class="btn btn-primary position-absolute d-inline-flex align-items-center" 
+                style="right: 1rem; bottom: 1rem; z-index: 10;"
+                aria-label="Activar o desactivar audio">
+          <i class="fa {% if start_muted %}fa-volume-off{% else %}fa-play{% endif %}"></i>
+          <span class="d-none d-md-inline ml-2">{% if start_muted %}Activar audio{% else %}Silenciar{% endif %}</span>
+        </button>
+      {% endif %}
     </div>
     <div class="container-fluid">
       <div class="row">
@@ -20,4 +32,32 @@
       </div>
     </div>
   </div>
-</div>
+</div>r
+
+<!-- JS: alternar audio (FA4) -->
+<script>
+  (function(){
+    var video = document.getElementById('background-video');
+    var btn   = document.getElementById('audio-toggle');
+    if (!video || !btn) return;
+
+    var icon  = btn.querySelector('i');
+    var label = btn.querySelector('span');
+
+    btn.addEventListener('click', function () {
+      var willMute = !video.muted;
+      video.muted = willMute;
+
+      if (willMute) {
+        // Silenciado
+        icon.className = 'fa fa-volume-off';
+        if (label) label.textContent = ' Activar audio';
+      } else {
+        // Con audio
+        icon.className = 'fa fa-volume-up';
+        if (label) label.textContent = ' Silenciar';
+        if (video.paused) { video.play && video.play().catch(function(){}); }
+      }
+    });
+  })();
+</script>
